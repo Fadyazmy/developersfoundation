@@ -13,6 +13,11 @@
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 
+html,body {
+	height:100%;
+	margin:0;
+	padding:0;
+}
 body {
 	background: #fff;
 	color: #383a3c;
@@ -39,8 +44,16 @@ section {
 	padding: 1em;
 	text-align: center;
 }
-
+.main-quote {
+	display:inline-block;
+	margin:4em 0;
+	padding:16px;
+	border:solid 1px #CCC;
+	font-size:20pt;
+	background-color:#EEE;
+}
 .footer-block {
+	margin-bottom:2.5em;
 	width:100%;
 	background-color:#000;
 	height:80px;
@@ -56,10 +69,11 @@ p.ref {
 
 /* Header */
 .codrops-header {
+	width:100%;
 	margin: 0 auto;
-	padding: 5em 0 1em 0;
+	padding: 0em 0 1em 0;
 	text-align: center;
-	max-width: 900px;
+	max-width:900px;
 }
 
 .codrops-header h1 {
@@ -71,10 +85,9 @@ p.ref {
 
 .codrops-header h1 span {
 	display: block;
-	padding: 1em 0 5em;
+	padding: 1em 0 5em 0;
 	font-size: 36%;
 	color: #95a5a6;
-	line-height: 1.4;
 }
 
 /* To Navigation Style */
@@ -202,3 +215,4 @@ p.ref {
 		font-size: 2.5em;
 	}
 }
+
