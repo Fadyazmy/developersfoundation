@@ -40,6 +40,15 @@ section {
 	text-align: center;
 }
 
+.footer-block {
+	width:100%;
+	background-color:#000;
+	height:80px;
+	text-align: center;
+	color:#fff;
+	line-height:80px;
+}
+
 p.ref {
 	text-align: center;
 	padding: 2em 1em;
@@ -48,7 +57,7 @@ p.ref {
 /* Header */
 .codrops-header {
 	margin: 0 auto;
-	padding: 2em;
+	padding: 5em 0 1em 0;
 	text-align: center;
 	max-width: 900px;
 }
@@ -62,7 +71,7 @@ p.ref {
 
 .codrops-header h1 span {
 	display: block;
-	padding: 1em 0 1.5em;
+	padding: 1em 0 5em;
 	font-size: 36%;
 	color: #95a5a6;
 	line-height: 1.4;
