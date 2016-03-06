@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Build Path: /app/.heroku/php/
+# Build Deps: php-min
+
+OUT_PREFIX=$1
+
+# fail hard
+set -o pipefail
+# fail harder
+set -eux
+
+dep_formula=${0#$WORKSPACE_DIR/}
+dep_name=$(basename $BASH_SOURCE)
+dep_version=${VERSION}
+dep_package=${dep_name}-${dep_version}
+
+echo "-----> Bundling Composer (${dep_version})..."
+
+export PATH=${OUT_PREFIX}/bin:$PATH
+
+curl -sS https://getcomposer.org/installer | php -- --version=${dep_version}
+
+php composer.phar --version
+
+rm -rf ${OUT_PREFIX}/*
+mkdir -p ${OUT_PREFIX}/bin
+
+mv composer.phar ${OUT_PREFIX}/bin/composer
+
+echo "-----> Done."

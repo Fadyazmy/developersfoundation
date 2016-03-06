@@ -1,0 +1,48 @@
+[
+    {
+        "name": "heroku/heroku-buildpack-php",
+        "version": "v95",
+        "version_normalized": "95.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/heroku/heroku-buildpack-php.git",
+            "reference": "f9896322d7651dcb0972e3b9f69e9b388aabad76"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/f9896322d7651dcb0972e3b9f69e9b388aabad76",
+            "reference": "f9896322d7651dcb0972e3b9f69e9b388aabad76",
+            "shasum": ""
+        },
+        "time": "2016-03-03 02:23:47",
+        "bin": [
+            "bin/heroku-hhvm-apache2",
+            "bin/heroku-hhvm-nginx",
+            "bin/heroku-php-apache2",
+            "bin/heroku-php-nginx"
+        ],
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "David Zuelke",
+                "email": "dz@heroku.com"
+            }
+        ],
+        "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
+        "homepage": "http://github.com/heroku/heroku-buildpack-php",
+        "keywords": [
+            "apache",
+            "apache2",
+            "foreman",
+            "heroku",
+            "hhvm",
+            "nginx",
+            "php"
+        ]
+    }
+]
