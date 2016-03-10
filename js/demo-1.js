@@ -70,13 +70,13 @@
 
     // Event handling
     function addListeners() {
-        if(!('ontouchstart' in window)) {
+        //if(!('ontouchstart' in window)) {
             window.addEventListener('mousemove', mouseMove);
-        }
+        //}
         window.addEventListener('scroll', scrollCheck);
         window.addEventListener('resize', resize);
     }
-
+	
     function mouseMove(e) {
         var posx = posy = 0;
         if (e.pageX || e.pageY) {
