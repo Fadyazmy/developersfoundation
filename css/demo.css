@@ -53,7 +53,7 @@ section {
 	background-color:#EEE;
 }
 .footer-block {
-	margin-bottom:2.5em;
+	//margin-bottom:2.5em;
 	width:100%;
 	background-color:#000;
 	height:80px;
@@ -78,7 +78,7 @@ p.ref {
 
 .codrops-header h1 {
 	margin: 0;
-	font-size: 4.5em;
+	font-size: 3em;
 	line-height: 1;
 	font-weight: 200;
 }
