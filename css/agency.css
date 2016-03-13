@@ -689,6 +689,3 @@ img::selection {
 img::-moz-selection {
     background: 0 0
 }
-body {
-    webkit-tap-highlight-color: #fed136
-}
