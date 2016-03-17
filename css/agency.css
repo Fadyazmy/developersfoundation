@@ -20,7 +20,7 @@ h6 {
 hr {
     border-color: #f05f40;
     border-width: 3px;
-    max-width: 50px;
+    max-width: 100px;
 }
 
 .img-centered {
@@ -265,7 +265,7 @@ section h3.section-subheading {
     text-transform: none;
     font-style: italic;
     font-weight: 400;
-    margin-bottom: 75px
+    margin-bottom: 10px
 }
 @media (min-width: 768px) {
     section {
