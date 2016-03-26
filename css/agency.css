@@ -16,9 +16,28 @@ h6 {
 	font-family: "Roboto Slab";
 }
 
+
+hr {
+    border-color: #f05f40;
+    border-width: 3px;
+    max-width: 100px;
+}
+
+
+
+.glyphicon {
+    font-size: 50px;
+}
+
+.whoweare{
+    padding: 100px 0;
+}
+
+
 .img-centered {
     margin: 0 auto
 }
+
 .bg-light-gray {
     background-color: #f7f7f7
 }
@@ -258,7 +277,7 @@ section h3.section-subheading {
     text-transform: none;
     font-style: italic;
     font-weight: 400;
-    margin-bottom: 75px
+    margin-bottom: 10px
 }
 @media (min-width: 768px) {
     section {
