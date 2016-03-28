@@ -2,7 +2,12 @@
 	font-size: 14px;
 }
 
-h3,
+.customcolor{
+	font-color:#ffffff;
+}
+
+
+h3,	
 h4,
 h5,
 h6 {
@@ -141,7 +146,7 @@ fieldset[disabled] .btn-xl.active {
     border-color: transparent
 }
 .navbar-default .navbar-brand {
-    color: #fed136;
+    color: #f0ad4e;
     font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive
 }
 .navbar-default .navbar-brand:hover,
@@ -289,11 +294,12 @@ section h3.section-subheading {
     margin: 15px 0;
     text-transform: none
 }
+
 /* portfolio section taken from creative.css*/
 
 a:hover,
 a:focus {
-    color: #eb3812;
+    color: #ffffff;
 }
 .portfolio-box {
     display: block;
