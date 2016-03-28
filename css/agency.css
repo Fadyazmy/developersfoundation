@@ -1,6 +1,9 @@
 .navbar-nav{
 	font-size: 14px;
 }
+.p1{
+	color: #ffffff;
+}
 
 h3,	
 h4,
@@ -312,7 +315,7 @@ a:focus {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(128,128,128,.8) /*rgba(240,95,64,.9)*/;
+    background: rgba(254,209,54,.8);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
