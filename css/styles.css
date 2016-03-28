@@ -100,6 +100,7 @@
 	height: auto;
 	display: block;
 	margin: 0 auto;
+	cursor: pointer;
 }
 
 .portfolioslider .selectors {
@@ -121,6 +122,7 @@
 	color: #CCC;
 	cursor: pointer;
 	opacity:0.5;
+	border-color: #ffffff;
 }
 
 .portfolioslider .captions div {
