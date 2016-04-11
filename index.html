@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>developers' Foundation</title>
-    <meta name="description" content="Examples for creative website header animations using Canvas and JavaScript"/>
-    <meta name="keywords" content="header, canvas, animated, creative, inspiration, javascript"/>
-    <meta name="author" content="Codrops"/>
-    <!--<link rel="shortcut icon" href="img/favicon.PNG">-->
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <meta name="description" content="">
+    <meta name="keywords" content="bootstrap theme, portfolio template, digital agency, onepage, mobile responsive, developer's Foundation, bootstrap theme">
+    <meta name="author" content="developer's Foundation">
+    
+    <!-- Favicons
+    ================================================== -->
+	<link rel="shortcut icon" href="img/favicon.PNG">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
@@ -27,510 +32,570 @@
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
 
-    <!-- Custom CSS -->
-    <link href="css/grayscale.css" rel="stylesheet">
-	
-    <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
-    <link rel="stylesheet" type="text/css" href="css/demo.css"/>
+    <!-- Slider
+    ================================================== -->
+    <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
+    <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css"/>
     <link rel="stylesheet" type="text/css" href="css/component.css"/>
-    <link rel="stylesheet" type="text/css" href="css/agency.css"/>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
-    <!--[if IE]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<!-- temp - used for portfolio-->
-	<link href="css/styles.css" rel="stylesheet">
-
-	
-</head>
-
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<div class="demo-1">
-    <div class="content">
-
-        <div id="large-header" class="large-header">
-            <canvas id="demo-canvas"></canvas>
-            <h1 class="main-title"><b>developers'</b><br><span class="thin">Foundation</span></h1>
+  </head>
+  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <div class="demo-1">
+  <div id="home1">
+   <div id="large-header" class="large-header">
+				<canvas id="demo-canvas"></canvas>
+				<h1 class="main-title"><b>developers'</b><br><span class="thin">Foundation</span></h1>
+			</div>
+			</div>
+    <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">developer's <span class="thin">Foundation</span></a>
         </div>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse"
-                            data-target=".navbar-main-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#large-header">
-                        <i class="fa fa-play-circle"></i>developers' <span class="light">Foundation</span>
-                    </a>
-                </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#home1" class="page-scroll">Home</a></li>
+            <li><a href="#tf-about" class="page-scroll">Mission Statement</a></li>
+            <li><a href="#tf-team" class="page-scroll">About</a></li>
+            <li><a href="#tf-services" class="page-scroll">Services</a></li>
+            <li><a href="#tf-works" class="page-scroll">Portfolio</a></li>
+            <li><a href="#tf-testimonials" class="page-scroll">Testimonials</a></li>
+            <li><a href="#tf-contact" class="page-scroll">Contact</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#mission">Our Mission</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#about">About Us</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#how">The Process</a>
-                        </li>
-						<li>
-                            <a class="page-scroll" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#applynow">Apply Now</a>
-                        </li>
-                    </ul>
+    <!-- About Us Page
+    ==========================================-->
+    <div id="tf-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="img/02.png" class="img-responsive" width="380">
                 </div>
-                <!-- /.navbar-collapse -->
-            </div>
-            <!-- /.container -->
-        </nav>
-
-        <!-- Mission statement section -->
-        <section id="mission" style="padding-bottom: 0px;padding-top: 100px;" class="bg-light-gray">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Mission Statement</h2>
-                        <h3 class="section-subheading text-muted">Every developer can make a difference.</h3>
-                    <hr>
+                <div class="col-md-6">
+                    <div class="about-text">
+                        <div class="section-title">
+                            <h4>Our Mission Statement:</h4>
+                            <h2>Every <strong>developer</strong> can make a <strong>difference</strong></h2>
+                            <hr>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p class="intro">We believe that every good cause deserves a great website. As an organization of college, university and highschool students, we are constantly excited to building the next 'great thing'.</p>
+                        
                     </div>
-                    
-                </div>
-
-                <div class="row">
-                    <!-- Description -->
-                    <p class="text-muted" style="margin-bottom: 100px;">We believe that every good cause deserves a great website. As an organization of college, university and highschool students, we are constantly excited to building the next 'great thing'.</p>
-                </div>
-                <!--<div class="row text-center">
-                    <a class="page-scroll btn btn-xl" href="https://docs.google.com/forms/d/12kYXI8S7CoeBhEuf7ekzvFj3IuNinnBRhOVS9m4BKjg/viewform">APPLY NOW</a>
-                </div>-->
-            </div>
-        </section>
-		
-
-
-
-
-		<section id="about" style="padding-bottom: 50px;padding-top: 100px;">
-			<div class="row">
-        <div class="col-lg-4">
-          <i class="glyphicon glyphicon-console fa-5x glyphicon50px"></i>
-          <h2 style="padding-top: 40px;">Developers</h2>
-          <p>Spanning more than 10 faculties, our developers are funny, genuine and <br> passionate about making a difference.</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <i class="glyphicon wow bounceIn glyphicon-education fa-4x glyphicon50px" data-wow-delay=".1s"></i>
-          <h2 style="padding-top: 40px;">Designers</h2>
-          <p>Designers are the lifeblood of every website. They work closely with developers to <br> uniquely design your website.</p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <i class="glyphicon glyphicon-briefcase glyphicon50px" data-wow-delay=".2s"></i>
-          <h2 style="padding-top: 40px;">Marketers</h2>
-          <p>Our business and marketing students are carefully selected to handle your social<br> media marketing, pro-bono consulting for your marketing objectives and operation challenges.</p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-        </section>
-		
-
-
-
-
-
-
-
-        <!-- how section -->
-        <section id="how" class="bg-light-gray" style="padding-bottom: 100px;padding-top: 100px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">How It Works</h2>
-                        <h3 class="section-subheading text-muted">From Submitting an application to getting a great website.</h3>
-						<hr>
-                    </div>
-                </div>
-				<div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div style="font-size:2.0em;" class="timeline-badge orange"><i class="glyphicon glyphicon-check"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Application Submission</h4>
-                                </div>
-                                <div class="timeline-body roboto">
-                                    <p class="text-muted">Fill out our 2 minute form so we can know more about you and the needs of your organization</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div style="font-size:2.0em;" class="timeline-badge orange"><i class="glyphicon glyphicon-search"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Application reviewed</h4>
-                                </div>
-                                <div class="timeline-body roboto">
-                                    <p class="text-muted">We will evaluate the scope and goal of your submission. </p>
-                                </div>
-                            </div>
-                        </li>
-                        <!-- Agree upon project's vision  &&& We will consult you for more information regarding needs of your organization. &&&-->
-                        <li>
-                            <div style="font-size:2.0em;" class="timeline-badge orange"><i class="glyphicon glyphicon-play-circle"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Our team begins development</h4>
-                                </div>
-                                <div class="timeline-body roboto">
-                                    <p class="text-muted">Doing what we do best.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div style="font-size:2.0em;" class="timeline-badge orange"><i class="glyphicon glyphicon-wrench"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Iterate on user feedback</h4>
-                                </div>
-                                <div class="timeline-body roboto">
-                                    <p class="text-muted">Pilot website presented based on feedback.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div style="font-size:2.0em;" class="timeline-badge orange"><i class="glyphicon glyphicon-thumbs-up"></i></div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4 class="subheading">Deliver the final application</h4>
-                                </div>
-                                <div class="timeline-body roboto">
-                                    <p class="text-muted">Launching the long awaited website.</p>
-								</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-				</div>
-            </div>
-        </section>
-		
-		
-		
-		<!-- portfolio section-->
-		<section class="no-padding" id="portfolio" style="padding-bottom: 100px;padding-top: 100px;background-image: url(img/callout.jpg);">
-        <div class="container-fluid">
-			<div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading p1">Portfolio</h2>
-                        <h3 class="section-subheading text-muted p1">Check out some past projects we've done.<br> <br> </h3>
-						<hr>
-                    </div>
-            </div>
-            <div class="row no-gutter no-gutters">
-                <div class="col-lg-4 col-sm-6">
-				
-				
-                  <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
-    </section>
-	
-	
-	<!--<section class="no-padding portfolioslider" id="portfolio" style="padding-bottom: 100px;padding-top: 100px;background-image: url(img/bg.jpg);">-->
-	<!--<div class="stage">-->
-        
-	<!--		<div class="row">-->
- <!--                   <div class="col-lg-12 text-center">-->
- <!--                       <h2 class="section-heading">Portfolio</h2>-->
- <!--                       <h3 class="section-subheading text-muted">Check out some past projects we've done.<br> <br> </h3>-->
- <!--                   </div>-->
- <!--           </div>-->
-			
-			
-			
-	<!--		<div id="SLDR-ONE" class="sldr">-->
-	<!--	<ul class="wrp animate">-->
-	<!--		<li class="elmnt-one"><div class="skew"><div class="wrap"><img src="img/portfolio/1.jpg" width="1000" height="563"></div></div></li>-->
-	<!--		<li class="elmnt-two"><div class="skew"><div class="wrap"><img src="img/portfolio/2.jpg" width="1000" height="563"></div></div></li>-->
-	<!--		<li class="elmnt-three"><div class="skew"><div class="wrap"><img src="img/portfolio/3.jpg" width="1000" height="563"></div></div></li>-->
-	<!--		<li class="elmnt-four"><div class="skew"><div class="wrap"><img src="img/portfolio/4.jpg" width="1000" height="563"></div></div></li>-->
-	<!--	</ul>-->
-	<!--</div>-->
-
-	<!--<div class="clear"></div>-->
-	
-	<!--<button class="sldr-prv sldr-nav prev">Prev</button>-->
-	<!--<button class="sldr-nxt sldr-nav next">Next</button>-->
-
-	<!--<div class="captions">-->
-	<!--	<div class="focalPoint">-->
-	<!--		<h3 class="thin">Example 1</h3>-->
- <!--           <p class="text-muted">Doing what we do best.</p>-->
- <!--       </div>-->
-	<!-- <div>-->
-	<!--	<h3 class="subheading">Example 2</h3>-->
- <!--       <p class="text-muted">Doing what we do best.</p>-->
-	<!-- </div>-->
-	<!-- <div>-->
-	<!--	<h3 class="subheading">Example 3</h3>-->
- <!--       <p class="text-muted">Doing what we do best.</p>-->
-	<!-- </div>-->
-	<!-- <div>-->
-	<!--	<h3 class="subheading">Example 4</h3>-->
- <!--       <p class="text-muted">Doing what we do best.</p>-->
-	<!-- </div>-->
-	<!--</div>-->
-
-	<!--<ul class="selectors">-->
-	<!--	<li class="focalPoint col-xs-6 col-sm-3">-->
-	<!--		<img src="img/portfolio/1.jpg" onmouseover="darken" class="img-responsive aaa" alt="">-->
-	<!--	</li>-->
-	<!--	<li class=" col-xs-6 col-sm-3">-->
-	<!--		<img src="img/portfolio/2.jpg" onmouseover="darken"  class="img-responsive aaa" alt="">-->
-	<!--	</li>-->
-	<!--	<li class=" col-xs-6 col-sm-3">-->
-	<!--		<img src="img/portfolio/3.jpg" onmouseover="darken"  class="img-responsive aaa" alt="">-->
-	<!--	</li>-->
-	<!--	<li class=" col-xs-6 col-sm-3">-->
-	<!--		<img src="img/portfolio/4.jpg" onmouseover="darken"  class="img-responsive aaa" alt="">-->
-	<!--	</li>-->
-	<!--</ul>-->
-	
-	
-
-
-	<!--</div>-->
-	<!--</section>-->
-	
-
-        <!-- Contact Section -->
-        <section id="applynow" class="bg-light-gray" style="padding-bottom: 100px;padding-top: 100px;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="section-heading">Interested?</h2>
-                        <h3 class="section-subheading text-muted">Get started by filling out our application.<br></h3>
-						<hr>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form name="sentMessage" id="contactForm" novalidate>
-                            <div class="row">
-                                <div class="clearfix"></div>
-                                <div class="col-lg-12 text-center">
-                                    <div id="success"></div>
-                                    <button type="submit" class="btn btn-xl"> <a href="https://docs.google.com/forms/d/12kYXI8S7CoeBhEuf7ekzvFj3IuNinnBRhOVS9m4BKjg/viewform" class="section-heading customcolor"> Apply Now</a></button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="footer-block">Copyright &copy; 2016. Developer's Foundation. All rights reserved.</div>
     </div>
-    <!-- Related demos -->
-    <!--  -->
-</div><!-- /container -->
+	
+	
 
-<!-- jQuery -->
-<script src="js/jquery.js"></script>
+    <!-- Team Page
+    ==========================================-->
+    <div id="tf-team" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2>Who <strong>we are</strong></h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.min.js"></script>
+                <div class="space"></div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 service">
+                    <i class="fa fa-desktop"></i>
+                    <h2 class="aboutus" style="padding-top: 30px">Developers</h2>
+                    <p class="intro">Spanning more than 10 faculties, our developers are funny, genuine and passionate about making a difference.</p>
+                </div>
 
-<!-- Plugin JavaScript -->
-<script src="js/jquery.easing.min.js"></script>
+                <div class="col-md-4 col-sm-6 service">
+                    <i class="fa fa-paint-brush"></i>
+                    <h2 class="aboutus" style="padding-top: 30px">Designers</h2>
+                    <p class="intro">Designers are the lifeblood of every website. They work closely with developers to uniquely design your website.</p>
+                </div>
 
-<!-- Custom Theme JavaScript -->
-<script src="js/grayscale.js"></script>
+                <div class="col-md-4 col-sm-6 service">
+                    <i class="fa fa-suitcase"></i>
+                    <h2 class="aboutus" style="padding-top: 30px">Marketers</h2>
+                    <p class="intro">Our business and marketing students are carefully selected to handle your social media marketing, pro-bono consulting and operation challenges.</p>
+                </div>
+            </div>
+                
+            </div>
+        </div>
+    </div>
+	
+  
+  <!-- Start call to action -->
+  <section id="call-to-action">
+    <img src="img/call-to-action-bg.png" alt="img" style="height:200px;">
+    <div class="call-to-overlay">
+      <div class="container">
+        <div class="call-to-content wow fadeInUp">
+          <h2 class ="bannertext">Are you a <span class="color1">designer,</span> <span class="color2">coder,</span> or <span class="color3">business wizard?</span></h2>
+          <a href="#" class="button button-default" data-text="GET IT NOW"><span>JOIN OUR TEAM</span></a>
+        </div>
+      </div>
+    </div> 
+  </section>
+  <!-- End call to action -->
+	
 
-<script src="js/jquery.sldr.js"></script>
-<!-- Custom Theme JavaScript -->
-<script src="js/grayscale.js"></script>
-<script src="js/TweenLite.min.js"></script>
+    <!-- Services Section
+    ==========================================-->
+    <div id="tf-services" class="text-center"">
+        <div class="container">
+            <div class="section-title center">
+                <h2><strong>Services</strong> we offer</h2>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="clearfix"></div>
+                
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                <div class="pricing-table">
+                    <div class="panel panel-primary" style="border: none;">
+                        <div class="controle-header panel-heading panel-heading-landing">
+                            <h2 class="services-title panel-title panel-title-landing" style="padding-bottom: 30px">UX Design</h2>
+							<i class="fa fa-user-plus"></i>
+                        </div>
+                       
+                        <div class="panel-body panel-body-landing">
+                            <p class="intro">Spanning more than 10 faculties, our developers are funny, genuine and passionate about making a difference.</p>
+                        </div>
+                        <div class="panel-footer panel-footer-landing"></div>
+                    </div>
+                </div>
+            </div>
+			<div class="col-md-4">
+                <div class="pricing-table">
+                    <div class="panel panel-primary" style="border: none;">
+                        <div class="controle-header panel-heading panel-heading-landing">
+                            <h2 class="services-title panel-title panel-title-landing" style="padding-bottom: 30px">Web Design</h2>
+							<i class="fa fa-html5"></i>
+                        </div>
+                        
+                        <div class="panel-body panel-body-landing">
+                            <p class="intro">Spanning more than 10 faculties, our developers are funny, genuine and passionate about making a difference.</p>
+                        </div>
+                        <div class="panel-footer panel-footer-landing"></div>
+                    </div>
+                </div>
+            </div>
+			<div class="col-md-4">
+                <div class="pricing-table">
+                    <div class="panel panel-primary" style="border: none;">
+                        <div class="controle-header panel-heading panel-heading-landing">
+                            <h2 class="services-title panel-title panel-title-landing" style="padding-bottom: 30px">Marketing</h2>
+							<i class="fa fa-bar-chart"></i>
+                        </div>
+                        
+                        <div class="panel-body panel-body-landing">
+                            <p class="intro">Spanning more than 10 faculties, our developers are funny, genuine and passionate about making a difference.</p>
+                        </div>
+                        <div class="panel-footer panel-footer-landing"></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Start counter section -->
+  <section id="counter">
+    <div id="tf-clients" class="text-center">
+    <div class="counter-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Start counter area -->
+            <div class="counter-area">
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="single-counter">
+                  <span class="fa fa-users"></span>
+                  <div class="counter-count">
+                    <span class="counter">1050</span>
+                    <p>Happy Clients</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="single-counter">
+                  <span class="fa fa-bus"></span>
+                  <div class="counter-count">
+                    <span class="counter">750</span>
+                    <p>Project delivery</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="single-counter">
+                  <span class="fa fa-twitter"></span>
+                  <div class="counter-count">
+                    <span class="counter">2,300</span>
+                    <p>Followers</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="single-counter">
+                  <span class="fa fa-tasks"></span>
+                  <div class="counter-count">
+                    <span class="counter">800</span>
+                    <p>Project done</p>
+                  </div>
+                </div>
+              </div>    
+            </div>
+          </div>
+        </div>
+		</div>
+      </div>
+    </div> 
+  </section>
+  <!-- End counter section -->
+
+    <!-- Clients Section
+    ==========================================-->
+    <div id="tf-clients" class="text-center">
+        <div class="overlay">
+            <div class="container">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			</div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section
+    ==========================================-->
+    <div id="tf-works">
+        <div class="container"> <!-- Container -->
+            <div class="section-title text-center center">
+                <h2>Take a look at <strong>our Portfolio</strong></h2>
+                <div class="line">
+                    <hr>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="space"></div>
+
+            <!--<div class="categories">
+                
+                <ul class="cat">
+                    <li class="pull-left"><h4>Filter by Type:</h4></li>
+                    <li class="pull-right">
+                        <ol class="type">
+                            <li><a href="#" data-filter="*" class="active">All</a></li>
+                            <li><a href="#" data-filter=".web">Web Design</a></li>
+                            <li><a href="#" data-filter=".photography">Photography</a></li>
+                            <li><a href="#" data-filter=".app" >Mobile App</a></li>
+                            <li><a href="#" data-filter=".branding" >Branding</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>-->
+
+            <div id="lightbox" class="row">
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/01.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography app">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/02.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/03.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/04.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/05.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 app">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/06.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 photography web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/07.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3 col-lg-3 web">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="img/portfolio/08.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+            
+
+           
+        </div>
+    </div>
+
+    <!-- Testimonials Section
+    ==========================================-->
+    <div id="tf-testimonials" class="text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="section-title center">
+                    <h2><strong>Our clients’</strong> testimonials</h2>
+                    <div class="line">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div id="testimonial" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
+                                <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
+                            </div>
+
+                            <div class="item">
+                                <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
+                                <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
+                            </div>
+
+                            <div class="item">
+                                <h5>This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</h5>
+                                <p><strong>Dean Martin</strong>, CEO Acme Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section
+    ==========================================-->
+    <div id="tf-contact" class="text-center">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="section-title center">
+                        <h2>Feel free to <strong>contact us</strong></h2>
+                        <div class="line">
+                            <hr>
+                        </div>
+                        <div class="clearfix"></div>
+                        <small><em>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</em></small>            
+                    </div>
+
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Message</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav id="footer">
+        <div class="container">
+            <div class="pull-left fnav">
+                <p>Copyright &copy; 2016. Developer's Foundation. All rights reserved.</a></p>
+            </div>
+            <div class="pull-right fnav">
+                <ul class="footer-social">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.1.11.1.js"></script>
+	<script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/SmoothScroll.js"></script>
+    <script type="text/javascript" src="js/jquery.isotope.js"></script>
+
+    <script src="js/owl.carousel.js"></script>
+
+    <!-- Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="js/main.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	
+	<script src="js/TweenLite.min.js"></script>
 <script src="js/EasePack.min.js"></script>
-<script src="js/rAF.js"></script>
+
 <script src="js/demo-1.js"></script>
-
-<script>
-
-$( window ).load( function() {
-
-	$( '.sldr' ).each( function() {
-		var th = $( this );
-		th.sldr({
-			focalClass    : 'focalPoint',
-			offset        : th.width() / 2,
-			sldrWidth     : 'responsive',
-			nextSlide     : th.nextAll( '.sldr-nav.next:first' ),
-			previousSlide : th.nextAll( '.sldr-nav.prev:first' ),
-			selectors     : th.nextAll( '.selectors:first' ).find( 'li' ),
-			toggle        : th.nextAll( '.captions:first' ).find( 'div' ),
-			sldrInit      : sliderInit,
-			sldrStart     : slideStart,
-			sldrComplete  : slideComplete,
-			sldrLoaded    : sliderLoaded,
-			sldrAuto      : true,
-			sldrTime      : 5000,
-			hasChange     : true
-		});
-	});
-
-});
-
-/**
- * Sldr Callbacks
- */
-
-/**
- * When the sldr is initiated, before the DOM is manipulated
- * @param {object} args the slides, callback, and config of the slider
- * @return null
- */
-function sliderInit( args ) {
-
-}
-
-/**
- * When individual slides are loaded
- * @param {object} args the slides, callback, and config of the slider
- * @return null
- */
-function slideLoaded( args ) {
-
-}
-
-/**
- * When the full slider is loaded, after the DOM is manipulated
- * @param {object} args the slides, callback, and config of the slider
- * @return null
- */
-function sliderLoaded( args ) {
-
-}
-
-/**
- * Before the slides change focal points
- * @param {object} args the slides, callback, and config of the slider
- * @return null
- */
-function slideStart( args ) {
-
-}
-
-/**
- * After the slides are done changing focal points
- * @param {object} args the slides, callback, and config of the slider
- * @return null
- */
-function slideComplete( args ) {
-
-}
-
-</script>
-</body>
+  </body>
 </html>
