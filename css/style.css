@@ -18,82 +18,36 @@
 }
 
 /*button*/
-.button {
-	float: left;	
-	display: block;
-	margin: 1em;	
-	border: none;
-	background: none;
-	color: inherit;
-	vertical-align: middle;
-	position: relative;
-	z-index: 1;
-	-webkit-backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
-.button:focus {
-	outline: none;
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
 }
-.button > span {
-	vertical-align: middle;
+ 
+.btn-primary {
+    background: #FCAC45;
+    color: #ffffff;
 }
-.button-default {
-	text-decoration: none;
-	border-radius: 2px;
-	overflow: hidden;
-	font-weight: 600;
-	font-size: 15px;
-	padding: 0;
-	-webkit-transition: border-color 0.3s, background-color 0.3s;
-	transition: border-color 0.3s, background-color 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #fc9b1d;
 }
-.button-default::after {
-	content: attr(data-text);
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	color: #3f51b5;
-	-webkit-transform: translate3d(0, 25%, 0);
-	transform: translate3d(0, 25%, 0);
-}
-.button-default > span {
-	display: block;
-}
-.button-default:after {
-	color: #fff;
-}
-.button-default::after,
-.button-default > span {
-	padding: 12px 21px;
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-}
-.button-default:hover {
-	background-color: rgba(63, 81, 181, 0.1);
-	text-decoration: none;
-}
-.button-default:hover,
-.button-default:focus {
-	color: #fff !important;
-}
-.button-default:hover::after {
-	opacity: 1;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0);
-}
-.button-default:hover > span {
-	opacity: 0;
-	-webkit-transform: translate3d(0, -25%, 0);
-	transform: translate3d(0, -25%, 0);
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #FCAC45;
+    box-shadow: none;
 }
 
+.btn-lg.round {
+	border-radius: 24px;
+}
 /*--------------------*/
 /* CALL TO ACTION */
 /*--------------------*/
