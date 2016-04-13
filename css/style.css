@@ -149,6 +149,54 @@
 }
 
 
+/*--------------------*/
+/* COUNTER 2*/
+/*--------------------*/
+
+#counter1{
+	display: inline;
+	float: left;	
+	position: relative;
+	width: 100%;	
+}
+.counter-overlay1{
+	/*background-color: rgba(0, 0, 0, 0.8);*/
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.counter-area1 {
+	display: inline;
+	
+	padding: 112px 0;
+	width: 100%;
+}
+.single-counter1 {
+	display: inline;
+	
+	padding: 0 10px;
+	width: 100%;
+}
+.single-counter1 > span {
+	display: block;
+	
+	font-size: 60px;
+	text-align: center;
+	width: 60px;
+}
+
+.single-counter1 .counter-count1 > span {
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	margin-top: 70px;
+}
+/*end of counter*/
+
 .no-gutter [class*="-3"] {
     padding-left:0;
 	padding-right:0;
