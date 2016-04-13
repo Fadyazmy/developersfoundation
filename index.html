@@ -330,7 +330,7 @@
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
-                                <img src="img/portfolio/westerncyber.JPG" class="img-responsive" alt="...">
+                                <img src="img/portfolio/westerncyber2.JPG" class="img-responsive" alt="...">
                             </a>
                         </div>
                     </div>
@@ -466,23 +466,16 @@
 				<div class="col-md-12">
 				<!-- Start counter area -->
 				<div class="counter-area">
-				<div class="col-md-12 col-sm-6 col-xs-6">
+				
 					<div class="single-counter">
 						<div class="counter-count">
-							<span class="" style="padding-bottom: 30px">Interested? <br> Are you a <span class="color4">non-profit</span> or <span class="color5">student</span> organization?</span>
+							<span class="centered" style="padding-bottom: 50px">Interested?</span>
 						</div>
 					</div>
-				</div>	
-				<div class="col-md-16 col-sm-6 col-xs-6">
+				
+				<div class="col-md-12 col-sm-6 col-xs-6">
 					<div class="single-counter">
-						<a href="//docs.google.com/forms/d/12kYXI8S7CoeBhEuf7ekzvFj3IuNinnBRhOVS9m4BKjg/viewform"><button type="button" class="btn btn-primary btn-lg round bg4">APPLY NOW</button></a>
-						<div class="counter-count">	
-						</div>
-					</div>
-				</div>    
-				<div class="col-md-16 col-sm-6 col-xs-6">
-					<div class="single-counter">
-						<a href="//docs.google.com/forms/d/12kYXI8S7CoeBhEuf7ekzvFj3IuNinnBRhOVS9m4BKjg/viewform"><button type="button" class="btn btn-primary btn-lg round bg5">APPLY NOW</button></a>
+						<a href="//docs.google.com/forms/d/12kYXI8S7CoeBhEuf7ekzvFj3IuNinnBRhOVS9m4BKjg/viewform"><button type="button" class="big-btn btn btn-primary btn-lg round bg4">APPLY NOW</button></a>
 						<div class="counter-count">	
 						</div>
 					</div>
@@ -535,22 +528,24 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
+					
+					
 
-                    <form>
+                    <form name="htmlform" method="post" action="contactusform.php">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                    <label for="email">Email address</label>
+                                    <input  type="text" name="email" maxlength="80" size="30" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Message</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <label for="comments">Message</label>
+                            <textarea  name="comments" class="form-control" rows="3"></textarea>
                         </div>
                         
-                        <button type="submit" class="btn tf-btn btn-default">Submit</button>
+                        <button type="submit" value="Submit" class="btn tf-btn btn-default">Submit</button>
                     </form>
 
                 </div>

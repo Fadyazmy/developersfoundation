@@ -1,4 +1,6 @@
-
+.centered{
+	text-align:center;
+}
 .call-to-action{
 	height:300px;
 }
@@ -20,21 +22,16 @@
 .color5{
 	color: #3BE229;
 }
-.bg4{
-	background:  #2F84C6;
-	color: #ffffff;
-}
-.bg5{
-	background: #3BE229;
-	color: #ffffff;
-}
 
 /*button*/
-
+.big-btn{
+	width:200px;	
+	height:60px;
+}
 .btn {
     padding: 14px 24px;
     border: 0 none;
-    font-weight: 700;
+    font-weight: 7000;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
