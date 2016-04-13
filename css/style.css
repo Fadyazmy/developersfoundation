@@ -14,6 +14,20 @@
 .color3{
 	color: rgb(58, 93, 207);
 }
+.color4{
+	color: #2F84C6;
+}
+.color5{
+	color: #3BE229;
+}
+.bg4{
+	background:  #2F84C6;
+	color: #ffffff;
+}
+.bg5{
+	background: #3BE229;
+	color: #ffffff;
+}
 
 /*button*/
 
