@@ -129,7 +129,7 @@ $(document).ready(function() {
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
             // Nob form
 
-            var sendFrom = "test@abc.com",
+            var sendFrom = "hello@developersfoundation.ca",
                 sendTo = "harrisonchowhk@yahoo.com",
                 subject = "Test Email",
                 msg = "test test",
