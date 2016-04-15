@@ -120,5 +120,48 @@ function main() {
 main();
 
 document.onload(function() {
-    
+    $('form.form-email').submit(function(e) {
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false;
+
+        var thisForm = $(this).closest('form.form-email');
+
+        if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
+            // Nob form
+
+            var sendFrom = "test@abc.com",
+                sendTo = "harrisonchowhk@yahoo.com",
+                subject = "Test Email",
+                msg = "test test",
+                msgHTML = "<em>lol</em>",
+                fromName = "me",
+                toName = "Developers' Foundation";
+
+            var sendData = JSON.stringify({
+                'sendFrom': sendFrom,
+                'fromName': fromName,
+                'sendTo': sendTo,
+                'toName': toName,
+                'subject': subject,
+                'msg': msg,
+                'msgHTML': msgHTML
+            });
+
+            $.ajax({
+                url: 'mail/mailer.php',
+                crossDomain: false,
+                data: sendData,
+                method: "POST",
+                cache: false,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+    });
 });
