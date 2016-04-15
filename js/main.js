@@ -119,6 +119,60 @@ function main() {
 }
 main();
 
-document.onload(function() {
-    
+$(document).ready(function() {
+    $('form.form-email').submit(function(e) {
+        if (e.preventDefault) e.preventDefault();
+        else e.returnValue = false;
+
+        var thisForm = $(this).closest('form.form-email');
+
+        if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
+            // Nob form
+
+            // document.getElements
+            var sendFrom = "hello@developersfoundation.ca",
+                sendTo = "harrisonchowhk@yahoo.com",
+                subject = "Test Email",
+                msg = "test test",
+                msgHTML = "<em>lol</em>",
+                fromName = "Developers' Foundation",
+                toName = "me";
+
+            var sendData = JSON.stringify({
+                'sendFrom': sendFrom,
+                'fromName': fromName,
+                'sendTo': sendTo,
+                'toName': toName,
+                'subject': subject,
+                'msg': msg,
+                'msgHTML': msgHTML
+            });
+
+            $.ajax({
+                url: 'mail/mailer.php',
+                crossDomain: false,
+                data: sendData,
+                method: "POST",
+                cache: false,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    // Deal with JSON
+                    console.log(data);
+                    var returnData = JSON.parse(data);
+                    if (returnData.success) {
+                        // Throw success msg
+
+                    } else {
+                        // Throw error message
+
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                    // Throw error message
+                }
+            });
+        }
+    });
 });
