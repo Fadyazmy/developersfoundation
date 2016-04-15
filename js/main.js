@@ -130,10 +130,10 @@ $(document).ready(function() {
             // Nob form
 
             // document.getElements
-            var sendFrom = document.htmlform.email.valueOf(),
+            var sendFrom = document.htmlform.email.innerHTML,
                 sendTo = "zilinxie95@gmail.com",
                 subject = "Message from "+sendFrom,
-                msg = document.htmlform.comments.valueOf(),
+                msg = document.htmlform.comments.innerHTML,
                 msgHTML = "<em>lol</em>",
                 fromName = "Developers' Foundation",
                 toName = "test";
