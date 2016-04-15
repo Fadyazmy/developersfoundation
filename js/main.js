@@ -130,13 +130,13 @@ $(document).ready(function() {
             // Nob form
 
             // document.getElements
-            var sendFrom = "hello@developersfoundation.ca",
-                sendTo = "harrisonchowhk@yahoo.com",
-                subject = "Test Email",
-                msg = "test test",
+            var sendFrom = document.getElementsByName("email"),
+                sendTo = "hello@developersfoundation.ca",
+                subject = "Message from "+sendFrom,
+                msg = document.getElementsByName("comments"),
                 msgHTML = "<em>lol</em>",
                 fromName = "Developers' Foundation",
-                toName = "me";
+                toName = "test";
 
             var sendData = JSON.stringify({
                 'sendFrom': sendFrom,
@@ -162,6 +162,7 @@ $(document).ready(function() {
                     var returnData = JSON.parse(data);
                     if (returnData.success) {
                         // Throw success msg
+                        document.getElementById("submit").disabled = true;
 
                     } else {
                         // Throw error message
