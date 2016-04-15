@@ -119,7 +119,7 @@ function main() {
 }
 main();
 
-document.onload(function() {
+$(document).ready(function() {
     $('form.form-email').submit(function(e) {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
