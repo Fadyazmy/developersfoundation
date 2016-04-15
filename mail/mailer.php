@@ -21,3 +21,6 @@ $email
 ;
 
 $sendgrid->send($email);
+
+header('Location: http://developersfoundation.ca/');
+exit;
