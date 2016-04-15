@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
-
+.centered{
+	text-align:center;
+}
 .call-to-action{
 	height:300px;
 }
@@ -16,13 +16,22 @@
 .color3{
 	color: rgb(58, 93, 207);
 }
+.color4{
+	color: #2F84C6;
+}
+.color5{
+	color: #3BE229;
+}
 
 /*button*/
-
+.big-btn{
+	width:200px;	
+	height:60px;
+}
 .btn {
     padding: 14px 24px;
     border: 0 none;
-    font-weight: 700;
+    font-weight: 7000;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -139,6 +148,54 @@
 	margin-left: 5px;
 }
 
+
+/*--------------------*/
+/* COUNTER 2*/
+/*--------------------*/
+
+#counter1{
+	display: inline;
+	float: left;	
+	position: relative;
+	width: 100%;	
+}
+.counter-overlay1{
+	/*background-color: rgba(0, 0, 0, 0.8);*/
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.counter-area1 {
+	display: inline;
+	
+	padding: 112px 0;
+	width: 100%;
+}
+.single-counter1 {
+	display: inline;
+	
+	padding: 0 10px;
+	width: 100%;
+}
+.single-counter1 > span {
+	display: block;
+	
+	font-size: 60px;
+	text-align: center;
+	width: 60px;
+}
+
+.single-counter1 .counter-count1 > span {
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	margin-top: 70px;
+}
+/*end of counter*/
 
 .no-gutter [class*="-3"] {
     padding-left:0;
@@ -360,7 +417,7 @@ font-weight: 900;
 #tf-menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
 	color: #FFF;
-	font-size: 12px;
+	font-size: 14px;
 	letter-spacing: 1px;
 }
 .on {
