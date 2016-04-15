@@ -25,4 +25,4 @@ $email
 
 $sendgrid->send($email);
 
-echo json_encode('{success:true, msg:"done"}');
+echo '{success:true, message:"done"}';

@@ -129,6 +129,7 @@ $(document).ready(function() {
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
             // Nob form
 
+            // document.getElements
             var sendFrom = "hello@developersfoundation.ca",
                 sendTo = "harrisonchowhk@yahoo.com",
                 subject = "Test Email",
@@ -156,10 +157,20 @@ $(document).ready(function() {
                 dataType: 'json',
                 contentType: 'application/json; charset=utf-8',
                 success: function (data) {
+                    // Deal with JSON
                     console.log(data);
+                    var returnData = JSON.parse(data);
+                    if (returnData.success) {
+                        // Throw success msg
+
+                    } else {
+                        // Throw error message
+
+                    }
                 },
                 error: function (error) {
                     console.log(error);
+                    // Throw error message
                 }
             });
         }
