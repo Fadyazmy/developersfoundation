@@ -6,6 +6,8 @@
  * Time: 10:32 PM
  */
 
+require '../vendor/autoload.php';
+
 $sendgrid = new SendGrid('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');
 $email = new SendGrid\Email();
 
