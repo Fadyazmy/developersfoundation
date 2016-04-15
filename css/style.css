@@ -1,3 +1,6 @@
+.bigger-font{
+    font-size: 16px;
+}
 .centered{
 	text-align:center;
 }
@@ -895,7 +898,8 @@ nav#footer p{
 	color: #8c8c8c;
 	transition: all 0.5s;
 }
-#footer i.fa:hover{
-	background: #FCAC45;
-	border-color: #FCAC45;
-	color: #ffffff;
+#footer i.fa:hover {
+    background: #FCAC45;
+    border-color: #FCAC45;
+    color: #ffffff;
+}
