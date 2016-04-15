@@ -124,16 +124,18 @@ $(document).ready(function() {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
 
+        document.getElementById("submit").disabled = true;
+
         var thisForm = $(this).closest('form.form-email');
 
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
             // Nob form
 
             // document.getElements
-            var sendFrom = document.htmlform.email.value,
+            var sendFrom = document.getElementById("email1").value,
                 sendTo = "zilinxie95@gmail.com",
                 subject = "Message from "+sendFrom,
-                msg = document.htmlform.comments.value,
+                msg = document.getElementById("comments1").value,
                 msgHTML = "<em>lol</em>",
                 fromName = "Developers' Foundation",
                 toName = "test";
@@ -162,11 +164,11 @@ $(document).ready(function() {
                     var returnData = JSON.parse(data);
                     if (returnData.success) {
                         // Throw success msg
-                        document.getElementById("submit").disabled = true;
+                        document.getElementById("submit").disabled =    false;
 
                     } else {
                         // Throw error message
-                        document.getElementById("submit").disabled = true;
+                        document.getElementById("submit").disabled = false;
                     }
                 },
                 error: function (error) {
