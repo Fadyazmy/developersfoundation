@@ -130,10 +130,10 @@ $(document).ready(function() {
             // Nob form
 
             // document.getElements
-            var sendFrom = document.getElementsByName("email"),
-                sendTo = "hello@developersfoundation.ca",
+            var sendFrom = document.htmlform.email.valueOf(),
+                sendTo = "zilinxie95@gmail.com",
                 subject = "Message from "+sendFrom,
-                msg = document.getElementsByName("comments"),
+                msg = document.htmlform.comments.valueOf(),
                 msgHTML = "<em>lol</em>",
                 fromName = "Developers' Foundation",
                 toName = "test";
@@ -166,7 +166,7 @@ $(document).ready(function() {
 
                     } else {
                         // Throw error message
-
+                        document.getElementById("submit").disabled = true;
                     }
                 },
                 error: function (error) {
