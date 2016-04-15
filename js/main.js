@@ -124,8 +124,6 @@ $(document).ready(function() {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
 
-        document.getElementById("submit").disabled = true;
-
         var thisForm = $(this).closest('form.form-email');
 
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
