@@ -134,8 +134,8 @@ $(document).ready(function() {
                 subject = "Test Email",
                 msg = "test test",
                 msgHTML = "<em>lol</em>",
-                fromName = "me",
-                toName = "Developers' Foundation";
+                fromName = "Developers' Foundation",
+                toName = "me";
 
             var sendData = JSON.stringify({
                 'sendFrom': sendFrom,
