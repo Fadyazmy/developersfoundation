@@ -131,7 +131,7 @@ $(document).ready(function() {
 
             // document.getElements
             var sendFrom = document.getElementsByName("email"),
-                sendTo = "hello@developersfoundation.ca",
+                sendTo = "zilinxie95@gmail.com",
                 subject = "Message from "+sendFrom,
                 msg = document.getElementsByName("comments"),
                 msgHTML = "<em>lol</em>",
@@ -166,7 +166,7 @@ $(document).ready(function() {
 
                     } else {
                         // Throw error message
-
+                        document.getElementById("submit").disabled = true;
                     }
                 },
                 error: function (error) {
