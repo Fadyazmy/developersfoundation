@@ -131,7 +131,7 @@ $(document).ready(function() {
 
             // document.getElements
             var sendFrom = document.getElementById("email1").value,
-                sendTo = "devfoundationca@gmail.com",
+                sendTo = "zilinxie95@gmail.com",
                 subject = "Message from "+sendFrom,
                 msg = document.getElementById("comments1").value,
                 msgHTML = "<em>"+document.getElementById("comments1").value+"<em>",
