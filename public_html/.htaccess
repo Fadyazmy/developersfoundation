@@ -4,6 +4,11 @@
     RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]
     RewriteRule (.*) https://%2%{REQUEST_URI} [L,R=301]
 
+    RewriteCond %{HTTPS} != on
+    RewriteCond %{ENV:HTTPS} !=on
+    RewriteCond %{HTTP_HOST} !^(www\.)(.*) [NC]
+    RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
 </IfModule>
