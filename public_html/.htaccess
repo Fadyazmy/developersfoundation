@@ -51,6 +51,7 @@ ExpiresByType application/javascript "access 1 week"
 ExpiresByType text/x-javascript "access plus 1 month"
 ExpiresByType application/x-shockwave-flash "access plus 1 month"
 ExpiresByType image/x-icon "access plus 1 year"
+ExpiresByType text/html "access 1 month"
 ExpiresDefault "access plus 2 days"
 </IfModule>
 ## EXPIRES CACHING ##
