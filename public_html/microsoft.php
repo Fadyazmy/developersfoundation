@@ -5,3 +5,4 @@
  * Date: 5/4/16
  * Time: 9:57 PM
  */
+header('Location: http://portal.office.com/');
