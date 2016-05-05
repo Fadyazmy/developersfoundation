@@ -1,11 +1,13 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^microsoft.developersfoundation.ca
+    RewriteRule ^(.*)$ http://developersfoundation.ca/microsoft.php [L,NC,QSA]
     # match any URL with www and rewrite it to https without the www
     RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]
     RewriteRule (.*) http://%2%{REQUEST_URI} [L,R=301]
 
-    #RewriteCond %{REQUEST_FILENAME} !-f
-    #RewriteRule ^([^\.]+)$ $1.php [NC,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
 </IfModule>
 
 <IfModule mod_deflate.c>
