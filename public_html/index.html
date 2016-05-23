@@ -38,10 +38,12 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
 
+
     <!-- Slider
     ================================================== -->
     <link href="css/owl.carousel.css" rel="stylesheet" media="screen">
     <link href="css/owl.theme.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/style2.css">
 
     <!-- Stylesheet
     ================================================== -->
@@ -60,6 +62,7 @@
     <![endif]-->
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <div class="demo-1">
     <div id="home1">
         <div id="large-header" class="large-header">
@@ -352,7 +355,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 branding">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a target="_blank" href="https://https://kems.herokuapp.com/">
+                            <a target="_blank" href="https://kems.herokuapp.com/">
                                 <div class="hover-text">
                                     <h4>Awaiting feedback</h4>
                                     <div class="clearfix"></div>
@@ -367,7 +370,7 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 branding">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a target="_blank" href="https://www.facebook.com/amnestyatwestern">
+                            <a target="_blank" href="https://amnesty.herokuapp.com">
                                 <div class="hover-text">
                                     <h4>Coming soon</h4>
                                     <div class="clearfix"></div>
@@ -462,7 +465,7 @@
                         <div class="col-md-12">
                             <div class="single-counter1">
                                 <div class="counter-count1">
-                                    <span class="">Interested?</span>
+                                    <span class="">Does your nonprofit need help?</span>
                                 </div>
                             </div>
                         </div>
@@ -471,7 +474,7 @@
             </div>
             <div class="row">
                 <a href="//docs.google.com/forms/d/12kYXI8S7CoeBhEuf7ekzvFj3IuNinnBRhOVS9m4BKjg/viewform">
-                    <button type="button" class="big-btn btn btn-primary btn-lg round bg4">APPLY NOW</button>
+                    <button type="button" class="big-btn btn btn-primary btn-lg round bg4"><b>APPLY NOW</b></button>
                 </a>
             </div>
         </div>
@@ -486,37 +489,44 @@
 
 <!-- Contact Section
 ==========================================-->
-<div id="tf-contact" class="text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="section-title center">
-                    <h2><strong>contact us</strong></h2>
-                    <div class="line">
-                        <hr>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-                <form class="form-email" name="htmlform" method="post" action="" data-form-type="nob">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="email1" class="bigger-font">Email address</label>
-                                <input type="text" name="email" id="email1" maxlength="80" size="30"
-                                       class="form-control" placeholder="Enter email">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="comments1" class="bigger-font">Message</label>
-                        <textarea name="comments" id="comments1" class="form-control" rows="3"></textarea>
-                    </div>
-                    <button type="submit" value="Submit" class="btn tf-btn btn-default">Submit</button>
-                </form>
-            </div>
-        </div>
+<div id="tf-contact" class="text-center" style="
+    padding-top: 0px;
+    padding-bottom: 0px;">
 
-    </div>
+
+<section id="contact-form-body">
+<form id="contact-form">
+  <p>Hey guys,</p>
+  <p>My
+    name is
+    <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)" required> and</p>
+
+  <p>my
+    email address is
+    <input type="email" name="your-email" id="email" placeholder="(your email address)" required>
+  </p>
+
+  <p> I have a
+    message for you,</p>
+
+  <p>
+    <textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
+  </p>
+  <p>
+    <button type="submit">
+      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+        <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
+    l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
+      </svg>
+      <small>send</small>
+    </button>
+  </p>
+</form>
+
+</section>
+
+
+
 </div>
 
 <nav id="footer">
