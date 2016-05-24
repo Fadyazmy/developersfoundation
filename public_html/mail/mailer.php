@@ -21,7 +21,7 @@ $email
     ->setSubject($getPost['subject'])
     ->setText($getPost['msg'])
     ->setHtml($getPost['msgHTML']);
-
+//test
 try {
     $sendgrid->send($email);
     echo '{success:true, message:"done"}';
