@@ -119,11 +119,6 @@ function main() {
 }
 main();
 
-var http = require("http");
-setInterval(function() {
-    http.get("http://developersfoundation.ca");
-}, 300000); // every 5 minutes (300000)
-
 $(document).ready(function() {
     $('form.form-email').submit(function(e) {
         if (e.preventDefault) e.preventDefault();
