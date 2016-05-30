@@ -191,7 +191,7 @@ $(document).ready(function() {
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
             // Nob form
             var sendFrom = document.getElementById("email").value,
-                sendTo = "fadi@developersfoundation.ca",
+                sendTo = "harrison@developersfoundation.ca",
                 subject = "Message from " + sendFrom,
                 msg = document.getElementById("your-message").value,
                 msgHTML = "<em>" + document.getElementById("your-message").value + "<em>",
@@ -210,7 +210,7 @@ $(document).ready(function() {
             
             var successMsg = thisForm.attr('data-success-msg');
             var errorMsg = thisForm.attr('data-error-msg');
-            var statusDiv = thisForm.getElementsByClass("form-status")[0];
+            var statusDiv = thisForm.children(".form-status")[0];
 
             $.ajax({
                 url: 'mail/mailer.php',
