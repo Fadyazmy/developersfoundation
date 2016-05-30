@@ -207,6 +207,10 @@ $(document).ready(function() {
                 'msg': msg,
                 'msgHTML': msgHTML
             });
+            
+            var successMsg = thisForm.attr('data-success-msg');
+            var errorMsg = thisForm.attr('data-error-msg');
+            var statusDiv = thisForm.getElementsByClass("form-status")[0];
 
             $.ajax({
                 url: 'mail/mailer.php',
@@ -223,11 +227,13 @@ $(document).ready(function() {
                     if (returnData.success) {
                         // Throw success msg
                         document.getElementById("submit").disabled = false;
-
+                        statusDiv.value = successMsg;
                     } else {
                         // Throw error message
                         document.getElementById("submit").disabled = false;
+                        statusDiv.value = errorMsg;
                     }
+                    statusDiv.toggle("slow");
                     document.getElementById("email").value = "";
                     document.getElementById("your-message").value = "";
                     document.getElementById("your-name").value = "";
@@ -235,6 +241,8 @@ $(document).ready(function() {
                 error: function (error) {
                     console.log(error);
                     // Throw error message
+                    statusDiv.value = errorMsg;
+                    statusDiv.toggle("slow");
                     document.getElementById("email").value = "";
                     document.getElementById("your-message").value = "";
                     document.getElementById("your-name").value = "";
