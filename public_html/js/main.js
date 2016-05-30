@@ -120,7 +120,7 @@ function main() {
 main();
 
 $(document).ready(function() {
-    $('form.form-email').submit(function(e) {
+    $('form').submit(function(e) {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
 
