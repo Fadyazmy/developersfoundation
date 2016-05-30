@@ -224,7 +224,7 @@ $(document).ready(function() {
                 success: function (data) {
                     // Deal with JSON
                     console.log(data);
-                    var returnData = JSON.parse(data);
+                    var returnData = data;
                     if (returnData.success) {
                         // Throw success msg
                         document.getElementById("submit").disabled = false;
