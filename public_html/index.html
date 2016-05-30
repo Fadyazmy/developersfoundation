@@ -527,7 +527,7 @@
 
     <section id="contact-form-body">
         <form id="contact-form" name="form" class="form-email" method="post" action="javascript:void(0);"
-              data-form-type="nob">
+              data-form-type="nob" data-success-message="Thanks :)" data-error-message="Sorry, We hit a technical issue.">
             <p>Hey guys,</p>
             <p>My name is
                 <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)"
@@ -545,6 +545,7 @@
       </svg>
                     <small>send</small>
                 </button></p>
+            <div class="form-status" style="display: none;"></div>
         </form>
     </section>
 </div>
