@@ -228,11 +228,11 @@ $(document).ready(function() {
                     if (returnData.success) {
                         // Throw success msg
                         document.getElementById("submit").disabled = false;
-                        statusDiv.value = successMsg;
+                        statusDiv.innerHTML = successMsg;
                     } else {
                         // Throw error message
                         document.getElementById("submit").disabled = false;
-                        statusDiv.value = errorMsg;
+                        statusDiv.innerHTML = errorMsg;
                     }
                     statusDiv.style = "";
                     //statusDiv.toggle("slow");
@@ -243,7 +243,7 @@ $(document).ready(function() {
                 error: function (error) {
                     console.log(error);
                     // Throw error message
-                    statusDiv.value = errorMsg;
+                    statusDiv.innerHTML = errorMsg;
                     statusDiv.style = "";
                     //statusDiv.toggle("slow");
                     document.getElementById("email").value = "";
