@@ -190,8 +190,6 @@ $(document).ready(function() {
 
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
             // Nob form
-
-            // document.getElements
             var sendFrom = document.getElementById("email").value,
                 sendTo = "fadi@developersfoundation.ca",
                 subject = "Message from " + sendFrom,
