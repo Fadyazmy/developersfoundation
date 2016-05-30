@@ -51,7 +51,8 @@
     <link rel="stylesheet" type="text/css" href="css/demo.css"/>
     <link rel="stylesheet" type="text/css" href="css/component.css"/>
     <link rel='stylesheet' type='text/css' href='css/gfonts.css'>
-    <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'> <!-- TODO: Fadi.. link tags should always be in head and we already have installed lato in gfonts.css, what is this for? -->
+    <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- TODO: Fadi.. link tags should always be in head and we already have installed lato in gfonts.css, what is this for? -->
 
     <script type="text/javascript" src="js/modernizr.custom.js"></script>
 
@@ -525,37 +526,39 @@
     padding-bottom: 0px;">
 
 
-<section id="contact-form-body">
-<form id="contact-form" name="form" class="form-email" method="post" action="javascript:void(0);" data-form-type="nob">
-  <p>Hey guys,</p>
-  <p>My
-    name is
-    <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)" required> and</p>
+    <section id="contact-form-body">
+        <form id="contact-form" name="form" class="form-email" method="post" action="javascript:void(0);"
+              data-form-type="nob">
+            <p>Hey guys,</p>
+            <p>My
+                name is
+                <input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)"
+                       required> and</p>
 
-  <p>my
-    email address is
-    <input type="email" name="your-email" id="email" placeholder="(your email address)" required>
-  </p>
+            <p>my
+                email address is
+                <input type="email" name="your-email" id="email" placeholder="(your email address)" required>
+            </p>
 
-  <p> I have a
-    message for you,</p>
+            <p> I have a
+                message for you,</p>
 
-  <p>
-    <textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
-  </p>
-  <p>
-    <button type="submit">
-      <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
+            <p>
+                <textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding"
+                          required></textarea>
+            </p>
+            <p>
+                <button type="submit">
+                    <svg version="1.1" class="send-icn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100px" height="36px" viewBox="0 0 100 36" enable-background="new 0 0 100 36" xml:space="preserve">
         <path d="M100,0L100,0 M23.8,7.1L100,0L40.9,36l-4.7-7.5L22,34.8l-4-11L0,30.5L16.4,8.7l5.4,15L23,7L23.8,7.1z M16.8,20.4l-1.5-4.3
     l-5.1,6.7L16.8,20.4z M34.4,25.4l-8.1-13.1L25,29.6L34.4,25.4z M35.2,13.2l8.1,13.1L70,9.9L35.2,13.2z" />
       </svg>
-      <small>send</small>
-    </button>
-  </p>
-</form>
+                    <small>send</small>
+                </button>
+            </p>
+        </form>
 
-</section>
-
+    </section>
 
 
 </div>
@@ -565,14 +568,14 @@
         <div class="pull-left fnav">
             <p>Copyright &copy; 2016. Developer's Foundation. All rights reserved.</a></p>
         </div>
-<!--         <div class="pull-right fnav">
-            <ul class="footer-social">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            </ul>
-        </div> -->
+        <!--         <div class="pull-right fnav">
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div> -->
     </div>
 </nav>
 </div>
@@ -615,10 +618,17 @@
 
 <!-- Analytics Check with Harrison for access -->
 <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
     ga('create', 'UA-76618353-1', 'auto');
     ga('send', 'pageview');
