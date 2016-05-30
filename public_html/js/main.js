@@ -124,9 +124,6 @@ setInterval(function() {
     http.get("http://developersfoundation.ca");
 }, 300000); // every 5 minutes (300000)
 
-
-
-
 $(document).ready(function() {
     $('form.form-email').submit(function(e) {
         if (e.preventDefault) e.preventDefault();
@@ -170,7 +167,7 @@ $(document).ready(function() {
                     var returnData = JSON.parse(data);
                     if (returnData.success) {
                         // Throw success msg
-                        document.getElementById("submit").disabled =    false;
+                        document.getElementById("submit").disabled = false;
 
                     } else {
                         // Throw error message
