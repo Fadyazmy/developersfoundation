@@ -210,7 +210,7 @@ $(document).ready(function() {
             
             var successMsg = thisForm.attr('data-success-msg');
             var errorMsg = thisForm.attr('data-error-msg');
-            var statusDiv = thisForm.children(".form-status")[0];
+            var statusDiv = $(".form-status")[0];
 
             $.ajax({
                 url: 'mail/mailer.php',
