@@ -210,6 +210,7 @@ $(document).ready(function() {
             
             var successMsg = thisForm.attr('data-success-msg');
             var errorMsg = thisForm.attr('data-error-msg');
+            console.log(successMsg);
             var statusDiv = $(".form-status")[0];
 
             $.ajax({
@@ -233,7 +234,8 @@ $(document).ready(function() {
                         document.getElementById("submit").disabled = false;
                         statusDiv.value = errorMsg;
                     }
-                    statusDiv.toggle("slow");
+                    statusDiv.style = "";
+                    //statusDiv.toggle("slow");
                     document.getElementById("email").value = "";
                     document.getElementById("your-message").value = "";
                     document.getElementById("your-name").value = "";
@@ -242,7 +244,8 @@ $(document).ready(function() {
                     console.log(error);
                     // Throw error message
                     statusDiv.value = errorMsg;
-                    statusDiv.toggle("slow");
+                    statusDiv.style = "";
+                    //statusDiv.toggle("slow");
                     document.getElementById("email").value = "";
                     document.getElementById("your-message").value = "";
                     document.getElementById("your-name").value = "";
