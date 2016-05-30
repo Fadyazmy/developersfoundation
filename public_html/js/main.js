@@ -124,7 +124,7 @@ $(document).ready(function() {
         if (e.preventDefault) e.preventDefault();
         else e.returnValue = false;
 
-        var thisForm = $(this).closest('form.form-email');
+        var thisForm = $(this).closest('form');
 
         if (thisForm.attr('data-form-type').indexOf("nob") > -1) {
             // Nob form
