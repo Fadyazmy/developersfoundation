@@ -135,13 +135,13 @@ $(document).ready(function() {
             // Nob form
 
             // document.getElements
-            var sendFrom = document.getElementById("email1").value,
-                sendTo = "devfoundationca@gmail.com",
-                subject = "Message from "+sendFrom,
-                msg = document.getElementById("comments1").value,
-                msgHTML = "<em>"+document.getElementById("comments1").value+"<em>",
-                fromName = "Developers' Foundation",
-                toName = "test";
+            var sendFrom = document.getElementById("email").value,
+                sendTo = "fadi@developersfoundation.ca",
+                subject = "Message from " + sendFrom,
+                msg = document.getElementById("your-message").value,
+                msgHTML = "<em>" + document.getElementById("your-message").value + "<em>",
+                fromName = document.getElementById("your-name").value,
+                toName = "Developers' Foundation";
 
             var sendData = JSON.stringify({
                 'sendFrom': sendFrom,
