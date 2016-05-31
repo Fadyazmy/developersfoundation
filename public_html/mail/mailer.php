@@ -6,7 +6,7 @@
  * Time: 10:32 PM
  */
 
-require '../vendor/autoload.php';
+require '../../vendor/autoload.php';
 $getPost = (array)json_decode(file_get_contents('php://input'));
 
 $sendgrid = new SendGrid('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');
@@ -21,10 +21,10 @@ $email
     ->setSubject($getPost['subject'])
     ->setText($getPost['msg'])
     ->setHtml($getPost['msgHTML']);
-
+//test
 try {
     $sendgrid->send($email);
-    echo '{success:true, message:"done"}';
+    echo json_encode(array('success' => true, 'message' => "done"));
 } catch (\SendGrid\Exception $e) {
-    echo '{success:false, message:"' . $e . '"}';
+    echo json_encode(array('success' => false, 'message' => $e));
 }
