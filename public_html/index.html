@@ -7,11 +7,18 @@
     <!--[if IE]>
     <meta http-equiv="x-ua-compatible" content="IE=9"/><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>developers' Foundation</title>
-    <meta name="description" content="">
+    <title>Developers&#039; Foundation</title>
+    <meta name="description" content="Every developer can make a difference.">
     <meta name="keywords"
-          content="developer, foundation, developer's Foundation, bootstrap, developers, designers, marketers, non-profit, charity">
-    <meta name="author" content="developer's Foundation">
+          content="developers', developer, foundation, developer's Foundation, bootstrap, developers, designers, marketers, non-profit, charity">
+    <meta name="author" content="Developers&#039; Foundation">
+    <meta property="og:title" content="Developers&#039; Foundation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://developersfoundation.ca/img/logo.copy.min.png" />
+    <meta property="og:description" content="Every developer can make a difference." />
+    <meta property="og:url"content="https://developersfoundation.ca/" />
+    <meta property="fb:app_id" content="1107893785918456" />
 
     <!-- Favicons
     ================================================== -->
@@ -553,7 +560,7 @@
 <nav id="footer">
     <div class="container">
         <div class="pull-left fnav">
-            <p>Copyright &copy; 2016. Developer's Foundation. All rights reserved.</a></p>
+            <p>Copyright &copy; 2016. Developers' Foundation. All rights reserved.</a></p>
         </div>
         <!--         <div class="pull-right fnav">
                     <ul class="footer-social">
@@ -619,7 +626,25 @@
 
     ga('create', 'UA-76618353-1', 'auto');
     ga('send', 'pageview');
+</script>
 
+<!-- Facebook Developer ask Harrison for access -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1107893785918456',
+            xfbml      : true,
+            version    : 'v2.6'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 </script>
 
 </body>
