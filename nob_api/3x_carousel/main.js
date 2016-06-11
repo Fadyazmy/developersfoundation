@@ -5,7 +5,7 @@
 /* ----------------------------------------------------------- */
 /* Nob Carousel Correction
  /* ----------------------------------------------------------- */
-$('.carousel .item').each(function () {
+$('.carousel.three .item').each(function () {
     var next = $(this).next();
 
     if (!next.length) {
