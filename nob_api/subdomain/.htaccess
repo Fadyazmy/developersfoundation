@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^microsoft.developersfoundation.ca
+    RewriteRule ^(.*)$ http://developersfoundation.ca/microsoft.php [L,NC,QSA]
+</IfModule>

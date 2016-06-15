@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # match any URL with www and rewrite it to https without the www
+    RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]
+    RewriteRule (.*) http://%2%{REQUEST_URI} [L,R=301]
+
+    # Removes .php (change the .php to .html if you don't have any php files)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
+</IfModule>
