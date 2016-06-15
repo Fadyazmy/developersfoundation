@@ -1,10 +1,30 @@
-.carousel-inner .active.left  { left: -33%;             }
-.carousel-inner .active.right { left: 33%;              }
-.carousel-inner .next         { left: 33%               }
-.carousel-inner .prev         { left: -33%              }
-.carousel-control.left        { background-image: none; }
-.carousel-control.right       { background-image: none; }
-.carousel-inner .item         { background: white;      }
+.carousel.three .carousel-inner .active.left {
+    left: -33%;
+}
+
+.carousel.three .carousel-inner .active.right {
+    left: 33%;
+}
+
+.carousel.three .carousel-inner .next {
+    left: 33%
+}
+
+.carousel.three .carousel-inner .prev {
+    left: -33%
+}
+
+.carousel.three .carousel-control.left {
+    background-image: none;
+}
+
+.carousel.three .carousel-control.right {
+    background-image: none;
+}
+
+.carousel.three .carousel-inner .item {
+    background: white;
+}
 
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-inner > .item.next,
