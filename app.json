@@ -5,6 +5,9 @@
     "pr-predestroy": "bin/teardown"
   },
   "env": {
+    "INHERIT_THIS_CONFIG_VAR": {
+      "required": true
+    }
   },
   "formation": {
     "web": {
