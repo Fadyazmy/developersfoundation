@@ -1,0 +1,20 @@
+{
+  "name": "Developers' Foundation",
+  "description": "",
+  "scripts": {
+    "postdeploy": "bin/setup",
+    "pr-predestroy": "bin/teardown"
+  },
+  "env": {},
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/php"
+    }
+  ]
+}
