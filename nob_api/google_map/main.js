@@ -10,6 +10,7 @@ function loadedGmap() {
         // create a LatLng object containing the coordinate for the center of the map
         var latlng = new google.maps.LatLng(-33.86455, 151.209);
 
+        // Find your styles here :) https://snazzymaps.com/explore
         var styleArr = [{
             "featureType": "landscape",
             "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]
