@@ -6,6 +6,11 @@
  * Time: 1:17 AM
  */
 
+if($_SERVER['REQUEST_METHOD'] === 'GET'){
+    header("HTTP/1.1 403 Forbidden");
+    exit;
+}
+
 require '../../../vendor/autoload.php'; // MAKE SURE THIS POINTS TO YOUR COMPOSER VENDOR FOLDER
 $getPost = (array)json_decode(file_get_contents('php://input'));
 
