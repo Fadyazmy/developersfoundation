@@ -26,7 +26,7 @@ $email
     ->setSubject($getPost['subject'])
     ->setText($getPost['msg'])
     ->setHtml($getPost['msgHTML']);
-//test
+
 try {
     $sendgrid->send($email);
     echo json_encode(array('success' => true, 'message' => "done"));
