@@ -6,6 +6,11 @@
  * Time: 10:32 PM
  */
 
+if($_SERVER['REQUEST_METHOD'] === 'GET'){
+    header("HTTP/1.1 403 Forbidden");
+    exit;
+}
+
 require '../../vendor/autoload.php';
 $getPost = (array)json_decode(file_get_contents('php://input'));
 
