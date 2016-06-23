@@ -6,6 +6,6 @@
         public static $redirectURI = 'https://dev.developersfoundation.ca/windows-ad/handleAuth.php';
         public static $resourceURI = 'https://graph.windows.net';
         public static $appTenantDomainName = 'developersfoundation.onmicrosoft.com';
-        public static $apiVersion = 'api-version=2013-11-08';
+        public static $apiVersion = 'api-version=1.6'/*'2013-11-08'*/;
     }
 ?>
