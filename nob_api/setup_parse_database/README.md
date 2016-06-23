@@ -33,6 +33,6 @@ or (PHP)
 ParseClient::initialize('YOUR_APP_ID', 'YOUR_CLIENT_KEY', 'YOUR_MASTER_KEY');
 ParseClient::setServerURL('http://localhost:1337/parse');
 ```
-- Jobs are not available yet, so I dont think you can automate server tasks
+- Jobs are not available yet, so I dont think you can automate server tasks, try: https://github.com/Automattic/kue
 - See this page for more info on how to use: https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide
-
+- If you like an admin panel visit: http://adminca.com/
