@@ -3,7 +3,7 @@
     RewriteCond %{HTTP_HOST} ^microsoft.developersfoundation.ca
     RewriteRule ^(.*)$ http://developersfoundation.ca/microsoft.php [L,NC,QSA]
 
-    RewriteCond %{HTTP_HOST} ^dev.domain.com
+    RewriteCond %{HTTP_HOST} ^dev.developersfoundation.ca
     RewriteCond %{REQUEST_URI} !^/backend/
     RewriteRule ^(.*)$ http://developersfoundation.ca/backend/$1 [L,NC,QSA]
 
