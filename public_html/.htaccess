@@ -2,6 +2,11 @@
     RewriteEngine On
     RewriteCond %{HTTP_HOST} ^microsoft.developersfoundation.ca
     RewriteRule ^(.*)$ http://developersfoundation.ca/microsoft.php [L,NC,QSA]
+
+    RewriteCond %{HTTP_HOST} ^dev.domain.com
+    RewriteCond %{REQUEST_URI} !^/backend/
+    RewriteRule ^(.*)$ http://developersfoundation.ca/backend/$1 [L,NC,QSA]
+
     # match any URL with www and rewrite it to https without the www
     RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]
     RewriteRule (.*) http://%2%{REQUEST_URI} [L,R=301]
