@@ -18,5 +18,6 @@ git push
 1. Click Deploy to Heroku on this link: (https://github.com/ParsePlatform/parse-server-example/blob/master/README.md#with-the-heroku-button)
 2. Follow the setup on heroku. Make sure to change the mount point to https://YOUR_APP_NAME.herokuapp.com/parse
 3. Change the setting so heroku auto deploys from your github
+4. Optional: Setup a papertrail plugin on heroku to see logs for the server
 
 
