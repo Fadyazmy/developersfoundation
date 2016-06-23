@@ -20,4 +20,19 @@ git push
 3. Change the setting so heroku auto deploys from your github
 4. Optional: Setup a papertrail plugin on heroku to see logs for the server
 
+3: Use your database :)
+=====
+
+- You can connect to your database via (JS)
+```
+Parse.initialize("YOUR_APP_ID");
+Parse.serverURL = 'http://localhost:1337/parse'
+```
+or (PHP)
+```
+ParseClient::initialize('YOUR_APP_ID', 'YOUR_CLIENT_KEY', 'YOUR_MASTER_KEY');
+ParseClient::setServerURL('http://localhost:1337/parse');
+```
+- Jobs are not available yet, so I dont think you can automate server tasks
+- See this page for more info on how to use: https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide
 
