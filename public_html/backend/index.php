@@ -170,7 +170,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                 <!-- sidebar menu -->
                 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                     <div class="menu_section">
-                        <h3>General</h3>
+                        <h3>Dashboard</h3>
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
@@ -179,7 +179,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                     <li><a href="index3.html">Dashboard3</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                            <!--<li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="form.html">General Form</a></li>
                                     <li><a href="form_advanced.html">Advanced Components</a></li>
@@ -224,23 +224,20 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                     <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
                                     <li><a href="fixed_footer.html">Fixed Footer</a></li>
                                 </ul>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                     <div class="menu_section">
-                        <h3>Live On</h3>
+                        <h3>Quick Links</h3>
                         <ul class="nav side-menu">
-                            <li><a><i class="fa fa-bug"></i> Additional Pages <span
-                                        class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-laptop"></i> Developers' Foundation
+                                    <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="e_commerce.html">E-commerce</a></li>
-                                    <li><a href="projects.html">Projects</a></li>
-                                    <li><a href="project_detail.html">Project Detail</a></li>
-                                    <li><a href="contacts.html">Contacts</a></li>
-                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="https://developersfoundation.ca/">Home Page</a></li>
+                                    <li><a href="https://mircrosoft.developersfoundation.ca/">Microsoft</a></li>
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                            <!--<li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="page_403.html">403 Error</a></li>
                                     <li><a href="page_404.html">404 Error</a></li>
@@ -269,7 +266,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                 </ul>
                             </li>
                             <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span
-                                        class="label label-success pull-right">Coming Soon</span></a></li>
+                                        class="label label-success pull-right">Coming Soon</span></a></li>-->
                         </ul>
                     </div>
 
