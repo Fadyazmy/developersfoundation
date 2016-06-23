@@ -10,6 +10,7 @@ git remote remove origin
 git remote add origin https://link.to.your.git
 git push
 ```
+4. Run `npm update` to download dependencies and such
 
 
 2: Setup mongoDb on heroku to link with server
