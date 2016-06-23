@@ -50,6 +50,7 @@
 
             // close curl resource to free up system resources
             curl_close($ch);
+            error_log($output);
             $jsonOutput = json_decode($output);
             return $jsonOutput;
         }
