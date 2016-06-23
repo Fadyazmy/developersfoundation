@@ -18,7 +18,7 @@
             $feedURL = "https://graph.windows.net/".Settings::$appTenantDomainName."/me/";
         //  $feedURL = "https://graph.windows.net/me";
             $feedURL = $feedURL."?".Settings::$apiVersion;
-            curl_setopt($ch, CURLOPT_URL, $feedURL);             
+            curl_setopt($ch, CURLOPT_URL, $feedURL);
             
             //Enable fiddler to capture request
             //curl_setopt($ch, CURLOPT_PROXY, '127.0.0.1:8888');
@@ -27,6 +27,29 @@
             
             // close curl resource to free up system resources 
             curl_close($ch);      
+            $jsonOutput = json_decode($output);
+            return $jsonOutput;
+        }
+
+        public static function getMePhoto() {
+            $ch = curl_init();
+
+            // Add authorization and other headers. Also set some common settings.
+            self::AddRequiredHeadersAndSettings($ch);
+
+            // Create url for the entry based on the feedname and the key value
+            $feedURL = "https://graph.windows.net/".Settings::$appTenantDomainName."/me/photo/\$value";
+            //  $feedURL = "https://graph.windows.net/me";
+            $feedURL = $feedURL."?".Settings::$apiVersion;
+            curl_setopt($ch, CURLOPT_URL, $feedURL);
+
+            //Enable fiddler to capture request
+            //curl_setopt($ch, CURLOPT_PROXY, '127.0.0.1:8888');
+            // $output contains the output string
+            $output = curl_exec($ch);
+
+            // close curl resource to free up system resources
+            curl_close($ch);
             $jsonOutput = json_decode($output);
             return $jsonOutput;
         }

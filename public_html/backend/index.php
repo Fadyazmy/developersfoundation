@@ -19,6 +19,7 @@ if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
 }
 
 $user = GraphServiceAccessHelper::getMeEntry();
+$userPic = GraphServiceAccessHelper::getMePhoto();
 ?>
 
 <!--<HTML>
@@ -176,6 +177,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
+                        <?php echo $userPic; ?>
                         <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>" class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
