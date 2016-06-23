@@ -15,8 +15,6 @@
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
-
-    RewriteRule ^(header|content|footer)\.php index.php [L,R=301]
 </IfModule>
 
 <IfModule mod_deflate.c>
