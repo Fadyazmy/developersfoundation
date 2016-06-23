@@ -13,6 +13,12 @@ ini_set('display_errors', 1);
 require_once 'windows-ad/GraphServiceAccessHelper.php';
 require_once 'windows-ad/Settings.php';
 require_once 'windows-ad/AuthorizationHelperForGraph.php';
+
+if ($_SESSION['access_token'] == NULL) {
+    header('Location:windows-ad/Authorize.php');
+}
+
+$user = GraphServiceAccessHelper::getMeEntry();
 ?>
 
 <!--<HTML>
@@ -29,11 +35,6 @@ require_once 'windows-ad/AuthorizationHelperForGraph.php';
 <br/><br/>
 <table border="0">
     <?php
-if ($_SESSION['access_token'] == NULL) {
-    header('Location:windows-ad/Authorize.php');
-}
-//display a set of user properties
-$user = GraphServiceAccessHelper::getMeEntry();
 echo('<tr><td>Display Name:</td>');
 echo('<td>' . $user->{'displayName'} . '</td>');
 echo('</tr><tr><td>User Principal Name:</td>');
