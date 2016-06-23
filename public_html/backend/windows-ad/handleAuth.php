@@ -15,7 +15,7 @@ if (!isset($_GET['code'])) {
     header('Location:Authorize.php');
 } else {
     AuthorizationHelperForAADGraphService::GetAuthenticationHeaderFor3LeggedFlow($_GET['code']);
-    header('Location:DisplayME.php');
+    header('Location:../index.php');
 }
 ?>
 
