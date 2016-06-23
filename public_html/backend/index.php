@@ -256,7 +256,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                     <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="https://developersfoundation.ca/">Home Page</a></li>
-                                    <li><a href="https://mircrosoft.developersfoundation.ca/">Microsoft</a></li>
+                                    <li><a href="https://microsoft.developersfoundation.ca/">Microsoft</a></li>
                                 </ul>
                             </li>
                             <!--<li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
