@@ -7,12 +7,16 @@
     RewriteCond %{REQUEST_URI} !^/backend/
     RewriteRule (.*) /backend/$1 [L]
 
+    RewriteRule ^\.php$ index.php [NC,R,L]
+
     # match any URL with www and rewrite it to https without the www
     RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]
     RewriteRule (.*) http://%2%{REQUEST_URI} [L,R=301]
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+    RewriteRule ^(header|content|footer)\.php index.php [L,R=301]
 </IfModule>
 
 <IfModule mod_deflate.c>
