@@ -121,7 +121,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentellela Alela! | </title>
+    <title>Developers' Foundation | Dashboard</title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -148,7 +148,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
         <div class="col-md-3 left_col">
             <div class="left_col scroll-view">
                 <div class="navbar nav_title" style="border: 0;">
-                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+                    <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>Developers' Foundation</span></a>
                 </div>
 
                 <div class="clearfix"></div>
@@ -156,11 +156,11 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>" class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2>John Doe</h2>
+                        <h2><?php echo $user->{'displayName'}; ?></h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -307,7 +307,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="production/images/img.jpg" alt="">John Doe
+                                <img src="production/images/img.jpg" alt=""><?php echo $user->{'displayName'}; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
