@@ -177,7 +177,6 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <?php echo $userPic; ?>
                         <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>" class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
