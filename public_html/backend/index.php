@@ -155,7 +155,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                        <img src="production/images/img.jpg" alt="..." class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -306,7 +306,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="images/img.jpg" alt="">John Doe
+                                <img src="production/images/img.jpg" alt="">John Doe
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -331,7 +331,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -343,7 +343,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -355,7 +355,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -367,7 +367,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -1157,44 +1157,44 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
 </div>
 
 <!-- jQuery -->
-<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="../vendors/fastclick/lib/fastclick.js"></script>
+<script src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="../vendors/nprogress/nprogress.js"></script>
+<script src="vendors/nprogress/nprogress.js"></script>
 <!-- Chart.js -->
-<script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+<script src="vendors/Chart.js/dist/Chart.min.js"></script>
 <!-- gauge.js -->
-<script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+<script src="vendors/gauge.js/dist/gauge.min.js"></script>
 <!-- bootstrap-progressbar -->
-<script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <!-- iCheck -->
-<script src="../vendors/iCheck/icheck.min.js"></script>
+<script src="vendors/iCheck/icheck.min.js"></script>
 <!-- Skycons -->
-<script src="../vendors/skycons/skycons.js"></script>
+<script src="vendors/skycons/skycons.js"></script>
 <!-- Flot -->
-<script src="../vendors/Flot/jquery.flot.js"></script>
-<script src="../vendors/Flot/jquery.flot.pie.js"></script>
-<script src="../vendors/Flot/jquery.flot.time.js"></script>
-<script src="../vendors/Flot/jquery.flot.stack.js"></script>
-<script src="../vendors/Flot/jquery.flot.resize.js"></script>
+<script src="vendors/Flot/jquery.flot.js"></script>
+<script src="vendors/Flot/jquery.flot.pie.js"></script>
+<script src="vendors/Flot/jquery.flot.time.js"></script>
+<script src="vendors/Flot/jquery.flot.stack.js"></script>
+<script src="vendors/Flot/jquery.flot.resize.js"></script>
 <!-- Flot plugins -->
-<script src="js/flot/jquery.flot.orderBars.js"></script>
-<script src="js/flot/date.js"></script>
-<script src="js/flot/jquery.flot.spline.js"></script>
-<script src="js/flot/curvedLines.js"></script>
+<script src="production/js/flot/jquery.flot.orderBars.js"></script>
+<script src="production/js/flot/date.js"></script>
+<script src="production/js/flot/jquery.flot.spline.js"></script>
+<script src="production/js/flot/curvedLines.js"></script>
 <!-- JQVMap -->
-<script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-<script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
 <!-- bootstrap-daterangepicker -->
-<script src="js/moment/moment.min.js"></script>
-<script src="js/datepicker/daterangepicker.js"></script>
+<script src="production/js/moment/moment.min.js"></script>
+<script src="production/js/datepicker/daterangepicker.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="../build/js/custom.min.js"></script>
+<script src="build/js/custom.min.js"></script>
 
 <!-- Flot -->
 <script>
