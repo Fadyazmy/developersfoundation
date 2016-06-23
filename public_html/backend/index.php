@@ -311,7 +311,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                                 <li><a href="javascript:;"> Profile</a></li>
                                 <li>
                                     <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
+                                        <!--<span class="badge bg-red pull-right">50%</span>-->
                                         <span>Settings</span>
                                     </a>
                                 </li>
@@ -1146,7 +1146,7 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                &copy; 2016 <a href="https://developersfoundation.ca/">Developers' Foundation</a>, made with love
             </div>
             <div class="clearfix"></div>
         </footer>
