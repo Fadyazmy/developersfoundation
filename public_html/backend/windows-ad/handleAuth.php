@@ -7,7 +7,6 @@
  */
 
 require_once '../../../vendor/autoload.php';
-require_once '../globalSettings.php';
 
 //Require other files.
 require_once 'GraphServiceAccessHelper.php';
