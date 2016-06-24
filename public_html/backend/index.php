@@ -6,8 +6,6 @@
  * Time: 11:09 PM
  */
 
-session_start();
-
 //Enable the option to display any parsing errors.
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
