@@ -23,6 +23,7 @@ use Parse\ParseUser;
 
 if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
     header('Location:windows-ad/Authorize.php');
+    exit();
 }
 
 $user = GraphServiceAccessHelper::getMeEntry();
