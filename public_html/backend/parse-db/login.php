@@ -7,7 +7,7 @@
  */
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
-require_once __DIR__.'header.php';
+require_once __DIR__.'/header.php';
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
