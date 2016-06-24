@@ -39,7 +39,7 @@ $windowsUser = GraphServiceAccessHelper::getMeEntry();*/
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
-
+exit();
 ParseACL::setDefaultACL(new ParseACL(), true);
 
 $roleACL2 = new ParseACL();
