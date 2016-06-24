@@ -14,7 +14,13 @@ require_once 'DisplayME.php';
 if (!isset($_GET['code'])) {
     header('Location:Authorize.php');
 } else {
+    // Authed windows-ad
     AuthorizationHelperForAADGraphService::GetAuthenticationHeaderFor3LeggedFlow($_GET['code']);
+    
+    // Now auth parse-db
+    $windowsUser = GraphServiceAccessHelper::getMeEntry();
+    require_once '../parse-db/login.php';
+    
     header('Location:../index.php');
 }
 ?>
