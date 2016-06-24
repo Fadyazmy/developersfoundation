@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7daf8c2c1dfebd5ba4eccbb436a74ea6",
-    "content-hash": "0ff0fc808ce08da1a4094565b1bc897d",
+    "hash": "a387a8150958b8c8346d138ff3f9e4b5",
+    "content-hash": "1fd6bf584abc9bf7dfbbc3f0dc0ce014",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -252,16 +252,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.4",
+            "version": "v2.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "47d2d8cade9b1c3987573d2943bb9352536cdb87"
+                "reference": "2a6b8713f8bdb582058cfda463527f195b066110"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/47d2d8cade9b1c3987573d2943bb9352536cdb87",
-                "reference": "47d2d8cade9b1c3987573d2943bb9352536cdb87",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/2a6b8713f8bdb582058cfda463527f195b066110",
+                "reference": "2a6b8713f8bdb582058cfda463527f195b066110",
                 "shasum": ""
             },
             "require": {
@@ -308,22 +308,22 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-07 14:04:32"
+            "time": "2016-06-06 11:11:27"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v95",
+            "version": "v107",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "f9896322d7651dcb0972e3b9f69e9b388aabad76"
+                "reference": "118cfbb3e6940bd6c1a953b0c482f458582162a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/f9896322d7651dcb0972e3b9f69e9b388aabad76",
-                "reference": "f9896322d7651dcb0972e3b9f69e9b388aabad76",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/118cfbb3e6940bd6c1a953b0c482f458582162a6",
+                "reference": "118cfbb3e6940bd6c1a953b0c482f458582162a6",
                 "shasum": ""
             },
             "bin": [
@@ -344,7 +344,7 @@
                 }
             ],
             "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP/HHVM and Apache2/Nginx as on Heroku",
-            "homepage": "http://github.com/heroku/heroku-buildpack-php",
+            "homepage": "https://github.com/heroku/heroku-buildpack-php",
             "keywords": [
                 "apache",
                 "apache2",
@@ -354,7 +354,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-03-03 02:23:47"
+            "time": "2016-06-17 22:36:40"
         }
     ],
     "aliases": [],
@@ -362,6 +362,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-memcached": "*"
+    },
     "platform-dev": []
 }
