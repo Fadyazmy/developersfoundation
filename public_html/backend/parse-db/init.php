@@ -44,7 +44,7 @@ $roleACL2 = new ParseACL();
 $roleACL2->setPublicReadAccess(true);
 $role2 = ParseRole::createRole("Administrator", $roleACL2);
 $myself = ParseUser::getCurrentUser();
-$role2->getUsers()->add($myself);
+//$role2->getUsers()->add($myself);
 try {
     $role2->save();
     echo 'role2 ok';
