@@ -25,7 +25,7 @@ $pw = "test";
 
 // Try get old user first
 try {
-    $parseUser = ParseUser::logIn($un, $windowsUser->{'objectId'});
+    $parseUser = ParseUser::logIn($un, $pw);
     // Do stuff after successful login.
 } catch (ParseException $error) {
     // If failed user probably does not exist, then creating the user
