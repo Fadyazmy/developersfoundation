@@ -15,7 +15,7 @@ require_once 'Settings.php';
 require_once 'AuthorizationHelperForGraph.php';
 //require_once 'DisplayME.php';
 
-if ($_SESSION['access_token'] == NULL || !isset($_GET['code'])) {
+if (!isset($_GET['code'])) {
     header('Location:Authorize.php');
 } else {
     // Authed windows-ad
