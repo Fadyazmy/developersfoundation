@@ -7,9 +7,6 @@
  */
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
-require_once '../../../vendor/autoload.php';
-require_once '../globalSettings.php';
-
 use Parse\ParseClient;
 use Parse\ParseObject;
 use Parse\ParseException;

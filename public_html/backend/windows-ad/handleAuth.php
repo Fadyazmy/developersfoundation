@@ -6,6 +6,8 @@
  * Time: 1:23 AM
  */
 
+require_once '../../../vendor/autoload.php';
+require_once '../globalSettings.php';
 session_start();
 //Require other files.
 require_once 'Settings.php';

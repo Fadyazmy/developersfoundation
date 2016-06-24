@@ -31,6 +31,9 @@ $user = GraphServiceAccessHelper::getMeEntry();
 $parseUser = ParseUser::getCurrentUser();
 if (!$parseUser) {
     error_log("User is not authed with parse :(");
+    // Reattempt to auth
+    header('Location:windows-ad/Authorize.php');
+    exit();
 }
 ?>
 
