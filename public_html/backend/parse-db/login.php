@@ -8,7 +8,6 @@
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
 use Parse\ParseClient;
-use Parse\ParseObject;
 use Parse\ParseException;
 use Parse\ParseUser;
 

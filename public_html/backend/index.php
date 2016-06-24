@@ -26,12 +26,17 @@ if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
 
 $user = GraphServiceAccessHelper::getMeEntry();
 //$userPic = GraphServiceAccessHelper::getMePhoto();
-$parseUser = ParseUser::getCurrentUser();
-if (!$parseUser) {
-    error_log("User is not authed with parse :(");
-    // Reattempt to auth
-    header('Location:windows-ad/Authorize.php');
-    exit();
+try {
+    $parseUser = ParseUser::getCurrentUser();
+    if (!$parseUser) {
+        error_log("User is not authed with parse :(");
+        // Reattempt to auth
+        header('Location:windows-ad/Authorize.php');
+        exit();
+    }
+} catch (Exception $ex) {
+    // Probably somehow got to this page without parse login
+    require_once 'parse-db/login.php';
 }
 ?>
 
