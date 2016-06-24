@@ -6,6 +6,8 @@
  * Time: 8:09 PM
  */
 
+// ONLY REMOVE THIS WHEN YOU ARE SURE IT IS SAFE TO RUN
+exit();
 
 require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
@@ -42,16 +44,25 @@ $roleACL2->setPublicReadAccess(true);
 $role2 = ParseRole::createRole("Administrator", $roleACL2);
 $myself = ParseUser::getCurrentUser();
 $role2->getUsers()->add($myself);
-$role2->save();
+try {
+    $role2->save();
+    echo 'role2 ok';
+} catch (ParseException $ex) {
+    echo 'Failed to create new object, with error message: ' . $ex->getMessage();
+}
 
 $roleACL = new ParseACL();
 $roleACL->setPublicReadAccess(true);
 $role = ParseRole::createRole("User", $roleACL);
 $role->getRoles()->add($role2);
-$role->save();
+try {
+    $role2->save();
+    echo 'role1 ok';
+} catch (ParseException $ex) {
+    echo 'Failed to create new object, with error message: ' . $ex->getMessage();
+}
 
 $website = new ParseObject("Website");
-
 $website->set("url", "https://nigerian.herokuapp.com");
 $website->set("name", "Nigerian Association of London and Area");
 $website->set("nickname", "Nigerian");
