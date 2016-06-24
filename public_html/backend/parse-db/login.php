@@ -8,6 +8,15 @@
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
 require_once '../globalSettings.php';
+// Parse endpoints
+use Parse\ParseClient;
+use Parse\ParseUser;
+use Parse\ParseException;
+use Parse\ParseObject;
+use Parse\ParseQuery;
+use Parse\ParseACL;
+use Parse\ParseRole;
+
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
 

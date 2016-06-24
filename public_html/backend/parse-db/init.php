@@ -8,6 +8,14 @@
 
 require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
+// Parse endpoints
+use Parse\ParseClient;
+use Parse\ParseUser;
+use Parse\ParseException;
+use Parse\ParseObject;
+use Parse\ParseQuery;
+use Parse\ParseACL;
+use Parse\ParseRole;
 
 //Enable the option to display any parsing errors.
 error_reporting(E_ALL | E_STRICT);
