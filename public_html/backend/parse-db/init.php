@@ -39,8 +39,6 @@ $windowsUser = GraphServiceAccessHelper::getMeEntry();*/
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
-exit();
-ParseACL::setDefaultACL(new ParseACL(), true);
 
 $roleACL2 = new ParseACL();
 $roleACL2->setPublicReadAccess(true);
@@ -78,3 +76,4 @@ try {
     echo 'Failed to create new object, with error message: ' . $ex->getMessage();
 }
 
+ParseACL::setDefaultACL(new ParseACL(), true);
