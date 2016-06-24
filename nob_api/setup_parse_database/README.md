@@ -37,3 +37,4 @@ ParseClient::setServerURL('http://localhost:1337/parse');
 - Jobs are not available yet, so I dont think you can automate server tasks, try: https://github.com/Automattic/kue
 - See this page for more info on how to use: https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide
 - If you like an admin panel visit: http://adminca.com/
+- See the `init.php` provided to see how to use the db
