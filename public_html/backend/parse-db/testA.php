@@ -8,7 +8,6 @@
 
 require_once "../../../vendor/autoload.php";
 $ParseAppID = "developers-foundation-db";
-$ParseMasterKey = "Abcd1234";
 $ParseServer = "https://developers-foundation-db.herokuapp.com/parse";
 session_start();
 
@@ -19,7 +18,7 @@ use Parse\ParseException;
 use Parse\ParseUser;
 use Parse\ParseSessionStorage;
 
-ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
+ParseClient::initialize($ParseAppID);
 ParseClient::setServerURL($ParseServer);
 //ParseClient::setStorage( new ParseSessionStorage() );
 
