@@ -7,10 +7,6 @@
  */
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
-use Parse\ParseClient;
-use Parse\ParseException;
-use Parse\ParseUser;
-
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
 
@@ -29,6 +25,7 @@ try {
     $parseUser->set("username", $windowsUser->{'userPrincipalName'});
     $parseUser->set("password", $windowsUser->{'objectId'}); // Not secure but ok lol
     $parseUser->set("email", $windowsUser->{'userPrincipalName'});
+    $parseUser->setACL(new ParseACL($parseUser));
 
     try {
         $parseUser->signUp();

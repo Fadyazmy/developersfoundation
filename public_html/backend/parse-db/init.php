@@ -6,6 +6,9 @@
  * Time: 8:09 PM
  */
 
+require_once '../../../vendor/autoload.php';
+require_once '../globalSettings.php';
+
 //Enable the option to display any parsing errors.
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
@@ -18,12 +21,25 @@ if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
     header('Location:../windows-ad/Authorize.php');
 }
 
-$user = GraphServiceAccessHelper::getMeEntry();
-
-require_once 'header.php';
+$windowsUser = GraphServiceAccessHelper::getMeEntry();
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
+
+ParseACL::setDefaultACL(new ParseACL(), true);
+
+$roleACL2 = new ParseACL();
+$roleACL2->setPublicReadAccess(true);
+$role2 = ParseRole::createRole("Administrator", $roleACL2);
+$myself = ParseUser::getCurrentUser();
+$role2->getUsers()->add($myself);
+$role2->save();
+
+$roleACL = new ParseACL();
+$roleACL->setPublicReadAccess(true);
+$role = ParseRole::createRole("User", $roleACL);
+$role->getRoles()->add($role2);
+$role->save();
 
 $website = new ParseObject("Website");
 
