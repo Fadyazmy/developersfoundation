@@ -11,7 +11,6 @@ use Parse\ParseClient;
 use Parse\ParseObject;
 use Parse\ParseException;
 use Parse\ParseUser;
-use Parse\ParseSessionStorage;
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);

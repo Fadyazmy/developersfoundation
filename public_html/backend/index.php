@@ -6,11 +6,12 @@
  * Time: 11:09 PM
  */
 
+require_once '../../vendor/autoload.php';
+
 //Enable the option to display any parsing errors.
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
 //Require other files.
-require_once '../../vendor/autoload.php';
 require_once 'windows-ad/GraphServiceAccessHelper.php';
 require_once 'windows-ad/Settings.php';
 require_once 'windows-ad/AuthorizationHelperForGraph.php';

@@ -8,11 +8,11 @@
 
 require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
-session_start();
+
 //Require other files.
 require_once 'Settings.php';
 require_once 'AuthorizationHelperForGraph.php';
-require_once 'DisplayME.php';
+//require_once 'DisplayME.php';
 if (!isset($_GET['code'])) {
     header('Location:Authorize.php');
 } else {
