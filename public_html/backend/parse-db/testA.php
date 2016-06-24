@@ -21,7 +21,7 @@ use Parse\ParseSessionStorage;
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
-ParseClient::setStorage( new ParseSessionStorage() );
+//ParseClient::setStorage( new ParseSessionStorage() );
 
 $un = "abc@abc.com";
 $pw = "test";

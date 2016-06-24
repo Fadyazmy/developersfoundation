@@ -11,5 +11,9 @@ session_start();
 print_r($_SESSION);
 
 use Parse\ParseUser;
+use Parse\ParseClient;
+
+ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
+ParseClient::setServerURL($ParseServer);
 
 $parseUser = ParseUser::getCurrentUser();
