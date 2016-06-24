@@ -16,7 +16,7 @@ $ParseServer = "https://developers-foundation-db.herokuapp.com/parse";
 use Parse\ParseUser;
 use Parse\ParseClient;
 
-ParseClient::initialize($ParseAppID);
+ParseClient::initialize($ParseAppID, '', '');
 ParseClient::setServerURL($ParseServer);
 
 $parseUser = ParseUser::getCurrentUser();
