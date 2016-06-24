@@ -6,6 +6,17 @@
  * Time: 11:09 PM
  */
 
+require_once '../../vendor/autoload.php';
+require_once 'globalSettings.php';
+// Parse endpoints
+use Parse\ParseClient;
+use Parse\ParseUser;
+use Parse\ParseException;
+use Parse\ParseObject;
+use Parse\ParseQuery;
+use Parse\ParseACL;
+use Parse\ParseRole;
+
 //Enable the option to display any parsing errors.
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
@@ -16,10 +27,26 @@ require_once 'windows-ad/AuthorizationHelperForGraph.php';
 
 if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
     header('Location:windows-ad/Authorize.php');
+    exit();
 }
 
+ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
+ParseClient::setServerURL($ParseServer);
+
 $user = GraphServiceAccessHelper::getMeEntry();
-$userPic = GraphServiceAccessHelper::getMePhoto();
+//$userPic = GraphServiceAccessHelper::getMePhoto();
+try {
+    $parseUser = ParseUser::getCurrentUser();
+    if (!$parseUser) {
+        error_log("User is not authed with parse :(");
+        // Reattempt to auth
+        header('Location:windows-ad/Authorize.php');
+        exit();
+    }
+} catch (Exception $ex) {
+    // Probably somehow got to this page without parse login
+    require_once 'parse-db/login.php';
+}
 ?>
 
 <!--<HTML>
@@ -177,7 +204,6 @@ echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></t
                 <!-- menu profile quick info -->
                 <div class="profile">
                     <div class="profile_pic">
-                        <?php echo $userPic; ?>
                         <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>" class="img-circle profile_img">
                     </div>
                     <div class="profile_info">

@@ -3,6 +3,7 @@
     "heroku/heroku-buildpack-php": "*"
   },
   "require": {
+    "ext-memcached": "*",
     "sendgrid/sendgrid": "4.0.4",
     "parse/php-sdk": "1.2.0"
   }

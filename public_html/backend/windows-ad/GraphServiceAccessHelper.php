@@ -38,9 +38,10 @@
             self::AddRequiredHeadersAndSettings($ch);
 
             // Create url for the entry based on the feedname and the key value
-            $feedURL = "https://graph.windows.net/".Settings::$appTenantDomainName."/me/photo/\$value";
+            //$feedURL = "https://graph.windows.net/".Settings::$appTenantDomainName."/me/photo/\$value";
             //  $feedURL = "https://graph.windows.net/me";
-            $feedURL = $feedURL."?".Settings::$apiVersion;
+            //$feedURL = $feedURL."?".Settings::$apiVersion;
+            $feedURL = "https://graph.microsoft.com/v1.0/me/photo/\$value";
             curl_setopt($ch, CURLOPT_URL, $feedURL);
 
             //Enable fiddler to capture request
@@ -50,6 +51,7 @@
 
             // close curl resource to free up system resources
             curl_close($ch);
+            error_log($output);
             $jsonOutput = json_decode($output);
             return $jsonOutput;
         }
