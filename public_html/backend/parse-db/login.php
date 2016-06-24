@@ -7,7 +7,7 @@
  */
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
-
+error_log(__DIR__);
 require_once '../parse-db/header.php';
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
