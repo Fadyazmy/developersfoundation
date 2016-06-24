@@ -20,6 +20,10 @@ if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
 
 $user = GraphServiceAccessHelper::getMeEntry();
 //$userPic = GraphServiceAccessHelper::getMePhoto();
+$parseUser = ParseUser::getCurrentUser();
+if (!$parseUser) {
+    error_log("User is not authed with parse :(");
+}
 ?>
 
 <!--<HTML>
