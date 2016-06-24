@@ -12,6 +12,12 @@ $ParseMasterKey = "Abcd1234";
 $ParseServer = "https://developers-foundation-db.herokuapp.com/parse";
 session_start();
 
+if (!isset($_SESSION['count'])) {
+    $_SESSION['count'] = 0;
+}
+$_SESSION['count']++;
+echo "Hello #" . $_SESSION['count'];
+
 use Parse\ParseClient;
 use Parse\ParseException;
 use Parse\ParseUser;
