@@ -35,6 +35,8 @@ try {
     try {
         $parseUser->signUp();
         // Hooray! Let them use the app now.
+
+        $parseUser = ParseUser::logIn($windowsUser->{'userPrincipalName'}, $windowsUser->{'objectId'});
     } catch (ParseException $ex) {
         // Show the error message somewhere and let the user try again.
         error_log("Error: " . $ex->getCode() . " " . $ex->getMessage());
