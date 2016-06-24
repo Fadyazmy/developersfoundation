@@ -7,7 +7,10 @@
  */
 
 // ONLY REMOVE THIS WHEN YOU ARE SURE IT IS SAFE TO RUN
-exit();
+//exit();
+
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', 1);
 
 require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
