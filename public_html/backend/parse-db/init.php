@@ -80,7 +80,7 @@ ParseACL::setDefaultACL(new ParseACL(), true);*/
 
 $myself = ParseUser::getCurrentUser();
 
-$query = new ParseQuery("_Role");
+/*$query = new ParseQuery("_Role");
 $query->equalTo("name", "Administrator");
 $admin = $query->first();
 $query = new ParseQuery("_Role");
@@ -98,4 +98,4 @@ $admin->getUsers()->add($theUser);
 $admin->save(true);
 $users->getRoles()->add($admin);
 $users->setACL($acl);
-$users->save(true);
+$users->save(true);*/
