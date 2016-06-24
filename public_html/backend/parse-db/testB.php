@@ -7,7 +7,6 @@
  */
 
 require_once "../../../vendor/autoload.php";
-require_once '../globalSettings.php';
 session_start();
 
 use Parse\ParseUser;
