@@ -12,6 +12,8 @@ $ParseMasterKey = "Abcd1234";
 $ParseServer = "https://developers-foundation-db.herokuapp.com/parse";
 session_start();
 
+print_r($_SESSION);
+
 use Parse\ParseClient;
 use Parse\ParseException;
 use Parse\ParseUser;
