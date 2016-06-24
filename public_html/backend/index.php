@@ -15,6 +15,7 @@ ini_set('display_errors', 1);
 require_once 'windows-ad/GraphServiceAccessHelper.php';
 require_once 'windows-ad/Settings.php';
 require_once 'windows-ad/AuthorizationHelperForGraph.php';
+require_once 'parse-db/header.php';
 
 if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
     header('Location:windows-ad/Authorize.php');

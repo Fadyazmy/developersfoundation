@@ -20,13 +20,7 @@ if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
 
 $user = GraphServiceAccessHelper::getMeEntry();
 
-require_once '../../../vendor/autoload.php';
-require_once '../globalSettings.php';
-
-use Parse\ParseClient;
-use Parse\ParseObject;
-use Parse\ParseException;
-use Parse\ParseUser;
+require_once 'header.php';
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
