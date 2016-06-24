@@ -7,7 +7,7 @@
  */
 
 // ONLY REMOVE THIS WHEN YOU ARE SURE IT IS SAFE TO RUN
-exit();
+//exit();
 
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
@@ -40,7 +40,7 @@ $windowsUser = GraphServiceAccessHelper::getMeEntry();*/
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
 
-$roleACL2 = new ParseACL();
+/*$roleACL2 = new ParseACL();
 $roleACL2->setPublicReadAccess(true);
 $role2 = ParseRole::createRole("Administrator", $roleACL2);
 $myself = ParseUser::getCurrentUser();
@@ -76,4 +76,5 @@ try {
     echo 'Failed to create new object, with error message: ' . $ex->getMessage();
 }
 
-ParseACL::setDefaultACL(new ParseACL(), true);
+ParseACL::setDefaultACL(new ParseACL(), true);*/
+
