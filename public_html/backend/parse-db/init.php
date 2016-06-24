@@ -6,6 +6,7 @@
  * Time: 8:09 PM
  */
 
+
 require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
 // Parse endpoints
@@ -18,7 +19,7 @@ use Parse\ParseACL;
 use Parse\ParseRole;
 
 //Enable the option to display any parsing errors.
-error_reporting(E_ALL | E_STRICT);
+/*error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 1);
 //Require other files.
 require_once 'windows-ad/GraphServiceAccessHelper.php';
@@ -29,7 +30,7 @@ if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
     header('Location:../windows-ad/Authorize.php');
 }
 
-$windowsUser = GraphServiceAccessHelper::getMeEntry();
+$windowsUser = GraphServiceAccessHelper::getMeEntry();*/
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
