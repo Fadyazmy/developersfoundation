@@ -6,6 +6,8 @@
  * Time: 8:39 PM
  */
 
+// NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
+
 require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
 
