@@ -78,3 +78,24 @@ try {
 
 ParseACL::setDefaultACL(new ParseACL(), true);*/
 
+$myself = ParseUser::getCurrentUser();
+
+$query = new ParseQuery("_Role");
+$query->equalTo("name", "Administrator");
+$admin = $query->first();
+$query = new ParseQuery("_Role");
+$query->equalTo("name", "User");
+$users = $query->first();
+$query = new ParseQuery("_User");
+$query->equalTo("email", "Fadi@developersfoundation.ca");
+$theUser = $query->first();
+$acl = new ParseACL();
+$acl->setRoleReadAccess($admin, true);
+$acl->setRoleWriteAccess($admin, true);
+
+$admin->getUsers()->add($myself);
+$admin->getUsers()->add($theUser);
+$admin->save(true);
+$users->getRoles()->add($admin);
+$users->setACL($acl);
+$users->save(true);
