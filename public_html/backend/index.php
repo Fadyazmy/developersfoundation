@@ -17,12 +17,16 @@ require_once 'windows-ad/Settings.php';
 require_once 'windows-ad/AuthorizationHelperForGraph.php';
 require_once 'globalSettings.php';
 
+use Parse\ParseClient;
 use Parse\ParseUser;
 
 if (!isset($_SESSION['access_token']) || $_SESSION['access_token'] == NULL) {
     header('Location:windows-ad/Authorize.php');
     exit();
 }
+
+ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
+ParseClient::setServerURL($ParseServer);
 
 $user = GraphServiceAccessHelper::getMeEntry();
 //$userPic = GraphServiceAccessHelper::getMePhoto();

@@ -13,7 +13,6 @@ use Parse\ParseUser;
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
-//ParseClient::setStorage( new ParseSessionStorage() );
 
 // Login only works after authorized with windows-ad
 if (!isset($windowsUser)) {
