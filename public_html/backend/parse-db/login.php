@@ -7,7 +7,13 @@
  */
 
 // NOTE: THIS PAGE IS NOT TO BE CALLED DIRECTLY
-require_once __DIR__.'/header.php';
+require_once '../../../vendor/autoload.php';
+require_once '../globalSettings.php';
+
+use Parse\ParseClient;
+use Parse\ParseObject;
+use Parse\ParseException;
+use Parse\ParseUser;
 
 ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
 ParseClient::setServerURL($ParseServer);
