@@ -10,19 +10,21 @@ require_once '../../../vendor/autoload.php';
 require_once '../globalSettings.php';
 
 //Require other files.
+require_once 'GraphServiceAccessHelper.php';
 require_once 'Settings.php';
 require_once 'AuthorizationHelperForGraph.php';
 //require_once 'DisplayME.php';
-if (!isset($_GET['code'])) {
+
+if ($_SESSION['access_token'] == NULL || !isset($_GET['code'])) {
     header('Location:Authorize.php');
 } else {
     // Authed windows-ad
     AuthorizationHelperForAADGraphService::GetAuthenticationHeaderFor3LeggedFlow($_GET['code']);
-    
+
     // Now auth parse-db
     $windowsUser = GraphServiceAccessHelper::getMeEntry();
     require_once '../parse-db/login.php';
-    
+
     header('Location:../index.php');
 }
 ?>
