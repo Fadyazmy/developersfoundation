@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentellela Alela! | </title>
+    <title>Developers' Foundation | </title>
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +18,16 @@
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Dropzone.js -->
     <link href="vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
@@ -45,7 +55,8 @@
                 <div class="profile">
                     <div class="profile_pic">
                         <?php echo $userPic; ?>
-                        <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>" class="img-circle profile_img">
+                        <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>"
+                             class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
@@ -218,7 +229,8 @@
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -230,7 +242,8 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -242,7 +255,8 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -254,7 +268,8 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="production/images/img.jpg" alt="Profile Image"/></span>
+                                        <span class="image"><img src="production/images/img.jpg"
+                                                                 alt="Profile Image"/></span>
                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -285,7 +300,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Form Wizards</h3>
+                        <h3>Form</h3>
                     </div>
 
                     <div class="title_right">
@@ -327,7 +342,6 @@
                             </div>
                             <div class="x_content">
 
-
                                 <!-- Smart Wizard -->
                                 <div id="wizard" class="form_wizard wizard_horizontal">
                                     <ul class="wizard_steps">
@@ -336,7 +350,7 @@
                                                 <span class="step_no">1</span>
                             <span class="step_descr">
                                               Step 1<br/>
-                                              <small>Step 1 description</small>
+                                              <small>Basic Website Info</small>
                                           </span>
                                             </a>
                                         </li>
@@ -345,7 +359,7 @@
                                                 <span class="step_no">2</span>
                             <span class="step_descr">
                                               Step 2<br/>
-                                              <small>Step 2 description</small>
+                                              <small>Exec Photo Upload</small>
                                           </span>
                                             </a>
                                         </li>
@@ -354,7 +368,7 @@
                                                 <span class="step_no">3</span>
                             <span class="step_descr">
                                               Step 3<br/>
-                                              <small>Step 3 description</small>
+                                              <small>Exec Info </small>
                                           </span>
                                             </a>
                                         </li>
@@ -363,134 +377,230 @@
                                                 <span class="step_no">4</span>
                             <span class="step_descr">
                                               Step 4<br/>
-                                              <small>Step 4 description</small>
+                                              <small>Content Edit</small>
                                           </span>
                                             </a>
                                         </li>
                                     </ul>
+
+                                    <!-- Steps form stuff goes in here -->
                                     <div id="step-1">
                                         <form class="form-horizontal form-label-left">
-
                                             <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                                                       for="first-name">First Name <span class="required">*</span>
+                                                       for="web-title">Website Title <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="first-name" required="required"
+                                                    <input type="text" id="web-title" required="required"
                                                            class="form-control col-md-7 col-xs-12">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                                                       for="last-name">Last Name <span class="required">*</span>
+                                                       for="web-description">Website Description<span
+                                                        class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input type="text" id="last-name" name="last-name"
-                                                           required="required" class="form-control col-md-7 col-xs-12">
+                                                    <textarea id="web-description" name="web-description"
+                                                              required="required"
+                                                              class="form-control col-md-7 col-xs-12"
+                                                              rows="3"></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="middle-name"
-                                                       class="control-label col-md-3 col-sm-3 col-xs-12">Middle Name /
-                                                    Initial</label>
-                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input id="middle-name" class="form-control col-md-7 col-xs-12"
-                                                           type="text" name="middle-name">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
-                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <div id="gender" class="btn-group" data-toggle="buttons">
-                                                        <label class="btn btn-default" data-toggle-class="btn-primary"
-                                                               data-toggle-passive-class="btn-default">
-                                                            <input type="radio" name="gender" value="male"> &nbsp; Male
-                                                            &nbsp;
-                                                        </label>
-                                                        <label class="btn btn-primary" data-toggle-class="btn-primary"
-                                                               data-toggle-passive-class="btn-default">
-                                                            <input type="radio" name="gender" value="female"> Female
-                                                        </label>
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-3">
+                                                        <img class="img-responsive avatar-view" src="production/images/picture.jpg"width="100%">
+                                                    </div>
+                                                    <div class="btn-group col-md-7">
+                                                        <br/><br/>
+                                                        <input type="file" data-role="magic-overlay"
+                                                               data-target="#pictureBtn"
+                                                               data-edit="insertImage"/>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth
-                                                    <span class="required">*</span>
-                                                </label>
-                                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                                    <input id="birthday"
-                                                           class="date-picker form-control col-md-7 col-xs-12"
-                                                           required="required" type="text">
-                                                </div>
-                                            </div>
-
                                         </form>
-
                                     </div>
                                     <div id="step-2">
                                         <h2 class="StepTitle">Photo Upload</h2>
                                         <div class="x_content">
                                             <p>Drag multiple files to the box below for multi upload or click to select
-                                                files. <br> <strong>(!!!This
-                                                    is for demonstration purposes only, the files are not uploaded to
-                                                    any server!!!)</strong></p>
+                                                files.</p>
                                             <form action="indexForm.html" class="dropzone"></form>
-                                            <br/>
-                                            <br/>
-                                            <br/>
-                                            <br/>
+                                            <br/><br/><br/><br/>
                                         </div>
                                     </div>
                                     <div id="step-3">
-                                        <h2 class="StepTitle">Step 3 Content</h2>
-                                        <p>
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                                            velit esse cillum dolore
-                                            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                            sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor
-                                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                            officia deserunt mollit anim id est laborum.
-                                        </p>
+                                        <h2 class="StepTitle">Exec info</h2>
+                                        <div class="x_content" id="exec-list">
+                                            <div class="form-group">
+                                                <div class="col-md-2 col-md-offset-1">
+                                                    <img src="production/images/user.png" alt="..."
+                                                         class="img-circle profile_img" width="100%">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                        <br/>
+                                                        <input type="text" id="exec-name" required="required"
+                                                               class="form-control col-md-7 col-xs-12"
+                                                               placeholder="Name">
+                                                        <br/><br/><br/>
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                         <textarea id="exec-description" name="exec-description"
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   rows="5" placeholder="Information goes here"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="x_content" id="exec-list2">
+                                            <div class="form-group">
+                                                <div class="col-md-2 col-md-offset-1">
+                                                    <img src="production/images/user.png" alt="..."
+                                                         class="img-circle profile_img" width="100%">
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                        <br/>
+                                                        <input type="text" id="exec-name2" required="required"
+                                                               class="form-control col-md-7 col-xs-12"
+                                                               placeholder="Name">
+                                                        <br/><br/></br/>
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                         <textarea id="exec-description2" name="exec-description"
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   rows="5" placeholder="Information goes here"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-md-offset-10 pull-right">
+                                            <button type="submit" class="btn btn-success">Add</button>
+                                            <button type="submit" class="btn btn-primary">Remove</button>
+                                        </div>
+
                                     </div>
                                     <div id="step-4">
-                                        <h2 class="StepTitle">Step 4 Content</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat.
-                                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                                            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                            sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                        </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor
-                                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                            officia deserunt mollit anim id est laborum.
-                                        </p>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                            consequat. Duis aute irure dolor
-                                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                            officia deserunt mollit anim id est laborum.
-                                        </p>
+                                        <h2 class="StepTitle">Content Edit</h2>
+                                        <div class="x_content">
+                                            <select id="heard" class="form-control" required="">
+                                                <option value="">Choose..</option>
+                                                <option value="press">Press</option>
+                                                <option value="net">Internet</option>
+                                                <option value="mouth">Word of mouth</option>
+                                            </select>
+                                            <div id="alerts"></div>
+                                            <div class="btn-toolbar editor" data-role="editor-toolbar"
+                                                 data-target="#editor">
+                                                <div class="btn-group">
+                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
+                                                       title="Font"><i
+                                                            class="fa fa-font"></i><b class="caret"></b></a>
+                                                    <ul class="dropdown-menu">
+                                                    </ul>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
+                                                       title="Font Size"><i
+                                                            class="fa fa-text-height"></i>&nbsp;<b
+                                                            class="caret"></b></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li>
+                                                            <a data-edit="fontSize 5">
+                                                                <p style="font-size:17px">Huge</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-edit="fontSize 3">
+                                                                <p style="font-size:14px">Normal</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-edit="fontSize 1">
+                                                                <p style="font-size:11px">Small</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i
+                                                            class="fa fa-bold"></i></a>
+                                                    <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i
+                                                            class="fa fa-italic"></i></a>
+                                                    <a class="btn" data-edit="strikethrough" title="Strikethrough"><i
+                                                            class="fa fa-strikethrough"></i></a>
+                                                    <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i
+                                                            class="fa fa-underline"></i></a>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="insertunorderedlist"
+                                                       title="Bullet list"><i
+                                                            class="fa fa-list-ul"></i></a>
+                                                    <a class="btn" data-edit="insertorderedlist" title="Number list"><i
+                                                            class="fa fa-list-ol"></i></a>
+                                                    <a class="btn" data-edit="outdent"
+                                                       title="Reduce indent (Shift+Tab)"><i
+                                                            class="fa fa-dedent"></i></a>
+                                                    <a class="btn" data-edit="indent" title="Indent (Tab)"><i
+                                                            class="fa fa-indent"></i></a>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="justifyleft"
+                                                       title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                                    <a class="btn" data-edit="justifycenter"
+                                                       title="Center (Ctrl/Cmd+E)"><i
+                                                            class="fa fa-align-center"></i></a>
+                                                    <a class="btn" data-edit="justifyright"
+                                                       title="Align Right (Ctrl/Cmd+R)"><i
+                                                            class="fa fa-align-right"></i></a>
+                                                    <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i
+                                                            class="fa fa-align-justify"></i></a>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn dropdown-toggle" data-toggle="dropdown"
+                                                       title="Hyperlink"><i
+                                                            class="fa fa-link"></i></a>
+                                                    <div class="dropdown-menu input-append">
+                                                        <input class="span2" placeholder="URL" type="text"
+                                                               data-edit="createLink"/>
+                                                        <button class="btn" type="button">Add</button>
+                                                    </div>
+                                                    <a class="btn" data-edit="unlink" title="Remove Hyperlink"><i
+                                                            class="fa fa-cut"></i></a>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn" title="Insert picture (or just drag & drop)"
+                                                       id="pictureBtn"><i
+                                                            class="fa fa-picture-o"></i></a>
+                                                    <input type="file" data-role="magic-overlay"
+                                                           data-target="#pictureBtn"
+                                                           data-edit="insertImage"/>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i
+                                                            class="fa fa-undo"></i></a>
+                                                    <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i
+                                                            class="fa fa-repeat"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div id="editor" class="editor-wrapper placeholderText"
+                                                 contenteditable="true"></div>
+                                            <textarea name="descr" id="descr" style="display:none;"></textarea>
+
+                                        </div>
                                     </div>
+                                    <!-- end of forms for each step -->
                                 </div>
                             </div>
                         </div>
