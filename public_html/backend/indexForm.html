@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--TODO: fix JS hieght thing-->
 <html lang="en">
 
 <head>
@@ -356,10 +357,10 @@
                                         </li>
                                         <li>
                                             <a href="#step-2">
-                                                <span class="step_no">2</span>
+                                                <span class="step_no">3</span>
                             <span class="step_descr">
                                               Step 2<br/>
-                                              <small>Exec Photo Upload</small>
+                                              <small>Exec Info </small>
                                           </span>
                                             </a>
                                         </li>
@@ -368,15 +369,6 @@
                                                 <span class="step_no">3</span>
                             <span class="step_descr">
                                               Step 3<br/>
-                                              <small>Exec Info </small>
-                                          </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#step-4">
-                                                <span class="step_no">4</span>
-                            <span class="step_descr">
-                                              Step 4<br/>
                                               <small>Content Edit</small>
                                           </span>
                                             </a>
@@ -422,17 +414,8 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-2">
-                                        <h2 class="StepTitle">Photo Upload</h2>
-                                        <div class="x_content">
-                                            <p>Drag multiple files to the box below for multi upload or click to select
-                                                files.</p>
-                                            <form action="indexForm.html" class="dropzone"></form>
-                                            <br/><br/><br/><br/>
-                                        </div>
-                                    </div>
-                                    <div id="step-3">
-                                        <h2 class="StepTitle">Exec info</h2>
+                                    <div id="step-2">  <!-- TODO: add button for each pictures-->
+                                        <h2 class="StepTitle"><strong>Exec info</strong></h2>
                                         <div class="x_content" id="exec-list">
                                             <div class="form-group">
                                                 <div class="col-md-2 col-md-offset-1">
@@ -442,13 +425,19 @@
                                                 <div class="col-md-9">
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-name" required="required"
+                                                        <input type="text" id="exec-name1" required="required"
                                                                class="form-control col-md-7 col-xs-12"
                                                                placeholder="Name">
-                                                        <br/><br/><br/>
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
-                                                         <textarea id="exec-description" name="exec-description"
+                                                        <br/>
+                                                        <input type="text" id="exec-position1" required="required"
+                                                               class="form-control col-md-7 col-xs-12"
+                                                               placeholder="Position">
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                        <br/>
+                                                         <textarea id="exec-description1" name="exec-description"
                                                                    class="form-control col-md-7 col-xs-12"
                                                                    rows="5" placeholder="Information goes here"></textarea>
                                                     </div>
@@ -467,9 +456,15 @@
                                                         <input type="text" id="exec-name2" required="required"
                                                                class="form-control col-md-7 col-xs-12"
                                                                placeholder="Name">
-                                                        <br/><br/></br/>
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
+                                                        <br/>
+                                                        <input type="text" id="exec-position2" required="required"
+                                                               class="form-control col-md-7 col-xs-12"
+                                                               placeholder="Position">
+                                                    </div>
+                                                    <div class="col-md-10 col-md-offset-2">
+                                                        <br/>
                                                          <textarea id="exec-description2" name="exec-description"
                                                                    class="form-control col-md-7 col-xs-12"
                                                                    rows="5" placeholder="Information goes here"></textarea>
@@ -483,14 +478,14 @@
                                         </div>
 
                                     </div>
-                                    <div id="step-4">
+                                    <div id="step-3">
                                         <h2 class="StepTitle">Content Edit</h2>
                                         <div class="x_content">
                                             <select id="heard" class="form-control" required="">
-                                                <option value="">Choose..</option>
-                                                <option value="press">Press</option>
-                                                <option value="net">Internet</option>
-                                                <option value="mouth">Word of mouth</option>
+                                                <option value="" disabled>Select which area you want to edit</option>
+                                                <option value="press">temp1</option>
+                                                <option value="net">temp2</option>
+                                                <option value="mouth">temp3</option>
                                             </select>
                                             <div id="alerts"></div>
                                             <div class="btn-toolbar editor" data-role="editor-toolbar"
@@ -579,11 +574,10 @@
 
                                                 <div class="btn-group">
                                                     <a class="btn" title="Insert picture (or just drag & drop)"
-                                                       id="pictureBtn"><i
-                                                            class="fa fa-picture-o"></i></a>
+                                                       id="pictureBtn"><i class="fa fa-picture-o"></i></a>
                                                     <input type="file" data-role="magic-overlay"
                                                            data-target="#pictureBtn"
-                                                           data-edit="insertImage"/>
+                                                           data-edit="insertImage" style="display: none;"/>
                                                 </div>
 
                                                 <div class="btn-group">
