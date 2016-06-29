@@ -400,74 +400,111 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-2 col-md-offset-3">
-                                                        <img class="img-responsive avatar-view" src="production/images/picture.jpg"width="100%">
-                                                    </div>
-                                                    <div class="btn-group col-md-7">
-                                                        <br/><br/>
-                                                        <input type="file" data-role="magic-overlay"
-                                                               data-target="#pictureBtn"
-                                                               data-edit="insertImage"/>
-                                                    </div>
+
+                                                <label class="control-label col-md-3 col-sm-3 col-xs-12"
+                                                       for="web-title">Logo <span class="required">*</span>
+                                                </label>
+                                                <div class="col-md-2">
+                                                    <img class="img-responsive avatar-view"
+                                                         src="production/images/picture.jpg" width="100%">
                                                 </div>
+                                                <div class="btn-group col-md-7">
+                                                    <br/><br/>
+                                                    <input type="file" data-role="magic-overlay"
+                                                           data-target="#pictureBtn"
+                                                           data-edit="insertImage"/>
+                                                </div>
+
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="step-2">  <!-- TODO: add button for each pictures-->
+                                    <div id="step-2">
                                         <h2 class="StepTitle"><strong>Exec info</strong></h2>
                                         <div class="x_content" id="exec-list">
                                             <div class="form-group">
-                                                <div class="col-md-2 col-md-offset-1">
-                                                    <img src="production/images/user.png" alt="..."
-                                                         class="img-circle profile_img" width="100%">
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
-                                                        <input type="text" id="exec-name1" required="required"
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Name">
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-1">
+                                                        <img src="production/images/user.png" alt="..."
+                                                             class="img-circle profile_img" width="100%">
+                                                        <div class="col-sm-9 col-sm-offset-3">
+                                                            <br/>
+                                                            <button type="submit" class="btn btn-success"
+                                                                    name="picturePlaceHolder1"
+                                                                    onclick="document.getElementsByName('pictureToUpload1')[0].click();return false;">
+                                                                Upload Picture
+                                                            </button>
+                                                            <input type="file" name="pictureToUpload1"
+                                                                   data-role="magic-overlay"
+                                                                   data-target="#pictureBtn"
+                                                                   data-edit="insertImage" style="display: none"
+                                                                   onchange="fileSubmit(this)"/>
+                                                        </div>
+
                                                     </div>
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
-                                                        <input type="text" id="exec-position1" required="required"
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Position">
-                                                    </div>
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
+                                                    <div class="col-md-9">
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <input type="text" id="exec-name1" required="required"
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   placeholder="Name">
+                                                        </div>
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <input type="text" id="exec-position1" required="required"
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   placeholder="Position">
+                                                        </div>
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
                                                          <textarea id="exec-description1" name="exec-description"
                                                                    class="form-control col-md-7 col-xs-12"
-                                                                   rows="5" placeholder="Information goes here"></textarea>
+                                                                   rows="5"
+                                                                   placeholder="Information goes here"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="x_content" id="exec-list2">
                                             <div class="form-group">
-                                                <div class="col-md-2 col-md-offset-1">
-                                                    <img src="production/images/user.png" alt="..."
-                                                         class="img-circle profile_img" width="100%">
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
-                                                        <input type="text" id="exec-name2" required="required"
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Name">
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-1">
+                                                        <img src="production/images/user.png" alt="..."
+                                                             class="img-circle profile_img" width="100%">
+                                                        <div class="col-sm-9 col-sm-offset-3">
+                                                            <br/>
+                                                            <button type="submit" class="btn btn-success"
+                                                                    name="picturePlaceHolder2"
+                                                                    onclick="document.getElementsByName('pictureToUpload2')[0].click();return false;">
+                                                                Upload Picture
+                                                            </button>
+                                                            <input type="file" name="pictureToUpload2"
+                                                                   data-role="magic-overlay"
+                                                                   data-target="#pictureBtn"
+                                                                   data-edit="insertImage" style="display: none"
+                                                                   onchange="fileSubmit(this)"/>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
-                                                        <input type="text" id="exec-position2" required="required"
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Position">
-                                                    </div>
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
+                                                    <div class="col-md-9">
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <input type="text" id="exec-name2" required="required"
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   placeholder="Name">
+                                                        </div>
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <input type="text" id="exec-position2" required="required"
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   placeholder="Position">
+                                                        </div>
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
                                                          <textarea id="exec-description2" name="exec-description"
                                                                    class="form-control col-md-7 col-xs-12"
-                                                                   rows="5" placeholder="Information goes here"></textarea>
+                                                                   rows="5"
+                                                                   placeholder="Information goes here"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
