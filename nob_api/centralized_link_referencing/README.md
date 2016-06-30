@@ -29,8 +29,9 @@ switch ($linkTo) {
 }
 ```
 
-To link to page 1, use the link: test.php?page=1
+To link to page 1, use the link: test.php?page=1, page 2 would be test.php?page=2 etc. 
+You can do this and create cases for as many pages as you need.
 
-To get the default page, use the link: test.php?page=0
+To get the default page, use the link: test.php?page=0, or another link to a case that doesn't exist.
 
 See the main.php for the full syntax.
