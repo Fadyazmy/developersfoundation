@@ -17,7 +17,8 @@ In the js file, specify the coordinates of the location you wish the map to be c
 
    `var latlng = new google.maps.LatLng(-33.86455, 151.209);`
 
-In the bottom of the js, change the $infowindow to display your location. 
+
+In the bottom of the js, change the $infowindow to display your location. This is what will show when you hover over the pin with your cursor. 
 
 #### Customization
 
