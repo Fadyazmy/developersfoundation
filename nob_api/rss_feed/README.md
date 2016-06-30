@@ -1,6 +1,6 @@
 ## RSS Feed
 
-![](rss.jpg)
+![](rss.JPG)
 
 This is a small widget to convert a rss feed into something that can be displayed to the user.
 
