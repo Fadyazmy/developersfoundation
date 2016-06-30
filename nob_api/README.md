@@ -19,9 +19,9 @@ Click on a link below to find the source code and instructions.
 
 ------------------------
 
-[Composer and Plugins](nob_api/!composer_and_plugins/)
+[Composer and Plugins](!composer_and_plugins/)
 
-[Carousel](/3x_carousel/)
+[Carousel](3x_carousel/)
 
 [Caching and Gzip](/caching_and_gzip/)
 
