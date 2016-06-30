@@ -2,7 +2,7 @@
 
 A custom Lightbox for photos, similar to one provided by bootstrap.
 
-![](/lb.jpg/)
+![](lb.jpg/)
 
 OK no longer on alpha, I'd say its pretty much beta or done.
 
