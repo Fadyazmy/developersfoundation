@@ -1,6 +1,6 @@
 ## Mailer
 
-![](form.jpg)
+![](form.JPG)
 
 *NOTE: This requires composer and Sendgrid to be installed.*
 
