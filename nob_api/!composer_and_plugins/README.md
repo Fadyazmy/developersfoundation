@@ -1,4 +1,6 @@
-OK so lets assume we are all just using JetBrains IDE (phpstorm or webstorm), to setup comperser and install apps:
+### Setting up the Composer and Dependencies
+
+We will assume you use JetBrains IDE (phpstorm or webstorm), to setup composer and install apps:
 
 1. Hop under Tools -> Composer -> Init Composer...
 2. Click Download Composer
@@ -6,7 +8,7 @@ OK so lets assume we are all just using JetBrains IDE (phpstorm or webstorm), to
 4. Click OK
 5. And you are done...
 
-And if you are not using an IDE, just go to getcomposer.org and play with bash lol
+And if you are not using an IDE, just go to getcomposer.org and play with bash.
 
 To install sendgrid on JetBrains IDE:
 
@@ -15,4 +17,4 @@ To install sendgrid on JetBrains IDE:
 3. Click Add
 4. And you are done :)
 
-You need to install php for any of this to work, but that will be too much for me to type... Just go search it on google on how to do it -,-
+You need to install php for any of this to work, here is a link to a proper guide: http://php.net/manual/en/install.php

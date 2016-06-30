@@ -1,3 +1,7 @@
+## Setup Parse Database
+
+#### Instructions
+
 1: Cloning Parse Server
 =====
 

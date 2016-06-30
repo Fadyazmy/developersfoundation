@@ -1,4 +1,10 @@
+## Lightbox
+
+A custom Lightbox for photos, similar to one provided by bootstrap.
+
+![](/lb.jpg/)
+
 OK no longer on alpha, I'd say its pretty much beta or done.
 
-But for this to work on your bootstrap, you might have to write up some custom classes to override those provied in bootstrap.
+For this to work on your bootstrap, you will have to write up some custom classes to override those provided in bootstrap.
 Still need to test this on other themes.
