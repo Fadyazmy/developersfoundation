@@ -1,0 +1,3 @@
+[submodule "nob_api/!blank_project"]
+	path = nob_api/!blank_project
+	url = https://github.com/nobodyrandom/blank-bootstrap.git

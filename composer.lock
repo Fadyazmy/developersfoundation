@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1b66707898a60e04f20530909a765c43",
-    "content-hash": "0ff0fc808ce08da1a4094565b1bc897d",
+    "hash": "a387a8150958b8c8346d138ff3f9e4b5",
+    "content-hash": "1fd6bf584abc9bf7dfbbc3f0dc0ce014",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -100,6 +100,7 @@
                 "rest",
                 "web service"
             ],
+            "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
         },
         {
@@ -252,16 +253,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.7",
+            "version": "v2.8.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "2a6b8713f8bdb582058cfda463527f195b066110"
+                "reference": "b180b70439dca70049b6b9b7e21d75e6e5d7aca9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/2a6b8713f8bdb582058cfda463527f195b066110",
-                "reference": "2a6b8713f8bdb582058cfda463527f195b066110",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b180b70439dca70049b6b9b7e21d75e6e5d7aca9",
+                "reference": "b180b70439dca70049b6b9b7e21d75e6e5d7aca9",
                 "shasum": ""
             },
             "require": {
@@ -308,22 +309,22 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-06 11:11:27"
+            "time": "2016-06-29 05:29:29"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v107",
+            "version": "v108",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "118cfbb3e6940bd6c1a953b0c482f458582162a6"
+                "reference": "afca47645064b9d28a6a7d9e470eb76c076d75b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/118cfbb3e6940bd6c1a953b0c482f458582162a6",
-                "reference": "118cfbb3e6940bd6c1a953b0c482f458582162a6",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/afca47645064b9d28a6a7d9e470eb76c076d75b6",
+                "reference": "afca47645064b9d28a6a7d9e470eb76c076d75b6",
                 "shasum": ""
             },
             "bin": [
@@ -354,7 +355,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-06-17 22:36:40"
+            "time": "2016-07-08 21:43:10"
         }
     ],
     "aliases": [],
