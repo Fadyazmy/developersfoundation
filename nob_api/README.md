@@ -2,7 +2,7 @@
 
 Welcome to the database of tools and features that we use on our projects.
 
-Written and compiled by Nobodyrandom.
+Written and compiled by NobodyRandom.
 
 ### How to Use
 
