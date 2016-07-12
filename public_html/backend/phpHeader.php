@@ -47,3 +47,5 @@ try {
     // Probably somehow got to this page without parse login
     require_once 'parse-db/login.php';
 }
+
+// Get available items with current user credentials
