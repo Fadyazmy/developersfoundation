@@ -485,7 +485,7 @@
 }
 
 .button--nuka.button--inverted {
-    color: #fc9b1d;
+    color: #222222;
 }
 
 .button--nuka::before,
@@ -493,7 +493,7 @@
     content: '';
     position: absolute;
     border-radius: inherit;
-    background:  #222222;
+    background:  #fc9b1d;
     z-index: -1;
 }
 
@@ -540,7 +540,7 @@
 }
 
 .button--nuka:hover::after {
-    background-color: #fc9b1d;
+    background-color:  #222222;
     color: #fff;
 }
 
