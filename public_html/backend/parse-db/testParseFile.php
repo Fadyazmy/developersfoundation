@@ -9,10 +9,15 @@
 // THIS CODE IS PURELY TO TEST IF THE DB CAN STORE FILES AND REUSE. SINCE HEROKU DOES NOT ALLOW PERSISTENT STORAGE
 
 require_once "../../../vendor/autoload.php";
+require_once '../globalSettings.php';
 use Parse\ParseFile;
 use Parse\ParseUser;
+use Parse\ParseClient;
 
 session_start();
+
+ParseClient::initialize($ParseAppID, '', $ParseMasterKey);
+ParseClient::setServerURL($ParseServer);
 
 $parseUser = ParseUser::getCurrentUser();
 if (!$parseUser) {
