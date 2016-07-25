@@ -113,7 +113,7 @@ try {
                                                    for="web-title">Logo <span class="required">*</span>
                                             </label>
                                             <div class="col-md-2">
-                                                <img class="img-responsive avatar-view"
+                                                <img id="web-logo-preview" class="img-responsive avatar-view"
                                                      src="<?php if ($theWebsite->get('logo') !== null && $theWebsite->get('logo') != '') {
                                                          echo $theWebsite->get('logo');
                                                      } else {
@@ -123,7 +123,7 @@ try {
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
-                                                <input type="file" data-role="magic-overlay"
+                                                <input type="file" id="web-logo" data-role="magic-overlay"
                                                        data-target="#pictureBtn"
                                                        data-edit="insertImage"/>
                                             </div>
