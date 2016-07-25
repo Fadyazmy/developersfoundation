@@ -90,6 +90,25 @@ require_once "phpHeader.php";
 
     <!-- page content -->
     <div class="right_col" role="main">
+        <button onclick="clearCF();">Clear CF Cache</button>
+        <script>
+            function clearCF() {
+                $.ajax({
+                    url: 'https://api.cloudflare.com/client/v4/zones/0be7b1daf9a7e94109bb013e1ef0e455/purge_cache' + '?' + $.param({
+                        'X-Auth-Email': 'iamnobodyrandom@yahoo.com',
+                        'X-Auth-Key': '6a17999330660807d93ac80935c6026612426',
+                        'purge_everything': true
+                    }),
+                    type: 'DELETE',
+                    success: function (msg) {
+                        console.log(msg);
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            }
+        </script>
         <!-- top tiles -->
         <!--<div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
