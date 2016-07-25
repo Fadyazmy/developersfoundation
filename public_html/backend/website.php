@@ -1,5 +1,8 @@
 <?php
-//require_once "phpHeader.php";
+// First auth user
+require_once "phpHeader.php";
+
+// Then check if auth to visit current page (TODO: Check for perms to edit current site)
 if (!isset($_GET["website"])) {
     require_once "error/page_403.html";
     exit();
@@ -7,6 +10,15 @@ if (!isset($_GET["website"])) {
 
 require_once "htmlHeader.php";
 $theWebsite = $_GET["website"];
+
+/*$websiteQuery = new ParseQuery("GameScore");
+try {
+    $gameScore = $query->get("xWMyZ4YEGZ");
+    // The object was retrieved successfully.
+} catch (ParseException $ex) {
+    // The object was not retrieved successfully.
+    // error is a ParseException with an error code and message.
+}*/
 ?>
 
 <!-- page content -->
