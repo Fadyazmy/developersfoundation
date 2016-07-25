@@ -1,4 +1,7 @@
 <?php
+require_once '../../vendor/autoload.php';
+require_once 'globalSettings.php';
+use Parse\ParseQuery;
 // First auth user
 require_once "phpHeader.php";
 
