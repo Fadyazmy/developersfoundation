@@ -48,4 +48,24 @@ try {
     require_once 'parse-db/login.php';
 }
 
-// Get available items with current user credentials
+// TODO: Get available items with current user credentials
+
+// Find all available websites and put into side bar (with get links)
+$websiteQuery = new ParseQuery("Website");
+$websiteQuery->ascending("nickname");
+try {
+    $results = $websiteQuery->find();
+    // The object was retrieved successfully.
+    for ($i = 0; $i < count($results); $i++) {
+        $object = $results[$i];
+        echo "<!--";
+        echo $object->getObjectId() . ' - ' . $object->get('nickname');
+        echo "-->";
+    }
+} catch (ParseException $ex) {
+    // The object was not retrieved successfully.
+    // error is a ParseException with an error code and message.
+    echo "<!--";
+    echo "SERVER ERROR: " . $ex->getMessage();
+    echo "-->";
+}
