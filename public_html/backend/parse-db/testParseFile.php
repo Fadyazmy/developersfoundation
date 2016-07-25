@@ -14,8 +14,12 @@ use Parse\ParseUser;
 
 session_start();
 
-$currentUser = ParseUser::getCurrentUser();
-if (!$currentUser) {
+try {
+    $currentUser = ParseUser::getCurrentUser();
+    if (!$currentUser) {
+        require_once "login.php";
+    }
+} catch (Exception $ex) {
     require_once "login.php";
 }
 
