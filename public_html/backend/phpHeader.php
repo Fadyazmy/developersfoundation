@@ -53,20 +53,16 @@ try {
 // Find all available websites and put into side bar (with get links)
 $websiteQuery = new ParseQuery("Website");
 $websiteQuery->ascending("nickname");
+$websiteMenu = "";
 try {
     $results = $websiteQuery->find();
-    echo "Server got " . count($results);
-    // The object was retrieved successfully.
     for ($i = 0; $i < count($results); $i++) {
-        $object = $results[$i];
-        echo "<!--";
-        echo $object->getObjectId() . ' - ' . $object->get('nickname');
-        echo "-->";
+        $website = $results[$i];
+        $websiteMenu = $websiteMenu . '<li><a href="website.php?website=' . $website->getObjectId() . '">' . $website->get('nickname') . '</a></li>';
     }
 } catch (ParseException $ex) {
-    // The object was not retrieved successfully.
-    // error is a ParseException with an error code and message.
     echo "<!--";
     echo "SERVER ERROR: " . $ex->getMessage();
     echo "-->";
+    $websiteMenu = '<li><a href="javascript:void(0)">Sorry Server Error</a></li>';
 }
