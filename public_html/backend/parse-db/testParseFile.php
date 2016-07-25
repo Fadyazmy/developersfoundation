@@ -10,8 +10,14 @@
 
 require_once "../../../vendor/autoload.php";
 use Parse\ParseFile;
+use Parse\ParseUser;
 
 session_start();
+
+$currentUser = ParseUser::getCurrentUser();
+if (!$currentUser) {
+    require_once "login.php";
+}
 
 // Heroku stores to /tmp/ but need to find a way to fetch it to store into db
 //$localFilePath = "/tmp/myFile.txt";
