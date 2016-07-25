@@ -87,6 +87,13 @@
                                     <li><a href="javascript:void(0)">Dashboard3</a></li>
                                 </ul>
                             </li>
+                            <li><a><i class="fa fa-home"></i> Client Sites <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="javascript:void(0)">Dashboard</a></li>
+                                    <li><a href="javascript:void(0)">Dashboard2</a></li>
+                                    <li><a href="javascript:void(0)">Dashboard3</a></li>
+                                </ul>
+                            </li>
                             <!--<li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="form.html">General Form</a></li>

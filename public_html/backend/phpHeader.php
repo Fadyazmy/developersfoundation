@@ -55,6 +55,7 @@ $websiteQuery = new ParseQuery("Website");
 $websiteQuery->ascending("nickname");
 try {
     $results = $websiteQuery->find();
+    echo "Server got " . count($results);
     // The object was retrieved successfully.
     for ($i = 0; $i < count($results); $i++) {
         $object = $results[$i];
