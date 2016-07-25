@@ -83,7 +83,8 @@ try {
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" id="web-title" required="required"
-                                                       class="form-control col-md-7 col-xs-12">
+                                                       class="form-control col-md-7 col-xs-12"
+                                                       value="<?php echo $theWebsite->get('name'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -95,7 +96,17 @@ try {
                                                     <textarea id="web-description" name="web-description"
                                                               required="required"
                                                               class="form-control col-md-7 col-xs-12"
-                                                              rows="3"></textarea>
+                                                              rows="3">
+                                                        <?php echo $theWebsite->get('description'); ?>
+                                                    </textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12"
+                                                   for="web-url">Website URL
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12" id="web-url">
+                                                <a href="<?php echo $theWebsite->get('url'); ?>" target="_blank"><?php echo $theWebsite->get('url'); ?></a>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -139,7 +150,7 @@ try {
                                                                 var file = data.value;
                                                                 var fileName = file.split("\\");
                                                                 if (fileName == "") fileName = "Upload Picture";
-                                                                document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length-1];
+                                                                document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
                                                                 return false;
                                                             }
                                                         </script>
@@ -297,7 +308,9 @@ try {
                         </div>
                         <div class="clearfix"></div>
                         <div class="pull-right">
-                            <button class="btn btn-default" id="website-form-submit" onclick="formSubmit(document.getElementById('website-form'))">Submit All</button>
+                            <button class="btn btn-default" id="website-form-submit"
+                                    onclick="formSubmit(document.getElementById('website-form'))">Submit All
+                            </button>
                         </div>
                         <div class="clearfix"></div>
                         <!-- Smart Wizard -->
