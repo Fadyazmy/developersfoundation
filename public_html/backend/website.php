@@ -9,16 +9,19 @@ if (!isset($_GET["website"])) {
 }
 
 require_once "htmlHeader.php";
-$theWebsite = $_GET["website"];
+$websiteID = $_GET["website"];
 
-/*$websiteQuery = new ParseQuery("GameScore");
+$query = new ParseQuery("Website");
+$theWebsite = null;
 try {
-    $gameScore = $query->get("xWMyZ4YEGZ");
+    $theWebsite = $query->get($websiteID);
     // The object was retrieved successfully.
 } catch (ParseException $ex) {
-    // The object was not retrieved successfully.
-    // error is a ParseException with an error code and message.
-}*/
+    // Website not found in db???
+    require_once "error/page_403.html";
+    echo $ex->getMessage();
+    exit();
+}
 ?>
 
 <!-- page content -->
@@ -26,7 +29,7 @@ try {
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Editing <?php echo $theWebsite; ?></h3>
+                <h3>Editing <?php echo $theWebsite->get('nickname'); ?></h3>
             </div>
 
             <div class="title_right">
