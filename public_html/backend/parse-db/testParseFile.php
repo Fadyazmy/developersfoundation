@@ -14,7 +14,31 @@ use Parse\ParseUser;
 
 session_start();
 
-require_once "login.php";
+$parseUser = ParseUser::getCurrentUser();
+if (!$parseUser) {
+    // Then try get old user first
+    try {
+        $parseUser = ParseUser::logIn($windowsUser->{'userPrincipalName'}, $windowsUser->{'objectId'});
+        // Do stuff after successful login.
+    } catch (ParseException $error) {
+        // If failed user probably does not exist, then creating the user
+        $parseUser = new ParseUser();
+        $parseUser->set("username", $windowsUser->{'userPrincipalName'});
+        $parseUser->set("password", $windowsUser->{'objectId'}); // Not secure but ok lol
+        $parseUser->set("email", $windowsUser->{'userPrincipalName'});
+        $parseUser->setACL(new ParseACL($parseUser));
+
+        try {
+            $parseUser->signUp();
+            // Hooray! Let them use the app now.
+
+            $parseUser = ParseUser::logIn($windowsUser->{'userPrincipalName'}, $windowsUser->{'objectId'});
+        } catch (ParseException $ex) {
+            // Show the error message somewhere and let the user try again.
+            error_log("Error: " . $ex->getCode() . " " . $ex->getMessage());
+        }
+    }
+}
 
 // Heroku stores to /tmp/ but need to find a way to fetch it to store into db
 //$localFilePath = "/tmp/myFile.txt";
