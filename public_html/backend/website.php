@@ -96,9 +96,7 @@ try {
                                                     <textarea id="web-description" name="web-description"
                                                               required="required"
                                                               class="form-control col-md-7 col-xs-12"
-                                                              rows="3">
-                                                        <?php echo $theWebsite->get('description'); ?>
-                                                    </textarea>
+                                                              rows="3"><?php echo $theWebsite->get('description'); ?></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -106,7 +104,8 @@ try {
                                                    for="web-url">Website URL
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12" id="web-url">
-                                                <a href="<?php echo $theWebsite->get('url'); ?>" target="_blank"><?php echo $theWebsite->get('url'); ?></a>
+                                                <a href="<?php echo $theWebsite->get('url'); ?>"
+                                                   target="_blank"><?php echo $theWebsite->get('url'); ?></a>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -115,7 +114,12 @@ try {
                                             </label>
                                             <div class="col-md-2">
                                                 <img class="img-responsive avatar-view"
-                                                     src="<?php if($theWebsite->get('logo') !== null && $theWebsite->get('logo') != '') {echo $theWebsite->get('logo');} else {echo 'production/images/picture.jpg';} ?>" width="100%">
+                                                     src="<?php if ($theWebsite->get('logo') !== null && $theWebsite->get('logo') != '') {
+                                                         echo $theWebsite->get('logo');
+                                                     } else {
+                                                         echo 'production/images/picture.jpg';
+                                                     } ?>"
+                                                     width="100%">
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
@@ -309,7 +313,7 @@ try {
                         <div class="clearfix"></div>
                         <div class="pull-right">
                             <button class="btn btn-default" id="website-form-submit"
-                                    onclick="formSubmit(document.getElementById('website-form'))">Submit All
+                                    onclick="formSubmit(document.getElementById('website-form'))">Save All
                             </button>
                         </div>
                         <div class="clearfix"></div>
