@@ -1,9 +1,8 @@
 <?php
-require_once '../../vendor/autoload.php';
-require_once 'globalSettings.php';
-use Parse\ParseQuery;
 // First auth user
 require_once "phpHeader.php";
+use Parse\ParseQuery;
+use Parse\ParseException;
 
 // Then check if auth to visit current page (TODO: Check for perms to edit current site)
 if (!isset($_GET["website"])) {
