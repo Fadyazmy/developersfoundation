@@ -63,12 +63,12 @@
                 <div class="profile">
                     <div class="profile_pic">
                         <?php //echo $userPic; ?>
-                        <img src="production/images/img.jpg" alt="<?php //echo $user->{'displayName'}; ?>"
+                        <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>"
                              class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2><?php //echo $user->{'displayName'}; ?></h2>
+                        <h2><?php echo $user->{'displayName'}; ?></h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -212,7 +212,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="production/images/img.jpg" alt=""><?php //echo $user->{'displayName'}; ?>
+                                <img src="production/images/img.jpg" alt=""><?php echo $user->{'displayName'}; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
