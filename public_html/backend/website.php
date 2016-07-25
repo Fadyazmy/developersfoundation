@@ -74,7 +74,8 @@ try {
                         <!-- Vertical float right tabbed -->
                         <div class="col-xs-9">
                             <!-- Tab panels -->
-                            <form class="form-horizontal form-label-left" id="website-form">
+                            <form class="form-horizontal form-label-left" id="website-form"
+                                  data-websiteID="<?php echo $websiteID; ?>" data-parseUser="" data-parsePW="">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">

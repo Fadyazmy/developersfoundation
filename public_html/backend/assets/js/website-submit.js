@@ -8,10 +8,24 @@ function formSubmit(theForm) {
     Parse.initialize("developers-foundation-db", "unused");
     Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
 
-    var formWebTitle = document.getElementById('web-title');
-    var formWebDesc = document.getElementById('web-description');
-    var formWebUrl = document.getElementById('web-url');
-    
+    var websiteID = theForm.dataset.websiteID;
+    var formWebTitle = document.getElementById('web-title').value;
+    var formWebDesc = document.getElementById('web-description').value;
+    var formWebUrl = document.getElementById('web-url').value;
+
+    console.log(websiteID);
+
+    var Websites = Parse.Object.extend("Website");
+    var query = new Parse.Query(Websites);
+    query.get("xWMyZ4YEGZ", {
+        success: function(gameScore) {
+            // The object was retrieved successfully.
+        },
+        error: function(object, error) {
+            // The object was not retrieved successfully.
+            // error is a Parse.Error with an error code and message.
+        }
+    });
 }
 
 function readURL(input) {
