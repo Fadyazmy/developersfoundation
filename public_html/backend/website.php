@@ -115,7 +115,7 @@ try {
                                             </label>
                                             <div class="col-md-2">
                                                 <img class="img-responsive avatar-view"
-                                                     src="production/images/picture.jpg" width="100%">
+                                                     src="<?php if($theWebsite->get('logo') !== null && $theWebsite->get('logo') != '') {echo $theWebsite->get('logo');} else {echo 'production/images/picture.jpg';} ?>" width="100%">
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
