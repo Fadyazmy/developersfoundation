@@ -66,3 +66,6 @@ try {
     echo "-->";
     $websiteMenu = '<li><a href="javascript:void(0)">Sorry Server Error</a></li>';
 }
+
+
+require_once "htmlHeader.php";
