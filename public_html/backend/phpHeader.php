@@ -48,4 +48,24 @@ try {
     require_once 'parse-db/login.php';
 }
 
-// Get available items with current user credentials
+// TODO: Get available items with current user credentials
+
+// Find all available websites and put into side bar (with get links)
+$websiteQuery = new ParseQuery("Website");
+$websiteQuery->ascending("nickname");
+$websiteMenu = "";
+try {
+    $results = $websiteQuery->find();
+    for ($i = 0; $i < count($results); $i++) {
+        $website = $results[$i];
+        $websiteMenu = $websiteMenu . '<li><a href="website.php?website=' . $website->getObjectId() . '">' . $website->get('nickname') . '</a></li>';
+    }
+} catch (ParseException $ex) {
+    echo "<!--";
+    echo "SERVER ERROR: " . $ex->getMessage();
+    echo "-->";
+    $websiteMenu = '<li><a href="javascript:void(0)">Sorry Server Error</a></li>';
+}
+
+
+require_once "htmlHeader.php";

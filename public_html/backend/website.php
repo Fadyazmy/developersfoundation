@@ -1,12 +1,29 @@
 <?php
-//require_once "phpHeader.php";
+// First auth user
+require_once "phpHeader.php";
+use Parse\ParseQuery;
+use Parse\ParseException;
+
+// Then check if auth to visit current page (TODO: Check for perms to edit current site)
 if (!isset($_GET["website"])) {
     require_once "error/page_403.html";
     exit();
 }
 
 require_once "htmlHeader.php";
-$theWebsite = $_GET["website"];
+$websiteID = $_GET["website"];
+
+$query = new ParseQuery("Website");
+$theWebsite = null;
+try {
+    $theWebsite = $query->get($websiteID);
+    // The object was retrieved successfully.
+} catch (ParseException $ex) {
+    // Website not found in db???
+    require_once "error/page_403.html";
+    echo $ex->getMessage();
+    exit();
+}
 ?>
 
 <!-- page content -->
@@ -14,7 +31,7 @@ $theWebsite = $_GET["website"];
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Editing <?php echo $theWebsite; ?></h3>
+                <h3>Editing <?php echo $theWebsite->get('nickname'); ?></h3>
             </div>
 
             <div class="title_right">
@@ -57,7 +74,8 @@ $theWebsite = $_GET["website"];
                         <!-- Vertical float right tabbed -->
                         <div class="col-xs-9">
                             <!-- Tab panels -->
-                            <form class="form-horizontal form-label-left" id="website-form">
+                            <form class="form-horizontal form-label-left" id="website-form"
+                                  data-websiteID="<?php echo $websiteID; ?>" data-parseUser="" data-parsePW="">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">
@@ -66,7 +84,8 @@ $theWebsite = $_GET["website"];
                                             </label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <input type="text" id="web-title" required="required"
-                                                       class="form-control col-md-7 col-xs-12">
+                                                       class="form-control col-md-7 col-xs-12"
+                                                       value="<?php echo $theWebsite->get('name'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -78,7 +97,16 @@ $theWebsite = $_GET["website"];
                                                     <textarea id="web-description" name="web-description"
                                                               required="required"
                                                               class="form-control col-md-7 col-xs-12"
-                                                              rows="3"></textarea>
+                                                              rows="3"><?php echo $theWebsite->get('description'); ?></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12"
+                                                   for="web-url">Website URL
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12" id="web-url">
+                                                <a href="<?php echo $theWebsite->get('url'); ?>"
+                                                   target="_blank"><?php echo $theWebsite->get('url'); ?></a>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -86,12 +114,17 @@ $theWebsite = $_GET["website"];
                                                    for="web-title">Logo <span class="required">*</span>
                                             </label>
                                             <div class="col-md-2">
-                                                <img class="img-responsive avatar-view"
-                                                     src="production/images/picture.jpg" width="100%">
+                                                <img id="web-logo-preview" class="img-responsive avatar-view"
+                                                     src="<?php if ($theWebsite->get('logo') !== null && $theWebsite->get('logo') != '') {
+                                                         echo $theWebsite->get('logo');
+                                                     } else {
+                                                         echo 'production/images/picture.jpg';
+                                                     } ?>"
+                                                     width="100%">
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
-                                                <input type="file" data-role="magic-overlay"
+                                                <input type="file" id="web-logo" data-role="magic-overlay"
                                                        data-target="#pictureBtn"
                                                        data-edit="insertImage"/>
                                             </div>
@@ -122,7 +155,7 @@ $theWebsite = $_GET["website"];
                                                                 var file = data.value;
                                                                 var fileName = file.split("\\");
                                                                 if (fileName == "") fileName = "Upload Picture";
-                                                                document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length-1];
+                                                                document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
                                                                 return false;
                                                             }
                                                         </script>
@@ -280,7 +313,9 @@ $theWebsite = $_GET["website"];
                         </div>
                         <div class="clearfix"></div>
                         <div class="pull-right">
-                            <button class="btn btn-default" id="website-form-submit" onclick="formSubmit(document.getElementById('website-form'))">Submit All</button>
+                            <button class="btn btn-default" id="website-form-submit"
+                                    onclick="formSubmit(document.getElementById('website-form'))">Save All
+                            </button>
                         </div>
                         <div class="clearfix"></div>
                         <!-- Smart Wizard -->

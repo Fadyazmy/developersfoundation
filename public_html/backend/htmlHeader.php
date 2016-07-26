@@ -63,12 +63,12 @@
                 <div class="profile">
                     <div class="profile_pic">
                         <?php //echo $userPic; ?>
-                        <img src="production/images/img.jpg" alt="<?php //echo $user->{'displayName'}; ?>"
+                        <img src="production/images/img.jpg" alt="<?php echo $user->{'displayName'}; ?>"
                              class="img-circle profile_img">
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2><?php //echo $user->{'displayName'}; ?></h2>
+                        <h2><?php echo $user->{'displayName'}; ?></h2>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -85,6 +85,11 @@
                                     <li><a href="javascript:void(0)">Dashboard</a></li>
                                     <li><a href="javascript:void(0)">Dashboard2</a></li>
                                     <li><a href="javascript:void(0)">Dashboard3</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-home"></i> Client Sites <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <?php echo $websiteMenu; ?>
                                 </ul>
                             </li>
                             <!--<li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -212,7 +217,7 @@
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
                                aria-expanded="false">
-                                <img src="production/images/img.jpg" alt=""><?php //echo $user->{'displayName'}; ?>
+                                <img src="production/images/img.jpg" alt=""><?php echo $user->{'displayName'}; ?>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
