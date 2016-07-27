@@ -314,7 +314,7 @@ try {
                         <div class="clearfix"></div>
                         <div class="pull-right">
                             <button class="btn btn-default" id="website-form-submit"
-                                    onclick="formSubmit(document.getElementById('website-form'))">Save All
+                                    onclick="formSubmit(document.getElementById('website-form'));">Save All
                             </button>
                         </div>
                         <div class="clearfix"></div>

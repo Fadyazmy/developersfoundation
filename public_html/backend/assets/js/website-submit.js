@@ -18,10 +18,10 @@ function formSubmit(theForm) {
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);
     query.get("xWMyZ4YEGZ", {
-        success: function(gameScore) {
+        success: function (gameScore) {
             // The object was retrieved successfully.
         },
-        error: function(object, error) {
+        error: function (object, error) {
             // The object was not retrieved successfully.
             // error is a Parse.Error with an error code and message.
         }
@@ -40,6 +40,6 @@ function readURL(input) {
     }
 }
 
-$("#web-logo").change(function(){
+$("#web-logo").change(function () {
     readURL(this);
 });
