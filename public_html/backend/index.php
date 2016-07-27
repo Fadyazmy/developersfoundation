@@ -100,6 +100,8 @@ require_once "phpHeader.php";
                         'purge_everything': true
                     }),
                     type: 'DELETE',
+                    dataType: 'JSONP',
+                    crossDomain: true,
                     success: function (msg) {
                         console.log(msg);
                     },
