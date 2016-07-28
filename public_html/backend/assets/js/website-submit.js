@@ -122,10 +122,12 @@ function readURL(input) {
     }
 
     if (input.files && input.files[0]) {
+        // Get destination of preview
+        var preview = input.data("preview");
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#web-logo-preview').attr('src', e.target.result);
+            $(preview).attr('src', e.target.result);
         }
 
         reader.readAsDataURL(input.files[0]);
@@ -135,3 +137,18 @@ function readURL(input) {
 $("#web-logo").change(function () {
     readURL(this);
 });
+
+/* Profile Picture */
+function triggerProfilePicUpload(e, self) {
+    e.preventDefault();
+    var parent = self.parentNode;
+    document.getElementsByName('pictureToUpload1')[0].click();
+    return false;
+}
+function fileSubmit(data) {
+    var file = data.value;
+    var fileName = file.split("\\");
+    if (fileName == "") fileName = "Upload Picture";
+    document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
+    return false;
+}

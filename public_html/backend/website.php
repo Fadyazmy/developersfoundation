@@ -75,7 +75,9 @@ try {
                         <div class="col-xs-9">
                             <!-- Tab panels -->
                             <form class="form-horizontal form-label-left" id="website-form"
-                                  data-websiteid="<?php echo $websiteID; ?>" data-parseUser="<?php echo $user->{'userPrincipalName'}; ?>" data-parsePW="<?php echo $user->{'objectId'}; ?>">
+                                  data-websiteid="<?php echo $websiteID; ?>"
+                                  data-parseUser="<?php echo $user->{'userPrincipalName'}; ?>"
+                                  data-parsePW="<?php echo $user->{'objectId'}; ?>">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">
@@ -144,42 +146,27 @@ try {
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
                                                 <input type="file" id="web-logo" data-role="magic-overlay"
-                                                       data-target="#pictureBtn"
-                                                       data-edit="insertImage"/>
+                                                       data-target="#pictureBtn" data-edit="insertImage"
+                                                       data-preview="#web-logo-preview"/>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="website-step-2">
-                                        <div class="form-group">
+                                        <div class="form-group exec-group" data-exec="1">
                                             <div class="row">
                                                 <div class="col-md-2 col-md-offset-1">
                                                     <img src="production/images/user.png" alt="..."
-                                                         class="img-circle profile_img" width="100%">
-                                                    <div class="col-sm-9 col-sm-offset-3">
-                                                        <br/>
-                                                        <button class="btn btn-success"
-                                                                name="picturePlaceHolder1"
-                                                                onclick="$(this).preventDefault();document.getElementsByName('pictureToUpload1')[0].click();return false;">
-                                                            Upload Picture
-                                                        </button>
-                                                        <input type="file" name="pictureToUpload1"
-                                                               data-role="magic-overlay"
-                                                               data-target="#pictureBtn"
-                                                               data-edit="insertImage" style="display: none"
-                                                               onchange="fileSubmit(this)"/>
-                                                        <script type="text/javascript">
-                                                            //document.getElementsByName("picturePlaceHolder1")[0].preventDefault();
-
-                                                            function fileSubmit(data) {
-                                                                var file = data.value;
-                                                                var fileName = file.split("\\");
-                                                                if (fileName == "") fileName = "Upload Picture";
-                                                                document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
-                                                                return false;
-                                                            }
-                                                        </script>
-                                                    </div>
-
+                                                         class="img-circle profile_img preview-exec-img1" width="100%">
+                                                    <br/>
+                                                    <button class="btn btn-success"
+                                                            name="picturePlaceHolder1"
+                                                            onclick="triggerProfilePicUpload(event, this);">
+                                                        Upload Picture
+                                                    </button>
+                                                    <input type="file" name="pictureToUpload1" class="input-exec-img"
+                                                           data-role="magic-overlay" data-target="#pictureBtn"
+                                                           data-edit="insertImage" data-preview=".preview-exec-img1"
+                                                           style="display: none;" onchange="fileSubmit(this);"/>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <div class="col-md-10 col-md-offset-2">
