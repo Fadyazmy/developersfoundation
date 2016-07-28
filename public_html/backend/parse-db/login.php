@@ -30,7 +30,7 @@ $parseUser = ParseUser::getCurrentUser();
 if (!$parseUser) {
     // Then try get old user first
     try {
-        $parseUser = ParseUser::logIn($user->{'userPrincipalName'}, $user->{'objectId'});
+        $parseUser = ParseUser::logIn($windowsUser->{'userPrincipalName'}, $windowsUser->{'objectId'});
         // Do stuff after successful login.
     } catch (ParseException $error) {
         // If failed user probably does not exist, then creating the user
