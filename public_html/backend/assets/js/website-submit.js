@@ -18,67 +18,68 @@ function formSubmit(theForm) {
 
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);
-    query.get(websiteID, {
-        success: function (obj) {
-            // The object was retrieved successfully.
-            console.log(obj);
+    query.get(websiteID).then(function (obj) {
+        // The object was retrieved successfully.
+        console.log(obj);
 
-            obj.set('name', formWebTitle);
-            obj.set('nickname', formWebNick);
-            obj.set('description', formWebDesc);
-            obj.set('url', formWebUrl);
+        obj.set('name', formWebTitle);
+        obj.set('nickname', formWebNick);
+        obj.set('description', formWebDesc);
+        obj.set('url', formWebUrl);
 
-            if (formWebLogo.indexOf('http') != -1) {
-                // Logo is hosted
-                obj.set('logoUrl', formWebLogo);
-            } else {
-                // Logo was just uploaded and is in base64
-                // Removing html trash first
-                //formWebLogo = formWebLogo.substr(formWebLogo.indexOf('base64,') + 7);
+        if (formWebLogo.indexOf('http') != -1) {
+            // Logo is hosted
+            obj.set('logoUrl', formWebLogo);
+        } else {
+            // Logo was just uploaded and is in base64
+            // Removing html trash first
+            //formWebLogo = formWebLogo.substr(formWebLogo.indexOf('base64,') + 7);
 
-                var theFile = document.getElementById('web-logo').files[0];
+            var theFile = document.getElementById('web-logo').files[0];
 
-                // First check file size (limit is 10mb)
-                if (theFile.size > 10485759) {
-                    new PNotify({
-                        title: 'Oh No!',
-                        text: 'File size limit is 10mb. Sorry!',
-                        type: 'error',
-                        styling: 'bootstrap3'
-                    });
-                    return;
-                }
-
-                var formWebLogoFilename = theFile.name;
-                var parseFile = new Parse.File(formWebLogoFilename, theFile);
-                parseFile.save().then(function(){}, function(err){console.log(err);});
-
-                // Add parse file to obj
-                obj.set('logo', parseFile);
-                obj.set('logoUrl', parseFile.url);
+            // First check file size (limit is 10mb)
+            if (theFile.size > 10485759) {
+                new PNotify({
+                    title: 'Oh No!',
+                    text: 'File size limit is 10mb. Sorry!',
+                    type: 'error',
+                    styling: 'bootstrap3'
+                });
+                return;
             }
 
-            obj.save();
-
-            new PNotify({
-                title: 'Regular Success',
-                text: 'That thing that you were trying to do actually worked! heheh',
-                type: 'success',
-                styling: 'bootstrap3'
+            var formWebLogoFilename = theFile.name;
+            var parseFile = new Parse.File(formWebLogoFilename, theFile);
+            parseFile.save().then(function () {
+            }, function (err) {
+                console.log(err);
             });
-        },
-        error: function (obj, error) {
-            // The object was not retrieved successfully.
-            // error is a Parse.Error with an error code and message.
-            console.log(error);
 
-            new PNotify({
-                title: 'Oh No!',
-                text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
-                type: 'error',
-                styling: 'bootstrap3'
-            });
+            // Add parse file to obj
+            obj.set('logo', parseFile);
+            obj.set('logoUrl', parseFile.url);
         }
+
+        return obj.save();
+    }).then(function(obj) {
+        // Object saved
+        new PNotify({
+            title: 'Success',
+            text: 'That thing that you were trying to do actually worked! heheh',
+            type: 'success',
+            styling: 'bootstrap3'
+        });
+    }, function (obj, error) {
+        // The object was not retrieved successfully.
+        // error is a Parse.Error with an error code and message.
+        console.log(error);
+
+        new PNotify({
+            title: 'Oh No!',
+            text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
+            type: 'error',
+            styling: 'bootstrap3'
+        });
     });
 
     submitButton.disabled = false;
