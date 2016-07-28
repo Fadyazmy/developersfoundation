@@ -6,6 +6,9 @@ function formSubmit(theForm) {
     var submitButton = document.getElementById('website-form-submit');
     submitButton.disabled = true;
 
+    var parseUser,
+        parsePwd;
+
     Parse.initialize("developers-foundation-db", "unused");
     Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
 
@@ -18,10 +21,7 @@ function formSubmit(theForm) {
 
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);
-    query.equalTo("objectId", websiteID);
-    query.limit(1);
-    query.find().then(function (obj) {
-        obj = obj[0];
+    query.get(websiteID).then(function (obj) {
         // The object was retrieved successfully.
         console.log(obj);
 

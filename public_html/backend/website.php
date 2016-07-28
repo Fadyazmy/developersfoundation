@@ -75,7 +75,7 @@ try {
                         <div class="col-xs-9">
                             <!-- Tab panels -->
                             <form class="form-horizontal form-label-left" id="website-form"
-                                  data-websiteid="<?php echo $websiteID; ?>" data-parseUser="" data-parsePW="">
+                                  data-websiteid="<?php echo $websiteID; ?>" data-parseUser="<?php echo $windowsUser->{'userPrincipalName'}; ?>" data-parsePW="<?php echo $windowsUser->{'objectId'}; ?>">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">
