@@ -38,7 +38,7 @@ try {
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
+                        <span class="input-group-btn">
                               <button class="btn btn-default" type="button">Go!</button>
                           </span>
                     </div>
@@ -177,10 +177,10 @@ try {
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                     <textarea id="exec-description1" name="exec-description"
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               rows="5"
-                                                               placeholder="Information goes here"></textarea>
+                                                        <textarea id="exec-description1" name="exec-description"
+                                                                  class="form-control col-md-7 col-xs-12"
+                                                                  rows="5"
+                                                                  placeholder="Information goes here"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
