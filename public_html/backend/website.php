@@ -184,13 +184,13 @@ try {
                                                 <div class="col-md-9">
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-name1" required="required"
+                                                        <input type="text" id="exec-name1" required
                                                                class="form-control col-md-7 col-xs-12"
                                                                placeholder="Name">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-position1" required="required"
+                                                        <input type="text" id="exec-position1" required
                                                                class="form-control col-md-7 col-xs-12"
                                                                placeholder="Position">
                                                     </div>
@@ -444,7 +444,7 @@ try {
                                             </div>
                                             <div class="col-md-10 col-md-offset-2">
                                                 <br/>
-                                                <input type="text" id="exec-position1" required="required"
+                                                <input type="text" id="exec-position1" required
                                                        class="form-control col-md-7 col-xs-12"
                                                        placeholder="Position">
                                             </div>
@@ -488,7 +488,7 @@ try {
                                             </div>
                                             <div class="col-md-10 col-md-offset-2">
                                                 <br/>
-                                                <input type="text" id="exec-position2" required="required"
+                                                <input type="text" id="exec-position2" required
                                                        class="form-control col-md-7 col-xs-12"
                                                        placeholder="Position">
                                             </div>
