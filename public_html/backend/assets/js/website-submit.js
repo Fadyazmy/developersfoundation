@@ -21,6 +21,7 @@ function formSubmit(theForm) {
     query.equalTo("objectId", websiteID);
     query.limit(1);
     query.find().then(function (obj) {
+        obj = obj[0];
         // The object was retrieved successfully.
         console.log(obj);
 
