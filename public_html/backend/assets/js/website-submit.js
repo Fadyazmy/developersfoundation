@@ -17,13 +17,15 @@ function formSubmit(theForm) {
 
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);
-    query.get("xWMyZ4YEGZ", {
-        success: function (gameScore) {
+    query.get(websiteID, {
+        success: function (obj) {
             // The object was retrieved successfully.
+            console.log(obj);
         },
-        error: function (object, error) {
+        error: function (obj, error) {
             // The object was not retrieved successfully.
             // error is a Parse.Error with an error code and message.
+            console.log(error);
         }
     });
 }
