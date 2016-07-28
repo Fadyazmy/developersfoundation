@@ -3,6 +3,8 @@
  */
 
 function formSubmit(theForm) {
+    var submitButton = document.getElementById('website-form-submit');
+    submitButton.disabled = true;
     console.log(theForm);
 
     Parse.initialize("developers-foundation-db", "unused");
@@ -21,13 +23,29 @@ function formSubmit(theForm) {
         success: function (obj) {
             // The object was retrieved successfully.
             console.log(obj);
+
+            new PNotify({
+                title: 'Regular Success',
+                text: 'That thing that you were trying to do actually worked! HAHAHA',
+                type: 'success',
+                styling: 'bootstrap3'
+            });
         },
         error: function (obj, error) {
             // The object was not retrieved successfully.
             // error is a Parse.Error with an error code and message.
             console.log(error);
+
+            new PNotify({
+                title: 'Oh No!',
+                text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
+                type: 'error',
+                styling: 'bootstrap3'
+            });
         }
     });
+
+    submitButton.disabled = false;
 }
 
 function readURL(input) {
