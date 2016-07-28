@@ -6,8 +6,8 @@ function formSubmit(theForm) {
     var submitButton = document.getElementById('website-form-submit');
     submitButton.disabled = true;
 
-    var parseUser,
-        parsePwd;
+    var parseUser = theForm.dataset.parseuser,
+        parsePwd = theForm.dataset.parsepw;
 
     Parse.initialize("developers-foundation-db", "unused");
     Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
@@ -19,9 +19,11 @@ function formSubmit(theForm) {
         formWebUrl = document.getElementById('web-url').value,
         formWebLogo = document.getElementById('web-logo-preview').src;
 
-    var Websites = Parse.Object.extend("Website");
-    var query = new Parse.Query(Websites);
-    query.get(websiteID).then(function (obj) {
+    Parse.User.logIn(parseUser, parsePwd).then(function() {
+        var Websites = Parse.Object.extend("Website");
+        var query = new Parse.Query(Websites);
+        return query.get(websiteID);
+    }).then(function (obj) {
         // The object was retrieved successfully.
         console.log(obj);
 
