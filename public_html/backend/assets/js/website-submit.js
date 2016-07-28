@@ -54,7 +54,7 @@ function formSubmit(theForm) {
 
                 // Add parse file to obj
                 obj.set('logo', parseFile);
-                obj.set('logoUrl', parseFile.url());
+                obj.set('logoUrl', parseFile.url);
             }
 
             obj.save();
