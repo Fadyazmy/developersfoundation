@@ -137,7 +137,7 @@ try {
                                                         container.appendChild(img);
                                                     };
                                                     img.id = "web-logo-preview";
-                                                    img.class = "img-responsive avatar-view";
+                                                    img.className = "img-responsive avatar-view";
                                                     img.src = url;
                                                 </script>
                                             </div>
