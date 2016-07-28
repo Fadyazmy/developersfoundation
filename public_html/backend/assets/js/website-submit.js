@@ -19,7 +19,7 @@ function formSubmit(theForm) {
         formWebUrl = document.getElementById('web-url').value,
         formWebLogo = document.getElementById('web-logo-preview').src;
 
-    Parse.User.logIn(parseUser, parsePwd).then(function() {
+    Parse.User.logIn(parseUser, parsePwd).then(function () {
         var Websites = Parse.Object.extend("Website");
         var query = new Parse.Query(Websites);
         return query.get(websiteID);
@@ -41,14 +41,16 @@ function formSubmit(theForm) {
 
             // First check file size (limit is 10mb)
             if (theFile.size > 10485759) {
-                new PNotify({
-                    title: 'Oh No!',
-                    text: 'File size limit is 10mb. Sorry!',
-                    type: 'error',
-                    nonblock: {
-                        nonblock: true
-                    },
-                    styling: 'bootstrap3'
+                $(function () {
+                    new PNotify({
+                        title: 'Oh No!',
+                        text: 'File size limit is 10mb. Sorry!',
+                        type: 'error',
+                        nonblock: {
+                            nonblock: true
+                        },
+                        styling: 'bootstrap3'
+                    });
                 });
                 return;
             }
@@ -69,30 +71,34 @@ function formSubmit(theForm) {
         }
 
         return obj.save();
-    }).then(function(obj) {
+    }).then(function (obj) {
         // Object saved
-        new PNotify({
-            title: 'Success',
-            text: 'That thing that you were trying to do actually worked! heheh',
-            type: 'success',
-            nonblock: {
-                nonblock: true
-            },
-            styling: 'bootstrap3'
+        $(function () {
+            new PNotify({
+                title: 'Success',
+                text: 'That thing that you were trying to do actually worked! heheh',
+                type: 'success',
+                nonblock: {
+                    nonblock: true
+                },
+                styling: 'bootstrap3'
+            });
         });
     }, function (error) {
         // The object was not retrieved successfully.
         // error is a Parse.Error with an error code and message.
         console.log(error);
 
-        new PNotify({
-            title: 'Oh No!',
-            text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
-            type: 'error',
-            nonblock: {
-                nonblock: true
-            },
-            styling: 'bootstrap3'
+        $(function () {
+            new PNotify({
+                title: 'Oh No!',
+                text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
+                type: 'error',
+                nonblock: {
+                    nonblock: true
+                },
+                styling: 'bootstrap3'
+            });
         });
     });
 
@@ -101,14 +107,16 @@ function formSubmit(theForm) {
 
 function readURL(input) {
     if (input.files && input.files[0] && input.files[0].size > 10485759) {
-        new PNotify({
-            title: 'Oh No!',
-            text: 'File size limit is 10mb. Sorry!',
-            type: 'error',
-            nonblock: {
-                nonblock: true
-            },
-            styling: 'bootstrap3'
+        $(function () {
+            new PNotify({
+                title: 'Oh No!',
+                text: 'File size limit is 10mb. Sorry!',
+                type: 'error',
+                nonblock: {
+                    nonblock: true
+                },
+                styling: 'bootstrap3'
+            });
         });
         return;
     }

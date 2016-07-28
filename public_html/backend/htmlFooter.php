@@ -64,7 +64,12 @@ if (isset($includeFile) && $includeFile != "") {
 
 <?php
 if($websiteSubmit) {
-    echo '<!-- PNotify -->
+    echo '
+<!-- PNotify TODO: MOVE THIS TO HEADER -->
+    <link href="vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+<!-- PNotify -->
     <script src="vendors/pnotify/dist/pnotify.js"></script>
     <script src="vendors/pnotify/dist/pnotify.buttons.js"></script>
     <script src="vendors/pnotify/dist/pnotify.nonblock.js"></script>';
