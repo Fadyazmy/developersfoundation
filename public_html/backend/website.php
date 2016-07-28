@@ -38,7 +38,7 @@ try {
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
+                        <span class="input-group-btn">
                               <button class="btn btn-default" type="button">Go!</button>
                           </span>
                     </div>
@@ -75,7 +75,7 @@ try {
                         <div class="col-xs-9">
                             <!-- Tab panels -->
                             <form class="form-horizontal form-label-left" id="website-form"
-                                  data-websiteID="<?php echo $websiteID; ?>" data-parseUser="" data-parsePW="">
+                                  data-websiteid="<?php echo $websiteID; ?>" data-parseUser="<?php echo $user->{'userPrincipalName'}; ?>" data-parsePW="<?php echo $user->{'objectId'}; ?>">
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">
@@ -86,6 +86,16 @@ try {
                                                 <input type="text" id="web-title" required="required"
                                                        class="form-control col-md-7 col-xs-12"
                                                        value="<?php echo $theWebsite->get('name'); ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12"
+                                                   for="web-nick">Website Nickname<span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <input type="text" id="web-nick" required="required"
+                                                       class="form-control col-md-7 col-xs-12"
+                                                       value="<?php echo $theWebsite->get('nickname'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -111,16 +121,25 @@ try {
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                                                   for="web-title">Logo <span class="required">*</span>
+                                                   for="web-logo">Logo <span class="required">*</span>
                                             </label>
-                                            <div class="col-md-2">
-                                                <img id="web-logo-preview" class="img-responsive avatar-view"
-                                                     src="<?php if ($theWebsite->get('logo') !== null && $theWebsite->get('logo') != '') {
-                                                         echo $theWebsite->get('logo');
-                                                     } else {
-                                                         echo 'production/images/picture.jpg';
-                                                     } ?>"
-                                                     width="100%">
+                                            <div class="col-md-2" id="web-logo-preview-container">
+                                                <!--<img id="web-logo-preview" class="img-responsive avatar-view" src="" width="100%" onload="">-->
+                                                <script>
+                                                    var img = new Image(),
+                                                        url = "<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
+                                                            echo $theWebsite->get('logoUrl');
+                                                        } else {
+                                                            echo 'production/images/picture.jpg';
+                                                        } ?>",
+                                                        container = document.getElementById('web-logo-preview-container');
+                                                    img.onload = function () {
+                                                        container.appendChild(img);
+                                                    };
+                                                    img.id = "web-logo-preview";
+                                                    img.className = "img-responsive avatar-view";
+                                                    img.src = url;
+                                                </script>
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
@@ -177,10 +196,10 @@ try {
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                     <textarea id="exec-description1" name="exec-description"
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               rows="5"
-                                                               placeholder="Information goes here"></textarea>
+                                                        <textarea id="exec-description1" name="exec-description"
+                                                                  class="form-control col-md-7 col-xs-12"
+                                                                  rows="5"
+                                                                  placeholder="Information goes here"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -314,7 +333,7 @@ try {
                         <div class="clearfix"></div>
                         <div class="pull-right">
                             <button class="btn btn-default" id="website-form-submit"
-                                    onclick="formSubmit(document.getElementById('website-form'))">Save All
+                                    onclick="formSubmit(document.getElementById('website-form'));">Save All
                             </button>
                         </div>
                         <div class="clearfix"></div>

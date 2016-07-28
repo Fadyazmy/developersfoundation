@@ -100,6 +100,8 @@ require_once "phpHeader.php";
                         'purge_everything': true
                     }),
                     type: 'DELETE',
+                    dataType: 'JSONP',
+                    crossDomain: true,
                     success: function (msg) {
                         console.log(msg);
                     },
@@ -109,6 +111,13 @@ require_once "phpHeader.php";
                 });
             }
         </script>
+        <br />
+        <div>
+            Available client sites to edit
+            <ul>
+                <?php echo $websiteMenu; ?>
+            </ul>
+        </div>
         <!-- top tiles -->
         <!--<div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">

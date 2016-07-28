@@ -64,6 +64,10 @@ if (isset($includeFile) && $includeFile != "") {
 
 <?php
 if($websiteSubmit) {
+    echo '<!-- PNotify -->
+    <script src="vendors/pnotify/dist/pnotify.js"></script>
+    <script src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+    <script src="vendors/pnotify/dist/pnotify.nonblock.js"></script>';
     echo "<script src='assets/js/website-submit.js'></script>";
 }
 ?>
