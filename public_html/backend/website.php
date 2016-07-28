@@ -127,7 +127,11 @@ try {
                                                 <img id="web-logo-preview" class="img-responsive avatar-view" src=""
                                                      width="100%"
                                                      onload="var img = new Image(),
-                                                     url = <?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {echo $theWebsite->get('logoUrl');} else {echo 'production/images/picture.jpg';} ?>
+                                                         url = '<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
+                                                         echo $theWebsite->get('logoUrl');
+                                                     } else {
+                                                         echo 'production/images/picture.jpg';
+                                                     } ?>',
                                                          container = this;
                                                          img.onload = function () { container.appendChild(img); };
                                                          img.src = url;">
