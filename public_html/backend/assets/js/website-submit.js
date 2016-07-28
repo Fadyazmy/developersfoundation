@@ -5,17 +5,16 @@
 function formSubmit(theForm) {
     var submitButton = document.getElementById('website-form-submit');
     submitButton.disabled = true;
-    console.log(theForm);
 
     Parse.initialize("developers-foundation-db", "unused");
     Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
 
     var websiteID = theForm.dataset.websiteid;
     var formWebTitle = document.getElementById('web-title').value;
+    var formWebNick = document.getElementById('web-nick').value;
     var formWebDesc = document.getElementById('web-description').value;
     var formWebUrl = document.getElementById('web-url').value;
-
-    console.log(websiteID);
+    var formWebLogo = document.getElementById('web-logo-preview').src;
 
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);
@@ -24,9 +23,44 @@ function formSubmit(theForm) {
             // The object was retrieved successfully.
             console.log(obj);
 
+            obj.set('name', formWebTitle);
+            obj.set('nickname', formWebNick);
+            obj.set('description', formWebDesc);
+            obj.set('url', formWebUrl);
+
+            if (formWebLogo.indexOf('http') != -1) {
+                // Logo is hosted
+                obj.set('logoUrl', formWebLogo);
+            } else {
+                // Logo was just uploaded and is in base64
+                // Removing html trash first
+                //formWebLogo = formWebLogo.substr(formWebLogo.indexOf('base64,') + 7);
+
+                // First check file size (limit is 10mb)
+                if (input.files[0].size > 10485759) {
+                    new PNotify({
+                        title: 'Oh No!',
+                        text: 'File size limit is 10mb. Sorry!',
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                    return;
+                }
+
+                var formWebLogoFilename = document.getElementById('web-logo').files[0].name;
+                var theFile = document.getElementById('web-logo').files[0];
+                var parseFile = new Parse.File(formWebLogoFilename, theFile);
+                parseFile.save().then(function(){}, function(err){console.log(err);});
+
+                // Add parse file to obj
+                obj.set('logo', parseFile);
+            }
+
+            obj.save();
+
             new PNotify({
                 title: 'Regular Success',
-                text: 'That thing that you were trying to do actually worked! HAHAHA',
+                text: 'That thing that you were trying to do actually worked! heheh',
                 type: 'success',
                 styling: 'bootstrap3'
             });
@@ -49,6 +83,16 @@ function formSubmit(theForm) {
 }
 
 function readURL(input) {
+    if (input.files && input.files[0] && input.files[0].size > 10485759) {
+        new PNotify({
+            title: 'Oh No!',
+            text: 'File size limit is 10mb. Sorry!',
+            type: 'error',
+            styling: 'bootstrap3'
+        });
+        return;
+    }
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
