@@ -8,7 +8,7 @@ function formSubmit(theForm) {
     Parse.initialize("developers-foundation-db", "unused");
     Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
 
-    var websiteID = theForm.dataset.websiteID;
+    var websiteID = theForm.dataset.websiteid;
     var formWebTitle = document.getElementById('web-title').value;
     var formWebDesc = document.getElementById('web-description').value;
     var formWebUrl = document.getElementById('web-url').value;
