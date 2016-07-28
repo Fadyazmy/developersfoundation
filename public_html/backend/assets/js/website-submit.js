@@ -43,6 +43,9 @@ function formSubmit(theForm) {
                     title: 'Oh No!',
                     text: 'File size limit is 10mb. Sorry!',
                     type: 'error',
+                    nonblock: {
+                        nonblock: true
+                    },
                     styling: 'bootstrap3'
                 });
                 return;
@@ -60,6 +63,8 @@ function formSubmit(theForm) {
             obj.set('logoUrl', parseFile.url);
         }
 
+        console.log(obj);
+
         return obj.save();
     }).then(function(obj) {
         // Object saved
@@ -67,6 +72,9 @@ function formSubmit(theForm) {
             title: 'Success',
             text: 'That thing that you were trying to do actually worked! heheh',
             type: 'success',
+            nonblock: {
+                nonblock: true
+            },
             styling: 'bootstrap3'
         });
     }, function (error) {
@@ -78,6 +86,9 @@ function formSubmit(theForm) {
             title: 'Oh No!',
             text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
             type: 'error',
+            nonblock: {
+                nonblock: true
+            },
             styling: 'bootstrap3'
         });
     });
@@ -91,6 +102,9 @@ function readURL(input) {
             title: 'Oh No!',
             text: 'File size limit is 10mb. Sorry!',
             type: 'error',
+            nonblock: {
+                nonblock: true
+            },
             styling: 'bootstrap3'
         });
         return;
