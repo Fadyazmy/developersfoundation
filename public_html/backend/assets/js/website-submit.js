@@ -18,7 +18,9 @@ function formSubmit(theForm) {
 
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);
-    query.get(websiteID).then(function (obj) {
+    query.equalTo("objectId", websiteID);
+    query.limit(1);
+    query.find().then(function (obj) {
         // The object was retrieved successfully.
         console.log(obj);
 
