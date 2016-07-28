@@ -24,9 +24,6 @@ function formSubmit(theForm) {
         var query = new Parse.Query(Websites);
         return query.get(websiteID);
     }).then(function (obj) {
-        // The object was retrieved successfully.
-        console.log(obj);
-
         obj.set('name', formWebTitle);
         obj.set('nickname', formWebNick);
         obj.set('description', formWebDesc);
@@ -65,10 +62,11 @@ function formSubmit(theForm) {
 
             // Add parse file to obj
             obj.set('logo', parseFile);
-            obj.set('logoUrl', parseFile.url);
+            // Need to switch url to https
+            var tempUrl = parseFile.url;
+            tempUrl = (tempUrl.indexOf('https') == 0) ? tempUrl : "https" + tempUrl.substr(4);
+            obj.set('logoUrl', tempUrl);
         }
-
-        console.log(obj);
 
         return obj.save();
     }).then(function(obj) {
