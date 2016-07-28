@@ -124,13 +124,13 @@ try {
                                                    for="web-title">Logo <span class="required">*</span>
                                             </label>
                                             <div class="col-md-2">
-                                                <img id="web-logo-preview" class="img-responsive avatar-view"
-                                                     src="<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
-                                                         echo $theWebsite->get('logoUrl');
-                                                     } else {
-                                                         echo 'production/images/picture.jpg';
-                                                     } ?>"
-                                                     width="100%">
+                                                <img id="web-logo-preview" class="img-responsive avatar-view" src=""
+                                                     width="100%"
+                                                     onload="var img = new Image(),
+                                                     url = <?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {echo $theWebsite->get('logoUrl');} else {echo 'production/images/picture.jpg';} ?>
+                                                         container = this;
+                                                         img.onload = function () { container.appendChild(img); };
+                                                         img.src = url;">
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
