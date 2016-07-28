@@ -145,10 +145,12 @@ function triggerProfilePicUpload(e, self) {
     document.getElementsByName('pictureToUpload1')[0].click();
     return false;
 }
-function fileSubmit(data) {
-    var file = data.value;
+function fileSubmit(self) {
+    var file = self.value;
     var fileName = file.split("\\");
     if (fileName == "") fileName = "Upload Picture";
     document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
+
+    readURL(self);
     return false;
 }
