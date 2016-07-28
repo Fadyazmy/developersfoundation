@@ -36,8 +36,10 @@ function formSubmit(theForm) {
                 // Removing html trash first
                 //formWebLogo = formWebLogo.substr(formWebLogo.indexOf('base64,') + 7);
 
+                var theFile = document.getElementById('web-logo').files[0];
+
                 // First check file size (limit is 10mb)
-                if (input.files[0].size > 10485759) {
+                if (theFile.size > 10485759) {
                     new PNotify({
                         title: 'Oh No!',
                         text: 'File size limit is 10mb. Sorry!',
@@ -47,8 +49,7 @@ function formSubmit(theForm) {
                     return;
                 }
 
-                var formWebLogoFilename = document.getElementById('web-logo').files[0].name;
-                var theFile = document.getElementById('web-logo').files[0];
+                var formWebLogoFilename = theFile.name;
                 var parseFile = new Parse.File(formWebLogoFilename, theFile);
                 parseFile.save().then(function(){}, function(err){console.log(err);});
 
