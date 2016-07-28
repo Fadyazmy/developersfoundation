@@ -10,11 +10,11 @@ function formSubmit(theForm) {
     Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
 
     var websiteID = theForm.dataset.websiteid;
-    var formWebTitle = document.getElementById('web-title').value;
-    var formWebNick = document.getElementById('web-nick').value;
-    var formWebDesc = document.getElementById('web-description').value;
-    var formWebUrl = document.getElementById('web-url').value;
-    var formWebLogo = document.getElementById('web-logo-preview').src;
+    var formWebTitle = document.getElementById('web-title').value,
+        formWebNick = document.getElementById('web-nick').value,
+        formWebDesc = document.getElementById('web-description').value,
+        formWebUrl = document.getElementById('web-url').value,
+        formWebLogo = document.getElementById('web-logo-preview').src;
 
     var Websites = Parse.Object.extend("Website");
     var query = new Parse.Query(Websites);

@@ -121,20 +121,25 @@ try {
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                                                   for="web-title">Logo <span class="required">*</span>
+                                                   for="web-logo">Logo <span class="required">*</span>
                                             </label>
-                                            <div class="col-md-2">
-                                                <img id="web-logo-preview" class="img-responsive avatar-view" src=""
-                                                     width="100%"
-                                                     onload="var img = new Image(),
-                                                         url = '<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
-                                                         echo $theWebsite->get('logoUrl');
-                                                     } else {
-                                                         echo 'production/images/picture.jpg';
-                                                     } ?>',
-                                                         container = this;
-                                                         img.onload = function () { container.appendChild(img); };
-                                                         img.src = url;">
+                                            <div class="col-md-2" id="web-logo-preview-container">
+                                                <!--<img id="web-logo-preview" class="img-responsive avatar-view" src="" width="100%" onload="">-->
+                                                <script>
+                                                    var img = new Image(),
+                                                        url = "<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
+                                                            echo $theWebsite->get('logoUrl');
+                                                        } else {
+                                                            echo 'production/images/picture.jpg';
+                                                        } ?>",
+                                                        container = document.getElementById('web-logo-preview-container');
+                                                    img.onload = function () {
+                                                        container.appendChild(img);
+                                                    };
+                                                    img.id = "web-logo-preview";
+                                                    img.class = "img-responsive avatar-view";
+                                                    img.src = url;
+                                                </script>
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
