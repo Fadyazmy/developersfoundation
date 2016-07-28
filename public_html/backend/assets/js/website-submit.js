@@ -123,7 +123,7 @@ function readURL(input) {
 
     if (input.files && input.files[0]) {
         // Get destination of preview
-        var preview = input.data("preview");
+        var preview = input.dataset.preview;
         var reader = new FileReader();
 
         reader.onload = function (e) {
