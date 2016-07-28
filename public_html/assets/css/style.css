@@ -1013,7 +1013,7 @@ button.btn.tf-btn.btn-default {
 .btn.active.focus {
     outline: thin dotted;
     outline: none;
-    outline-offset: none;
+    /*outline-offset: none;*/
 }
 
 /* Footer */
