@@ -127,7 +127,7 @@ try {
                                             </label>
                                             <div class="col-md-2" id="web-logo-preview-container">
                                                 <!--<img id="web-logo-preview" class="img-responsive avatar-view" src="" width="100%" onload="">-->
-                                                <img id="web-logo-preview-loading" class="img-responsive" width="100%"
+                                                <img id="web-logo-preview-loading" class="img-responsive" width="100%" style="padding: 50%"
                                                      src="assets/img/web-loading.gif">
                                                 <script>
                                                     var image_load = document.getElementById('web-logo-preview-loading');
