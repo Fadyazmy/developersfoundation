@@ -129,6 +129,7 @@ try {
                                                 <!--<img id="web-logo-preview" class="img-responsive avatar-view" src="" width="100%" onload="">-->
                                                 <img id="web-logo-preview-loading" class="img-responsive" width="100%" src="assets/img/web-loading.gif">
                                                 <script>
+                                                    var image_load = document.getElementById('web-logo-preview-loading');
                                                     var img = new Image(),
                                                         url = "<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
                                                             echo $theWebsite->get('logoUrl');
@@ -137,6 +138,7 @@ try {
                                                         } ?>",
                                                         container = document.getElementById('web-logo-preview-container');
                                                     img.onload = function () {
+                                                        image_load.parentNode.removeChild(image_load);
                                                         container.appendChild(img);
                                                     };
                                                     img.id = "web-logo-preview";
