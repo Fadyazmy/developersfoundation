@@ -57,14 +57,17 @@ function formSubmit(theForm) {
 
             var formWebLogoFilename = theFile.name;
             var parseFile = new Parse.File(formWebLogoFilename, theFile);
-            parseFile.save();
+            var tempUrl = "";
+            parseFile.save().then(function(img) {
+                tempUrl = img.url();
+                tempUrl = (tempUrl.indexOf('https') == 0) ? tempUrl : "https" + tempUrl.substr(4);
+            }, function(err) {
+                console.log(err);
+            });
 
             // Add parse file to obj
             obj.set('logo', parseFile);
             // Need to switch url to https
-            parseFile = obj.get('logo');
-            var tempUrl = parseFile.url();
-            tempUrl = (tempUrl.indexOf('https') == 0) ? tempUrl : "https" + tempUrl.substr(4);
             obj.set('logoUrl', tempUrl);
         }
 
