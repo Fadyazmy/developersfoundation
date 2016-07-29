@@ -24,6 +24,9 @@ function formSubmit(theForm) {
         var query = new Parse.Query(Websites);
         return query.get(websiteID);
     }).then(function (obj) {
+        // Promise system to make async
+        var promise = Parse.Promise.as();
+
         obj.set('name', formWebTitle);
         obj.set('nickname', formWebNick);
         obj.set('description', formWebDesc);
@@ -52,26 +55,31 @@ function formSubmit(theForm) {
                         styling: 'bootstrap3'
                     });
                 });
-                return;
+                return Parse.Promise.error("File size too large.");
             }
 
             var formWebLogoFilename = theFile.name;
             var parseFile = new Parse.File(formWebLogoFilename, theFile);
-            var tempUrl = "";
-            parseFile.save().then(function(img) {
-                tempUrl = img.url();
+            promise = promise.then(function () {
+                return parseFile.save();
+            }).then(function (img) {
+                var tempUrl = img.url();
                 tempUrl = (tempUrl.indexOf('https') == 0) ? tempUrl : "https" + tempUrl.substr(4);
-            }, function(err) {
+                console.log(tempUrl);
+
+                // Add parse file to obj
+                obj.set('logo', parseFile);
+                obj.set('logoUrl', tempUrl);
+                return;
+            }, function (err) {
                 console.log(err);
             });
-
-            // Add parse file to obj
-            obj.set('logo', parseFile);
-            // Need to switch url to https
-            obj.set('logoUrl', tempUrl);
         }
 
-        return obj.save();
+        promise = promise.then(function () {
+            return obj.save();
+        });
+        return promise;
     }).then(function (obj) {
         // Object saved
         $(function () {
