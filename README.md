@@ -1,7 +1,7 @@
 Developers' Foundation
 =========
 
-Mission statement: Every developer can make a difference. 
+Mission statement: Making something meaningful. 
 
 ------------------------------
 
