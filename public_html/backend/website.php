@@ -127,6 +127,7 @@ try {
                                             </label>
                                             <div class="col-md-2" id="web-logo-preview-container">
                                                 <!--<img id="web-logo-preview" class="img-responsive avatar-view" src="" width="100%" onload="">-->
+                                                <img id="web-logo-preview-loading" class="img-responsive" width="100%" src="assets/img/web-loading.gif">
                                                 <script>
                                                     var img = new Image(),
                                                         url = "<?php if ($theWebsite->get('logoUrl') !== null && $theWebsite->get('logoUrl') != '') {
