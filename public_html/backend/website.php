@@ -139,7 +139,7 @@ try {
                                                         } ?>",
                                                         container = document.getElementById('web-logo-preview-container');
                                                     img.onload = function () {
-                                                        if (image_load === null)
+                                                        if (image_load !== null)
                                                             image_load.parentNode.removeChild(image_load);
                                                         container.appendChild(img);
                                                     };
