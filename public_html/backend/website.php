@@ -205,7 +205,7 @@ try {
                                             <?php
                                         }
                                         ?>
-                                        <button id="add-exec" class="btn btn-primary" onclick="">Add another executive</button>
+                                        <button id="add-exec" class="btn btn-primary">Add another executive</button>
                                     </div>
                                     <div class="tab-pane" id="website-step-3">
                                         <select id="heard" class="form-control" required="">

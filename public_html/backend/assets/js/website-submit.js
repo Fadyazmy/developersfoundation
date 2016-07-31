@@ -114,6 +114,7 @@ function formSubmit(theForm) {
     submitButton.disabled = false;
 }
 
+// Auto preview uploads
 function readURL(input) {
     if (input.files && input.files[0] && input.files[0].size > 10485759) {
         $(function () {
@@ -143,8 +144,15 @@ function readURL(input) {
     }
 }
 
-$("#web-logo").change(function () {
-    readURL(this);
+$(document).ready(function () {
+    $("#web-logo").change(function () {
+        readURL(this);
+    });
+
+    $("#add-exec").click(function (e) {
+        e.preventDefault();
+        addExec();
+    });
 });
 
 /* Profile Picture */
@@ -154,6 +162,7 @@ function triggerProfilePicUpload(e, self) {
     document.getElementsByName('pictureToUpload1')[0].click();
     return false;
 }
+
 function fileSubmit(self) {
     var file = self.value;
     var fileName = file.split("\\");
@@ -162,4 +171,57 @@ function fileSubmit(self) {
 
     readURL(self);
     return false;
+}
+
+/* Add exec */
+function addExec() {
+    var container = document.getElementById('website-step-2');
+    var addButton = document.getElementById('add-exec');
+    var newDiv = document.createElement('DIV');
+
+    var inner = `<div class="row">
+        <div class="col-md-2 col-md-offset-1">
+        <img src="production/images/user.png" alt="..."
+class="img-circle profile_img preview-exec-img1"
+    width="100%">
+        <br/>
+        <button class="btn btn-success"
+    name="picturePlaceHolder1"
+    onclick="triggerProfilePicUpload(event, this);">
+        Upload Picture
+    </button>
+    <input type="file" name="pictureToUpload1"
+class="input-exec-img"
+    data-role="magic-overlay" data-target="#pictureBtn"
+    data-edit="insertImage" data-preview=".preview-exec-img1"
+    style="display: none;" onchange="fileSubmit(this);"/>
+        </div>
+        <div class="col-md-9">
+        <div class="col-md-10 col-md-offset-2">
+        <br/>
+        <input type="text" id="exec-name1" required
+class="form-control col-md-7 col-xs-12"
+    placeholder="Name">
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+        <br/>
+        <input type="text" id="exec-position1" required
+class="form-control col-md-7 col-xs-12"
+    placeholder="Position">
+        </div>
+        <div class="col-md-10 col-md-offset-2">
+        <br/>
+        <textarea id="exec-description1" name="exec-description"
+class="form-control col-md-7 col-xs-12"
+    rows="5"
+    placeholder="Information goes here"></textarea>
+        </div>
+        </div>
+        </div>`;
+
+    newDiv.appendChild(inner);
+    newDiv.className = "form-group exec-group";
+    newDiv.dataset.exec = "2";
+
+    container.insertBefore(newDiv, addButton);
 }
