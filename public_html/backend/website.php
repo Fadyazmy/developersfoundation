@@ -157,45 +157,55 @@ try {
                                         </div>
                                     </div>
                                     <div class="tab-pane" id="website-step-2">
-                                        <div class="form-group exec-group" data-exec="1">
-                                            <div class="row">
-                                                <div class="col-md-2 col-md-offset-1">
-                                                    <img src="production/images/user.png" alt="..."
-                                                         class="img-circle profile_img preview-exec-img1" width="100%">
-                                                    <br/>
-                                                    <button class="btn btn-success"
-                                                            name="picturePlaceHolder1"
-                                                            onclick="triggerProfilePicUpload(event, this);">
-                                                        Upload Picture
-                                                    </button>
-                                                    <input type="file" name="pictureToUpload1" class="input-exec-img"
-                                                           data-role="magic-overlay" data-target="#pictureBtn"
-                                                           data-edit="insertImage" data-preview=".preview-exec-img1"
-                                                           style="display: none;" onchange="fileSubmit(this);"/>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="col-md-10 col-md-offset-2">
+                                        <?php
+                                        $execList = $theWebsite->get('exec');
+                                        for ($i = 0; $i < count($execList); $i++) {
+                                            ?>
+                                            <div class="form-group exec-group" data-exec="1">
+                                                <div class="row">
+                                                    <div class="col-md-2 col-md-offset-1">
+                                                        <img src="production/images/user.png" alt="..."
+                                                             class="img-circle profile_img preview-exec-img1"
+                                                             width="100%">
                                                         <br/>
-                                                        <input type="text" id="exec-name1" required
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Name">
+                                                        <button class="btn btn-success"
+                                                                name="picturePlaceHolder1"
+                                                                onclick="triggerProfilePicUpload(event, this);">
+                                                            Upload Picture
+                                                        </button>
+                                                        <input type="file" name="pictureToUpload1"
+                                                               class="input-exec-img"
+                                                               data-role="magic-overlay" data-target="#pictureBtn"
+                                                               data-edit="insertImage" data-preview=".preview-exec-img1"
+                                                               style="display: none;" onchange="fileSubmit(this);"/>
                                                     </div>
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
-                                                        <input type="text" id="exec-position1" required
-                                                               class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Position">
-                                                    </div>
-                                                    <div class="col-md-10 col-md-offset-2">
-                                                        <br/>
-                                                        <textarea id="exec-description1" name="exec-description"
-                                                                  class="form-control col-md-7 col-xs-12"
-                                                                  rows="5"
-                                                                  placeholder="Information goes here"></textarea>
+                                                    <div class="col-md-9">
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <input type="text" id="exec-name1" required
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   placeholder="Name">
+                                                        </div>
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <input type="text" id="exec-position1" required
+                                                                   class="form-control col-md-7 col-xs-12"
+                                                                   placeholder="Position">
+                                                        </div>
+                                                        <div class="col-md-10 col-md-offset-2">
+                                                            <br/>
+                                                            <textarea id="exec-description1" name="exec-description"
+                                                                      class="form-control col-md-7 col-xs-12"
+                                                                      rows="5"
+                                                                      placeholder="Information goes here"></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                            <?php
+                                        }
+                                        ?>
+                                        <button id="add-exec" class="btn btn-primary" onclick="">Add another executive</button>
                                     </div>
                                     <div class="tab-pane" id="website-step-3">
                                         <select id="heard" class="form-control" required="">
