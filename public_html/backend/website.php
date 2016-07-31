@@ -160,7 +160,8 @@ try {
                                     $execList = $theWebsite->get('exec');
                                     echo '<div class="tab-pane" id="website-step-2" data-execcount="' . count($execList) . '">';
                                     for ($i = 0; $i < count($execList); $i++) {
-                                        $exec = json_decode($execList[$i]);
+                                        //$exec = json_decode($execList[$i]);
+                                        $exec = $execList[$i];
                                         ?>
                                         <div class="form-group exec-group" data-exec="<?php echo $i; ?>">
                                             <div class="row">
