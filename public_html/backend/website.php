@@ -162,6 +162,7 @@ try {
                                     for ($i = 0; $i < count($execList); $i++) {
                                         //$exec = json_decode($execList[$i]);
                                         $exec = $execList[$i];
+                                        var_dump($exec);
                                         ?>
                                         <div class="form-group exec-group" data-exec="<?php echo $i; ?>">
                                             <div class="row">
