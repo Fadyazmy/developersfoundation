@@ -1,4 +1,18 @@
 {
+  "name": "developersfoundation/devfoundation",
+  "description": "Developers' Foundation Main Website",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Harrison Chow",
+      "email": "harrison@developersfoundation.ca"
+    },
+    {
+      "name": "Michael Park",
+      "email": "michael@developersfoundation.ca"
+    }
+  ],
   "require-dev" : {
     "heroku/heroku-buildpack-php": "*"
   },
