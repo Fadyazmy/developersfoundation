@@ -162,7 +162,6 @@ try {
                                     for ($i = 0; $i < count($execList); $i++) {
                                         //$exec = json_decode($execList[$i]);
                                         $exec = $execList[$i];
-                                        var_dump($exec);
                                         ?>
                                         <div class="form-group exec-group" data-exec="<?php echo $i; ?>">
                                             <div class="row">
@@ -187,20 +186,20 @@ try {
                                                         <br/>
                                                         <input type="text" id="exec-name<?php echo $i; ?>" required
                                                                class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Name" value="<?php echo $exec->{'name'}; ?>">
+                                                               placeholder="Name" value="<?php echo $exec['name']; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
                                                         <input type="text" id="exec-position<?php echo $i; ?>" required
                                                                class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Position" value="<?php echo $exec->{'position'}; ?>">
+                                                               placeholder="Position" value="<?php echo $exec['position']; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
                                                         <textarea id="exec-description<?php echo $i; ?>" name="exec-description"
                                                                   class="form-control col-md-7 col-xs-12"
                                                                   rows="5" placeholder="Information goes here">
-                                                            <?php echo $exec->{'desc'}; ?>
+                                                            <?php echo $exec['desc']; ?>
                                                         </textarea>
                                                     </div>
                                                 </div>
