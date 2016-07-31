@@ -175,53 +175,41 @@ function fileSubmit(self) {
 
 /* Add exec */
 function addExec() {
-    var container = document.getElementById('website-step-2');
-    var addButton = document.getElementById('add-exec');
-    var newDiv = document.createElement('DIV');
+    var currentExecCount = document.getElementById('website-step-2').dataset.execcount,
+        container = document.getElementById('website-step-2'),
+        addButton = document.getElementById('add-exec'),
+        newDiv = document.createElement('DIV');
 
-    var inner = `<div class="row">
-        <div class="col-md-2 col-md-offset-1">
-        <img src="production/images/user.png" alt="..."
-class="img-circle profile_img preview-exec-img1"
-    width="100%">
-        <br/>
-        <button class="btn btn-success"
-    name="picturePlaceHolder1"
-    onclick="triggerProfilePicUpload(event, this);">
-        Upload Picture
-    </button>
-    <input type="file" name="pictureToUpload1"
-class="input-exec-img"
-    data-role="magic-overlay" data-target="#pictureBtn"
-    data-edit="insertImage" data-preview=".preview-exec-img1"
-    style="display: none;" onchange="fileSubmit(this);"/>
-        </div>
-        <div class="col-md-9">
-        <div class="col-md-10 col-md-offset-2">
-        <br/>
-        <input type="text" id="exec-name1" required
-class="form-control col-md-7 col-xs-12"
-    placeholder="Name">
-        </div>
-        <div class="col-md-10 col-md-offset-2">
-        <br/>
-        <input type="text" id="exec-position1" required
-class="form-control col-md-7 col-xs-12"
-    placeholder="Position">
-        </div>
-        <div class="col-md-10 col-md-offset-2">
-        <br/>
-        <textarea id="exec-description1" name="exec-description"
-class="form-control col-md-7 col-xs-12"
-    rows="5"
-    placeholder="Information goes here"></textarea>
-        </div>
-        </div>
-        </div>`;
+    currentExecCount++;
 
-    newDiv.appendChild(inner);
+    var inner = '<div class="row">\
+        <div class="col-md-2 col-md-offset-1">\
+        <img src="production/images/user.png" alt="..." class="img-circle profile_img preview-exec-img' + currentExecCount + '" width="100%">\
+        <br/>\
+        <button class="btn btn-success" name="picturePlaceHolder1" onclick="triggerProfilePicUpload(event, this);">Upload Picture</button>\
+        <input type="file" name="pictureToUpload1" class="input-exec-img" data-role="magic-overlay" data-target="#pictureBtn"\
+        data-edit="insertImage" data-preview=".preview-exec-img1" style="display: none;" onchange="fileSubmit(this);"/>\
+        </div>\
+        <div class="col-md-9">\
+        <div class="col-md-10 col-md-offset-2">\
+        <br/>\
+        <input type="text" id="exec-name' + currentExecCount + '" required class="form-control col-md-7 col-xs-12" placeholder="Name">\
+        </div>\
+        <div class="col-md-10 col-md-offset-2">\
+        <br/>\
+        <input type="text" id="exec-position' + currentExecCount + '" required class="form-control col-md-7 col-xs-12" placeholder="Position">\
+        </div>\
+        <div class="col-md-10 col-md-offset-2">\
+        <br/>\
+        <textarea id="exec-description' + currentExecCount + '" name="exec-description" class="form-control col-md-7 col-xs-12" rows="5" placeholder="Information goes here"></textarea>\
+        </div>\
+        </div>\
+        </div>';
+
+    newDiv.innerHTML = inner;
     newDiv.className = "form-group exec-group";
-    newDiv.dataset.exec = "2";
+    newDiv.dataset.exec = "" + currentExecCount;
 
     container.insertBefore(newDiv, addButton);
+    document.getElementById('website-step-2').dataset.execcount = currentExecCount;
 }
