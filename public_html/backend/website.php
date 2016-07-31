@@ -160,8 +160,9 @@ try {
                                     $execList = $theWebsite->get('exec');
                                     echo '<div class="tab-pane" id="website-step-2" data-execcount="' . count($execList) . '">';
                                     for ($i = 0; $i < count($execList); $i++) {
+                                        $exec = json_decode($execList[$i]);
                                         ?>
-                                        <div class="form-group exec-group" data-exec="1">
+                                        <div class="form-group exec-group" data-exec="<?php echo $i; ?>">
                                             <div class="row">
                                                 <div class="col-md-2 col-md-offset-1">
                                                     <img src="production/images/user.png" alt="..."
@@ -182,22 +183,23 @@ try {
                                                 <div class="col-md-9">
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-name1" required
+                                                        <input type="text" id="exec-name<?php echo $i; ?>" required
                                                                class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Name">
+                                                               placeholder="Name" value="<?php echo $exec->{'name'}; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-position1" required
+                                                        <input type="text" id="exec-position<?php echo $i; ?>" required
                                                                class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Position">
+                                                               placeholder="Position" value="<?php echo $exec->{'position'}; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <textarea id="exec-description1" name="exec-description"
+                                                        <textarea id="exec-description<?php echo $i; ?>" name="exec-description"
                                                                   class="form-control col-md-7 col-xs-12"
-                                                                  rows="5"
-                                                                  placeholder="Information goes here"></textarea>
+                                                                  rows="5" placeholder="Information goes here">
+                                                            <?php echo $exec->{'desc'}; ?>
+                                                        </textarea>
                                                     </div>
                                                 </div>
                                             </div>
