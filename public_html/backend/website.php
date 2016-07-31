@@ -192,15 +192,14 @@ try {
                                                         <br/>
                                                         <input type="text" id="exec-position<?php echo $i; ?>" required
                                                                class="form-control col-md-7 col-xs-12"
-                                                               placeholder="Position" value="<?php echo $exec['position']; ?>">
+                                                               placeholder="Position"
+                                                               value="<?php echo $exec['position']; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <textarea id="exec-description<?php echo $i; ?>" name="exec-description"
-                                                                  class="form-control col-md-7 col-xs-12"
-                                                                  rows="5" placeholder="Information goes here">
-                                                            <?php echo $exec['desc']; ?>
-                                                        </textarea>
+                                                        <textarea id="exec-description<?php echo $i; ?>"
+                                                                  name="exec-description" class="form-control col-md-7 col-xs-12" rows="5"
+                                                                  placeholder="Information goes here"><?php echo $exec['desc']; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
