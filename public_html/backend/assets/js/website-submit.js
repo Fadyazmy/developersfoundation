@@ -159,7 +159,7 @@ $(document).ready(function () {
 function triggerProfilePicUpload(e, self) {
     e.preventDefault();
     var parent = self.parentNode;
-    document.getElementsByName('pictureToUpload1')[0].click();
+    document.getElementsByName('pictureToUpload1')[0].click(); // TODO: Point this to the correct one
     return false;
 }
 
