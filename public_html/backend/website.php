@@ -214,7 +214,7 @@ try {
                                     <?php
                                     $contentList = $theWebsite->get('content');
                                     $allContent = $contentList->data;
-                                    print_r($allContent);
+                                    print_r($contentList);
                                     foreach ($allContent as $content) {
                                         $field = $content->name;
                                         ?>
