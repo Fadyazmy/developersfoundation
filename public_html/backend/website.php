@@ -211,20 +211,19 @@ try {
                                     <button id="add-exec" class="btn btn-primary">Add another executive</button>
                                 </div>
                                 <div class="tab-pane" id="website-step-3">
-                                    <?php
-                                    $contentList = $theWebsite->get('content');
-                                    print_r($contentList);
-                                    foreach ($contentList['data'] as $content) {
-                                        $field = $content['name'];
-                                        ?>
-                                        <select id="heard" class="form-control" required="">
-                                            <option value="" disabled>Select which area you want to edit</option>
-                                            <option value="<?php echo $field; ?>"><?php echo $field; ?></option>
-                                        </select>
+                                    <select id="heard" class="form-control" required>
+                                        <option value="" disabled>Select which area you want to edit</option>
                                         <?php
-                                    }
-                                    $content = $allContent[0]['content'];
-                                    ?>
+                                        $contentList = $theWebsite->get('content');
+                                        foreach ($contentList['data'] as $content) {
+                                            $field = $content['name'];
+                                            ?>
+                                            <option value="<?php echo $field; ?>"><?php echo $field; ?></option>
+                                            <?php
+                                        }
+                                        $content = $contentList['data']['content'];
+                                        ?>
+                                    </select>
                                     <div id="alerts"></div>
                                     <div class="btn-toolbar editor" data-role="editor-toolbar"
                                          data-target="#editor">
