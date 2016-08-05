@@ -214,7 +214,7 @@ try {
                                     <?php
                                     $contentList = $theWebsite->get('content');
                                     print_r($contentList);
-                                    foreach ($allContent['data'] as $content) {
+                                    foreach ($contentList['data'] as $content) {
                                         $field = $content['name'];
                                         ?>
                                         <select id="heard" class="form-control" required="">
