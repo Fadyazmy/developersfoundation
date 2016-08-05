@@ -214,8 +214,8 @@ try {
                                     <?php
                                     $contentList = $theWebsite->get('content');
                                     print_r($contentList);
-                                    foreach ($allContent as $content) {
-                                        $field = $content->name;
+                                    foreach ($allContent['data'] as $content) {
+                                        $field = $content['name'];
                                         ?>
                                         <select id="heard" class="form-control" required="">
                                             <option value="" disabled>Select which area you want to edit</option>
@@ -223,7 +223,7 @@ try {
                                         </select>
                                         <?php
                                     }
-                                    $content = $allContent[0]->content;
+                                    $content = $allContent[0]['content'];
                                     ?>
                                     <div id="alerts"></div>
                                     <div class="btn-toolbar editor" data-role="editor-toolbar"
