@@ -213,7 +213,6 @@ try {
                                 <div class="tab-pane" id="website-step-3">
                                     <?php
                                     $contentList = $theWebsite->get('content');
-                                    $allContent = $contentList->data;
                                     print_r($contentList);
                                     foreach ($allContent as $content) {
                                         $field = $content->name;
