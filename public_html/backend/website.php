@@ -221,7 +221,7 @@ try {
                                             <option value="<?php echo $field; ?>"><?php echo $field; ?></option>
                                             <?php
                                         }
-                                        $content = $contentList['data']['content'];
+                                        $content = $contentList['data'][0]['content'];
                                         ?>
                                     </select>
                                     <div id="alerts"></div>
