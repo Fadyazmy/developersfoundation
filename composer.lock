@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a387a8150958b8c8346d138ff3f9e4b5",
-    "content-hash": "1fd6bf584abc9bf7dfbbc3f0dc0ce014",
+    "hash": "e64d2d6b75145ab8182da7dc305719bb",
+    "content-hash": "806d89d80c4e0f80dd23e06842b3a3a2",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -253,16 +253,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.8",
+            "version": "v2.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "b180b70439dca70049b6b9b7e21d75e6e5d7aca9"
+                "reference": "889983a79a043dfda68f38c38b6dba092dd49cd8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/b180b70439dca70049b6b9b7e21d75e6e5d7aca9",
-                "reference": "b180b70439dca70049b6b9b7e21d75e6e5d7aca9",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/889983a79a043dfda68f38c38b6dba092dd49cd8",
+                "reference": "889983a79a043dfda68f38c38b6dba092dd49cd8",
                 "shasum": ""
             },
             "require": {
@@ -309,22 +309,22 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-06-29 05:29:29"
+            "time": "2016-07-28 16:56:28"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v108",
+            "version": "v109",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "afca47645064b9d28a6a7d9e470eb76c076d75b6"
+                "reference": "cd2d13992b72d049aa270d4b745aae6329e0c037"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/afca47645064b9d28a6a7d9e470eb76c076d75b6",
-                "reference": "afca47645064b9d28a6a7d9e470eb76c076d75b6",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/cd2d13992b72d049aa270d4b745aae6329e0c037",
+                "reference": "cd2d13992b72d049aa270d4b745aae6329e0c037",
                 "shasum": ""
             },
             "bin": [
@@ -355,7 +355,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-07-08 21:43:10"
+            "time": "2016-07-21 11:26:05"
         }
     ],
     "aliases": [],
