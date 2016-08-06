@@ -12,7 +12,7 @@ Add the javascript and php files to your project.
 
 Insert the html code snippet for the form to your desired location. 
 
-Generate an API key using sendgrid, and inside the php file, replace the $API KEY with your key. 
+Generate an API key using sendgrid (give maximum access to everything), and inside the php file, replace the $API KEY with your key. 
 
 `$sendgrid = new SendGrid('API KEY');`
 
