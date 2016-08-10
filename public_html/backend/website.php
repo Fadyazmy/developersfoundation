@@ -330,6 +330,17 @@ try {
                                               style="display:none;"><?php echo $content; ?></textarea>
                                 </div>
                         </div>
+                        <div class="tab-pane" id="website-step-4">
+                            <div class="form-group">
+                                    <p>Drag multiple files to the box below for multi upload or click to select files. This
+                                        is for demonstration purposes only, the files are not uploaded to any server.</p>
+                                    <form action="form_upload.html" class="dropzone"></form>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                            </div>
+                        </div>
                         </form>
                     </div>
                     <div class="col-xs-3">
@@ -340,6 +351,10 @@ try {
                             <li><a href="#website-step-2" data-toggle="tab">Exec Info</a>
                             </li>
                             <li><a href="#website-step-3" data-toggle="tab">Content Edit</a>
+                            </li>
+                            <li><a href="#website-step-4" data-toggle="tab">Gallery</a>
+                            </li>
+                            <li><a href="#website-step-5" data-toggle="tab">Event</a>
                             </li>
                         </ul>
                     </div>
