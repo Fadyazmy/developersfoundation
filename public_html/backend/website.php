@@ -329,17 +329,17 @@ try {
                                     <textarea name="descr" id="descr"
                                               style="display:none;"><?php echo $content; ?></textarea>
                                 </div>
-                        </div>
-                        <div class="tab-pane" id="website-step-4">
-                            <div class="form-group">
-                                    <p>Drag multiple files to the box below for multi upload or click to select files. This
-                                        is for demonstration purposes only, the files are not uploaded to any server.</p>
-                                    <form action="form_upload.html" class="dropzone"></form>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                                    <br/>
-                            </div>
+                                <div class="tab-pane" id="website-step-4">
+                                    <div class="form-group">
+                                        <p>Drag multiple files to the box below for multi upload or click to select files. This
+                                            is for demonstration purposes only, the files are not uploaded to any server.</p>
+                                        <form action="form_upload.html" class="dropzone"></form>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                        <br/>
+                                    </div>
+                                </div>
                         </div>
                         </form>
                     </div>
