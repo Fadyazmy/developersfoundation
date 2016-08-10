@@ -210,6 +210,7 @@ try {
                                     ?>
                                     <button id="add-exec" class="btn btn-primary">Add another executive</button>
                                 </div>
+                                <!--  End of website-step-2 and beginning of website-step-3 -->
                                 <div class="tab-pane" id="website-step-3">
                                     <select id="heard" class="form-control" required>
                                         <option value="" disabled>Select which area you want to edit</option>
@@ -329,11 +330,12 @@ try {
                                     <textarea name="descr" id="descr"
                                               style="display:none;"><?php echo $content; ?></textarea>
                                 </div>
+                                <!-- End of website-step-3 and beginning to website-step-4 -->
                                 <div class="tab-pane" id="website-step-4">
                                     <div class="form-group">
                                         <p>Drag multiple files to the box below for multi upload or click to select files. This
                                             is for demonstration purposes only, the files are not uploaded to any server.</p>
-                                        <form action="form_upload.html" class="dropzone"></form>
+                                        <form action="website.php" class="dropzone"></form>
                                         <br/>
                                         <br/>
                                         <br/>
