@@ -74,10 +74,10 @@ try {
                         <!-- Vertical float right tabbed -->
                         <div class="col-xs-9">
                             <!-- Tab panels -->
-                            <form class="form-horizontal form-label-left" id="website-form"
+                           <!-- <form class="form-horizontal form-label-left" id="website-form"
                                   data-websiteid="<?php echo $websiteID; ?>"
                                   data-parseUser="<?php echo $user->{'userPrincipalName'}; ?>"
-                                  data-parsePW="<?php echo $user->{'objectId'}; ?>">
+                                  data-parsePW="<?php echo $user->{'objectId'}; ?>"> -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">
@@ -332,7 +332,6 @@ try {
                                 </div>
                                 <!-- End of website-step-3 and beginning to website-step-4 -->
                                 <div class="tab-pane" id="website-step-4">
-
                                         <p>Drag multiple files to the box below for multi upload or click to select files. This
                                             is for demonstration purposes only, the files are not uploaded to any server.</p>
                                         <form action="website.php" class="dropzone"></form>
@@ -340,14 +339,13 @@ try {
                                         <br/>
                                         <br/>
                                         <br/>
-
                                 </div>
                                 <!-- End of website-step-4 and beginning of website-step-5 -->
                                 <div class="tab-pane" id="website-step-5">
 
                                 </div>
                         </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                     <div class="col-xs-3">
                         <!-- Tabs -->
