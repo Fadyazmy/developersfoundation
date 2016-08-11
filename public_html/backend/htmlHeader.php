@@ -57,6 +57,9 @@
     <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
     <!-- starrr -->
     <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- FullCalendar -->
+    <link href="vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+    <link href="vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
 
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
