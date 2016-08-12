@@ -2,6 +2,21 @@
  * Created by harrisonchow on 7/10/16.
  */
 
+$(document).ready(function () {
+    $("#web-logo").change(function () {
+        readURL(this);
+    });
+
+    $("#add-exec").click(function (e) {
+        e.preventDefault();
+        addExec();
+    });
+
+    /* Dropzone override TODO-michael: this does ignites the dropzone div */
+    Dropzone.autoDiscover = false;
+    $("div#galleryDrop").dropzone({ url: "website.php" });
+});
+
 function formSubmit(theForm) {
     var submitButton = document.getElementById('website-form-submit');
     submitButton.disabled = true;
@@ -144,17 +159,6 @@ function readURL(input) {
     }
 }
 
-$(document).ready(function () {
-    $("#web-logo").change(function () {
-        readURL(this);
-    });
-
-    $("#add-exec").click(function (e) {
-        e.preventDefault();
-        addExec();
-    });
-});
-
 /* Profile Picture */
 function triggerProfilePicUpload(e, self) {
     e.preventDefault();
@@ -218,6 +222,3 @@ function addExec() {
 function switchSection() {
 
 }
-
-/* Dropzone override TODO-michael: this does ignites the dropzone div */
-$("div#galleryDrop").dropzone({ url: "website.php" });
