@@ -1053,6 +1053,13 @@ nav#footer p {
     border-color: #FCAC45;
     color: #ffffff;
 }
+#footer a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#footer a:hover, a:focus {
+    color: #FCAC45;
+}
 
 /* Start responsive.css */
 @media (max-width: 768px) {
