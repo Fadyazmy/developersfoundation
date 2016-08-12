@@ -337,8 +337,10 @@ try {
                                         is for demonstration purposes only, the files are not uploaded to any
                                         server.</p>
                                     <!-- TODO-michael: using a div works.... <form action="website.php" class="dropzone"></form>-->
-                                    <div id="dZUpload" class="dropzone">
-                                        <div class="dz-default dz-message"></div>
+                                    <div class="dropzone dz-clickable" id="galleryDrop">
+                                        <div class="dz-default dz-message" data-dz-message="">
+                                            <span>Drop files here to upload</span>
+                                        </div>
                                     </div>
                                     <br/>
                                     <br/>
