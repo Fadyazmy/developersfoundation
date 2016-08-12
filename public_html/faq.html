@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Developers&#039; Foundation</title>
     <meta name="description" content="Every developer can make a difference.">
-    <meta name="keywords"
-          content="developers', developer, foundation, developer's Foundation, bootstrap, developers, designers, marketers, non-profit, charity">
+    <meta name="keywords" content="developers', developer, foundation, developer's Foundation, bootstrap, developers, designers, marketers, non-profit, charity">
     <meta name="author" content="Developers&#039; Foundation">
     <meta property="og:title" content="Developers&#039; Foundation"/>
     <meta property="og:type" content="website"/>
@@ -43,7 +42,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
 
-
     <!-- Slider
     ================================================== -->
     <link href="assets/css/owl.carousel.css" rel="stylesheet" media="screen">
@@ -73,6 +71,51 @@
 </head>
 <body>
 <div class="demo-1">
+    <div id="home1">
+        <div id="large-header" class="large-header">
+            <canvas id="demo-canvas"></canvas>
+            <h1 class="main-title"><b>developers'</b><br><span class="thin">Foundation</span></h1>
+        </div>
+    </div>
+
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container" style="padding-left: 5px;padding-right: 5px">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" style="padding: 15px 0px 0px 15px" href="index.php">developers'
+                    <span class="thin">Foundation</span></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#faq" class="page-scroll">FAQ</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- FAQ contents goes in here -->
+    <div id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>FAQ</h2>
+                    <hr>
+                </div>
+                <div class="col-sm-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Beginning of footer -->
     <nav id="footer">
         <div class="container">
             <div class="row">
@@ -81,9 +124,10 @@
                         <li><a href="#">Careers</a></li>
                         <li><a href="blog.php">Blog</a></li>
                         <li><a href="faq.php">FAQ</a></li>
-                        <li><a href="#">Terms &amp; Privacy</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#termsAndPrivacy">Terms &amp; Privacy</a></li>
                     </ul>
                 </div>
+                <hr style="width: 60%;clear: both;">
                 <div class="col-sm-12">
                     <ul class="footer-social list-inline text-center">
                         <li><a href="https://www.facebook.com/Developers-Foundation-989771317784822/?fref=ts"
@@ -97,6 +141,23 @@
             </div>
         </div>
     </nav>
+    <!-- Sart Modal -->
+    <div class="modal fade" id="termsAndPrivacy" tabindex="-1" role="dialog" aria-labelledby="Terms and Privacy"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Terms &amp; Privacy</h4>
+                </div>
+                <div class="modal-body">
+                    <p> Info goes in here </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-simple" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

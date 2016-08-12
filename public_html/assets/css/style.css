@@ -1144,3 +1144,14 @@ nav#footer p {
     /*padding: 45px;*/
     background-attachment: fixed;
 }
+
+#faq {
+    padding: 45px 0;
+}
+#faq hr{
+    border-color: #fcac45;
+    border-width: 4px;
+    width: 60px;
+    float: left;
+    clear: both;
+}
