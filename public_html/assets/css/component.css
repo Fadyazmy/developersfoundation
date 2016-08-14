@@ -13,6 +13,9 @@
 .demo-1 .large-header {
 	background-image: url('../img/demo-1-bg.jpg');
 }
+.demo-blog .large-header {
+	background-image: url('../img/bg.jpg');
+}
 
 .demo-2 .large-header {
 	background-image: url('../img/demo-2-bg.jpg');
@@ -40,7 +43,8 @@
 }
 
 
-.demo-1 .main-title, 
+.demo-1 .main-title,
+.demo-blog .main-title,
 .demo-3 .main-title {
 	text-transform: uppercase;
 	font-size: 4.2em;
@@ -93,7 +97,8 @@
 
 
 @media only screen and (max-width : 768px) {
-	.demo-1 .main-title, 
+	.demo-1 .main-title,
+	.demo-blog .main-title,
 	.demo-3 .main-title,
 	.demo-4 .main-title {
 		font-size: 3em;

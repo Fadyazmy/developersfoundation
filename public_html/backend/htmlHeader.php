@@ -106,7 +106,7 @@
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
-                                    <li><a href="userDashBoardExample.html">User Dash Board Example</a></li>
+                                    <li><a href="userDashBoardExample.html">Analytics</a></li>
                                     <li><a href="javascript:void(0)">Dashboard2</a></li>
                                     <li><a href="javascript:void(0)">Dashboard3</a></li>
                                 </ul>

@@ -1155,3 +1155,11 @@ nav#footer p {
     float: left;
     clear: both;
 }
+
+#apply-now{
+    background-color: #333;
+}
+#apply-now h2{
+    color: #fff;
+    font-size:42px;
+}
