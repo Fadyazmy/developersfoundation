@@ -172,8 +172,8 @@ try {
                                                     <br/>
                                                     <button class="btn btn-success"
                                                             name="picturePlaceHolder<?php echo $i + 1; ?>"
-                                                            onclick="triggerProfilePicUpload(event, this);">
-                                                        Upload Picture
+                                                            onclick="triggerProfilePicUpload(event, this);">Upload
+                                                        Picture
                                                     </button>
                                                     <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                            class="input-exec-img"
