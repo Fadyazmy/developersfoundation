@@ -331,7 +331,7 @@ try {
                                               style="display:none;"><?php echo $content[0]['content']; ?></textarea>
                                     <?php
                                     for ($i = 0; $i < count($content); $i++) {
-                                        echo '<div class="content-field" style="display: none;" data-namefield="' . $content['name'] . '">' . $content[$i]['content'] . '</div>';
+                                        echo '<div class="content-field" style="display: none;" data-namefield="' . $content[$i]['name'] . '">' . $content[$i]['content'] . '</div>';
                                     }
                                     ?>
                                 </div>
