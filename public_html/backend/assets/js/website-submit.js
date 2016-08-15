@@ -194,8 +194,6 @@ function addExec() {
         addButton = document.getElementById('add-exec'),
         newDiv = document.createElement('DIV');
 
-    currentExecCount++;
-
     var inner = '<div class="row">\
         <div class="col-md-2 col-md-offset-1">\
         <img src="production/images/user.png" alt="..." class="img-circle profile_img preview-exec-img' + currentExecCount + '" width="100%">\
@@ -225,6 +223,7 @@ function addExec() {
     newDiv.dataset.exec = "" + currentExecCount;
 
     container.insertBefore(newDiv, addButton);
+    currentExecCount++;
     document.getElementById('website-step-2').dataset.execcount = currentExecCount;
 }
 
