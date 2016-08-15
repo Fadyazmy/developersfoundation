@@ -146,7 +146,7 @@ function formSubmit(theForm) {
 function triggerProfilePicUpload(e, self) {
     e.preventDefault();
     var parent = self.parentNode;
-    document.getElementsByName('pictureToUpload1')[0].click(); // TODO: Point this to the correct one
+    parent.getElementsByClassName('input-exec-img')[0].click();
     return false;
 }
 
