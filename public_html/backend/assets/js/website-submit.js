@@ -36,6 +36,8 @@ function formSubmit(theForm) {
         formWebUrl = document.getElementById('web-url').value,
         formWebLogo = document.getElementById('web-logo-preview').src;
 
+    // Save current edits first
+    switchSection(document.getElementsByClassName('content-select')[0]);
     var contentFields = document.getElementsByClassName('content-field'),
         formWebContent = {};
     for(i = 0; i < contentFields.length; i++) {

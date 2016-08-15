@@ -111,7 +111,7 @@ require_once "htmlHeader.php";
                 });
             }
         </script>
-        <br />
+        <br/>
         <div>
             Available client sites to edit
             <ul>
