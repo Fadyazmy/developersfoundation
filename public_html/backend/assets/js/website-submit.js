@@ -226,5 +226,9 @@ function switchSection(self) {
         oldField = editor.dataset.contentold,
         oldData = editor.innerHTML,
         newField = self.value;
+    var oldFieldDiv = document.querySelectorAll('[data-namefield~="' + oldField + '"]')[0];
+    oldFieldDiv.innerHTML = oldData;
 
+    var newFieldDiv = document.querySelectorAll('[data-namefield~="' + newField + '"]')[0];
+    editor.innerHTML = newFieldDiv.innerHTML;
 }
