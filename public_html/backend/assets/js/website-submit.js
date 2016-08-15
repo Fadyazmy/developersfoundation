@@ -40,7 +40,7 @@ function formSubmit(theForm) {
     switchSection(document.getElementsByClassName('content-select')[0]);
     var contentFields = document.getElementsByClassName('content-field'),
         formWebContent = {};
-    for(i = 0; i < contentFields.length; i++) {
+    for (i = 0; i < contentFields.length; i++) {
         formWebContent.name = contentFields[i].dataset.namefield;
         formWebContent.content = contentFields[i].innerHTML;
     }
@@ -141,6 +141,24 @@ function formSubmit(theForm) {
     submitButton.disabled = false;
 }
 
+/* Profile Picture */
+function triggerProfilePicUpload(e, self) {
+    e.preventDefault();
+    var parent = self.parentNode;
+    document.getElementsByName('pictureToUpload1')[0].click(); // TODO: Point this to the correct one
+    return false;
+}
+
+function fileSubmit(self) {
+    var file = self.value;
+    var fileName = file.split("\\");
+    if (fileName == "") fileName = "Upload Picture";
+    document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
+
+    readURL(self);
+    return false;
+}
+
 // Auto preview uploads
 function readURL(input) {
     if (input.files && input.files[0] && input.files[0].size > 10485759) {
@@ -171,24 +189,6 @@ function readURL(input) {
     }
 }
 
-/* Profile Picture */
-function triggerProfilePicUpload(e, self) {
-    e.preventDefault();
-    var parent = self.parentNode;
-    document.getElementsByName('pictureToUpload1')[0].click(); // TODO: Point this to the correct one
-    return false;
-}
-
-function fileSubmit(self) {
-    var file = self.value;
-    var fileName = file.split("\\");
-    if (fileName == "") fileName = "Upload Picture";
-    document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
-
-    readURL(self);
-    return false;
-}
-
 /* Add exec */
 function addExec() {
     var currentExecCount = document.getElementById('website-step-2').dataset.execcount,
@@ -196,36 +196,38 @@ function addExec() {
         addButton = document.getElementById('add-exec'),
         newDiv = document.createElement('DIV');
 
+    currentExecCount++;
+
     var inner = '<div class="row">\
         <div class="col-md-2 col-md-offset-1">\
         <img src="production/images/user.png" alt="..." class="img-circle profile_img preview-exec-img' + currentExecCount + '" width="100%">\
         <br/>\
-        <button class="btn btn-success" name="picturePlaceHolder1" onclick="triggerProfilePicUpload(event, this);">Upload Picture</button>\
-        <input type="file" name="pictureToUpload1" class="input-exec-img" data-role="magic-overlay" data-target="#pictureBtn"\
-        data-edit="insertImage" data-preview=".preview-exec-img1" style="display: none;" onchange="fileSubmit(this);"/>\
+        <button class="btn btn-success" name="picturePlaceHolder' + currentExecCount + '" onclick="triggerProfilePicUpload(event, this);">Upload Picture</button>\
+        <input type="file" name="pictureToUpload' + currentExecCount + '" class="input-exec-img" data-role="magic-overlay" data-target="#pictureBtn"\
+        data-edit="insertImage" data-preview=".preview-exec-img' + currentExecCount + '" style="display: none;" onchange="fileSubmit(this);"/>\
         </div>\
         <div class="col-md-9">\
         <div class="col-md-10 col-md-offset-2">\
         <br/>\
-        <input type="text" id="exec-name' + currentExecCount + '" required class="form-control col-md-7 col-xs-12" placeholder="Name">\
+        <input type="text" id="exec-name' + currentExecCount + '" required class="form-control col-md-7 col-xs-12 exec-name" placeholder="Name">\
         </div>\
         <div class="col-md-10 col-md-offset-2">\
         <br/>\
-        <input type="text" id="exec-position' + currentExecCount + '" required class="form-control col-md-7 col-xs-12" placeholder="Position">\
+        <input type="text" id="exec-position' + currentExecCount + '" required class="form-control col-md-7 col-xs-12 exec-position" placeholder="Position">\
         </div>\
         <div class="col-md-10 col-md-offset-2">\
         <br/>\
-        <textarea id="exec-description' + currentExecCount + '" name="exec-description" class="form-control col-md-7 col-xs-12" rows="5" placeholder="Information goes here"></textarea>\
+        <textarea id="exec-description' + currentExecCount + '" name="exec-description" class="form-control col-md-7 col-xs-12 exec-description" rows="5" placeholder="Information goes here"></textarea>\
         </div>\
         </div>\
-        </div>';
+        </div>\
+        <div class="clearfix"></div>';
 
     newDiv.innerHTML = inner;
     newDiv.className = "form-group exec-group";
     newDiv.dataset.exec = "" + currentExecCount;
 
     container.insertBefore(newDiv, addButton);
-    currentExecCount++;
     document.getElementById('website-step-2').dataset.execcount = currentExecCount;
 }
 

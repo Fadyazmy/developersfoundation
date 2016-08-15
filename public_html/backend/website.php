@@ -163,19 +163,19 @@ try {
                                         //$exec = json_decode($execList[$i]);
                                         $exec = $execList[$i];
                                         ?>
-                                        <div class="form-group exec-group" data-exec="<?php echo $i; ?>">
+                                        <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>">
                                             <div class="row">
                                                 <div class="col-md-2 col-md-offset-1">
                                                     <img src="production/images/user.png" alt="..."
-                                                         class="img-circle profile_img preview-exec-img1"
+                                                         class="img-circle profile_img preview-exec-img<?php echo $i + 1; ?>"
                                                          width="100%">
                                                     <br/>
                                                     <button class="btn btn-success"
-                                                            name="picturePlaceHolder1"
+                                                            name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                             onclick="triggerProfilePicUpload(event, this);">
                                                         Upload Picture
                                                     </button>
-                                                    <input type="file" name="pictureToUpload1"
+                                                    <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                            class="input-exec-img"
                                                            data-role="magic-overlay" data-target="#pictureBtn"
                                                            data-edit="insertImage" data-preview=".preview-exec-img1"
@@ -184,26 +184,29 @@ try {
                                                 <div class="col-md-9">
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-name<?php echo $i; ?>" required
-                                                               class="form-control col-md-7 col-xs-12"
+                                                        <input type="text" id="exec-name<?php echo $i + 1; ?>" required
+                                                               class="form-control col-md-7 col-xs-12 exec-name"
                                                                placeholder="Name" value="<?php echo $exec['name']; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <input type="text" id="exec-position<?php echo $i; ?>" required
-                                                               class="form-control col-md-7 col-xs-12"
+                                                        <input type="text" id="exec-position<?php echo $i + 1; ?>"
+                                                               required
+                                                               class="form-control col-md-7 col-xs-12 exec-position"
                                                                placeholder="Position"
                                                                value="<?php echo $exec['position']; ?>">
                                                     </div>
                                                     <div class="col-md-10 col-md-offset-2">
                                                         <br/>
-                                                        <textarea id="exec-description<?php echo $i; ?>"
+                                                        <textarea id="exec-description<?php echo $i + 1; ?>"
                                                                   name="exec-description"
-                                                                  class="form-control col-md-7 col-xs-12" rows="5"
+                                                                  class="form-control col-md-7 col-xs-12 exec-description"
+                                                                  rows="5"
                                                                   placeholder="Information goes here"><?php echo $exec['desc']; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="clearfix"></div>
                                         </div>
                                         <?php
                                     }
@@ -212,7 +215,8 @@ try {
                                 </div>
                                 <!--  End of website-step-2 and beginning of website-step-3 -->
                                 <div class="tab-pane" id="website-step-3">
-                                    <select id="heard" class="form-control content-select" required onchange="switchSection(this)">
+                                    <select id="heard" class="form-control content-select" required
+                                            onchange="switchSection(this)">
                                         <option value="" disabled>Select which area you want to edit</option>
                                         <?php
                                         $contentList = $theWebsite->get('content');
@@ -326,7 +330,8 @@ try {
                                         </div>
                                     </div>
                                     <div id="editor" class="editor-wrapper placeholderText content-editor-field"
-                                         contenteditable="true" data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
+                                         contenteditable="true"
+                                         data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
                                     <textarea name="descr" id="descr"
                                               style="display:none;"><?php echo $content[0]['content']; ?></textarea>
                                     <?php
