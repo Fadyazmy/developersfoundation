@@ -36,6 +36,13 @@ function formSubmit(theForm) {
         formWebUrl = document.getElementById('web-url').value,
         formWebLogo = document.getElementById('web-logo-preview').src;
 
+    var contentFields = document.getElementsByClassName('content-field'),
+        formWebContent = {};
+    for(i = 0; i < contentFields.length; i++) {
+        formWebContent.name = contentFields[i].dataset.namefield;
+        formWebContent.content = contentFields[i].innerHTML;
+    }
+
     Parse.User.logIn(parseUser, parsePwd).then(function () {
         var Websites = Parse.Object.extend("Website");
         var query = new Parse.Query(Websites);
@@ -48,6 +55,7 @@ function formSubmit(theForm) {
         obj.set('nickname', formWebNick);
         obj.set('description', formWebDesc);
         obj.set('url', formWebUrl);
+        obj.set('content', formWebContent);
 
         if (formWebLogo.indexOf('http') != -1) {
             // Logo is hosted
