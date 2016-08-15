@@ -170,6 +170,7 @@ try {
                                                          class="img-circle profile_img preview-exec-img<?php echo $i + 1; ?>"
                                                          width="100%">
                                                     <br/>
+                                                    <br/>
                                                     <button class="btn btn-success"
                                                             name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                             onclick="triggerProfilePicUpload(event, this);">Upload
@@ -178,7 +179,7 @@ try {
                                                     <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                            class="input-exec-img"
                                                            data-role="magic-overlay" data-target="#pictureBtn"
-                                                           data-edit="insertImage" data-preview=".preview-exec-img1"
+                                                           data-edit="insertImage" data-preview=".preview-exec-img<?php echo $i + 1; ?>"
                                                            style="display: none;" onchange="fileSubmit(this);"/>
                                                 </div>
                                                 <div class="col-md-9">

@@ -202,6 +202,7 @@ function addExec() {
         <div class="col-md-2 col-md-offset-1">\
         <img src="production/images/user.png" alt="..." class="img-circle profile_img preview-exec-img' + currentExecCount + '" width="100%">\
         <br/>\
+        <br/>\
         <button class="btn btn-success" name="picturePlaceHolder' + currentExecCount + '" onclick="triggerProfilePicUpload(event, this);">Upload Picture</button>\
         <input type="file" name="pictureToUpload' + currentExecCount + '" class="input-exec-img" data-role="magic-overlay" data-target="#pictureBtn"\
         data-edit="insertImage" data-preview=".preview-exec-img' + currentExecCount + '" style="display: none;" onchange="fileSubmit(this);"/>\
