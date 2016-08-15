@@ -222,5 +222,9 @@ function addExec() {
 
 /* Switch fetch sections */
 function switchSection(self) {
-    console.log(self);
+    var editor = document.getElementById('editor'),
+        oldField = editor.dataset.contentold,
+        oldData = editor.innerHTML,
+        newField = self.value;
+
 }

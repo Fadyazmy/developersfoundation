@@ -212,7 +212,7 @@ try {
                                 </div>
                                 <!--  End of website-step-2 and beginning of website-step-3 -->
                                 <div class="tab-pane" id="website-step-3">
-                                    <select id="heard" class="form-control" required onchange="switchSection(this)">
+                                    <select id="heard" class="form-control content-select" required onchange="switchSection(this)">
                                         <option value="" disabled>Select which area you want to edit</option>
                                         <?php
                                         $contentList = $theWebsite->get('content');
@@ -325,8 +325,8 @@ try {
                                                     class="fa fa-repeat"></i></a>
                                         </div>
                                     </div>
-                                    <div id="editor" class="editor-wrapper placeholderText"
-                                         contenteditable="true"><?php echo $content[0]['content']; ?></div>
+                                    <div id="editor" class="editor-wrapper placeholderText content-editor-field"
+                                         contenteditable="true" data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
                                     <textarea name="descr" id="descr"
                                               style="display:none;"><?php echo $content[0]['content']; ?></textarea>
                                     <?php
