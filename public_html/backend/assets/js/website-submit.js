@@ -145,8 +145,7 @@ function formSubmit(theForm) {
 /* Profile Picture */
 function triggerProfilePicUpload(e, self) {
     e.preventDefault();
-    var parent = self.parentNode;
-    parent.getElementsByClassName('input-exec-img')[0].click();
+    self.parentNode.getElementsByClassName('input-exec-img')[0].click();
     return false;
 }
 
@@ -154,7 +153,7 @@ function fileSubmit(self) {
     var file = self.value;
     var fileName = file.split("\\");
     if (fileName == "") fileName = "Upload Picture";
-    document.getElementsByName("picturePlaceHolder1")[0].innerHTML = fileName[fileName.length - 1];
+    self.parentNode.getElementsByClassName('btn')[0].innerHTML = fileName[fileName.length - 1];
 
     readURL(self);
     return false;
