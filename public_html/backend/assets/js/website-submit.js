@@ -39,10 +39,11 @@ function formSubmit(theForm) {
     // Save current edits first
     switchSection(document.getElementsByClassName('content-select')[0]);
     var contentFields = document.getElementsByClassName('content-field'),
-        formWebContent = {};
+        formWebContent = {"data":[]};
     for (i = 0; i < contentFields.length; i++) {
-        formWebContent.name = contentFields[i].dataset.namefield;
-        formWebContent.content = contentFields[i].innerHTML;
+        formWebContent.data[i] = {};
+        formWebContent.data[i].name = contentFields[i].dataset.namefield;
+        formWebContent.data[i].content = contentFields[i].innerHTML;
     }
 
     Parse.User.logIn(parseUser, parsePwd).then(function () {
