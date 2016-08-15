@@ -222,7 +222,7 @@ try {
                                             <option value="<?php echo $field; ?>"><?php echo $field; ?></option>
                                             <?php
                                         }
-                                        $content = $contentList['data'][0]['content'];
+                                        $content = $contentList['data'];
                                         ?>
                                     </select>
                                     <div id="alerts"></div>
@@ -326,9 +326,14 @@ try {
                                         </div>
                                     </div>
                                     <div id="editor" class="editor-wrapper placeholderText"
-                                         contenteditable="true"><?php echo $content; ?></div>
+                                         contenteditable="true"><?php echo $content[0]['content']; ?></div>
                                     <textarea name="descr" id="descr"
-                                              style="display:none;"><?php echo $content; ?></textarea>
+                                              style="display:none;"><?php echo $content[0]['content']; ?></textarea>
+                                    <?php
+                                    for ($i = 0; $i < count($content); $i++) {
+                                        echo '<div class="content-field" style="display: none;" data-namefield="' . $content['name'] . '">' . $content[$i]['content'] . '</div>';
+                                    }
+                                    ?>
                                 </div>
                                 <!-- End of website-step-3 and beginning to website-step-4 -->
                                 <div class="tab-pane" id="website-step-4">

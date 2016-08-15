@@ -2,6 +2,7 @@
  * Created by harrisonchow on 7/10/16.
  */
 
+/* Doc Ready Functions */
 $(document).ready(function () {
     $("#web-logo").change(function () {
         readURL(this);
@@ -17,6 +18,7 @@ $(document).ready(function () {
     $("div#galleryDrop").dropzone({ url: "website.php" });
 });
 
+/* On form submit function */
 function formSubmit(theForm) {
     var submitButton = document.getElementById('website-form-submit');
     submitButton.disabled = true;

@@ -107,8 +107,8 @@
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="userDashBoardExample.html">Analytics</a></li>
-                                    <li><a href="javascript:void(0)">Dashboard2</a></li>
-                                    <li><a href="javascript:void(0)">Dashboard3</a></li>
+                                    <!--<li><a href="javascript:void(0)">Dashboard2</a></li>
+                                    <li><a href="javascript:void(0)">Dashboard3</a></li>-->
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-home"></i> Client Sites <span class="fa fa-chevron-down"></span></a>
@@ -268,11 +268,11 @@
                                     <a>
                                         <span class="image"><img src="production/images/img.jpg"
                                                                  alt="Profile Image"/></span>
-                        <span>
+                                        <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
                         </span>
-                        <span class="message">
+                                        <span class="message">
                           Film festivals used to be do-or-die moments for movie makers. They were where...
                         </span>
                                     </a>
@@ -281,11 +281,11 @@
                                     <a>
                                         <span class="image"><img src="production/images/img.jpg"
                                                                  alt="Profile Image"/></span>
-                        <span>
+                                        <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
                         </span>
-                        <span class="message">
+                                        <span class="message">
                           Film festivals used to be do-or-die moments for movie makers. They were where...
                         </span>
                                     </a>
@@ -294,11 +294,11 @@
                                     <a>
                                         <span class="image"><img src="production/images/img.jpg"
                                                                  alt="Profile Image"/></span>
-                        <span>
+                                        <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
                         </span>
-                        <span class="message">
+                                        <span class="message">
                           Film festivals used to be do-or-die moments for movie makers. They were where...
                         </span>
                                     </a>
@@ -307,11 +307,11 @@
                                     <a>
                                         <span class="image"><img src="production/images/img.jpg"
                                                                  alt="Profile Image"/></span>
-                        <span>
+                                        <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
                         </span>
-                        <span class="message">
+                                        <span class="message">
                           Film festivals used to be do-or-die moments for movie makers. They were where...
                         </span>
                                     </a>
