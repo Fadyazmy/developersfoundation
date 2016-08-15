@@ -212,7 +212,7 @@ try {
                                 </div>
                                 <!--  End of website-step-2 and beginning of website-step-3 -->
                                 <div class="tab-pane" id="website-step-3">
-                                    <select id="heard" class="form-control" required>
+                                    <select id="heard" class="form-control" required onchange="switchSection(this)">
                                         <option value="" disabled>Select which area you want to edit</option>
                                         <?php
                                         $contentList = $theWebsite->get('content');

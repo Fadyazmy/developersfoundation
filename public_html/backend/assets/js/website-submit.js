@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     /* Dropzone override TODO-michael: this does ignites the dropzone div */
     Dropzone.autoDiscover = false;
-    $("div#galleryDrop").dropzone({ url: "website.php" });
+    $("div#galleryDrop").dropzone({url: "website.php"});
 });
 
 /* On form submit function */
@@ -221,6 +221,6 @@ function addExec() {
 }
 
 /* Switch fetch sections */
-function switchSection() {
-
+function switchSection(self) {
+    console.log(self);
 }
