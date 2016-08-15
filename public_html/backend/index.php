@@ -8,7 +8,7 @@
 
 require_once "phpHeader.php";
 
-//require_once "htmlHeader.php";
+require_once "htmlHeader.php";
 ?>
 
     <!--
