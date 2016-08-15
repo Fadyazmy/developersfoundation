@@ -1163,3 +1163,13 @@ nav#footer p {
     color: #fff;
     font-size:42px;
 }
+
+.btn-default{
+    color: #FFFFFF;
+    background-color: #FCAC45;
+}
+.btn-default:hover{
+    color: #FFFFFF;
+    background-color: #222222;
+    border-color: #adadad;
+}
