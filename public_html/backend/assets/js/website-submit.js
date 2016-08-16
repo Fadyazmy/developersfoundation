@@ -176,6 +176,9 @@ function uploadExecPic(self) {
         parseUser = theForm.dataset.parseuser,
         parsePwd = theForm.dataset.parsepw;
 
+    Parse.initialize("developers-foundation-db", "unused");
+    Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
+
     var theFile = self.files[0];
 
     Parse.User.logIn(parseUser, parsePwd).then(function () {
