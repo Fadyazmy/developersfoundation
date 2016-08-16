@@ -68,6 +68,7 @@ function formSubmit(theForm) {
         obj.set('nickname', formWebNick);
         obj.set('description', formWebDesc);
         obj.set('url', formWebUrl);
+        obj.set('exec',formWebExec);
         obj.set('content', formWebContent);
 
         if (formWebLogo.indexOf('http') != -1) {
@@ -103,7 +104,7 @@ function formSubmit(theForm) {
             }).then(function (img) {
                 var tempUrl = img.url();
                 tempUrl = (tempUrl.indexOf('https') == 0) ? tempUrl : "https" + tempUrl.substr(4);
-                console.log(tempUrl);
+                //console.log(tempUrl);
 
                 // Add parse file to obj
                 obj.set('logo', parseFile);
@@ -175,11 +176,62 @@ function uploadExecPic(self) {
         parseUser = theForm.dataset.parseuser,
         parsePwd = theForm.dataset.parsepw;
 
-    console.log(self);
+    var theFile = self.files[0];
 
-    /*Parse.User.logIn(parseUser, parsePwd).then(function () {
+    Parse.User.logIn(parseUser, parsePwd).then(function () {
+        var promise = Parse.Promise.as();
 
-    });*/
+        // First check file size (limit is 10mb)
+        if (theFile.size > 10485759) {
+            $(function () {
+                new PNotify({
+                    title: 'Oh No!',
+                    text: 'File size limit is 10mb. Sorry!',
+                    type: 'error',
+                    nonblock: {
+                        nonblock: true
+                    },
+                    styling: 'bootstrap3'
+                });
+            });
+            return Parse.Promise.error("File size too large.");
+        }
+
+        var ExecPhoto = Parse.Object.extend("ExecPhoto");
+        var execPhotoObj = new ExecPhoto();
+
+        var parseFile = new Parse.File(theFile.name, theFile);
+        promise = promise.then(function () {
+            return parseFile.save();
+        }).then(function (img) {
+            var tempUrl = img.url();
+            tempUrl = (tempUrl.indexOf('https') == 0) ? tempUrl : "https" + tempUrl.substr(4);
+
+            // Add parse file to obj
+            execPhotoObj.set('picture', parseFile);
+            execPhotoObj.set('pictureUrl', tempUrl);
+            return execPhotoObj.save();
+        }).then(function(rtnObj) {
+            console.log(rtnObj);
+        }, function (err) {
+            console.log(err);
+        });
+
+        return promise;
+    }, function (err) {
+        console.log(err);
+        $(function () {
+            new PNotify({
+                title: 'Oh No!',
+                text: err.message,
+                type: 'error',
+                nonblock: {
+                    nonblock: true
+                },
+                styling: 'bootstrap3'
+            });
+        });
+    });
 }
 
 // Auto preview uploads
