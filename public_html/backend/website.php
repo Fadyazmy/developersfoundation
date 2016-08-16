@@ -162,12 +162,30 @@ try {
                                     for ($i = 0; $i < count($execList); $i++) {
                                         //$exec = json_decode($execList[$i]);
                                         $exec = $execList[$i];
+
+                                        // Defaults
+                                        $execPhotoURL = "production/images/user.png";
+                                        $execPhotoName = "Upload Picture";
+                                        $execPhotoID = $exec['pictureid'];
+                                        if ($exec['pictureid'] != "-1") {
+                                            $query = new ParseQuery("ExecPhoto");
+                                            // Try get replacement
+                                            try {
+                                                $theExecPhoto = $query->get($execPhotoID);
+                                                // The object was retrieved successfully.
+                                                $execPhotoURL = $theExecPhoto->get('pictureUrl');
+                                                $execPhotoName = $theExecPhoto->get('picture')->getName();
+                                            } catch (ParseException $ex) {
+                                                // Photo not found in db???
+                                                echo $ex->getMessage();
+                                            }
+                                        }
                                         ?>
                                         <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>">
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="col-md-12">
-                                                        <img src="production/images/user.png" alt="..."
+                                                        <img src="<?php echo $execPhotoURL; ?>" alt="..."
                                                              class="img-circle profile_img preview-exec-img<?php echo $i + 1; ?>"
                                                              width="100%">
                                                         <br/>
@@ -176,15 +194,13 @@ try {
                                                     <div class="col-md-12" style="text-align: center">
                                                         <button class="btn btn-success"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
-                                                                onclick="triggerProfilePicUpload(event, this);">Upload
-                                                            Picture
-                                                        </button>
+                                                                onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                                class="input-exec-img"
                                                                data-role="magic-overlay" data-target="#pictureBtn"
                                                                data-edit="insertImage"
                                                                data-preview=".preview-exec-img<?php echo $i + 1; ?>"
-                                                               data-parsedb="-1"
+                                                               data-parsedb="<?php echo $execPhotoID; ?>"
                                                                style="display: none;" onchange="fileSubmit(this);"/>
                                                     </div>
                                                 </div>
