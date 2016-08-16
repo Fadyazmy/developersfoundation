@@ -20,15 +20,15 @@ ParseClient::setServerURL($ParseServer);
 $query = new ParseQuery("Website");
 $theWebsite = $query->get("5Itqbrk0en");
 
-//header('Content-type: text/plain');
-//echo '<pre>';
-//print_r($theWebsite);
-//echo '</pre>';
+header('Content-type: text/plain');
+echo '<pre>';
+print_r($theWebsite);
+echo '</pre>';
 
 ?>
 
-<html>
+<!--<html>
 <body>
 <img src="<?php echo $theWebsite->get('logoUrl'); ?>" />
 </body>
-</html>
+</html>-->
