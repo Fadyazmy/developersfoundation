@@ -165,7 +165,7 @@ try {
                                         ?>
                                         <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>">
                                             <div class="row">
-                                                <div class="col-md-2 col-md-offset-1">
+                                                <div class="col-md-3">
                                                     <div class="col-md-12">
                                                         <img src="production/images/user.png" alt="..."
                                                              class="img-circle profile_img preview-exec-img<?php echo $i + 1; ?>"
