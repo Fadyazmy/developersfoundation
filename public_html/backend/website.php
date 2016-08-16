@@ -77,7 +77,7 @@ try {
                             <form class="form-horizontal form-label-left" id="website-form"
                                   data-websiteid="<?php echo $websiteID; ?>"
                                   data-parseUser="<?php echo $user->{'userPrincipalName'}; ?>"
-                                  data-parsePW="<?php echo $user->{'objectId'}; ?>">
+                                  data-parsePW="<?php echo $user->{'objectId'}; ?>"><!-- TODO: add in task remaining counter to prevent early fire of submit button -->
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="website-step-1">
                                         <div class="form-group">
@@ -114,8 +114,7 @@ try {
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                                                   for="web-url">Website URL
-                                            </label>
+                                                   for="web-url">Website URL</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12" id="web-url">
                                                 <a href="<?php echo $theWebsite->get('url'); ?>"
                                                    target="_blank"><?php echo $theWebsite->get('url'); ?></a>
@@ -175,6 +174,7 @@ try {
                                                 // The object was retrieved successfully.
                                                 $execPhotoURL = $theExecPhoto->get('pictureUrl');
                                                 $execPhotoName = $theExecPhoto->get('picture')->getName();
+                                                $execPhotoName = substr($execPhotoName, strpos($execPhotoName, "_") + 1);
                                             } catch (ParseException $ex) {
                                                 // Photo not found in db???
                                                 echo $ex->getMessage();
