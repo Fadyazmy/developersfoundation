@@ -19,4 +19,8 @@ ParseClient::setServerURL($ParseServer);
 
 $query = new ParseQuery("Website");
 $theWebsite = $query->get("5Itqbrk0en");
+
+header('Content-type: text/plain');
+echo '<pre>';
 print_r($theWebsite);
+echo '</pre>';
