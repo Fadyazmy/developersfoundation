@@ -40,7 +40,7 @@ function formSubmit(theForm) {
         execBlocks = document.getElementsByClassName('exec-group');
     for (i = 0; i < execBlocks.length; i++) {
         formWebExec[i] = {};
-        formWebExec[i].pictureid = execBlocks.getElementsByClassName('input-exec-img')[0].dataset.parsedb;
+        formWebExec[i].pictureid = execBlocks[i].getElementsByClassName('input-exec-img')[0].dataset.parsedb;
         formWebExec[i].name = execBlocks[i].getElementsByClassName('exec-name')[0].value;
         formWebExec[i].position = execBlocks[i].getElementsByClassName('exec-name')[0].value;
         formWebExec[i].desc = execBlocks[i].getElementsByClassName('exec-description')[0].value;
