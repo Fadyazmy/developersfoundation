@@ -278,13 +278,17 @@ function addExec() {
     currentExecCount++;
 
     var inner = '<div class="row">\
-        <div class="col-md-2 col-md-offset-1">\
+        <div class="col-md-3">\
+        <div class="col-md-12">\
         <img src="production/images/user.png" alt="..." class="img-circle profile_img preview-exec-img' + currentExecCount + '" width="100%">\
         <br/>\
         <br/>\
+        </div>\
+        <div class="col-md-12" style="text-align: center">\
         <button class="btn btn-success" name="picturePlaceHolder' + currentExecCount + '" onclick="triggerProfilePicUpload(event, this);">Upload Picture</button>\
         <input type="file" name="pictureToUpload' + currentExecCount + '" class="input-exec-img" data-role="magic-overlay" data-target="#pictureBtn"\
         data-edit="insertImage" data-preview=".preview-exec-img' + currentExecCount + '" data-parsedb="-1" style="display: none;" onchange="fileSubmit(this);"/>\
+        </div>\
         </div>\
         <div class="col-md-9">\
         <div class="col-md-10 col-md-offset-2">\
