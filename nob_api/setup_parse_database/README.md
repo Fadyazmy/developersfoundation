@@ -25,6 +25,7 @@ git push
 3. Change the setting so heroku auto deploys from your github
 4. Optional: Setup a papertrail plugin on heroku to see logs for the server
 
+
 3: Use your database :)
 =====
 
