@@ -166,21 +166,26 @@ try {
                                         <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>">
                                             <div class="row">
                                                 <div class="col-md-2 col-md-offset-1">
-                                                    <img src="production/images/user.png" alt="..."
-                                                         class="img-circle profile_img preview-exec-img<?php echo $i + 1; ?>"
-                                                         width="100%">
-                                                    <br/>
-                                                    <br/>
-                                                    <button class="btn btn-success"
-                                                            name="picturePlaceHolder<?php echo $i + 1; ?>"
-                                                            onclick="triggerProfilePicUpload(event, this);">Upload
-                                                        Picture
-                                                    </button>
-                                                    <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
-                                                           class="input-exec-img"
-                                                           data-role="magic-overlay" data-target="#pictureBtn"
-                                                           data-edit="insertImage" data-preview=".preview-exec-img<?php echo $i + 1; ?>"
-                                                           style="display: none;" onchange="fileSubmit(this);"/>
+                                                    <div class="col-md-12">
+                                                        <img src="production/images/user.png" alt="..."
+                                                             class="img-circle profile_img preview-exec-img<?php echo $i + 1; ?>"
+                                                             width="100%">
+                                                        <br/>
+                                                        <br/>
+                                                    </div>
+                                                    <div class="col-md-12" style="text-align: center">
+                                                        <button class="btn btn-success"
+                                                                name="picturePlaceHolder<?php echo $i + 1; ?>"
+                                                                onclick="triggerProfilePicUpload(event, this);">Upload
+                                                            Picture
+                                                        </button>
+                                                        <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
+                                                               class="input-exec-img"
+                                                               data-role="magic-overlay" data-target="#pictureBtn"
+                                                               data-edit="insertImage"
+                                                               data-preview=".preview-exec-img<?php echo $i + 1; ?>"
+                                                               style="display: none;" onchange="fileSubmit(this);"/>
+                                                    </div>
                                                 </div>
                                                 <div class="col-md-9">
                                                     <div class="col-md-10 col-md-offset-2">
