@@ -215,7 +215,8 @@ function uploadExecPic(self) {
             execPhotoObj.set('pictureUrl', tempUrl);
             return execPhotoObj.save();
         }).then(function(rtnObj) {
-            console.log(rtnObj);
+            //console.log(rtnObj);
+            self.dataset.parsedb = rtnObj.id;
         }, function (err) {
             console.log(err);
         });
