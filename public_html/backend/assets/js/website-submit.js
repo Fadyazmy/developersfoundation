@@ -36,6 +36,16 @@ function formSubmit(theForm) {
         formWebUrl = document.getElementById('web-url').value,
         formWebLogo = document.getElementById('web-logo-preview').src;
 
+    var formWebExec = [],
+        execBlocks = document.getElementsByClassName('exec-group');
+    for (i = 0; i < execBlocks.length; i++) {
+        formWebExec[i] = {};
+        formWebExec[i].pictureid = execBlocks.getElementsByClassName('input-exec-img')[0].dataset.parsedb;
+        formWebExec[i].name = execBlocks[i].getElementsByClassName('exec-name')[0].value;
+        formWebExec[i].position = execBlocks[i].getElementsByClassName('exec-name')[0].value;
+        formWebExec[i].desc = execBlocks[i].getElementsByClassName('exec-description')[0].value;
+    }
+
     // Save current edits first
     switchSection(document.getElementsByClassName('content-select')[0]);
     var contentFields = document.getElementsByClassName('content-field'),
@@ -156,7 +166,20 @@ function fileSubmit(self) {
     self.parentNode.getElementsByClassName('btn')[0].innerHTML = fileName[fileName.length - 1];
 
     readURL(self);
+    uploadExecPic(self);
     return false;
+}
+
+function uploadExecPic(self) {
+    var theForm = document.getElementById('website-form'),
+        parseUser = theForm.dataset.parseuser,
+        parsePwd = theForm.dataset.parsepw;
+
+    console.log(self);
+
+    /*Parse.User.logIn(parseUser, parsePwd).then(function () {
+
+    });*/
 }
 
 // Auto preview uploads
@@ -205,7 +228,7 @@ function addExec() {
         <br/>\
         <button class="btn btn-success" name="picturePlaceHolder' + currentExecCount + '" onclick="triggerProfilePicUpload(event, this);">Upload Picture</button>\
         <input type="file" name="pictureToUpload' + currentExecCount + '" class="input-exec-img" data-role="magic-overlay" data-target="#pictureBtn"\
-        data-edit="insertImage" data-preview=".preview-exec-img' + currentExecCount + '" style="display: none;" onchange="fileSubmit(this);"/>\
+        data-edit="insertImage" data-preview=".preview-exec-img' + currentExecCount + '" data-parsedb="-1" style="display: none;" onchange="fileSubmit(this);"/>\
         </div>\
         <div class="col-md-9">\
         <div class="col-md-10 col-md-offset-2">\

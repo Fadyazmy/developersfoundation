@@ -184,6 +184,7 @@ try {
                                                                data-role="magic-overlay" data-target="#pictureBtn"
                                                                data-edit="insertImage"
                                                                data-preview=".preview-exec-img<?php echo $i + 1; ?>"
+                                                               data-parsedb="-1"
                                                                style="display: none;" onchange="fileSubmit(this);"/>
                                                     </div>
                                                 </div>
