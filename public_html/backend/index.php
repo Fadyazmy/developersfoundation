@@ -13,7 +13,7 @@ require_once "htmlHeader.php";
 
     <!--
 <?php
-    echo('<tr><td>Display Name:</td>');
+    /*echo('<tr><td>Display Name:</td>');
     echo('<td>' . $user->{'displayName'} . '</td>');
     echo('</tr><tr><td>User Principal Name:</td>');
     echo('<td>' . $user->{'userPrincipalName'} . '</td>');
@@ -84,7 +84,7 @@ require_once "htmlHeader.php";
     echo('<tr><td>User Type:</td>');
     echo('<td>' . $user->{'userType'} . '</td></tr>');
     $editLinkValue = "windows-ad/EditUser.php";
-    echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></td></tr>');
+    echo('<tr/><tr><td><a href=\'' . $editLinkValue . '\'>' . 'Edit User' . '</a></td></tr>');*/
     ?>
 -->
 
@@ -117,6 +117,9 @@ require_once "htmlHeader.php";
             <ul>
                 <?php echo $websiteMenu; ?>
             </ul>
+        </div>
+        <div>
+            Please see <a href="sampleSite.php">sample site</a> for how to fetch data from db.
         </div>
         <!-- top tiles -->
         <!--<div class="row tile_count">
