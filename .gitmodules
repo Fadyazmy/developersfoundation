@@ -1,3 +1,6 @@
 [submodule "nob_api/!blank_project"]
 	path = nob_api/!blank_project
 	url = https://github.com/nobodyrandom/blank-bootstrap.git
+[submodule "nob_api/!composer_nob_api"]
+	path = nob_api/!composer_nob_api
+	url = https://github.com/nobodyrandom/nob-api.git

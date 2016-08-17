@@ -100,6 +100,7 @@ require_once "htmlHeader.php";
                         'purge_everything': true
                     }),
                     type: 'DELETE',
+                    contentType:'application/json',
                     dataType: 'JSONP',
                     crossDomain: true,
                     success: function (msg) {
@@ -110,6 +111,14 @@ require_once "htmlHeader.php";
                     }
                 });
             }
+
+            /*
+             curl -X DELETE "https://api.cloudflare.com/client/v4/zones/0be7b1daf9a7e94109bb013e1ef0e455/purge_cache" \
+             -H "X-Auth-Email: iamnobodyrandom@yahoo.com" \
+             -H "X-Auth-Key: 6a17999330660807d93ac80935c6026612426" \
+             -H "Content-Type: application/json" \
+             --data '{"purge_everything":true}'
+             */
         </script>
         <br/>
         <div>
