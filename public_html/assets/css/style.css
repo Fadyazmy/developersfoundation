@@ -1173,3 +1173,11 @@ nav#footer p {
     background-color: #222222;
     border-color: #adadad;
 }
+
+#career .container :hover{
+    background-color: #cccccc;
+}
+
+#career li{
+    font-size: 14px;
+}
