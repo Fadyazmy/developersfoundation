@@ -57,6 +57,8 @@
     <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
     <!-- starrr -->
     <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- FullCalendar -->
     <link href="vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
     <link href="vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">

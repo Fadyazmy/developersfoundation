@@ -36,8 +36,12 @@ if (isset($includeFile) && $includeFile != "") {
 <script src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
 <script src="vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="vendors/Chart.js/dist/Chart.min.js"></script>
 <!-- Dropzone.js -->
 <script src="vendors/dropzone/dist/min/dropzone.min.js"></script>
+<!-- gauge.js -->
+<script src="vendors/gauge.js/dist/gauge.min.js"></script>
 <!-- jQuery Smart Wizard -->
 <script src="vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
 <!-- JS Parse Database -->
@@ -49,6 +53,29 @@ if (isset($includeFile) && $includeFile != "") {
 <script src="vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
 <script src="vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
 <script src="vendors/google-code-prettify/src/prettify.js"></script>
+<!-- jQuery Sparklines -->
+<script src="vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+<!-- Flot -->
+<script src="vendors/Flot/jquery.flot.js"></script>
+<script src="vendors/Flot/jquery.flot.pie.js"></script>
+<script src="vendors/Flot/jquery.flot.time.js"></script>
+<script src="vendors/Flot/jquery.flot.stack.js"></script>
+<script src="vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="production/js/flot/jquery.flot.orderBars.js"></script>
+<script src="production/js/flot/date.js"></script>
+<script src="production/js/flot/jquery.flot.spline.js"></script>
+<script src="production/js/flot/curvedLines.js"></script>
+<!-- JQVMap -->
+<script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="production/js/moment/moment.min.js"></script>
+<script src="production/js/datepicker/daterangepicker.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+
 
 <!-- Custom Theme Scripts -->
 <script src="build/js/custom.min.js"></script>
