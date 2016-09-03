@@ -1173,3 +1173,53 @@ nav#footer p {
     background-color: #222222;
     border-color: #adadad;
 }
+
+#career li{
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"] {
+    background: #ffffff;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    border-radius: 0;
+    color: #111111;
+}
+
+
+::-webkit-input-placeholder {
+    text-align: center;
+    color: rgba(0,0,0, 0.7);
+    font-style: italic;
+    font-weight: 500;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+
+    text-align: center;
+    color: rgba(0,0,0, 0.7);
+    font-style: italic;
+    font-weight: 500;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+
+    text-align: center;
+    color: rgba(0,0,0,0.7);
+    font-style: italic;
+    font-weight: 500;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-style: italic;
+    font-weight: 500;
+}

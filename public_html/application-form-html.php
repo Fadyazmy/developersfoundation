@@ -75,7 +75,7 @@
     <div id="home1">
         <div id="large-header-blog" class="large-header">
             <canvas id="demo-canvas"></canvas>
-            <h1 class="main-title" style="font-size: 52pt;"><b>Careers</b></h1>
+            <!-- <h1 class="main-title" style="font-size: 52pt;"><b>FAQ</b></h1> -->
         </div>
     </div>
 
@@ -89,278 +89,111 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-    <!-- career contents goes in here -->
-    <div id="career">
+    <!--=======================================================
+    Application form starts
+    ========================================================-->
 
-        <!-- Chapter President -->
-        <div class="container" style="padding: 15px; background: #ecf0f1;">
-            <div class="row">
-                <div class="col-md-3 col-sm-12" style="text-align: center; margin-top: 20px;">
-                    <i class="fa fa-user" style="font-size: 15em;" aria-hidden="true"></i>
-                    <h5 class="uppercase mb0" style="color: #FCAC45;"><span><i class="ti-user"
-                                                                               style="font-size: 2em;"></i></span><br>
-                        Chapter President</h5>
-                    <span class="inline-block mb40 mb-xs-24">London ON (Western University)</span>
-                </div>
-                <div class="col-md-6 col-sm-12" style="text-align: left;">
-                    <h6 class="uppercase text-center">Job
-                        Description</h6>
-                    <hr>
-                    <div style="padding-left: 15px">
-                        <h5 style="margin-bottom: 0px;">
-                            Roles &amp; Responsibilities:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Oversees all operations of the chapter.</li>
-                            <li>Hold regular weekly meetings with all other executives to review progress.</li>
-                            <li>Remains in regular contact with DF-HQ team and reports chapter progress.</li>
-                            <li>Speak on behalf of the chapter in promotional events.</li>
-                            <li>Improves efficiency and maximize the effect the chapter has on the community.</li>
-                            <li>Attend training sessions to remain consistent and effective.</li>
-                            <li>Review the quality of the work completed with the developer team on a regular basis to
-                                ensure that it meets the project standards.
-                            </li>
-                        </ul>
-                        <h5 style="margin-bottom: 0px;">
-                            Skills &amp; Qualification:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Experienced in previous organization working in leadership positions and/or a minimum of
-                                6 months working at DF.
-                            </li>
-                            <li>Strong leadership skills.</li>
-                            <li>Strong organizational skills.</li>
-                            <li>Ability to thrive in a team environment and encourage others to do the same.</li>
-                            <li>Demonstrates passion and drive for the local DF chapter.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12" style="text-align: left;">
-                    <div class="row" style="text-align:center;">
-                        <a class="btn btn-default" href="application-form.php?position=chapterpresident" style="margin-top: 80px;">Apply</a>
-                    </div>
+    <!-- going back to previous page
+<ul class="list-inline social-list" style="position: fixed; top: 0; z-index: 999">
+        <li>
+            <a href="join-us">
+            <span>
+                <i class="ti-angle-left" style="font-size: 1em;"></i>
+            </span>
+Back to available positions
+</a>
+        </li>
+    </ul> -->
+    <a id="top"></a>
+    <section>
+        <div class="row" style="text-align:center;">
+            <span><i class="fa fa-user" style="font-size: 15em;" aria-hidden="true"></i><h2><b>Found a position you're interested in? <br/> Please fill in the application form below</b></h2></span>
+            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="background-color:#f8f8f8;">
+                <div class="row">
+                    <form class="text-center" data-form-type="default" action="application-form-submit.php"
+                          method="post"
+                          enctype="multipart/form-data"
+                          data-error="There were errors, please check all required fields and try again"
+                          data-success="Thanks for taking the time to complete the planner. We'll be in touch shortly!">
+                        <h4 class="uppercase mt48 mt-xs-0">Please fill in the application form
+                            for <? echo $_GET["position"]; ?></h4>
+
+                        <div class="col-md-12">
+                            <h6 class="uppercase">
+                                1. Your personal details
+                            </h6>
+                            <input class="" type="text" name="position" id="position"
+                                   value="<? echo $_GET['position']; ?>"
+                                   style="display: none;"/>
+                            <input type="text" name="name" class="validate-required" placeholder="Full Name*"/>
+                            <input type="text" name="email" class="validate-required validate-email"
+                                   placeholder="Email Address*"/>
+                            <input type="text" name="number" class="validate-required"
+                                   placeholder="Phone Number*"/>
+                            <button type="button"
+                                    class="button button--nuka button--round-s button--text-thick button--size-s"
+                                    style="color: #fff; text-align:center" name="filePlaceholder"
+                                    onclick="document.getElementsByName('fileToUpload')[0].click(); return false;">
+                                Attach
+                                your resume
+                            </button>
+                            <input type="file" name="fileToUpload" style="display: none;" onchange="fileSubmit(this)"/>
+                            <script>
+                                document.getElementsByName("filePlaceholder")[0].preventDefault();
+
+                                function fileSubmit(data) {
+                                    var file = data.value;
+                                    var fileName = file.split("\\");
+                                    if (fileName == "") fileName = "Attach your resume";
+                                    document.getElementsByName("filePlaceholder")[0].innerHTML = fileName[fileName.length - 1];
+                                    return false;
+                                }
+                            </script>
+                        </div>
+                        <div class="">
+                            All document file formats are supported up to 5Mb</br>
+                        </div>
+                        <div class="">
+                            <h6 class="">
+                                2. Program details
+                            </h6>
+                            <div class="">
+                                <i class="ti-angle-down"></i>
+                                <select name="school-year">
+                                    <option selected value="Default">Select your current school year</option>
+                                    <option value="1st year">1st year</option>
+                                    <option value="2nd year">2nd year</option>
+                                    <option value="3rd year">3rd year</option>
+                                    <option value="4th year">4th year</option>
+                                    <option value="Post-grad">Post-grad</option>
+                                </select>
+                                <br>
+                            </div>
+
+                            <input type="text" name="program" class=" validate-required"
+                                   placeholder="Program*"/>
+                            <hr>
+                        </div>
+                        <div class="">
+                            <h6 class="">
+                                3. Links (fill in if you have any of these)
+                            </h6>
+                            <input type="text" name="linkedin" placeholder="Linkedin URL"/>
+                            <input type="text" name="github" placeholder="Github URL"/>
+                            <hr>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="button submit"
+                                    class="button button--nuka button--round-s button--text-thick button--size-l"
+                                    style="color: #fff; text-align:center" ><b>Submit Application</b>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <hr>
         </div>
-        <!-- End of Chapter President -->
-
-        <!-- VP Tech -->
-        <div class="container" style="padding: 15px;background: #E4E4E4;">
-            <div class="row">
-                <div class="col-md-3 col-sm-12" style="text-align: center; margin-top: 20px;">
-                    <i class="fa fa-user" style="font-size: 15em;" aria-hidden="true"></i>
-                    <h5 class="uppercase mb0" style="color: #FCAC45;"><span><i class="ti-user"
-                                                                               style="font-size: 2em;"></i></span><br>
-                        VP Technology</h5>
-                    <span class="inline-block mb40 mb-xs-24">London ON (Western University)</span>
-                </div>
-                <div class="col-md-6 col-sm-12" style="text-align: left;">
-                    <h6 class="uppercase text-center">Job
-                        Description</h6>
-                    <hr>
-                    <div style="padding-left: 15px">
-                        <h5 style="margin-bottom: 0px;">
-                            Roles &amp; Responsibilities:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Decide the best way to approach each client's platform.</li>
-                            <li>Ensure member developers and VP Technology from each chapters to complete training
-                                resources provided from HQ.
-                            </li>
-                            <li>Recruit the developer members.</li>
-                            <li>Consistently maintain software documentation and quality across all clientele
-                                platforms.
-                            </li>
-                            <li>Work with VP Operations in delivering educational workshops.</li>
-                        </ul>
-                        <h5 style="margin-bottom: 0px;">
-                            Skills &amp; Qualification:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Experience in previous organizations with leading a team of developers.</li>
-                            <li>Hackathon veteran.</li>
-                            <li>Solid experience with the following technologies (HTML5, CSS3, JS, Git, Bootstrap,
-                                Materialize).
-                            </li>
-                            <li>Bonus: Experience with MEAN, JQuery of PHP</li>
-                            <li>Excellent communication skills</li>
-                            <li>Demonstrates passion and drive for the local DF chapter</li>
-                            <li>Developed GitHub portfolio</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12" style="text-align: left;">
-                    <div class="row" style="text-align:center;">
-                        <a class="btn btn-default" href="application-form.php?position=vptechnology" style="margin-top: 80px;">Apply</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
-        <!-- End of VP Tech-->
-
-        <!-- VP Finance -->
-        <div class="container" style="padding: 15px;background: #ecf0f1;">
-            <div class="row">
-                <div class="col-md-3 col-sm-12" style="text-align: center; margin-top: 20px;">
-                    <i class="fa fa-user" style="font-size: 15em;" aria-hidden="true"></i>
-                    <h5 class="uppercase mb0" style="color: #FCAC45;"><span><i class="ti-user"
-                                                                               style="font-size: 2em;"></i></span><br>
-                        VP Finance / Business Associate</h5>
-                    <span class="inline-block mb40 mb-xs-24">London ON (Western University)</span>
-                </div>
-                <div class="col-md-6 col-sm-12" style="text-align: left;">
-                    <h6 class="uppercase text-center">Job
-                        Description</h6>
-                    <hr>
-                    <div style="padding-left: 15px">
-                        <h5 style="margin-bottom: 0px;">
-                            Roles &amp; Responsibilities:
-                        </h5>
-                        <ul class="bullets">
-                            <h6><b>Finance</b></h6>
-                            <li>Keep track of the financial position of the chapter.</li>
-                            <li>Report financial statements to chapter president and DF-Hq monthly.</li>
-                            <li>Seek funding for local chapter (Secure sponsorships / Founding for promotional
-                                events).
-                            </li>
-                            <h6><b>Business</b></h6>
-                            <li>Present Developers' Foundation's product and service offerings in client meetings
-                                (Consult client on their needs regarding the requested platform (VP's discretion).
-                            </li>
-                            <li>Track all clientele processes (Follow up with clients on outstanding material).</li>
-                            <li>Attend training sessions to remain consistent and effective.</li>
-                            <h6><b>HQ</b></h6>
-                            <li>Remain in regular contact with VP Operations of DF-HQ team.</li>
-                        </ul>
-                        <h5 style="margin-bottom: 0px;">
-                            Skills &amp; Qualification:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Experienced in previous organizations working as treasurer, VP Finance, Account Manager,
-                                etc.
-                            </li>
-                            <li>Experienced and/or knowledge in accounting (i.e keeping record of financial position of
-                                the chapter).
-                            </li>
-                            <li>Strong organizational skills.</li>
-                            <li>Strong attention to details.</li>
-                            <li>Strong analytical skills.</li>
-                            <li>Ability to work independently.</li>
-                            <li>Demonstrates passion and drive for the local DF chapter.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12" style="text-align: left;">
-                    <div class="row" style="text-align:center;">
-                        <a class="btn btn-default" href="application-form.php?position=vpfinance" style="margin-top: 80px;">Apply</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
-        <!-- End of VP Finance-->
-
-        <!-- VP Marketing and Public Relations -->
-        <div class="container" style="padding: 15px;background: #E4E4E4;">
-            <div class="row">
-                <div class="col-md-3 col-sm-12" style="text-align: center; margin-top: 20px;">
-                    <i class="fa fa-user" style="font-size: 15em;" aria-hidden="true"></i>
-                    <h5 class="uppercase mb0" style="color: #FCAC45;"><span><i class="ti-user"
-                                                                               style="font-size: 2em;"></i></span><br>
-                        VP Marketing and Public Relations</h5>
-                    <span class="inline-block mb40 mb-xs-24">London ON (Western University)</span>
-                </div>
-                <div class="col-md-6 col-sm-12" style="text-align: left;">
-                    <h6 class="uppercase text-center">Job
-                        Description</h6>
-                    <hr>
-                    <div style="padding-left: 15px">
-                        <h5 style="margin-bottom: 0px;">
-                            Roles &amp; Responsibilities:
-                        </h5>
-                        <ul class="bullets">
-                            <h6><b>Sales</b></h6>
-                            <li>Contact local organizations to establish relationships either by email, meet up or by
-                                phone.
-                            </li>
-                            <h6><b>Marketing</b></h6>
-                            <li>Develop public relations with the local community.</li>
-                            <li>Developing promotional material for events.</li>
-                            <li>Helping chapter developers with the design of their web apps.</li>
-                            <li>Attend training sessions to remain consistent and effective.</li>
-                        </ul>
-                        <h5 style="margin-bottom: 0px;">
-                            Skills &amp; Qualification:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Experience contacting organizations in a cold call and/or cold email setting.</li>
-                            <li>Experienced and/or knowledge in preparing and developing marketing, and advertising
-                                material.
-                            </li>
-                            <li>Strong verbal and written communication skills.</li>
-                            <li>Strong analytical skills.</li>
-                            <li>Ability to work independently.</li>
-                            <li>Demonstrates passion and drive for the local DF chapter.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12" style="text-align: left;">
-                    <div class="row" style="text-align:center;">
-                        <a class="btn btn-default" href="application-form.php?position=vpmarketing" style="margin-top: 80px;">Apply</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
-        <!-- End of VP Marketing and Public Relations -->
-
-        <!-- Developer -->
-        <div class="container" style="padding: 15px;background: #ecf0f1;">
-            <div class="row">
-                <div class="col-md-3 col-sm-12" style="text-align: center; margin-top: 20px;">
-                    <i class="fa fa-user" style="font-size: 15em;" aria-hidden="true"></i>
-                    <h5 class="uppercase mb0" style="color: #FCAC45;"><span><i class="ti-user"
-                                                                               style="font-size: 2em;"></i></span><br>
-                        Web Developer</h5>
-                    <span class="inline-block mb40 mb-xs-24">London ON (Western University)</span>
-                </div>
-                <div class="col-md-6 col-sm-12" style="text-align: left;">
-                    <h6 class="uppercase text-center">Job
-                        Description</h6>
-                    <hr>
-                    <div style="padding-left: 15px">
-                        <h5 style="margin-bottom: 0px;">
-                            Roles &amp; Responsibilities:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Working with VP Technology in planning the web design of each clientele project.</li>
-                            <li>Learning new technologies assigned by VP-Technology.</li>
-                            <li>Assisting VP Technology with organizing workshops.</li>
-                        </ul>
-                        <h5 style="margin-bottom: 0px;">
-                            Skills &amp; Qualification:
-                        </h5>
-                        <ul class="bullets">
-                            <li>Experienced in web development (HTML5, CSS3, Bootstrap, etc).</li>
-                            <li>Strong familiarity and experience with Git, GitHub and Heroku.</li>
-                            <li>Ability to work independently.</li>
-                            <li>Demonstrates passion and drive for the local DF chapter.</li>
-                            <li>Ability to pay attention to finest details and focus on completing tasks on time.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12" style="text-align: left;">
-                    <div class="row" style="text-align:center;">
-                        <a class="btn btn-default" href="application-form.php?position=webdeveloper" style="margin-top: 80px;">Apply</a>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
-        <!-- End of Developer -->
-    </div>
+    </section>
+    <!-- Application form ends -->
 
     <!-- Beginning of footer -->
     <nav id="footer">
@@ -400,26 +233,56 @@
                 </div>
                 <div class="modal-body">
                     <p>Last updated: August 19, 2016</p>
-                    <p>These Terms of Service ("Terms", "Terms of Service") govern your relationship with http://developersfoundation.ca website (the "Service") operated by Developers' Foundation ("us", "we", or "our").</p>
+                    <p>These Terms of Service ("Terms", "Terms of Service") govern your relationship with
+                        http://developersfoundation.ca website (the "Service") operated by Developers' Foundation ("us",
+                        "we", or "our").</p>
                     <p>Please read these Terms of Service carefully before using the Service.</p>
-                    <p>Your access to and use of the Service is based on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
-                    <p>By accessing or using the Service you agree to be bound by these Terms and accept all legal consequences. If you do not agree to these terms and conditions, in whole or in part, please do not use the Service.</p>
+                    <p>Your access to and use of the Service is based on your acceptance of and compliance with these
+                        Terms. These Terms apply to all visitors, users and others who access or use the Service.</p>
+                    <p>By accessing or using the Service you agree to be bound by these Terms and accept all legal
+                        consequences. If you do not agree to these terms and conditions, in whole or in part, please do
+                        not use the Service.</p>
                     <p><strong>Intellectual Property</strong></p>
-                    <p>The Service and all contents, including but not limited to text, images, graphics or code are the property of Developers' Foundation and are protected by copyright, trademarks, database and other intellectual property rights. You may display and copy, download or print portions of the material from the different areas of the Service only for your own non-commercial use. Any other use is strictly prohibited and may violate copyright, trademark and other laws. These Terms do not grant you a license to use any trademark of Developers' Foundation or its affiliates. You further agree not to use, change or delete any proprietary notices from materials downloaded from the Service.</p>
+                    <p>The Service and all contents, including but not limited to text, images, graphics or code are the
+                        property of Developers' Foundation and are protected by copyright, trademarks, database and
+                        other intellectual property rights. You may display and copy, download or print portions of the
+                        material from the different areas of the Service only for your own non-commercial use. Any other
+                        use is strictly prohibited and may violate copyright, trademark and other laws. These Terms do
+                        not grant you a license to use any trademark of Developers' Foundation or its affiliates. You
+                        further agree not to use, change or delete any proprietary notices from materials downloaded
+                        from the Service.</p>
                     <p><strong>Links To Other Web Sites</strong></p>
-                    <p>The Service may contain links to third-party web sites or services that are not owned or controlled by Developers' Foundation.</p>
-                    <p>Developers' Foundation has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that Developers' Foundation shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such websites or services.</p>
-                    <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web sites or services that you visit.</p>
+                    <p>The Service may contain links to third-party web sites or services that are not owned or
+                        controlled by Developers' Foundation.</p>
+                    <p>Developers' Foundation has no control over, and assumes no responsibility for, the content,
+                        privacy policies, or practices of any third party web sites or services. You further acknowledge
+                        and agree that Developers' Foundation shall not be responsible or liable, directly or
+                        indirectly, for any damage or loss caused or alleged to be caused by or in connection with use
+                        of or reliance on any such content, goods or services available on or through any such websites
+                        or services.</p>
+                    <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party
+                        web sites or services that you visit.</p>
                     <p><strong>Termination</strong></p>
-                    <p>We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach the Terms.</p>
-                    <p>All provisions of the Terms shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.</p>
+                    <p>We may terminate or suspend access to our Service immediately, without prior notice or liability,
+                        for any reason whatsoever, including, without limitation, if you breach the Terms.</p>
+                    <p>All provisions of the Terms shall survive termination, including, without limitation, ownership
+                        provisions, warranty disclaimers, indemnity and limitations of liability.</p>
                     <p>Upon termination, your right to use the Service will immediately cease.</p>
                     <p><strong>Governing Law</strong></p>
-                    <p>These Terms shall be governed by, and interpreted and enforced in accordance with, the laws in the Province of Ontario and the laws of Canada, as applicable.</p>
-                    <p>If any provision of these Terms is held to be invalid or unenforceable by a court of competent jurisdiction, then any remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements, oral or otherwise, regarding the Service.</p>
+                    <p>These Terms shall be governed by, and interpreted and enforced in accordance with, the laws in
+                        the Province of Ontario and the laws of Canada, as applicable.</p>
+                    <p>If any provision of these Terms is held to be invalid or unenforceable by a court of competent
+                        jurisdiction, then any remaining provisions of these Terms will remain in effect. These Terms
+                        constitute the entire agreement between us regarding our Service, and supersede and replace any
+                        prior agreements, oral or otherwise, regarding the Service.</p>
                     <p><strong>Changes</strong></p>
-                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will make reasonable efforts to provide at least 15 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.</p>
-                    <p>By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
+                        revision is material we will make reasonable efforts to provide at least 15 days' notice prior
+                        to any new terms taking effect. What constitutes a material change will be determined at our
+                        sole discretion.</p>
+                    <p>By continuing to access or use our Service after those revisions become effective, you agree to
+                        be bound by the revised terms. If you do not agree to the new terms, in whole or in part, please
+                        stop using the website and the Service.</p>
                     <p><strong>Contact Us</strong></p>
                     <p>If you have any questions about these Terms, please contact us.</p>
                 </div>
@@ -449,7 +312,7 @@
                         accordance with our website.<br></div>
                     <span id='infoCo'></span><br>
                     <div class='grayText'><strong>What personal information do we collect from the people that visit our
-                        blog, website or app?</strong></div>
+                            blog, website or app?</strong></div>
                     <br/>
                     <div class='innerText'>When ordering or registering on our site, as appropriate, you may be asked to
                         enter your name, email address, phone number or other details to help you with your experience.
@@ -586,7 +449,8 @@
                     <div class='innerText'><br><strong>Opting out:</strong><br>
                         Users can set preferences for how Google advertises to you using the Google Ad Settings page.
                         Alternatively, you can opt out by visiting the Network Advertising Initiative Opt Out page or by
-                        using the Google Analytics Opt Out Browser add on.</div>
+                        using the Google Analytics Opt Out Browser add on.
+                    </div>
                     <span id='calOppa'></span><br>
                     <div class='blueText'><strong>California Online Privacy Protection Act</strong></div>
                     <br/>
@@ -640,7 +504,7 @@
                         Practice Principles and how they should be implemented is critical to comply with the various
                         privacy laws that protect personal information.<br><br></div>
                     <div class='innerText'><strong>In order to be in line with Fair Information Practices we will take
-                        the following responsive action, should a data breach occur:</strong></div>
+                            the following responsive action, should a data breach occur:</strong></div>
                     <div class='innerText'>We will notify you via email</div>
                     <div class='innerText'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&bull;</strong> Within 7 business days
                     </div>
@@ -673,7 +537,7 @@
                         list or continue to send emails to our clients after the original transaction has occurred.
                     </div>
                     <div class='innerText'><br><strong>To be in accordance with CANSPAM, we agree to the
-                        following:</strong></div>
+                            following:</strong></div>
                     <div class='innerText'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&bull;</strong> Not use false or
                         misleading subjects or email addresses.
                     </div>
@@ -693,7 +557,7 @@
                         unsubscribe by using the link at the bottom of each email.
                     </div>
                     <div class='innerText'><strong><br>If at any time you would like to unsubscribe from receiving
-                        future emails, you can email us at</strong></div>
+                            future emails, you can email us at</strong></div>
                     <div class='innerText'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>&bull;</strong> Follow the
                         instructions at the bottom of each email.
                     </div>
@@ -706,9 +570,7 @@
         </div>
     </div>
     <!-- End of Privacy Policy modal-->
-
 </div>
-
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
