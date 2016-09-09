@@ -183,7 +183,7 @@ Back to available positions
                             <hr>
                         </div>
                         <div class="col-md-12">
-                            <button type="submit"
+                            <button type="submit" onclick="document.getElementsByTagName('form')[0].submit()"
                                     class="button button--nuka button--round-s button--text-thick button--size-l"
                                     style="color: #fff; text-align:center" ><b>Submit Application</b>
                             </button>
