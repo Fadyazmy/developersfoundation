@@ -253,7 +253,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.9",
+            "version": "v2.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -315,16 +315,16 @@
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v109",
+            "version": "v110",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "cd2d13992b72d049aa270d4b745aae6329e0c037"
+                "reference": "b5c4a0b77a725c4ab9dc1736e5a8217824790093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/cd2d13992b72d049aa270d4b745aae6329e0c037",
-                "reference": "cd2d13992b72d049aa270d4b745aae6329e0c037",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/b5c4a0b77a725c4ab9dc1736e5a8217824790093",
+                "reference": "b5c4a0b77a725c4ab9dc1736e5a8217824790093",
                 "shasum": ""
             },
             "bin": [
@@ -355,7 +355,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-07-21 11:26:05"
+            "time": "2016-08-26 14:02:29"
         }
     ],
     "aliases": [],
