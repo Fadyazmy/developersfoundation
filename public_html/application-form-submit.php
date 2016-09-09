@@ -23,7 +23,7 @@ use Parse\ParseObject;
 use Parse\ParseFile;
 
 ParseClient::initialize('devfound-career-db', 'YOUR_CLIENT_KEY', 'thisismymasterkey');
-ParseClient::setServerURL('http://localhost:1337/parse');
+ParseClient::setServerURL('http://devfound-career-db.herokuapp.com/parse');
 $application = new ParseObject("applications");
 $application->set("position", $position);
 $application->set("name", $name);
