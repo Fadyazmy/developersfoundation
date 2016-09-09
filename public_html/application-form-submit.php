@@ -22,7 +22,8 @@ use Parse\ParseClient;
 use Parse\ParseObject;
 use Parse\ParseFile;
 
-ParseClient::initialize('SeHk9pU9MA4vuoCGc5knx0VKsy8PoOPJu5ZrxLna', 'ln8Pq8b9VD47rvXE80C5UIyE5btckohZN6RDzTad', 's2who59fnh6PYBmlcJrC9W1ND8aj71fPqvITey4p');
+ParseClient::initialize('devfound-career-db', 'YOUR_CLIENT_KEY', 'thisismymasterkey');
+ParseClient::setServerURL('http://localhost:1337/parse');
 $application = new ParseObject("applications");
 $application->set("position", $position);
 $application->set("name", $name);

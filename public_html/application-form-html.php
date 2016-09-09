@@ -133,13 +133,13 @@ Back to available positions
                             <button type="button"
                                     class="button button--nuka button--round-s button--text-thick button--size-s"
                                     style="color: #fff; text-align:center" name="filePlaceholder"
-                                    onclick="document.getElementsByName('fileToUpload')[0].click(); return false;">
+                                    onclick="event.preventDefault(); document.getElementsByName('fileToUpload')[0].click(); return false;">
                                 Attach
                                 your resume
                             </button>
                             <input type="file" name="fileToUpload" style="display: none;" onchange="fileSubmit(this)"/>
                             <script>
-                                document.getElementsByName("filePlaceholder")[0].preventDefault();
+                                //document.getElementsByName("filePlaceholder")[0].preventDefault();
 
                                 function fileSubmit(data) {
                                     var file = data.value;
@@ -183,7 +183,7 @@ Back to available positions
                             <hr>
                         </div>
                         <div class="col-md-12">
-                            <button type="button submit"
+                            <button type="submit"
                                     class="button button--nuka button--round-s button--text-thick button--size-l"
                                     style="color: #fff; text-align:center" ><b>Submit Application</b>
                             </button>

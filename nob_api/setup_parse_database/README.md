@@ -12,7 +12,7 @@
 cd folderName
 git remote remove origin
 git remote add origin https://link.to.your.git
-git push
+git push --set-upstream origin master
 ```
 4. Run `npm update` to download dependencies and such
 
