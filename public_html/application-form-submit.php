@@ -12,10 +12,10 @@ $linkedin = $_POST["linkedin"];
 $github = $_POST["github"];
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+//$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 //$imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-echo $target_file;
+//echo $target_file;
 
 require '../vendor/autoload.php';
 use Parse\ParseClient;
@@ -24,12 +24,12 @@ use Parse\ParseFile;
 
 ParseClient::initialize('devfound-career-db', 'YOUR_CLIENT_KEY', 'thisismymasterkey');
 ParseClient::setServerURL('http://devfound-career-db.herokuapp.com/parse');
-$application = new ParseObject("applications");
+$application = new ParseObject("Applications");
 $application->set("position", $position);
 $application->set("name", $name);
 $application->set("email", $email);
 $application->set("number", $number);
-$application->set("resume", $target_file);
+//$application->set("resume", $target_file);
 $application->set("schoolyear", $schoolyear);
 $application->set("program", $program);
 $application->set("linkedin", $linkedin);
@@ -47,6 +47,7 @@ if($check !== false) {
 }*/
 //}
 
+/*
 // Check if file already exists
 if (file_exists($target_file)) {
     $errMsg = $errMsg . "Sorry, file already exists.<br>";
@@ -57,6 +58,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $errMsg = $errMsg . "Sorry, your file is too large.<br>";
     $uploadOk = 0;
 }
+*/
 
 // Allow certain file formats
 /*if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
@@ -65,6 +67,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $uploadOk = 0;
 }*/
 
+/*
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     $errMsg = $errMsg . "Sorry, your file was not uploaded.<br>";
@@ -85,6 +88,7 @@ $file->save();
 $url = $file->getURL();
 $application->set("resumeFile", $file);
 $application->set("resumeURL", $url);
+*/
 
 try {
     $application->save();
