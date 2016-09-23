@@ -53,6 +53,7 @@ try {
 // Find all available websites and put into side bar (with get links)
 $websiteQuery = new ParseQuery("Website");
 $websiteQuery->ascending("nickname");
+
 $websiteMenu = "";
 try {
     $results = $websiteQuery->find();
