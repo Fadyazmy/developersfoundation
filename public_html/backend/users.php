@@ -44,13 +44,17 @@ $allRoles = $query->find();
                             if ($theUser == ParseUser::getCurrentUser())
                                 continue;
                             echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
-                            echo "<td>" . $theUser->get('username') . "</td>";
+                            echo "<td data-un=\"" . $theUser->getObjectId() . "\">" . $theUser->get('username') . "</td>";
                             echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
 
-                            if (ParseCloud::run("isAdmin", ["username" => $theUser->getUsername()]))
+                            // TODO: Wire this up properly
+                            if (ParseCloud::run("isAdmin", ["username" => $theUser->getUsername()])) {
                                 echo "<option value=\"" . $allRoles[0]->getObjectId() . "\" selected>" . $allRoles[0]->get('name') . "</option>";
-                            else
+                                echo "<option value=\"" . $allRoles[1]->getObjectId() . "\">" . $allRoles[1]->get('name') . "</option>";
+                            } else {
+                                echo "<option value=\"" . $allRoles[0]->getObjectId() . "\">" . $allRoles[0]->get('name') . "</option>";
                                 echo "<option value=\"" . $allRoles[1]->getObjectId() . "\" selected>" . $allRoles[1]->get('name') . "</option>";
+                            }
 
                             /*for ($j = 1; $j < count($allRoles); $j++) {
                                 echo "<option value=\"" . $allRoles[$j]->getObjectId() . "\">" . $allRoles[$j]->get('name') . "</option>";
