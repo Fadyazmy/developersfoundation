@@ -1,10 +1,17 @@
 <?php
-include_once "htmlHeader.php";
+require_once "phpHeader.php";
 
 use Parse\ParseUser;
 use Parse\ParseQuery;
 use Parse\ParseException;
 use Parse\ParseCloud;
+
+if (!ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()])) {
+    require_once "error/page_403.html";
+    exit();
+}
+
+require_once "htmlHeader.php";
 
 $query = new ParseQuery('_Role');
 $allRoles = $query->find();
