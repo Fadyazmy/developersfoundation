@@ -120,6 +120,7 @@ $allRoles = $query->find();
                                      aria-multiselectable="true">
                                     <?php
                                     $query = new ParseQuery("Website");
+                                    $query->ascending('name');
                                     try {
                                         $allWebsites = $query->find();
                                         for ($i = 0; $i < count($allWebsites); $i++) {
@@ -130,7 +131,7 @@ $allRoles = $query->find();
                                             echo "</h4></a>";
 
                                             echo "<div id=\"collapseOne\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                                            echo "<input id=\"tags_1\" type=\"text\" class=\"tags form-control\" value=\"michaelpark, corgi\"/>";
+                                            echo "<input id=\"tags_" . $i . "\" type=\"text\" class=\"tags form-control\" value=\"michaelpark, corgi\"/>";
                                             echo "<div id=\"suggestions-container1\" style=\"position: relative; float: left; width: 250px; margin: 10px;\"></div>";
                                             echo "</div></div></div>";
                                         }
