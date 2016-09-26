@@ -101,7 +101,7 @@ if (isset($includeFile) && $includeFile != "") {
 <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
 
 <!-- jQuery Tags Input -->
-<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<script src="assets/js/bootstrap-tokenfield.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="build/js/custom.min.js"></script>
