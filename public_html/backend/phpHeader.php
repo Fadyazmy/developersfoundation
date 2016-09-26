@@ -60,12 +60,12 @@ try {
     for ($i = 0; $i < count($results); $i++) {
         $website = $results[$i];
         $theACL = $website->getACL();
-        echo "<!--" . $theACL->getUserWriteAccess($parseUser) . "-->";
-        echo "<!--" . $parseUser->getUsername() . "-->";
-        echo "<!--" . ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()]) . "!-->";
         if ($theACL->getUserWriteAccess($parseUser) || ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()])) {
             $websiteMenu = $websiteMenu . '<li><a href="website.php?website=' . $website->getObjectId() . '">' . $website->get('nickname') . '</a></li>';
         }
+    }
+    if ($websiteMenu == "") {
+        $websiteMenu = '<li><a href="">None Available</a></li>';
     }
 } catch (ParseException $ex) {
     echo "<!--";
