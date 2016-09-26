@@ -4,6 +4,7 @@ include_once "htmlHeader.php";
 use Parse\ParseUser;
 use Parse\ParseQuery;
 use Parse\ParseException;
+use Parse\ParseCloud;
 
 $query = new ParseQuery('_Role');
 $allRoles = $query->find();
