@@ -829,13 +829,14 @@ if ($websiteSubmit) {
 <!-- Auto Tag -->
 <script>
 $(document).ready(function () {
-  $(\'#tag_0\').tokenfield({
+  $(\'#tags_0\').tokenfield({
   autocomplete: {
     source: [\'red\',\'blue\',\'green\',\'yellow\',\'violet\',\'brown\',\'purple\',\'black\',\'white\'],
     delay: 100
   },
   showAutocompleteOnFocus: true
-})});
+});
+});
 </script>
 <!-- / Auto Tag -->
 ';
