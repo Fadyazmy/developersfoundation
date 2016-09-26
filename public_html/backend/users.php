@@ -38,6 +38,8 @@ use Parse\ParseException;
                         $results = $query->find();
                         for ($i = 0; $i < count($results); $i++) {
                             $theUser = $results[$i];
+                            if ($theUser == ParseUser::getCurrentUser())
+                                continue;
                             echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
                             echo "<td>" . $theUser->get('username') . "</td>";
                             echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
