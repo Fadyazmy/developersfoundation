@@ -113,12 +113,19 @@
                                     <li><a href="javascript:void(0)">Dashboard3</a></li>-->
                                 </ul>
                             </li>
-                            <li><a><i class="fa fa-pencil"></i> Client Sites <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-pencil"></i> Client Sites <span
+                                        class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <?php echo $websiteMenu; ?>
                                 </ul>
                             </li>
-                            <li><a href="users.php"><i class="fa fa-users"></i> Users </a></li>
+                            <?php
+                            if (ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()])) {
+                                ?>
+                                <li><a href="users.php"><i class="fa fa-users"></i> Users </a></li>
+                                <?php
+                            }
+                            ?>
                             <!--<li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="form.html">General Form</a></li>
