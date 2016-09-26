@@ -130,7 +130,7 @@ $allRoles = $query->find();
 
                                         echo "<div id=\"collapse" . $i . "\" class=\"panel-collapse collapse" . ($i == 0 ? " in" : "") . "\" role=\"tabpanel\" aria-labelledby=\"heading" . $i . "\"><div class=\"panel-body\">";
                                         echo "<input id=\"tags_" . $i . "\" type=\"text\" class=\"tags form-control\" value=\"" . $usersList . "\"/>";
-                                        //echo "<div id=\"suggestions-container" . $i . "\" style=\"position: relative; float: left; width: 250px; margin: 10px;\"></div>";
+                                        echo "<div id=\"suggestions-container" . $i . "\" style=\"position: relative; float: left; width: 250px; margin: 10px;\"></div>";
                                         echo "</div></div></div>";
                                     }
                                     ?>

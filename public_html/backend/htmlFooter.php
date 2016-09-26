@@ -842,17 +842,14 @@ if($websiteSubmit) {
 
     $(document).ready(function () {
         $(\'#tags_0\').tagsInput({
-            width: \'auto\'
+            width: \'auto\',
+            autocomplete_url:\'assets/js/jquery-ui.min.js\'
         });
     });
     $(document).ready(function () {
         $(\'#tags_1\').tagsInput({
-            width: \'auto\'
-        });
-    });
-    $(document).ready(function () {
-        $(\'#tags_2\').tagsInput({
-            width: \'auto\'
+            width: \'auto\',
+            autocomplete_url:\'assets/js/jquery-ui.min.js\'
         });
     });
 </script>
