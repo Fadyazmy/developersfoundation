@@ -4,6 +4,7 @@ include_once "htmlHeader.php";
 use Parse\ParseUser;
 use Parse\ParseQuery;
 use Parse\ParseException;
+
 ?>
 <!-- page content -->
 <div class="right_col" role="main">
@@ -34,18 +35,13 @@ use Parse\ParseException;
                         <?php
                         $query = ParseUser::query();
                         try {
-                            $results = $query->find();
-                            for ($i = 0; $i < count($results); $i++) {
-                                $theUser = $results[$i];
-                                echo "<tr class=\"" . ($i % 2 == 0? "even" : "odd") . " pointer\">";
-                                echo "<td>" . $theUser->get('username') . "</td>";
-                                echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
-                                echo "</select></td></td>";
-                            }
-                        } catch (\Parse\ParseException $ex) {
-                            echo "<!-- INTERNAL SERVER ERROR: ";
-                            echo $ex->getMessage();
-                            echo "-->";
+                        $results = $query->find();
+                        for ($i = 0; $i < count($results); $i++) {
+                            $theUser = $results[$i];
+                            echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
+                            echo "<td>" . $theUser->get('username') . "</td>";
+                            echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
+                            echo "</select></td></td>";
                         }
                         ?>
                         <!--<tr class="even pointer">
@@ -152,6 +148,13 @@ use Parse\ParseException;
                         </tr>
                         </tbody>
                     </table>
+                    <?php
+                    } catch (\Parse\ParseException $ex) {
+                        echo "<!-- INTERNAL SERVER ERROR: ";
+                        echo $ex->getMessage();
+                        echo "-->";
+                    }
+                    ?>
                 </div>
             </div>
         </div>
