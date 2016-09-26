@@ -27,7 +27,22 @@ include_once "htmlHeader.php";
                         </thead>
 
                         <tbody>
-                        <tr class="even pointer">
+                        <?php
+                        $query = ParseUser::query();
+                        try {
+                            $results = $query->find();
+                            for ($i = 0; $i < count($results); $i++) {
+                                $theUser = $results[$i];
+                                echo "<tr class=\"" . ($i % 2 == 0? "even" : "odd") . " pointer\">";
+                                echo "<td>" . $theUser->get('username') . "</td>";
+                                echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
+                                echo "</select></td></td>";
+                            }
+                        } catch (\Parse\ParseException $ex) {
+
+                        }
+                        ?>
+                        <!--<tr class="even pointer">
                             <td>Michael Park</td>
                             <td><select id="role1" class="form-control" required="">
                                     <option value="" disabled>Select the role</option>
@@ -46,7 +61,7 @@ include_once "htmlHeader.php";
                                     <option value="mouth">Cute little corgi</option>
                                 </select></td>
                             </td>
-                        </tr>
+                        </tr>-->
                         </tbody>
                     </table>
                 </div>

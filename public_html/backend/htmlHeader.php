@@ -6,7 +6,7 @@
  * Time: 11:10 AM
  */
 
-if (!isset($parseUser)) {
+if (!isset($parseUser) || !isset($websiteMenu)) {
     require_once "phpHeader.php";
 }
 use Parse\ParseCloud;
