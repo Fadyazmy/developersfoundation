@@ -174,6 +174,9 @@ $allRoles = $query->find();
                         echo "-->";
                     }
                     ?>
+                    <div class="pull-right">
+                        <button class="btn btn-success" name="save">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
