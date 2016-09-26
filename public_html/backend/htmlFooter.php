@@ -108,7 +108,7 @@ if (isset($includeFile) && $includeFile != "") {
 
 <!-- FullCalendar -->
 <script>
-    $(window).load(function() {
+    $(window).load(function () {
         var date = new Date(),
             d = date.getDate(),
             m = date.getMonth(),
@@ -124,13 +124,13 @@ if (isset($includeFile) && $includeFile != "") {
             },
             selectable: true,
             selectHelper: true,
-            select: function(start, end, allDay) {
+            select: function (start, end, allDay) {
                 $('#fc_create').click();
 
                 started = start;
                 ended = end;
 
-                $(".antosubmit").on("click", function() {
+                $(".antosubmit").on("click", function () {
                     var title = $("#title").val();
                     if (end) {
                         ended = end;
@@ -158,13 +158,13 @@ if (isset($includeFile) && $includeFile != "") {
                     return false;
                 });
             },
-            eventClick: function(calEvent, jsEvent, view) {
+            eventClick: function (calEvent, jsEvent, view) {
                 $('#fc_edit').click();
                 $('#title2').val(calEvent.title);
 
                 categoryClass = $("#event_type").val();
 
-                $(".antosubmit2").on("click", function() {
+                $(".antosubmit2").on("click", function () {
                     calEvent.title = $("#title2").val();
 
                     calendar.fullCalendar('updateEvent', calEvent);
@@ -290,7 +290,7 @@ if (isset($includeFile) && $includeFile != "") {
 
 
 <?php
-if($websiteSubmit) {
+if ($websiteSubmit) {
     echo '
 <!-- PNotify TODO: MOVE THIS TO HEADER -->
     <link href="vendors/pnotify/dist/pnotify.css" rel="stylesheet">
@@ -827,13 +827,14 @@ if($websiteSubmit) {
 
 <!-- Auto Tag -->
 <script>
-$(\'#tag_0\').tokenfield({
+$(document).ready(function () {
+  (\'#tag_0\').tokenfield({
   autocomplete: {
     source: [\'red\',\'blue\',\'green\',\'yellow\',\'violet\',\'brown\',\'purple\',\'black\',\'white\'],
     delay: 100
   },
   showAutocompleteOnFocus: true
-})
+})});
 </script>
 <!-- / Auto Tag -->
 ';
