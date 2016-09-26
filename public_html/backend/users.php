@@ -1,5 +1,8 @@
 <?php
 include_once "htmlHeader.php";
+
+use Parse\ParseUser;
+use Parse\ParseQuery;
 ?>
 <!-- page content -->
 <div class="right_col" role="main">
