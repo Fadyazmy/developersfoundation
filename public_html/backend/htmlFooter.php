@@ -101,8 +101,7 @@ if (isset($includeFile) && $includeFile != "") {
 <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
 
 <!-- jQuery Tags Input -->
-<script src="assets/js/jquery-ui.min.js"></script>
-<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<script src="assets/js/bootstrap-tokenfield.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="build/js/custom.min.js"></script>
@@ -826,35 +825,7 @@ if($websiteSubmit) {
 </script>
 <!-- /Datatables -->
 
-<!-- TODO: You might need to do something with the scrip below for tag -->
-<!-- jQuery Tags Input -->
-<script>
-    function onAddTag(tag) {
-        alert("Added a tag: " + tag);
-    }
-
-    function onRemoveTag(tag) {
-        alert("Removed a tag: " + tag);
-    }
-
-    function onChangeTag(input, tag) {
-        alert("Changed a tag: " + tag);
-    }
-
-    $(document).ready(function () {
-        $(\'#tags_0\').tagsInput({
-            width: \'auto\',
-            autocomplete_url:\'assets/js/jquery-ui.min.js\'
-        });
-    });
-    $(document).ready(function () {
-        $(\'#tags_1\').tagsInput({
-            width: \'auto\',
-            autocomplete_url:\'assets/js/jquery-ui.min.js\'
-        });
-    });
-</script>
-<!-- /jQuery Tags Input -->';
+';
 }
 ?>
 
