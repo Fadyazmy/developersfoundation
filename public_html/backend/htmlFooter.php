@@ -841,17 +841,17 @@ if($websiteSubmit) {
     }
 
     $(document).ready(function () {
+        $(\'#tags_0\').tagsInput({
+            width: \'auto\'
+        });
+    });
+    $(document).ready(function () {
         $(\'#tags_1\').tagsInput({
             width: \'auto\'
         });
     });
     $(document).ready(function () {
         $(\'#tags_2\').tagsInput({
-            width: \'auto\'
-        });
-    });
-    $(document).ready(function () {
-        $(\'#tags_3\').tagsInput({
             width: \'auto\'
         });
     });
