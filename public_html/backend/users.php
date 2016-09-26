@@ -39,7 +39,9 @@ include_once "htmlHeader.php";
                                 echo "</select></td></td>";
                             }
                         } catch (\Parse\ParseException $ex) {
-
+                            echo "<!-- INTERNAL SERVER ERROR: ";
+                            echo $ex->getMessage();
+                            echo "-->";
                         }
                         ?>
                         <!--<tr class="even pointer">
