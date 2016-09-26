@@ -96,7 +96,7 @@ require_once "htmlHeader.php";
                 $.ajax({
                     url: 'https://api.cloudflare.com/client/v4/zones/0be7b1daf9a7e94109bb013e1ef0e455/purge_cache' + '?' + $.param({
                         'X-Auth-Email': 'iamnobodyrandom@yahoo.com',
-                        'X-Auth-Key': '6a17999330660807d93ac80935c6026612426',
+                        'X-Auth-Key': '<?php echo getenv('CLOUDFLARE_API_TOKEN'); ?>',
                         'purge_everything': true
                     }),
                     type: 'DELETE',
