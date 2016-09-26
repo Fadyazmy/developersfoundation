@@ -5,6 +5,8 @@ use Parse\ParseUser;
 use Parse\ParseQuery;
 use Parse\ParseException;
 
+$query = new ParseQuery('_Role');
+$allRoles = $query->find();
 ?>
 <!-- page content -->
 <div class="right_col" role="main">
@@ -35,14 +37,19 @@ use Parse\ParseException;
                         <?php
                         $query = ParseUser::query();
                         try {
-                        $results = $query->find();
-                        for ($i = 0; $i < count($results); $i++) {
-                            $theUser = $results[$i];
+                        $allUsers = $query->find();
+                        for ($i = 0; $i < count($allUsers); $i++) {
+                            $theUser = $allUsers[$i];
                             if ($theUser == ParseUser::getCurrentUser())
                                 continue;
                             echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
                             echo "<td>" . $theUser->get('username') . "</td>";
                             echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
+
+                            for ($j = 0; $j < count($allRoles); $j++) {
+                                echo "<option value=\"" . $allRoles[$j]->getObjectId() . "\">" . $allRoles[$j]->get('name') . "</option>";
+                            }
+
                             echo "</select></td></td>";
                         }
                         ?>
@@ -151,7 +158,7 @@ use Parse\ParseException;
                         </tbody>
                     </table>
                     <?php
-                    } catch (\Parse\ParseException $ex) {
+                    } catch (ParseException $ex) {
                         echo "<!-- INTERNAL SERVER ERROR: ";
                         echo $ex->getMessage();
                         echo "-->";
