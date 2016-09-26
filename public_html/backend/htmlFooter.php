@@ -825,8 +825,9 @@ if($websiteSubmit) {
 </script>
 <!-- /Datatables -->
 
+<!-- Auto Tag -->
 <script>
-$(\'#tokenfield\').tokenfield({
+$(\'#tag_0\').tokenfield({
   autocomplete: {
     source: [\'red\',\'blue\',\'green\',\'yellow\',\'violet\',\'brown\',\'purple\',\'black\',\'white\'],
     delay: 100
@@ -834,7 +835,7 @@ $(\'#tokenfield\').tokenfield({
   showAutocompleteOnFocus: true
 })
 </script>
-
+<!-- / Auto Tag -->
 ';
 }
 ?>
