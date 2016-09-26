@@ -113,11 +113,11 @@ use Parse\ParseCloud;
                         <h3>Dashboard</h3>
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
+                                <!--<ul class="nav child_menu">
                                     <li><a href="analytics.php">Analytics</a></li>
-                                    <!--<li><a href="javascript:void(0)">Dashboard2</a></li>
-                                    <li><a href="javascript:void(0)">Dashboard3</a></li>-->
-                                </ul>
+                                    <li><a href="javascript:void(0)">Dashboard2</a></li>
+                                    <li><a href="javascript:void(0)">Dashboard3</a></li>
+                                </ul>-->
                             </li>
                             <li><a><i class="fa fa-pencil"></i> Client Sites <span
                                         class="fa fa-chevron-down"></span></a>
