@@ -38,51 +38,60 @@ $allRoles = $query->find();
                         <?php
                         $query = ParseUser::query();
                         try {
-                        $allUsers = $query->find();
-                        for ($i = 0; $i < count($allUsers); $i++) {
-                            $theUser = $allUsers[$i];
-                            if ($theUser == ParseUser::getCurrentUser())
-                                continue;
-                            echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
-                            echo "<td data-un=\"" . $theUser->getObjectId() . "\">" . $theUser->get('username') . "</td>";
-                            echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
+                            $usersList = "";
+                            $allUsers = $query->find();
+                            for ($i = 0; $i < count($allUsers); $i++) {
+                                $theUser = $allUsers[$i];
+                                if ($theUser == ParseUser::getCurrentUser())
+                                    continue;
+                                echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
+                                echo "<td data-un=\"" . $theUser->getObjectId() . "\">" . $theUser->get('username') . "</td>";
+                                echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
 
-                            // TODO: Wire this up properly
-                            if (ParseCloud::run("isAdmin", ["username" => $theUser->getUsername()])) {
-                                echo "<option value=\"" . $allRoles[0]->getObjectId() . "\" selected>" . $allRoles[0]->get('name') . "</option>";
-                                echo "<option value=\"" . $allRoles[1]->getObjectId() . "\">" . $allRoles[1]->get('name') . "</option>";
-                            } else {
-                                echo "<option value=\"" . $allRoles[0]->getObjectId() . "\">" . $allRoles[0]->get('name') . "</option>";
-                                echo "<option value=\"" . $allRoles[1]->getObjectId() . "\" selected>" . $allRoles[1]->get('name') . "</option>";
+                                // TODO: Wire this up properly
+                                if (ParseCloud::run("isAdmin", ["username" => $theUser->getUsername()])) {
+                                    echo "<option value=\"" . $allRoles[0]->getObjectId() . "\" selected>" . $allRoles[0]->get('name') . "</option>";
+                                    echo "<option value=\"" . $allRoles[1]->getObjectId() . "\">" . $allRoles[1]->get('name') . "</option>";
+                                } else {
+                                    echo "<option value=\"" . $allRoles[0]->getObjectId() . "\">" . $allRoles[0]->get('name') . "</option>";
+                                    echo "<option value=\"" . $allRoles[1]->getObjectId() . "\" selected>" . $allRoles[1]->get('name') . "</option>";
+                                }
+
+                                /*for ($j = 1; $j < count($allRoles); $j++) {
+                                    echo "<option value=\"" . $allRoles[$j]->getObjectId() . "\">" . $allRoles[$j]->get('name') . "</option>";
+                                }*/
+
+                                echo "</select></td></td>";
                             }
-
-                            /*for ($j = 1; $j < count($allRoles); $j++) {
-                                echo "<option value=\"" . $allRoles[$j]->getObjectId() . "\">" . $allRoles[$j]->get('name') . "</option>";
-                            }*/
-
-                            echo "</select></td></td>";
+                            ?>
+                            <!--<tr class="even pointer">
+                                <td>Michael Park</td>
+                                <td><select id="role1" class="form-control" required="">
+                                        <option value="" disabled>Select the role</option>
+                                        <option value="press">Admin</option>
+                                        <option value="net">Client</option>
+                                        <option value="mouth">Cute little corgi</option>
+                                    </select></td>
+                                </td>
+                            </tr>
+                            <tr class="odd pointer">
+                                <td>Michael Park</td>
+                                <td><select id="role2" class="form-control" required="">
+                                        <option value="" disabled>Select the role</option>
+                                        <option value="press">Admin</option>
+                                        <option value="net">Client</option>
+                                        <option value="mouth">Cute little corgi</option>
+                                    </select></td>
+                                </td>
+                            </tr>-->
+                            <?php
+                        } catch (ParseException $ex) {
+                            echo "<!-- INTERNAL SERVER ERROR: ";
+                            echo $ex->getMessage();
+                            echo "-->";
+                            echo "Sorry the server hit a hitch.";
                         }
                         ?>
-                        <!--<tr class="even pointer">
-                            <td>Michael Park</td>
-                            <td><select id="role1" class="form-control" required="">
-                                    <option value="" disabled>Select the role</option>
-                                    <option value="press">Admin</option>
-                                    <option value="net">Client</option>
-                                    <option value="mouth">Cute little corgi</option>
-                                </select></td>
-                            </td>
-                        </tr>
-                        <tr class="odd pointer">
-                            <td>Michael Park</td>
-                            <td><select id="role2" class="form-control" required="">
-                                    <option value="" disabled>Select the role</option>
-                                    <option value="press">Admin</option>
-                                    <option value="net">Client</option>
-                                    <option value="mouth">Cute little corgi</option>
-                                </select></td>
-                            </td>
-                        </tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -104,76 +113,92 @@ $allRoles = $query->find();
                             </th>
                         </tr>
                         </thead>
-
                         <tbody>
                         <tr class="even pointer">
                             <td class=" last">
                                 <div class="accordion" id="accordion" role="tablist"
                                      aria-multiselectable="true">
+                                    <?php
+                                    $query = new ParseQuery("Website");
+                                    try {
+                                        $allWebsites = $query->find();
+                                        for ($i = 0; $i < count($allWebsites); $i++) {
+                                            echo "<div class=\"panel\" data-id=\"";
+                                            echo $allWebsites[$i]->getObjectId();
+                                            echo "\"><a class=\"panel-heading\" role=\"tab\" id=\"headingOne\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\"><h4 class=\"panel-title\">";
+                                            echo $allWebsites[$i]->get('name');
+                                            echo "</h4></a>";
 
-                                    <div class="panel">
-                                        <a class="panel-heading" role="tab" id="headingOne"
-                                           data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                           aria-expanded="true" aria-controls="collapseOne">
-                                            <h4 class="panel-title">Developers' Foundation</h4>
-                                        </a>
-                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                                             aria-labelledby="headingOne">
-                                            <div class="panel-body">
-                                                <input id="tags_1" type="text" class="tags form-control"
-                                                       value="michaelpark, corgi"/>
-                                                <div id="suggestions-container1"
-                                                     style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                            echo "<div id=\"collapseOne\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
+                                            echo "<input id=\"tags_1\" type=\"text\" class=\"tags form-control\" value=\"michaelpark, corgi\"/>";
+                                            echo "<div id=\"suggestions-container1\" style=\"position: relative; float: left; width: 250px; margin: 10px;\"></div>";
+                                            echo "</div></div></div>";
+                                        }
+                                        ?>
+                                        <!--<div class="panel">
+                                            <a class="panel-heading" role="tab" id="headingOne"
+                                               data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                               aria-expanded="true" aria-controls="collapseOne">
+                                                <h4 class="panel-title">Developers' Foundation</h4>
+                                            </a>
+                                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                                 aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <input id="tags_1" type="text" class="tags form-control"
+                                                           value="michaelpark, corgi"/>
+                                                    <div id="suggestions-container1"
+                                                         style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="panel">
-                                        <a class="panel-heading collapsed" role="tab" id="headingTwo"
-                                           data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
-                                           aria-expanded="false" aria-controls="collapseTwo">
-                                            <h4 class="panel-title">WithU FM</h4>
-                                        </a>
-                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                                             aria-labelledby="headingTwo">
-                                            <div class="panel-body">
-                                                <input id="tags_2" type="text" class="tags form-control" value="corgi"/>
-                                                <div id="suggestions-container2"
-                                                     style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                        <div class="panel">
+                                            <a class="panel-heading collapsed" role="tab" id="headingTwo"
+                                               data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                                               aria-expanded="false" aria-controls="collapseTwo">
+                                                <h4 class="panel-title">WithU FM</h4>
+                                            </a>
+                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                                 aria-labelledby="headingTwo">
+                                                <div class="panel-body">
+                                                    <input id="tags_2" type="text" class="tags form-control"
+                                                           value="corgi"/>
+                                                    <div id="suggestions-container2"
+                                                         style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="panel">
-                                        <a class="panel-heading collapsed" role="tab" id="headingThree"
-                                           data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
-                                           aria-expanded="false" aria-controls="collapseThree">
-                                            <h4 class="panel-title">Collapsible Group Items #3</h4>
-                                        </a>
-                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                                             aria-labelledby="headingThree">
-                                            <div class="panel-body">
-                                                <input id="tags_3" type="text" class="tags form-control"
-                                                       value="nobodyrandom, michaelpark, corgi"/>
-                                                <div id="suggestions-container3"
-                                                     style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                        <div class="panel">
+                                            <a class="panel-heading collapsed" role="tab" id="headingThree"
+                                               data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+                                               aria-expanded="false" aria-controls="collapseThree">
+                                                <h4 class="panel-title">Collapsible Group Items #3</h4>
+                                            </a>
+                                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                                 aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <input id="tags_3" type="text" class="tags form-control"
+                                                           value="nobodyrandom, michaelpark, corgi"/>
+                                                    <div id="suggestions-container3"
+                                                         style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-
+                                        </div>-->
+                                        <?php
+                                    } catch(ParseException $ex) {
+                                        echo "<!-- INTERNAL SERVER ERROR: ";
+                                        echo $ex->getMessage();
+                                        echo "-->";
+                                        echo "Sorry server error.";
+                                    }
+                                    ?>
                                 </div>
                                 <!-- end of accordion --></a>
                             </td>
                         </tr>
                         </tbody>
                     </table>
-                    <?php
-                    } catch (ParseException $ex) {
-                        echo "<!-- INTERNAL SERVER ERROR: ";
-                        echo $ex->getMessage();
-                        echo "-->";
-                    }
-                    ?>
                     <div class="pull-right">
                         <button class="btn btn-success" name="save">Save</button>
                     </div>
