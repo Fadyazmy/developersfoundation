@@ -5,6 +5,10 @@
  * Date: 7/10/16
  * Time: 11:10 AM
  */
+
+if (!isset($parseUser)) {
+    require_once "phpHeader.php";
+}
 ?>
 <!DOCTYPE html>
 <!--TODO: fix JS hieght thing-->
@@ -122,7 +126,7 @@
                             <?php
                             if (ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()])) {
                                 ?>
-                                <li><a href="users.php"><i class="fa fa-users"></i> Users </a></li>
+                                <li><a href="users.php"><i class="fa fa-users"></i> User Management </a></li>
                                 <?php
                             }
                             ?>
