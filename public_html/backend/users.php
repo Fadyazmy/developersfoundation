@@ -1,5 +1,13 @@
 <?php
 include_once "htmlHeader.php";
+
+use Parse\ParseUser;
+use Parse\ParseQuery;
+use Parse\ParseException;
+use Parse\ParseCloud;
+
+$query = new ParseQuery('_Role');
+$allRoles = $query->find();
 ?>
 <!-- page content -->
 <div class="right_col" role="main">
@@ -27,7 +35,35 @@ include_once "htmlHeader.php";
                         </thead>
 
                         <tbody>
-                        <tr class="even pointer">
+                        <?php
+                        $query = ParseUser::query();
+                        try {
+                        $allUsers = $query->find();
+                        for ($i = 0; $i < count($allUsers); $i++) {
+                            $theUser = $allUsers[$i];
+                            if ($theUser == ParseUser::getCurrentUser())
+                                continue;
+                            echo "<tr class=\"" . ($i % 2 == 0 ? "even" : "odd") . " pointer\">";
+                            echo "<td data-un=\"" . $theUser->getObjectId() . "\">" . $theUser->get('username') . "</td>";
+                            echo "<td><select id=\"role1\" class=\"form-control\" required><option value=\"\" disabled>Select the role</option>";
+
+                            // TODO: Wire this up properly
+                            if (ParseCloud::run("isAdmin", ["username" => $theUser->getUsername()])) {
+                                echo "<option value=\"" . $allRoles[0]->getObjectId() . "\" selected>" . $allRoles[0]->get('name') . "</option>";
+                                echo "<option value=\"" . $allRoles[1]->getObjectId() . "\">" . $allRoles[1]->get('name') . "</option>";
+                            } else {
+                                echo "<option value=\"" . $allRoles[0]->getObjectId() . "\">" . $allRoles[0]->get('name') . "</option>";
+                                echo "<option value=\"" . $allRoles[1]->getObjectId() . "\" selected>" . $allRoles[1]->get('name') . "</option>";
+                            }
+
+                            /*for ($j = 1; $j < count($allRoles); $j++) {
+                                echo "<option value=\"" . $allRoles[$j]->getObjectId() . "\">" . $allRoles[$j]->get('name') . "</option>";
+                            }*/
+
+                            echo "</select></td></td>";
+                        }
+                        ?>
+                        <!--<tr class="even pointer">
                             <td>Michael Park</td>
                             <td><select id="role1" class="form-control" required="">
                                     <option value="" disabled>Select the role</option>
@@ -46,7 +82,7 @@ include_once "htmlHeader.php";
                                     <option value="mouth">Cute little corgi</option>
                                 </select></td>
                             </td>
-                        </tr>
+                        </tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -131,9 +167,13 @@ include_once "htmlHeader.php";
                         </tr>
                         </tbody>
                     </table>
-                    <div class="pull-right">
-                        <button class="btn btn-success" name="save">Save</button>
-                    </div>
+                    <?php
+                    } catch (ParseException $ex) {
+                        echo "<!-- INTERNAL SERVER ERROR: ";
+                        echo $ex->getMessage();
+                        echo "-->";
+                    }
+                    ?>
                 </div>
             </div>
         </div>

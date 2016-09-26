@@ -5,6 +5,12 @@
  * Date: 7/10/16
  * Time: 11:10 AM
  */
+
+if (!isset($parseUser) || !isset($websiteMenu)) {
+    require_once "phpHeader.php";
+}
+use Parse\ParseCloud;
+
 ?>
 <!DOCTYPE html>
 <!--TODO: fix JS hieght thing-->
@@ -107,18 +113,25 @@
                         <h3>Dashboard</h3>
                         <ul class="nav side-menu">
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
+                                <!--<ul class="nav child_menu">
                                     <li><a href="analytics.php">Analytics</a></li>
-                                    <!--<li><a href="javascript:void(0)">Dashboard2</a></li>
-                                    <li><a href="javascript:void(0)">Dashboard3</a></li>-->
-                                </ul>
+                                    <li><a href="javascript:void(0)">Dashboard2</a></li>
+                                    <li><a href="javascript:void(0)">Dashboard3</a></li>
+                                </ul>-->
                             </li>
-                            <li><a><i class="fa fa-home"></i> Client Sites <span class="fa fa-chevron-down"></span></a>
+                            <li><a><i class="fa fa-pencil"></i> Client Sites <span
+                                        class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <?php echo $websiteMenu; ?>
                                 </ul>
                             </li>
-                            <li><a href="users.php"><i class="fa fa-home"></i> Users </a></li>
+                            <?php
+                            if (ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()])) {
+                                ?>
+                                <li><a href="users.php"><i class="fa fa-users"></i> User Management </a></li>
+                                <?php
+                            }
+                            ?>
                             <!--<li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="form.html">General Form</a></li>

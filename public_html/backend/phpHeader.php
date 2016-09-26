@@ -16,6 +16,7 @@ use Parse\ParseObject;
 use Parse\ParseQuery;
 use Parse\ParseACL;
 use Parse\ParseRole;
+use Parse\ParseCloud;
 
 //Enable the option to display any parsing errors.
 error_reporting(E_ALL | E_STRICT);
@@ -58,7 +59,13 @@ try {
     $results = $websiteQuery->find();
     for ($i = 0; $i < count($results); $i++) {
         $website = $results[$i];
-        $websiteMenu = $websiteMenu . '<li><a href="website.php?website=' . $website->getObjectId() . '">' . $website->get('nickname') . '</a></li>';
+        $theACL = $website->getACL();
+        if ($theACL->getUserWriteAccess($parseUser) || ParseCloud::run("isAdmin", ["username" => $parseUser->getUsername()])) {
+            $websiteMenu = $websiteMenu . '<li><a href="website.php?website=' . $website->getObjectId() . '">' . $website->get('nickname') . '</a></li>';
+        }
+    }
+    if ($websiteMenu == "") {
+        $websiteMenu = '<li><a href="">None Available</a></li>';
     }
 } catch (ParseException $ex) {
     echo "<!--";

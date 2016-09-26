@@ -69,7 +69,7 @@ function loadedGmap() {
             content: '<div class="info"><strong>This is my company</strong><br><br>My company address is here<br> 32846 Sydney</div>'
         });
     }
-};
+}
 /* ----------------------------------------------------------- */
 /* Nob Google Map End
  /* ----------------------------------------------------------- */
