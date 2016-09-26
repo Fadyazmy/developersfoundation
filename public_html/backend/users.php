@@ -124,10 +124,16 @@ $allRoles = $query->find();
                                     try {
                                         $allWebsites = $query->find();
                                         for ($i = 0; $i < count($allWebsites); $i++) {
+                                            $theWebsite = $allWebsites[$i];
+                                            $theACL = $theWebsite->getACL();
+                                            echo "<!--";
+                                            var_dump($theACL);
+                                            echo "-->";
+
                                             echo "<div class=\"panel\" data-id=\"";
-                                            echo $allWebsites[$i]->getObjectId();
+                                            echo $theWebsite->getObjectId();
                                             echo "\"><a class=\"panel-heading\" role=\"tab\" id=\"heading" . $i . "\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" . $i . "\" aria-expanded=\"true\" aria-controls=\"collapse" . $i . "\"><h4 class=\"panel-title\">";
-                                            echo $allWebsites[$i]->get('name');
+                                            echo $theWebsite->get('name');
                                             echo "</h4></a>";
 
                                             echo "<div id=\"collapse" . $i . "\" class=\"panel-collapse collapse" . ($i == 0? " in" : "") . "\" role=\"tabpanel\" aria-labelledby=\"heading" . $i . "\"><div class=\"panel-body\">";
