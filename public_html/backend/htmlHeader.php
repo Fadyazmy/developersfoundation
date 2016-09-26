@@ -9,6 +9,8 @@
 if (!isset($parseUser)) {
     require_once "phpHeader.php";
 }
+use Parse\ParseCloud;
+
 ?>
 <!DOCTYPE html>
 <!--TODO: fix JS hieght thing-->
