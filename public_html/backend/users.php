@@ -126,11 +126,11 @@ $allRoles = $query->find();
                                         for ($i = 0; $i < count($allWebsites); $i++) {
                                             echo "<div class=\"panel\" data-id=\"";
                                             echo $allWebsites[$i]->getObjectId();
-                                            echo "\"><a class=\"panel-heading\" role=\"tab\" id=\"headingOne\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\"><h4 class=\"panel-title\">";
+                                            echo "\"><a class=\"panel-heading\" role=\"tab\" id=\"heading" . $i . "\" data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapse" . $i . "\" aria-expanded=\"true\" aria-controls=\"collapse" . $i . "\"><h4 class=\"panel-title\">";
                                             echo $allWebsites[$i]->get('name');
                                             echo "</h4></a>";
 
-                                            echo "<div id=\"collapseOne\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
+                                            echo "<div id=\"collapse" . $i . "\" class=\"panel-collapse collapse" . ($i == 0? " in" : "") . "\" role=\"tabpanel\" aria-labelledby=\"heading" . $i . "\"><div class=\"panel-body\">";
                                             echo "<input id=\"tags_" . $i . "\" type=\"text\" class=\"tags form-control\" value=\"michaelpark, corgi\"/>";
                                             echo "<div id=\"suggestions-container1\" style=\"position: relative; float: left; width: 250px; margin: 10px;\"></div>";
                                             echo "</div></div></div>";
