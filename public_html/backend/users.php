@@ -131,6 +131,9 @@ include_once "htmlHeader.php";
                         </tr>
                         </tbody>
                     </table>
+                    <div class="pull-right">
+                        <button class="btn btn-success" name="save">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
