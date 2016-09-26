@@ -828,7 +828,7 @@ if ($websiteSubmit) {
 <!-- Auto Tag -->
 <script>
 $(document).ready(function () {
-  (\'#tag_0\').tokenfield({
+  $(\'#tag_0\').tokenfield({
   autocomplete: {
     source: [\'red\',\'blue\',\'green\',\'yellow\',\'violet\',\'brown\',\'purple\',\'black\',\'white\'],
     delay: 100
