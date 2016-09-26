@@ -3,6 +3,7 @@ include_once "htmlHeader.php";
 
 use Parse\ParseUser;
 use Parse\ParseQuery;
+use Parse\ParseException;
 ?>
 <!-- page content -->
 <div class="right_col" role="main">
