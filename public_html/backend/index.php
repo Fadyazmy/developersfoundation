@@ -98,7 +98,7 @@ require_once "htmlHeader.php";
                     type: 'GET',
                     success: function (msg) {
                         console.log(msg);
-                        $('button').innerHTML = "Done :D";
+                        $('button')[0].innerHTML = "Done :D";
                     },
                     error: function (err) {
                         console.log(err);
