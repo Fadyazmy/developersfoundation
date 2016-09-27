@@ -94,17 +94,14 @@ require_once "htmlHeader.php";
         <script>
             function clearCF() {
                 $.ajax({
-                    url: 'https://api.cloudflare.com/client/v4/zones/0be7b1daf9a7e94109bb013e1ef0e455/purge_cache' + '?' + $.param({
-                        'X-Auth-Email': 'iamnobodyrandom@yahoo.com',
-                        'X-Auth-Key': '<?php echo getenv('CLOUDFLARE_API_TOKEN'); ?>',
-                        'purge_everything': true
-                    }),
-                    type: 'DELETE',
+                    url: 'cloudflare/clearDFCache.php',
+                    type: 'GET',
                     contentType:'application/json',
-                    dataType: 'JSONP',
-                    crossDomain: true,
+                    dataType: 'json',
+                    crossDomain: false,
                     success: function (msg) {
                         console.log(msg);
+                        $('button').innerHTML = "Done :D";
                     },
                     error: function (err) {
                         console.log(err);
