@@ -96,9 +96,6 @@ require_once "htmlHeader.php";
                 $.ajax({
                     url: 'cloudflare/clearDFCache.php',
                     type: 'GET',
-                    contentType:'application/json',
-                    dataType: 'json',
-                    crossDomain: false,
                     success: function (msg) {
                         console.log(msg);
                         $('button').innerHTML = "Done :D";
