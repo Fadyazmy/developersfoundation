@@ -68,6 +68,8 @@ use Parse\ParseCloud;
     <!-- FullCalendar -->
     <link href="vendors/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
     <link href="vendors/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
+    <link href="sliptree-bootstrap-tokenfield-9c06df4/less/bootstrap-tokenfield.min.css" rel="stylesheet">
+    <link href="sliptree-bootstrap-tokenfield-9c06df4/less/tokenfield-typeahead.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
