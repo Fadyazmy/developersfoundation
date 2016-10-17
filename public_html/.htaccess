@@ -15,6 +15,14 @@
     RewriteCond %{REQUEST_URI} !^/backend/
     RewriteRule (.*) /backend/$1 [L]
 
+    RewriteCond %{HTTP_HOST} ^client\.developersfoundation\.ca$
+    RewriteCond %{REQUEST_URI} !^/backend/oauth/
+    RewriteRule (.*) /backend/oauth/$1 [L]
+
+    RewriteCond %{HTTP_HOST} ^client\.developers\.foundation$
+    RewriteCond %{REQUEST_URI} !^/backend/oauth/
+    RewriteRule (.*) /backend/oauth/$1 [L]
+
     # match any URL with www and rewrite it to https without the www
     RewriteCond %{HTTP_HOST} ^(www\.)(.*) [NC]
     RewriteRule (.*) http://%2%{REQUEST_URI} [L,R=301]

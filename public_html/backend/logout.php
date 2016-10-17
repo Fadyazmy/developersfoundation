@@ -8,7 +8,8 @@
 
 session_start();
 try {
+
     session_destroy();
 } finally {
-    header("Location: https://developersfoundation.ca/");
+    header("Location: https://developers.foundation/");
 }

@@ -63,7 +63,7 @@ $allRoles = $query->find();
                                 echo "<option value=\"" . $allRoles[1]->getObjectId() . "\" selected>" . $allRoles[1]->get('name') . "</option>";
                             }
 
-                            /*for ($j = 1; $j < count($allRoles); $j++) {
+                            /*for ($j = 0; $j < count($allRoles); $j++) {
                                 echo "<option value=\"" . $allRoles[$j]->getObjectId() . "\">" . $allRoles[$j]->get('name') . "</option>";
                             }*/
 

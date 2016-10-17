@@ -12,7 +12,6 @@ require_once 'globalSettings.php';
 use Parse\ParseClient;
 use Parse\ParseUser;
 use Parse\ParseException;
-use Parse\ParseObject;
 use Parse\ParseQuery;
 use Parse\ParseACL;
 use Parse\ParseRole;
@@ -73,6 +72,5 @@ try {
     echo "-->";
     $websiteMenu = '<li><a href="javascript:void(0)">Sorry Server Error</a></li>';
 }
-
 
 //require_once "htmlHeader.php";
