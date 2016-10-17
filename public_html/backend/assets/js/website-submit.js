@@ -321,8 +321,8 @@ function switchSection(self) {
         oldField = editor.dataset.contentold,
         oldData = editor.innerHTML,
         newField = self.value;
-    var oldField = oldField.substr(0, oldField.indexOf(" ")),
-        newField = newField.substr(0, newField.indexOf(" "));
+    var oldField = oldField.indexOf(" ") == -1 ? oldField : oldField.substr(0, oldField.indexOf(" ")),
+        newField = newField.indexOf(" ") == -1 ? newField : newField.substr(0, newField.indexOf(" "));
     var oldFieldDiv = document.querySelectorAll('[data-namefield~="' + oldField + '"]')[0];
     oldFieldDiv.innerHTML = oldData;
 
