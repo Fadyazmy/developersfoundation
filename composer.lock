@@ -253,16 +253,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.8.10",
+            "version": "v2.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "889983a79a043dfda68f38c38b6dba092dd49cd8"
+                "reference": "25c576abd4e0f212e678fe8b2bd9a9a98c7ea934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/889983a79a043dfda68f38c38b6dba092dd49cd8",
-                "reference": "889983a79a043dfda68f38c38b6dba092dd49cd8",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/25c576abd4e0f212e678fe8b2bd9a9a98c7ea934",
+                "reference": "25c576abd4e0f212e678fe8b2bd9a9a98c7ea934",
                 "shasum": ""
             },
             "require": {
@@ -309,22 +309,22 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-07-28 16:56:28"
+            "time": "2016-10-13 01:43:15"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v110",
+            "version": "v114",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "b5c4a0b77a725c4ab9dc1736e5a8217824790093"
+                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/b5c4a0b77a725c4ab9dc1736e5a8217824790093",
-                "reference": "b5c4a0b77a725c4ab9dc1736e5a8217824790093",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/a2222b58a1591c789fc987e797cc824e5a7e125d",
+                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d",
                 "shasum": ""
             },
             "bin": [
@@ -355,7 +355,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-08-26 14:02:29"
+            "time": "2016-11-10 23:19:38"
         }
     ],
     "aliases": [],

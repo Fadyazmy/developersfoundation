@@ -147,7 +147,10 @@ try {
                                                     img.src = url;
                                                 </script>
                                             </div>
-                                            <div class="btn-group col-md-7">
+
+                                            <!-- Added Change Logo Button so that it shows up neatly-->
+                                            <div class="btn btn-success btn-group col-md-7">
+                                                Change Logo
                                                 <br/><br/>
                                                 <input type="file" id="web-logo" data-role="magic-overlay"
                                                        data-target="#pictureBtn" data-edit="insertImage"
@@ -195,6 +198,14 @@ try {
                                                         <button class="btn btn-success"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
+
+                                                        <!-- TODO finish delete executive button here -->
+                                                        <!-- Check how the DB handles everything here with Harrison -->
+                                                        <button class="btn btn-success remove-exec-button"
+                                                                name="removeExecutiveButton<?php echo $i + 1; ?>">
+                                                            Remove Executive
+                                                        </button>
+
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                                class="input-exec-img"
                                                                data-role="magic-overlay" data-target="#pictureBtn"
