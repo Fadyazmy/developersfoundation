@@ -174,7 +174,7 @@ function fileSubmit(self) {
 
 // deletes the executive at position index by removing the accompanying dom element
 function removeExecutive(index) {
-    $('#exec-info-' + index).remove();
+    document.getElementById('exec-info-' + index).remove();
 }
 
 

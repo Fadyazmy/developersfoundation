@@ -192,7 +192,7 @@ try {
                                                         <br/>
                                                     </div>
                                                     <div class="col-md-12" style="text-align: center">
-                                                        <button class="btn btn-success"
+                                                        <button class="btn btn-warning"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
                                                         <button class="btn btn-success"
