@@ -181,7 +181,7 @@ try {
                                             }
                                         }
                                         ?>
-                                        <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>">
+                                        <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>" id="exec-info-<?php echo $i + 1?>">
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="col-md-12">
@@ -192,9 +192,14 @@ try {
                                                         <br/>
                                                     </div>
                                                     <div class="col-md-12" style="text-align: center">
-                                                        <button class="btn btn-success"
+                                                        <button class="btn btn-warning"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
+                                                        <button class="btn btn-success"
+                                                                name="removeExecutive<?php echo $i + 1; ?>"
+                                                                onclick="removeExecutive(<?php echo $i + 1?>)">
+                                                            Delete Executive
+                                                        </button>
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                                class="input-exec-img"
                                                                data-role="magic-overlay" data-target="#pictureBtn"
