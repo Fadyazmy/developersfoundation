@@ -197,7 +197,9 @@ try {
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
                                                         <button class="btn btn-success"
                                                                 name="removeExecutive<?php echo $i + 1; ?>"
-                                                                onclick="removeExecutive(<?php echo $i + 1?>)"
+                                                                onclick="removeExecutive(<?php echo $i + 1?>)">
+                                                            Delete Executive
+                                                        </button>
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                                class="input-exec-img"
                                                                data-role="magic-overlay" data-target="#pictureBtn"
