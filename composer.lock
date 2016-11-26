@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e64d2d6b75145ab8182da7dc305719bb",
-    "content-hash": "806d89d80c4e0f80dd23e06842b3a3a2",
+    "hash": "f90529deab7842f857bfe42ba0185c3d",
+    "content-hash": "6649f3442ec3a32b20a4c54790db6a75",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -310,21 +310,67 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
             "time": "2016-10-13 01:43:15"
+        },
+        {
+            "name": "twilio/sdk",
+            "version": "5.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "354b5859cc7386642b8842a8b9e3dee01e957235"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/354b5859cc7386642b8842a8b9e3dee01e957235",
+                "reference": "354b5859cc7386642b8842a8b9e3dee01e957235",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "apigen/apigen": "^4.1",
+                "phpunit/phpunit": "4.5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Twilio\\": "Twilio/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Twilio API Team",
+                    "email": "api@twilio.com"
+                }
+            ],
+            "description": "A PHP wrapper for Twilio's API",
+            "homepage": "http://github.com/twilio/twilio-php",
+            "keywords": [
+                "api",
+                "sms",
+                "twilio"
+            ],
+            "time": "2016-10-12 17:28:31"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v114",
+            "version": "v115",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d"
+                "reference": "12cac727ec2190bfc9a63ce0ee400379ee69a0c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/a2222b58a1591c789fc987e797cc824e5a7e125d",
-                "reference": "a2222b58a1591c789fc987e797cc824e5a7e125d",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/12cac727ec2190bfc9a63ce0ee400379ee69a0c9",
+                "reference": "12cac727ec2190bfc9a63ce0ee400379ee69a0c9",
                 "shasum": ""
             },
             "bin": [
@@ -355,7 +401,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-11-10 23:19:38"
+            "time": "2016-11-23 21:32:05"
         }
     ],
     "aliases": [],
