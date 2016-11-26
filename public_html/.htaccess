@@ -1,16 +1,16 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{HTTP_HOST} ^microsoft.developersfoundation.ca
-    RewriteRule ^(.*)$ http://developersfoundation.ca/microsoft.php [L,NC,QSA]
+    RewriteRule ^(.*)$ https://developersfoundation.ca/microsoft.php [L,NC,QSA]
 
     RewriteCond %{HTTP_HOST} ^microsoft.developers.foundation
-    RewriteRule ^(.*)$ http://developers.foundation/microsoft.php [L,NC,QSA]
+    RewriteRule ^(.*)$ https://developers.foundation/microsoft.php [L,NC,QSA]
 
     RewriteCond %{HTTP_HOST} ^workshop.developers.foundation
-    RewriteRule ^(.*)$ http://developers.foundation/workshop.php [L,NC,QSA]
+    RewriteRule ^(.*)$ https://developers.foundation/workshop.php [L,NC,QSA]
 
     RewriteCond %{HTTP_HOST} ^workshop.developersfoundation.ca
-    RewriteRule ^(.*)$ http://developers.foundation/workshop.php [L,NC,QSA]
+    RewriteRule ^(.*)$ https://developers.foundation/workshop.php [L,NC,QSA]
 
     RewriteCond %{HTTP_HOST} ^dev\.developersfoundation\.ca$
     RewriteCond %{REQUEST_URI} !^/backend/
