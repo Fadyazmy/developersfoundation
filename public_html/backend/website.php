@@ -181,7 +181,7 @@ try {
                                             }
                                         }
                                         ?>
-                                        <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>">
+                                        <div class="form-group exec-group" data-exec="<?php echo $i + 1; ?>" id="exec-info-<?php echo $i + 1?>">
                                             <div class="row">
                                                 <div class="col-md-3">
                                                     <div class="col-md-12">
@@ -195,6 +195,9 @@ try {
                                                         <button class="btn btn-success"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
+                                                        <button class="btn btn-success"
+                                                                name="removeExecutive<?php echo $i + 1; ?>"
+                                                                onclick="removeExecutive(<?php echo $i + 1?>)"
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
                                                                class="input-exec-img"
                                                                data-role="magic-overlay" data-target="#pictureBtn"

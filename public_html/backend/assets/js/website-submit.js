@@ -171,6 +171,13 @@ function fileSubmit(self) {
     return false;
 }
 
+
+// deletes the executive at position index by removing the accompanying dom element
+function removeExecutive(index) {
+    $('#exec-info-' + index).remove();
+}
+
+
 function uploadExecPic(self) {
     var theForm = document.getElementById('website-form'),
         parseUser = theForm.dataset.parseuser,
