@@ -12,7 +12,6 @@
     RewriteCond %{HTTP_HOST} ^workshop.developersfoundation.ca
     RewriteRule ^(.*)$ http://developers.foundation/workshop.php [L,NC,QSA]
 
-
     RewriteCond %{HTTP_HOST} ^dev\.developersfoundation\.ca$
     RewriteCond %{REQUEST_URI} !^/backend/
     RewriteRule (.*) /backend/$1 [L]
