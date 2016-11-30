@@ -192,12 +192,12 @@ try {
                                                         <br/>
                                                     </div>
                                                     <div class="col-md-12" style="text-align: center">
-                                                        <button class="btn btn-warning"
+                                                        <button class="btn btn-success"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
-                                                        <button class="btn btn-success"
+                                                        <button class="btn btn-warning"
                                                                 name="removeExecutive<?php echo $i + 1; ?>"
-                                                                onclick="removeExecutive(<?php echo $i + 1?>)">
+                                                                onclick="removeExecutive(event, <?php echo $i + 1?>)">
                                                             Delete Executive
                                                         </button>
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
