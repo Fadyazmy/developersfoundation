@@ -151,6 +151,7 @@ try {
                                                 <br/><br/>
                                                 <input type="file" id="web-logo" data-role="magic-overlay"
                                                        data-target="#pictureBtn" data-edit="insertImage"
+                                                       name="Input File"
                                                        data-preview="#web-logo-preview"/>
                                             </div>
                                         </div>
