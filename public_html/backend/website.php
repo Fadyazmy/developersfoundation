@@ -149,10 +149,13 @@ try {
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
-                                                <input type="file" id="web-logo" data-role="magic-overlay"
-                                                       data-target="#pictureBtn" data-edit="insertImage"
-                                                       name="Input File"
-                                                       data-preview="#web-logo-preview"/>
+                                                <label class="btn btn-default btn-file">
+                                                    Choose File
+                                                    <input type="file" id="web-logo" data-role="magic-overlay"
+                                                           data-target="#pictureBtn" data-edit="insertImage"
+                                                           name="Input File"
+                                                           data-preview="#web-logo-preview"/>
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
