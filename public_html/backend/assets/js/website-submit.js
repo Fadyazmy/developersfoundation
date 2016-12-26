@@ -13,6 +13,11 @@ $(document).ready(function () {
         addExec();
     });
 
+    $('#make-section-button').click(function(e) {
+        e.preventDefault();
+        promptNewSection();
+    });
+
     /* Dropzone override TODO-michael: this does ignites the dropzone div */
     Dropzone.autoDiscover = false;
     $("div#galleryDrop").dropzone({url: "website.php"});
