@@ -36,6 +36,8 @@ if (isset($includeFile) && $includeFile != "") {
 </div>
 </div>
 
+<!--SweetAlert -->
+<script src="assets/js/sweetalert.min.js"></script>
 <!-- jQuery -->
 <script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->

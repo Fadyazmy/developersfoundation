@@ -364,6 +364,11 @@ try {
                                     <div id="editor" class="editor-wrapper placeholderText content-editor-field"
                                          contenteditable="true"
                                          data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
+                                    <!--Button to create new section-->
+                                    <!-- TODO: Only show this button based on proper authentication -->
+                                    <button id="makeSectionButton"
+                                            onclick="promptNewSection()"
+                                            class="btn btn-default">Create a new section</button>
                                     <textarea name="descr" id="descr"
                                               style="display:none;"><?php echo $content[0]['content']; ?></textarea>
                                     <?php
