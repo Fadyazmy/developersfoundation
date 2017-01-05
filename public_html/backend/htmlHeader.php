@@ -73,6 +73,9 @@ use Parse\ParseCloud;
 
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
+
+    <!-- SweetAlert Theme CSS -->
+    <link href="assets/css/sweetalert.css" rel="stylesheet">
 </head>
 
 <body class="nav-md footer_fixed">

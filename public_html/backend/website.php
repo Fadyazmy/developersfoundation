@@ -149,9 +149,13 @@ try {
                                             </div>
                                             <div class="btn-group col-md-7">
                                                 <br/><br/>
-                                                <input type="file" id="web-logo" data-role="magic-overlay"
-                                                       data-target="#pictureBtn" data-edit="insertImage"
-                                                       data-preview="#web-logo-preview"/>
+                                                <label class="btn btn-default btn-file">
+                                                    Choose File
+                                                    <input type="file" id="web-logo" data-role="magic-overlay"
+                                                           data-target="#pictureBtn" data-edit="insertImage"
+                                                           name="Input File"
+                                                           data-preview="#web-logo-preview"/>
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -192,12 +196,12 @@ try {
                                                         <br/>
                                                     </div>
                                                     <div class="col-md-12" style="text-align: center">
-                                                        <button class="btn btn-warning"
+                                                        <button class="btn btn-success"
                                                                 name="picturePlaceHolder<?php echo $i + 1; ?>"
                                                                 onclick="triggerProfilePicUpload(event, this);"><?php echo $execPhotoName; ?></button>
-                                                        <button class="btn btn-success"
+                                                        <button class="btn btn-warning"
                                                                 name="removeExecutive<?php echo $i + 1; ?>"
-                                                                onclick="removeExecutive(<?php echo $i + 1?>)">
+                                                                onclick="removeExecutive(event, <?php echo $i + 1?>)">
                                                             Delete Executive
                                                         </button>
                                                         <input type="file" name="pictureToUpload<?php echo $i + 1; ?>"
@@ -360,6 +364,10 @@ try {
                                     <div id="editor" class="editor-wrapper placeholderText content-editor-field"
                                          contenteditable="true"
                                          data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
+                                    <!--Button to create new section-->
+                                    <!-- TODO: Only show this button based on proper authentication -->
+                                    <button id="make-section-button"
+                                            class="btn btn-default">Create a new section</button>
                                     <textarea name="descr" id="descr"
                                               style="display:none;"><?php echo $content[0]['content']; ?></textarea>
                                     <?php

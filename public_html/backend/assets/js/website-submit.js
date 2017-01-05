@@ -13,6 +13,11 @@ $(document).ready(function () {
         addExec();
     });
 
+    $('#make-section-button').click(function(e) {
+        e.preventDefault();
+        promptNewSection();
+    });
+
     /* Dropzone override TODO-michael: this does ignites the dropzone div */
     Dropzone.autoDiscover = false;
     $("div#galleryDrop").dropzone({url: "website.php"});
@@ -38,7 +43,7 @@ function formSubmit(theForm) {
 
     var formWebExec = [],
         execBlocks = document.getElementsByClassName('exec-group');
-    for (i = 0; i < execBlocks.length; i++) {
+    for (var i = 0; i < execBlocks.length; i++) {
         formWebExec[i] = {};
         formWebExec[i].pictureid = execBlocks[i].getElementsByClassName('input-exec-img')[0].dataset.parsedb;
         formWebExec[i].name = execBlocks[i].getElementsByClassName('exec-name')[0].value;
@@ -50,7 +55,7 @@ function formSubmit(theForm) {
     switchSection(document.getElementsByClassName('content-select')[0]);
     var contentFields = document.getElementsByClassName('content-field'),
         formWebContent = {"data":[]};
-    for (i = 0; i < contentFields.length; i++) {
+    for (var i = 0; i < contentFields.length; i++) {
         formWebContent.data[i] = {};
         formWebContent.data[i].name = contentFields[i].dataset.namefield;
         formWebContent.data[i].content = contentFields[i].innerHTML;
@@ -173,7 +178,8 @@ function fileSubmit(self) {
 
 
 // deletes the executive at position index by removing the accompanying dom element
-function removeExecutive(index) {
+function removeExecutive(e, index) {
+    e.preventDefault();
     document.getElementById('exec-info-' + index).remove();
 }
 
@@ -328,8 +334,8 @@ function switchSection(self) {
         oldField = editor.dataset.contentold,
         oldData = editor.innerHTML,
         newField = self.value;
-    var oldField = oldField.indexOf(" ") == -1 ? oldField : oldField.substr(0, oldField.indexOf(" ")),
-        newField = newField.indexOf(" ") == -1 ? newField : newField.substr(0, newField.indexOf(" "));
+    oldField = oldField.indexOf(" ") == -1 ? oldField : oldField.substr(0, oldField.indexOf(" "));
+    newField = newField.indexOf(" ") == -1 ? newField : newField.substr(0, newField.indexOf(" "));
     var oldFieldDiv = document.querySelectorAll('[data-namefield~="' + oldField + '"]')[0];
     oldFieldDiv.innerHTML = oldData;
 
@@ -337,4 +343,59 @@ function switchSection(self) {
     editor.innerHTML = newFieldDiv.innerHTML;
     editor.dataset.contentold = newField;
     return;
+}
+
+
+/**
+ * @param title The title of the new section
+ * @description Allows clients to add new sections to the website
+ */
+function makeSection(title) {
+    // this div will have no inner html as new sections have no content
+    var newSectionDiv = document.createElement('div');
+    newSectionDiv.setAttribute('class', 'content-field');
+    newSectionDiv.setAttribute('style', 'display: none;');
+    newSectionDiv.setAttribute('data-namefield', title);
+
+    // add up the div to the document for useful referencing
+    document.body.appendChild(newSectionDiv);
+
+    // add the section as an option to the selector
+    var newSectionOption = document.createElement('option');
+    newSectionOption.setAttribute('value', title);
+    newSectionOption.innerHTML = title;
+
+    document.getElementById('heard').appendChild(newSectionOption);
+
+    // switch the heard option selector to the new section
+    document.getElementById('heard').value = title;
+
+    // switch to the new section, the same way it worked before
+    switchSection(newSectionOption);
+}
+
+
+/**
+ * @description Prompts the user to create a new section on the website
+ */
+function promptNewSection() {
+    swal({
+        title: 'New Section',
+        text: 'Please enter the title for the new section',
+        type: 'input',
+        showCancelBUtton: true,
+        animation: 'slide-from-top',
+        inputPlaceHolder: 'Enter your new title...'
+    }, function(inputValue) {
+        if (inputValue === false)
+            return false;
+
+        if (inputValue === '') {
+            swal.showInputError('You need to enter a title');
+            return false;
+        }
+
+        // create the new section with the given title
+        makeSection(inputValue);
+    })
 }
