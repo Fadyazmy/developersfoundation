@@ -3,6 +3,7 @@
  */
 
 var debug = true;
+if (debug) console.debug("Debug mode is ON")
 
 /* Doc Ready Functions */
 $(document).ready(function () {
@@ -71,6 +72,7 @@ function formSubmit(theForm) {
         var query = new Parse.Query(Websites);
         return query.get(websiteID);
     }).then(function (obj) {
+        if (debug) console.log("Website Query OK");
         // Promise system to make async
         var promise = Parse.Promise.as();
 
@@ -126,10 +128,15 @@ function formSubmit(theForm) {
         }
 
         promise = promise.then(function () {
+            if (debug) console.log("Saving:");
+            if (debug) console.log(obj);
             return obj.save();
         });
+
+        if (debug) console.log("Save done");
         return promise;
     }).then(function (obj) {
+        if (debug) console.log("Save OK");
         // Object saved
         $(function () {
             new PNotify({
