@@ -24,6 +24,8 @@ try {
     echo $ex->getMessage();
     exit();
 }
+
+$galleryInfo = $theWebsite->get("gallery")["galleries"];
 ?>
 
 <!-- page content -->
@@ -382,8 +384,14 @@ try {
                                     }
                                     ?>
                                 </div>
+
                                 <!-- End of website-step-3 and beginning to website-step-4 -->
                                 <div class="tab-pane" id="website-step-4">
+                                    <?php
+                                    for ($i = 0; $i < count($galleryInfo); $i++) {
+                                        echo '<p> testing gallery schema' . $galleryInfo[$i] . '</p>';
+                                    }
+                                    ?>
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                         This
                                         is for demonstration purposes only, the files are not uploaded to any
