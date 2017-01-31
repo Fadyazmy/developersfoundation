@@ -26,8 +26,6 @@ try {
 }
 
 $galleryInfo = $theWebsite->get("gallery")["galleries"];
-echo '<p>' . $galleryInfo[0]['name'] . '</p>';
-echo '<p>' . $galleryInfo[0]['files'][0] . '</p>';
 ?>
 
 <!-- page content -->
@@ -389,6 +387,20 @@ echo '<p>' . $galleryInfo[0]['files'][0] . '</p>';
 
                                 <!-- End of website-step-3 and beginning to website-step-4 -->
                                 <div class="tab-pane" id="website-step-4">
+                                    <?php
+                                    for ($i = 0; $i < count($galleryInfo); $i++) {
+                                        $galleryName = $galleryInfo[$i]["name"];
+                                        $galleryFiles = $galleryInfo[$i]["files"];
+                                    ?>
+                                        <div class="gallery-pane">
+                                            <h4 class="gallery-heading"><?php echo $galleryName ?></h4>
+                                            <?php for ($j = 0; $j < count($galleryFiles); $j++) { ?>
+                                                <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
+                                            <?php } ?>
+                                        </div>
+
+                                    <?php }
+                                    ?>
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                         This
                                         is for demonstration purposes only, the files are not uploaded to any
