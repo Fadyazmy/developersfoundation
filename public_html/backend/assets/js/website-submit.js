@@ -2,6 +2,9 @@
  * Created by harrisonchow on 7/10/16.
  */
 
+var debug = true;
+if (debug) console.debug("Debug mode is ON")
+
 /* Doc Ready Functions */
 $(document).ready(function () {
     $("#web-logo").change(function () {
@@ -61,11 +64,15 @@ function formSubmit(theForm) {
         formWebContent.data[i].content = contentFields[i].innerHTML;
     }
 
-    Parse.User.logIn(parseUser, parsePwd).then(function () {
+    Parse.User.logIn(parseUser, parsePwd).then(function (u) {
+        if (debug) console.log("User Logged In");
+        if (debug) console.log(u);
+
         var Websites = Parse.Object.extend("Website");
         var query = new Parse.Query(Websites);
         return query.get(websiteID);
     }).then(function (obj) {
+        if (debug) console.log("Website Query OK");
         // Promise system to make async
         var promise = Parse.Promise.as();
 
@@ -121,10 +128,15 @@ function formSubmit(theForm) {
         }
 
         promise = promise.then(function () {
+            if (debug) console.log("Saving:");
+            if (debug) console.log(obj);
             return obj.save();
         });
+
+        if (debug) console.log("Save done");
         return promise;
     }).then(function (obj) {
+        if (debug) console.log("Save OK");
         // Object saved
         $(function () {
             new PNotify({
@@ -145,7 +157,7 @@ function formSubmit(theForm) {
         $(function () {
             new PNotify({
                 title: 'Oh No!',
-                text: 'Failed to submit form :( Error ' + error.code + ': ' + error.message,
+                text: 'Failed to submit form :(\nError ' + error.code + ': ' + error.message,
                 type: 'error',
                 nonblock: {
                     nonblock: true
