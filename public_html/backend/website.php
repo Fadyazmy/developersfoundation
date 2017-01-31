@@ -366,10 +366,16 @@ try {
                                          data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
                                     <!--Button to create new section-->
                                     <!-- TODO: Only show this button based on proper authentication -->
-                                    <button id="make-section-button"
-                                            class="btn btn-default">Create a new section</button>
-                                    <textarea name="descr" id="descr"
-                                              style="display:none;"><?php echo $content[0]['content']; ?></textarea>
+                                    <?php
+                                    if ($isAdmin) {?>
+                                        <button id="make-section-button"
+                                                class="btn btn-default">Create a new section
+                                        </button>
+                                        <textarea name="descr" id="descr"
+                                                  style="display:none;"><?php echo $content[0]['content']; ?></textarea>
+                                        <?php
+                                    }
+                                    ?>
                                     <?php
                                     for ($i = 0; $i < count($content); $i++) {
                                         echo '<div class="content-field" style="display: none;" data-namefield="' . $content[$i]['name'] . '">' . $content[$i]['content'] . '</div>';
