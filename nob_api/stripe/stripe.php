@@ -14,13 +14,8 @@ include_once "../../vendor/autoload.php";
 
 // Token is created using Stripe.js or Checkout!
 // Get the payment token submitted by the form:
-$getPost = (array)json_decode(file_get_contents('php://input'));
-
-var_dump($_POST);
-var_dump($getPost);
-
-//$token = $_POST['stripeToken'];
-$token = $getPost['stripeToken'];
+$token = $_POST['stripeToken'];
+//$token = $getPost['stripeToken'];
 
 echo $token;
 
