@@ -24,6 +24,8 @@ try {
     echo $ex->getMessage();
     exit();
 }
+
+$galleryInfo = $theWebsite->get("gallery")["galleries"];
 ?>
 
 <!-- page content -->
@@ -366,18 +368,39 @@ try {
                                          data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
                                     <!--Button to create new section-->
                                     <!-- TODO: Only show this button based on proper authentication -->
-                                    <button id="make-section-button"
-                                            class="btn btn-default">Create a new section</button>
-                                    <textarea name="descr" id="descr"
-                                              style="display:none;"><?php echo $content[0]['content']; ?></textarea>
+                                    <?php
+                                    if ($isAdmin) {?>
+                                        <button id="make-section-button"
+                                                class="btn btn-default">Create a new section
+                                        </button>
+                                        <textarea name="descr" id="descr"
+                                                  style="display:none;"><?php echo $content[0]['content']; ?></textarea>
+                                        <?php
+                                    }
+                                    ?>
                                     <?php
                                     for ($i = 0; $i < count($content); $i++) {
                                         echo '<div class="content-field" style="display: none;" data-namefield="' . $content[$i]['name'] . '">' . $content[$i]['content'] . '</div>';
                                     }
                                     ?>
                                 </div>
+
                                 <!-- End of website-step-3 and beginning to website-step-4 -->
                                 <div class="tab-pane" id="website-step-4">
+                                    <?php
+                                    for ($i = 0; $i < count($galleryInfo); $i++) {
+                                        $galleryName = $galleryInfo[$i]["name"];
+                                        $galleryFiles = $galleryInfo[$i]["files"];
+                                    ?>
+                                        <div class="gallery-pane">
+                                            <h4 class="gallery-heading"><?php echo $galleryName ?></h4>
+                                            <?php for ($j = 0; $j < count($galleryFiles); $j++) { ?>
+                                                <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
+                                            <?php } ?>
+                                        </div>
+
+                                    <?php }
+                                    ?>
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                         This
                                         is for demonstration purposes only, the files are not uploaded to any
