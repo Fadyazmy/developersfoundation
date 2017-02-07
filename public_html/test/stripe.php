@@ -10,7 +10,7 @@ include_once "../../vendor/autoload.php";
 
 // Set your secret key: remember to change this to your live secret key in production
 // See your keys here: https://dashboard.stripe.com/account/apikeys
-\Stripe\Stripe::setApiKey("sk_test_aGnS14vnHRLMFYc9Jlzb4SPT");
+\Stripe\Stripe::setApiKey($_ENV["STRIPE_API"]);
 
 // Token is created using Stripe.js or Checkout!
 // Get the payment token submitted by the form:
@@ -24,5 +24,5 @@ $charge = \Stripe\Charge::create(array(
     "amount" => 1000,
     "currency" => "hkd",
     "description" => "Example charge",
-    "source" => $token,
+    "source" => $token
 ));
