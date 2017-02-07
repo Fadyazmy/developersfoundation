@@ -21,8 +21,8 @@ echo $token;
 
 // Charge the user's card:
 $charge = \Stripe\Charge::create(array(
-    "amount" => 1000,
-    "currency" => "hkd",
+    "amount" => 30,
+    "currency" => "cad",
     "description" => "Example charge",
     "source" => $token
 ));
