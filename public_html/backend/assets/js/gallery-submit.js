@@ -47,7 +47,7 @@ function addPhotoUrl(galleryName, url) {
         var gallery = website.get('gallery');
         console.log('fetched gallery: ' + gallery);
 
-        var galleries = gallery.get('galleries');
+        var galleries = gallery.galleries;
         console.log('galleries: ' + galleries);
 
 
