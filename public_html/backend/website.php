@@ -367,7 +367,6 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                          contenteditable="true"
                                          data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
                                     <!--Button to create new section-->
-                                    <!-- TODO: Only show this button based on proper authentication -->
                                     <?php
                                     if ($isAdmin) {?>
                                         <button id="make-section-button"
@@ -401,8 +400,7 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                         <input
                                             type="file"
                                             data-gallery-name="<?php echo $galleryName ?>"
-                                            class="btn btn-default add-gallery-pic">
-                                                Add a picture to <?php echo $galleryName ?>
+                                            class="add-gallery-pic">
                                         </input>
 
                                     <?php }

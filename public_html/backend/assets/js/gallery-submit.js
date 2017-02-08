@@ -5,25 +5,27 @@
  * Description: Separate JS for handling gallery submission on website.php
  **/
 
-$(document).ready(function() {
+$('#website-form-submit').click(function() {
+    $('.add-gallery-pic').each(function(e) {
+        uploadGallery(e);
+    });
+});
 
-    // listen for gallery clicks
-    $('.add-gallery-pic').click(function (event) {
-        event.preventDefault();
-        var element = event.target; // get the dom element that triggered the click
+// listen for gallery clicks
+var uploadGallery = function (element) {
 
-        var galleryName = element.getAttribute('data-gallery-name');
+    var galleryName = element.getAttribute('data-gallery-name');
 
-        if (element.files.length > 0) {
-            var file = element.files[0];
-            var parseFile = new Parse.File(file.name, file); // name doesn't really matter
+    if (element.files.length > 0) {
+        var file = element.files[0];
+        var parseFile = new Parse.File(file.name, file); // name doesn't really matter
 
-            var Gallery = Parse.Object.extend("Gallery");
+        var Gallery = Parse.Object.extend("Gallery");
 
-            var galleryObject = new Gallery();
-            galleryObject.set('image', parseFile);
+        var galleryObject = new Gallery();
+        galleryObject.set('image', parseFile);
 
-            galleryObject.save().then(function(galleryObj) {
+        galleryObject.save().then(function(galleryObj) {
                 var photoUrl = galleryObj.url();
                 addPhotoUrl(galleryName, photoUrl);
 
@@ -31,10 +33,8 @@ $(document).ready(function() {
             function(err) {
                 alert("Error saving file: " + err);
             });
-        }
-    });
-
-});
+    }
+};
 
 function addPhotoUrl(galleryName, url) {
     var Website = Parse.Object.extend('Website');
