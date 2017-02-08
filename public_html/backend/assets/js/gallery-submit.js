@@ -42,8 +42,22 @@ function addPhotoUrl(galleryName, url) {
 
     var websiteid = document.getElementById('website-form').dataset.websiteid;
 
+
     query.get(websiteid).then(function(website) {
         var gallery = website.get('gallery');
         console.log('fetched gallery: ' + gallery);
+
+        var galleries = gallery.get('galleries');
+        console.log('galleries: ' + galleries);
+
+
+        // add url to website
+        for (var i = 0; i < galleries.length; i++) {
+            if (galleries[i].name === galleryName)
+                galleries[i].files.push(url);
+        }
+
+        // finally save with updated changes
+        website.save();
     });
 }

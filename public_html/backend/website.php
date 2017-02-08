@@ -397,14 +397,12 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                                 <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
                                             <?php } ?>
                                         </div>
-                                        <form>
-                                            <input
-                                                type="file"
-                                                accept="image/*"
-                                                data-gallery-name="<?php echo $galleryName ?>"
-                                                class="add-gallery-pic">
-                                            </input>
-                                        </form>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            data-gallery-name="<?php echo $galleryName ?>"
+                                            class="add-gallery-pic">
+                                        </input>
 
                                     <?php }
                                     ?>
