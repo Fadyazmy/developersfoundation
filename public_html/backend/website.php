@@ -398,6 +398,12 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                                 <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
                                             <?php } ?>
                                         </div>
+                                        <input
+                                            type="file"
+                                            data-gallery-name="<?php echo $galleryName ?>"
+                                            class="btn btn-default add-gallery-pic">
+                                                Add a picture to <?php echo $galleryName ?>
+                                        </input>
 
                                     <?php }
                                     ?>
@@ -527,6 +533,8 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
 <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
 </div>
 </div>
+<script src="assets/js/website-submit.js"></script>
+
 <!-- /page content -->
 
 <?php

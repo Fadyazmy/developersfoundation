@@ -304,6 +304,9 @@ if ($websiteSubmit) {
     <script src="vendors/pnotify/dist/pnotify.buttons.js"></script>
     <script src="vendors/pnotify/dist/pnotify.nonblock.js"></script>';
     echo "<script src='assets/js/website-submit.js'></script>";
+
+    // add gallery file submit functionality
+    echo "<script src='assets/js/gallery-submit.js'></script>";
 } elseif ($analytics) {
     echo '
     <!-- jQuery Smart Wizard -->

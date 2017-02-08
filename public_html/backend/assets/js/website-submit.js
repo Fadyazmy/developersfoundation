@@ -3,7 +3,7 @@
  */
 
 var debug = true;
-if (debug) console.debug("Debug mode is ON")
+if (debug) console.debug("Debug mode is ON");
 
 /* Doc Ready Functions */
 $(document).ready(function () {
