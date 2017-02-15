@@ -367,7 +367,6 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                          contenteditable="true"
                                          data-contentold="<?php echo $content[0]['name']; ?>"><?php echo $content[0]['content']; ?></div>
                                     <!--Button to create new section-->
-                                    <!-- TODO: Only show this button based on proper authentication -->
                                     <?php
                                     if ($isAdmin) {?>
                                         <button id="make-section-button"
@@ -398,6 +397,12 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                                 <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
                                             <?php } ?>
                                         </div>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            data-gallery-name="<?php echo $galleryName ?>"
+                                            class="add-gallery-pic">
+                                        </input>
 
                                     <?php }
                                     ?>
@@ -527,6 +532,8 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
 <div id="fc_edit" data-toggle="modal" data-target="#CalenderModalEdit"></div>
 </div>
 </div>
+<script src="assets/js/website-submit.js"></script>
+
 <!-- /page content -->
 
 <?php
