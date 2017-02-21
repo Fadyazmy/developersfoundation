@@ -11,6 +11,7 @@ $('.add-gallery-pic').change(function(e) {
     uploadGallery(clickedElem);
 });
 
+
 // listen for gallery clicks
 var uploadGallery = function (element) {
 
