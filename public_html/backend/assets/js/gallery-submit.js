@@ -5,10 +5,10 @@
  * Description: Separate JS for handling gallery submission on website.php
  **/
 
-$('#website-form-submit').click(function() {
-    $('.add-gallery-pic').each(function(e) {
-        uploadGallery(e);
-    });
+// event is only triggered when the input field values change
+$('.add-gallery-pic').change(function(e) {
+    var clickedElem = e.target;
+    uploadGallery(clickedElem);
 });
 
 // listen for gallery clicks
