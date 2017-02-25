@@ -4,6 +4,8 @@
 
 *NOTE: This requires composer and Sendgrid to be installed.*
 
+Current SendGrid Version Supported: 5.2.0
+
 #### Instructions
 
 First, you will have to create a sendgrid account. [Link.](https://sendgrid.com/)
