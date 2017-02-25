@@ -14,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
 require '../../../vendor/autoload.php';
 $getPost = (array)json_decode(file_get_contents('php://input'));
 
-$sendgrid = new SendGrid($_ENV["SENDGRID_API_KEY"]);
+/*$sendgrid = new SendGrid($_ENV["SENDGRID_API_KEY"]);
 $email = new SendGrid\Email();
 
 $email
@@ -32,4 +32,14 @@ try {
     echo json_encode(array('success' => true, 'message' => "done"));
 } catch (\SendGrid\Exception $e) {
     echo json_encode(array('success' => false, 'message' => $e));
-}
+}*/
+
+$from = new SendGrid\Email($getPost['fromName'], $getPost['sendFrom']);
+$subject = $getPost['subject'];
+$to = new SendGrid\Email($getPost['toName'], $getPost['sendTo']);
+$content = new SendGrid\Content("text/plain", $getPost['msgHTML']);
+$mail = new SendGrid\Mail($from, $subject, $to, $content);
+$apiKey = getenv('SENDGRID_API_KEY');
+$sg = new \SendGrid($apiKey);
+$response = $sg->client->mail()->send()->post($mail);
+echo json_encode(array('success' => true, 'message' => $response->statusCode() . " : " . $response->headers() . "\n" . $response->body()));
