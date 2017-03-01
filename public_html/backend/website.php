@@ -409,7 +409,7 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                     <?php }
                                     ?>
                                     <button class="btn btn-default"
-                                            onclick="promptNewGallery()">Create New Gallery</button>
+                                            onclick="promptNewGallery(event)">Create New Gallery</button>
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                         This
                                         is for demonstration purposes only, the files are not uploaded to any

@@ -416,7 +416,8 @@ function promptNewSection() {
 }
 
 // add functionality to create new gallery
-function promptNewGallery() {
+function promptNewGallery(e) {
+    e.preventDefault();
     swal({
         title: 'Create New Gallery',
         text: 'Please enter the title for the new gallery',
