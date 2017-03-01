@@ -7,6 +7,11 @@ if (debug) console.debug("Debug mode is ON");
 
 /* Doc Ready Functions */
 $(document).ready(function () {
+
+    // initialize Parse connection as soon as doc ready
+    Parse.initialize("developers-foundation-db", "unused");
+    Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
+
     $("#web-logo").change(function () {
         readURL(this);
     });
@@ -34,8 +39,6 @@ function formSubmit(theForm) {
     var parseUser = theForm.dataset.parseuser,
         parsePwd = theForm.dataset.parsepw;
 
-    Parse.initialize("developers-foundation-db", "unused");
-    Parse.serverURL = 'https://developers-foundation-db.herokuapp.com/parse';
 
     var websiteID = theForm.dataset.websiteid;
     var formWebTitle = document.getElementById('web-title').value,
@@ -287,7 +290,7 @@ function readURL(input) {
 
         reader.onload = function (e) {
             $(preview).attr('src', e.target.result);
-        }
+        };
 
         reader.readAsDataURL(input.files[0]);
     }
@@ -410,4 +413,48 @@ function promptNewSection() {
         // create the new section with the given title
         makeSection(inputValue);
     })
+}
+
+// add functionality to create new gallery
+function promptNewGallery() {
+    swal({
+        title: 'Create New Gallery',
+        text: 'Please enter the title for the new gallery',
+        type: 'input',
+        showCancelButton: true,
+        animation: 'slide-from-top',
+        inputPlaceHolder: 'Gallery Name...'
+    }, function(galleryName) {
+        if (galleryName == false)
+            return false;
+
+        if (galleryName == '') {
+            swal.showInputError('You need to enter a title');
+            return false;
+        }
+
+        makeGallery(galleryName);
+    })
+}
+
+function makeGallery(galleryName) {
+    var Website = Parse.Object.extend('Website');
+    var query = new Parse.Query(website);
+
+    var websiteid = document.getElementById('website-form').dataset.websiteid;
+
+    var newGalleryObj = {name: galleryName, files: []};
+
+    query.get(websiteid).then(function(website) {
+        var gallery = website.get('gallery');
+        gallery['galleries'].push(newGalleryObj);
+
+        return gallery.save();
+    }).then(
+        function(done) {
+            console.log('gallery successfully created');
+        },
+        function(err) {
+            console.log('error creating gallery object: ' + err);
+    });
 }

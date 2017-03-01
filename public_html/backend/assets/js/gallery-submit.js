@@ -27,7 +27,7 @@ var uploadGallery = function (element) {
         galleryObject.set('image', parseFile);
 
         galleryObject.save().then(function(galleryObj) {
-                var photoUrl = galleryObj.attributes.image.url();
+                var photoUrl = galleryObj.get('image').url();
                 addPhotoUrl(galleryName, photoUrl);
 
             },
@@ -62,3 +62,4 @@ function addPhotoUrl(galleryName, url) {
         website.save();
     });
 }
+

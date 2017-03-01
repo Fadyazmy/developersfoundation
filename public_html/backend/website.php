@@ -394,7 +394,9 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                         <div class="gallery-pane">
                                             <h4 class="gallery-heading"><?php echo $galleryName ?></h4>
                                             <?php for ($j = 0; $j < count($galleryFiles); $j++) { ?>
-                                                <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
+                                                <div style="width: 250px; height: 250px; overflow: hidden">
+                                                    <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img">
+                                                </div>
                                             <?php } ?>
                                         </div>
                                         <input
@@ -406,6 +408,8 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
 
                                     <?php }
                                     ?>
+                                    <button class="btn btn-default"
+                                            onclick="promptNewGallery()">Create New Gallery</button>
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                         This
                                         is for demonstration purposes only, the files are not uploaded to any
