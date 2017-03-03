@@ -6,9 +6,12 @@
  **/
 
 // event is only triggered when the input field values change
-$('.add-gallery-pic').change(function(e) {
+$('.gallery-upload').click(function(e) {
     var clickedElem = e.target;
-    uploadGallery(clickedElem);
+    var galleryId = e.getAttribute('data-gallery');
+    var inputElem = document.getElementById('gallery-upload-' + galleryId);
+
+    uploadGallery(inputElem);
 });
 
 
@@ -29,7 +32,7 @@ var uploadGallery = function (element) {
         galleryObject.save().then(function(galleryObj) {
                 var photoUrl = galleryObj.get('image').url();
                 addPhotoUrl(galleryName, photoUrl);
-
+                element.files = [];
             },
             function(err) {
                 alert("Error saving file: " + err);

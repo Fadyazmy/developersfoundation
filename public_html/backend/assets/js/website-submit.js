@@ -431,10 +431,11 @@ function promptNewGallery(e) {
 
         if (galleryName == '') {
             swal.showInputError('You need to enter a title');
-            return false;
         }
 
         makeGallery(galleryName);
+
+        swal('Done', galleryName + ' created', 'success');
     })
 }
 

@@ -402,9 +402,14 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                         <input
                                             type="file"
                                             accept="image/*"
-                                            data-gallery-name="<?php echo $galleryName ?>"
-                                            class="btn btn-default add-gallery-pic">
+                                            id="gallery-upload-<?php echo $galleryName ?>">
                                         </input>
+
+                                        <div
+                                            class="btn btn-default gallery-upload"
+                                            data-gallery="<?php echo $galleryName?>">
+                                            Upload image to <?php echo $galleryName ?>
+                                        </div>
 
                                     <?php }
                                     ?>
