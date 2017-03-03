@@ -400,6 +400,7 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                             <?php } ?>
                                         </div>
                                         <input
+                                            style="clear: both"
                                             type="file"
                                             accept="image/*"
                                             id="gallery-upload-<?php echo $galleryName ?>">

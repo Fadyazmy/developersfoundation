@@ -2,8 +2,7 @@
     width: 250px;
     height: 250px;
     float: left;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 15px;
 }
 
 .floated-img img {
