@@ -403,6 +403,7 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                             style="clear: both"
                                             type="file"
                                             accept="image/*"
+                                            data-gallery-name="<?php echo $galleryName ?>"
                                             id="gallery-upload-<?php echo $galleryName ?>">
                                         </input>
 

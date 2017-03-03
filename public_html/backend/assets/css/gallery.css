@@ -3,6 +3,7 @@
     height: 250px;
     float: left;
     margin: 15px;
+    padding: 10px;
 }
 
 .floated-img img {
