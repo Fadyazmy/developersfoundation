@@ -8,7 +8,7 @@
 // event is only triggered when the input field values change
 $('.gallery-upload').click(function(e) {
     var clickedElem = e.target;
-    var galleryId = e.getAttribute('data-gallery');
+    var galleryId = clickedElem.getAttribute('data-gallery');
     var inputElem = document.getElementById('gallery-upload-' + galleryId);
 
     uploadGallery(inputElem);
