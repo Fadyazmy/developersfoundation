@@ -32,7 +32,7 @@ var uploadGallery = function (element) {
         galleryObject.save().then(function(galleryObj) {
                 var photoUrl = galleryObj.get('image').url();
                 addPhotoUrl(galleryName, photoUrl);
-                element.files = [];
+                element.files.pop(-1);
             },
             function(err) {
                 alert("Error saving file: " + err);
@@ -50,6 +50,7 @@ function addPhotoUrl(galleryName, url) {
     query.get(websiteid).then(function(website) {
         var gallery = website.get('gallery');
         console.log('fetched gallery: ' + gallery);
+        swal('Success', 'Your image was uploaded', 'success');
 
         var galleries = gallery.galleries;
         console.log('galleries: ' + galleries);

@@ -394,7 +394,7 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                         <div class="gallery-pane">
                                             <h4 class="gallery-heading"><?php echo $galleryName ?></h4>
                                             <?php for ($j = 0; $j < count($galleryFiles); $j++) { ?>
-                                                <div style="width: 250px; height: 250px; overflow: hidden">
+                                                <div class="floated-img">
                                                     <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img">
                                                 </div>
                                             <?php } ?>
