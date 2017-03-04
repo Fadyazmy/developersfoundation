@@ -6,6 +6,8 @@
  * Time: 9:00 PM
  */
 
+session_start();
+
 echo $_SESSION['nobAuth'] . "\n";
 echo $_COOKIE['nobAuth'] . "\n";
 

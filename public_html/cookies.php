@@ -6,6 +6,8 @@
  * Time: 9:00 PM
  */
 
+session_start();
+
 $userAuthed = false;
 $_SESSION['nobAuth'] = false;
 $_COOKIE['nobAuth'] = false;
