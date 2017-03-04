@@ -394,18 +394,29 @@ $galleryInfo = $theWebsite->get("gallery")["galleries"];
                                         <div class="gallery-pane">
                                             <h4 class="gallery-heading"><?php echo $galleryName ?></h4>
                                             <?php for ($j = 0; $j < count($galleryFiles); $j++) { ?>
-                                                <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img" >˚
+                                                <div class="floated-img">
+                                                    <img src="<?php echo $galleryFiles[$j] ?>" class="gallery-img">
+                                                </div>
                                             <?php } ?>
                                         </div>
                                         <input
+                                            style="clear: both"
                                             type="file"
                                             accept="image/*"
                                             data-gallery-name="<?php echo $galleryName ?>"
-                                            class="btn btn-default add-gallery-pic">
+                                            id="gallery-upload-<?php echo $galleryName ?>">
                                         </input>
+
+                                        <div
+                                            class="btn btn-default gallery-upload"
+                                            data-gallery="<?php echo $galleryName?>">
+                                            Upload image to <?php echo $galleryName ?>
+                                        </div>
 
                                     <?php }
                                     ?>
+                                    <button class="btn btn-default"
+                                            onclick="promptNewGallery(event)">Create New Gallery</button>
                                     <p>Drag multiple files to the box below for multi upload or click to select files.
                                         This
                                         is for demonstration purposes only, the files are not uploaded to any

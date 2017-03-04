@@ -45,6 +45,8 @@ use Parse\ParseCloud;
     <meta name="msapplication-TileImage" content="assets/img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
+    <link href="assets/css/gallery.css" rel="stylesheet">
+
     <!-- jQuery UI -->
     <link href="vendors/Flot/examples/shared/jquery-ui/jquery-ui.min.css">
     <!-- Bootstrap -->

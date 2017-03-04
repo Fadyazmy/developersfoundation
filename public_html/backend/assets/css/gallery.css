@@ -1,0 +1,14 @@
+.floated-img {
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 15px;
+    padding: 10px;
+}
+
+.floated-img img {
+    width: 250px;
+    padding: 0;
+    height: 250px;
+    object-fit: cover;
+}

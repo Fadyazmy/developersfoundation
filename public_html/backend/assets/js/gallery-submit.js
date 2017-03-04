@@ -6,9 +6,12 @@
  **/
 
 // event is only triggered when the input field values change
-$('.add-gallery-pic').change(function(e) {
+$('.gallery-upload').click(function(e) {
     var clickedElem = e.target;
-    uploadGallery(clickedElem);
+    var galleryId = clickedElem.getAttribute('data-gallery');
+    var inputElem = document.getElementById('gallery-upload-' + galleryId);
+
+    uploadGallery(inputElem);
 });
 
 
@@ -27,9 +30,9 @@ var uploadGallery = function (element) {
         galleryObject.set('image', parseFile);
 
         galleryObject.save().then(function(galleryObj) {
-                var photoUrl = galleryObj.attributes.image.url();
+                var photoUrl = galleryObj.get('image').url();
                 addPhotoUrl(galleryName, photoUrl);
-
+                element.files.pop(-1);
             },
             function(err) {
                 alert("Error saving file: " + err);
@@ -47,6 +50,7 @@ function addPhotoUrl(galleryName, url) {
     query.get(websiteid).then(function(website) {
         var gallery = website.get('gallery');
         console.log('fetched gallery: ' + gallery);
+        swal('Success', 'Your image was uploaded', 'success');
 
         var galleries = gallery.galleries;
         console.log('galleries: ' + galleries);
@@ -62,3 +66,4 @@ function addPhotoUrl(galleryName, url) {
         website.save();
     });
 }
+
