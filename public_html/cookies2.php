@@ -6,7 +6,10 @@
  * Time: 9:00 PM
  */
 
-if (!$_COOKIE['nobAuth']) {
+echo $_SESSION['nobAuth'] . "\n";
+echo $_COOKIE['nobAuth'] . "\n";
+
+if (!$_SESSION['nobAuth']) {
     echo "You are not authorized. Go away :(";
 } else {
     echo "You are good :)";
