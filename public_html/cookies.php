@@ -10,13 +10,13 @@ session_start();
 
 $userAuthed = false;
 $_SESSION['nobAuth'] = false;
-$_COOKIE['nobAuth'] = false;
+setcookie("nobAuth",false);
 
 if ($_POST['user'] != '' && $_POST['user'] != null) {
     if ($_POST['user'] == "THE_USER" && $_POST['password'] == "THE_PASSWORD") {
         $userAuthed = true;
         $_SESSION['nobAuth'] = true;
-        $_COOKIE['nobAuth'] = true;
+        setcookie("nobAuth",true);
     }
 }
 
