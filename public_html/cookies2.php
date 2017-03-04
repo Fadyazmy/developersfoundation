@@ -7,7 +7,7 @@
  */
 
 if (!$_COOKIE['nobAuth']) {
-    echo "You are not authorized.";
+    echo "You are not authorized. Go away :(";
 } else {
     echo "You are good :)";
 }
