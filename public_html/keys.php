@@ -18,4 +18,4 @@ $pubKeyData = openssl_pkey_get_details($pubKey);
 $encrypted;
 
 openssl_public_encrypt("lol this is a test", $encrypted, $pubKey);
-echo $encrypted;
+echo base64_encode($encrypted);
