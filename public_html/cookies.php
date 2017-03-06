@@ -34,7 +34,7 @@ if (!$userAuthed) {
     <?php
 } else {
     ?>
-    <p>You are authed, try clicking on this <a href="cookies2.php">link</a>.</p>
+    <p>You are authed, try clicking on this <a href="cookies3.php">link</a>.</p>
     <?php
 }
 ?>
