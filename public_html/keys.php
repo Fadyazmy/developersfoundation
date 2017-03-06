@@ -6,9 +6,13 @@
  * Time: 4:18 PM
  */
 
-if($_SERVER['REQUEST_METHOD'] === 'GET'){
+if($_SERVER['REQUEST_METHOD'] === 'GET' || !isset($_SERVER['HTTPS'])){
     header("HTTP/1.1 403 Forbidden");
     exit;
 }
 
-$masterKey = $_POST[];
+$masterKey = $_ENV['NOB_API'];
+$pubKey = openssl_pkey_get_public("../key/public.pub");
+$pubKeyData = openssl_pkey_get_details($pubKey);
+
+print $pubKeyData;
