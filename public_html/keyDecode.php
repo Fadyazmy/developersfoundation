@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: harrisonchow
- * Date: 2/25/17
- * Time: 4:18 PM
+ * Date: 3/7/17
+ * Time: 11:24 AM
  */
 
 if($_SERVER['REQUEST_METHOD'] === 'GET' || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == "http")){
@@ -12,10 +12,10 @@ if($_SERVER['REQUEST_METHOD'] === 'GET' || (isset($_SERVER['HTTP_X_FORWARDED_PRO
 }
 
 $masterKey = $_ENV['NOB_API'];
-$pubKey = openssl_pkey_get_public(file_get_contents("../key/public.pub"));
+$crypt = $_POST['CRYPT'];
+$prvKey = openssl_pkey_get_private(file_get_contents("../key/private.pem"),$masterKey);
 
-openssl_public_encrypt("lol this is a test", $encrypted, $pubKey);
-echo $encrypted;
+openssl_private_decrypt($crypt, $decrypted, $prvKey);
+echo $decrypted;
 
-openssl_free_key($pubKey);
-//echo base64_encode($encrypted);
+openssl_free_key($prvKey);
