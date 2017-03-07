@@ -15,4 +15,5 @@ $masterKey = $_ENV['NOB_API'];
 $pubKey = openssl_pkey_get_public(file_get_contents("../key/public.pub"));
 
 openssl_public_encrypt("lol this is a test", $encrypted, $pubKey);
-echo base64_encode($encrypted);
+echo $encrypted;
+//echo base64_encode($encrypted);
