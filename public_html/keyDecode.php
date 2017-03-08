@@ -17,5 +17,7 @@ $prvKey = openssl_pkey_get_private(file_get_contents("../key/private.pem"),$mast
 
 openssl_private_decrypt($crypt, $decrypted, $prvKey);
 echo $decrypted;
+error_log($crypt, 0);
+error_log($decrypted);
 
 openssl_free_key($prvKey);
